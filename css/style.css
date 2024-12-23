@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-image: radial-gradient(circle, #161b22 20%, #0d1117 100%);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* Navbar Styling */
@@ -31,10 +34,21 @@ body {
     font-size: 4rem;
     color: #00FFFF;
     text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+    animation: floating 3s ease-in-out infinite;
 }
 .hero p {
     color: #c9d1d9;
     font-size: 1.2rem;
+}
+
+/* Floating Animation */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Section Titles */
@@ -43,6 +57,7 @@ h2 {
     text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
     text-align: center;
     margin-bottom: 20px;
+    animation: floating 3s ease-in-out infinite;
 }
 
 /* Project Cards */
@@ -51,20 +66,20 @@ h2 {
     border: 1px solid #00FFFF;
     border-radius: 10px;
     box-shadow: 0 0 10px #00FFFF;
-}
-.project-card h5 {
-    color: #c9d1d9;
-}
-.project-card p {
-    color: #c9d1d9;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 .project-card:hover {
+    transform: translateY(-10px);
     box-shadow: 0 0 20px #00FFFF;
+}
+.project-card h5, .project-card p {
+    color: #c9d1d9;
 }
 
 /* Blog Section */
 .bg-light {
     background-color: #21262d !important;
+    color: #c9d1d9;
 }
 
 /* Contact Form */
@@ -84,6 +99,7 @@ form button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 form button:hover {
     background-color: #00b3cc;
@@ -104,3 +120,28 @@ footer {
     text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #00FFFF;
 }
 
+/* Floating Decorative Elements */
+.floating-element {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00FFFF;
+    border-radius: 50%;
+    animation: floatAround 10s infinite ease-in-out;
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(20px, -20px);
+    }
+    50% {
+        transform: translate(-20px, 20px);
+    }
+    75% {
+        transform: translate(10px, -10px);
+    }
+}

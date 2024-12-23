@@ -1,80 +1,83 @@
-/* General */
+/* General Styles */
 body {
     background-color: #000; /* Black background */
     color: #00ff00; /* Neon green text */
-    font-family: 'Courier New', Courier, monospace; /* Hacker vibe */
+    font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
     margin: 0;
     padding: 0;
 }
 
-h1, h2, h5 {
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00bfff, 0 0 30px #9a00ff; /* Neon glow */
-}
-
-/* Navigation */
-.neon-navbar {
+/* Navbar */
+.navbar {
     background-color: #000;
     border-bottom: 2px solid #00ff00;
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    color: #00ff00 !important;
+.navbar-brand, .nav-link {
+    color: #00bfff !important; /* Neon blue */
+    font-size: 1.2rem;
 }
 
-.navbar-nav .nav-link {
-    color: #00bfff !important;
-    transition: color 0.2s ease-in-out;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #9a00ff !important;
+.nav-link:hover {
+    color: #9a00ff !important; /* Neon purple hover effect */
+    text-shadow: 0 0 15px #9a00ff;
 }
 
 /* Hero Section */
 .hero {
     padding: 100px 20px;
     text-align: center;
-    background: linear-gradient(180deg, #000, #111);
+    background: linear-gradient(180deg, #000, #111); /* Subtle gradient */
 }
 
 .hero-title {
     font-size: 3rem;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00bfff, 0 0 30px #9a00ff;
+    color: #00ff00; /* Neon green */
+    text-shadow: 0 0 15px #00ff00, 0 0 25px #00bfff;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: #00bfff;
+    color: #00bfff; /* Neon blue */
 }
 
-/* Sections */
+/* Section Titles */
 .neon-section {
     margin: 50px 0;
 }
 
 .section-title {
     text-align: center;
-    color: #9a00ff;
+    font-size: 2rem;
+    color: #9a00ff; /* Neon purple */
+    text-shadow: 0 0 15px #9a00ff, 0 0 25px #00bfff;
 }
 
-/* Projects */
-.project-card {
-    background: #111;
-    border: 1px solid #00ff00;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00ff00;
+/* Projects Section */
+.project {
+    text-align: center;
 }
 
-.project-card:hover {
-    box-shadow: 0 0 20px #00ff00;
+.project-image {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #00ff00; /* Neon green border */
+    border-radius: 8px;
+}
+
+.project-image:hover {
+    transform: translateY(-10px); /* Hover jump effect */
+    box-shadow: 0 0 20px #00ff00; /* Neon glow */
 }
 
 /* Footer */
-.neon-footer {
+footer {
     text-align: center;
     padding: 20px;
-    color: #00bfff;
-    border-top: 2px solid #9a00ff;
+    color: #00bfff; /* Neon blue */
+    border-top: 2px solid #9a00ff; /* Neon purple border */
+    margin-top: 20px;
 }

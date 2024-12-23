@@ -1,54 +1,28 @@
-
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
 });
 
-// Glow Effect on Project Cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseover', () => {
-        card.style.boxShadow = '0 0 30px #00FFFF';
+// Add Glow Effect on Hover for Project Titles
+document.querySelectorAll('.project h3').forEach(projectTitle => {
+    projectTitle.addEventListener('mouseover', function () {
+        this.style.textShadow = '0 0 15px #00ff00, 0 0 30px #00ff00';
     });
-    card.addEventListener('mouseout', () => {
-        card.style.boxShadow = '0 0 10px #00FFFF';
+
+    projectTitle.addEventListener('mouseout', function () {
+        this.style.textShadow = '0 0 5px #00ff00, 0 0 10px #00ff00';
     });
 });
 
-// Floating Decorative Elements
-const floatingElementsContainer = document.createElement('div');
-floatingElementsContainer.style.position = 'relative';
-floatingElementsContainer.style.zIndex = '1';
-document.body.appendChild(floatingElementsContainer);
-
-for (let i = 0; i < 10; i++) {
-    const element = document.createElement('div');
-    element.className = 'floating-element';
-    element.style.left = `${Math.random() * 100}%`;
-    element.style.top = `${Math.random() * 100}%`;
-    element.style.animationDelay = `${Math.random() * 5}s`;
-    floatingElementsContainer.appendChild(element);
-}
-
-// Contact Form Handler
-document.querySelector('form')?.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
-
-    // Retrieve input values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    if (name && email && message) {
-        alert(`Thank you, ${name}! Your message has been sent.`);
-        this.reset(); // Clear the form fields
-    } else {
-        alert('Please fill out all fields before submitting.');
-    }
-});
+// Console Greeting in Hacker Theme
+console.log('%cWelcome to My Portfolio!', 'color: #00ff00; font-size: 20px; font-family: monospace; text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;');
+console.log('%cFeel free to explore the projects and reach out!', 'color: #00ff00; font-size: 14px; font-family: monospace; text-shadow: 0 0 5px #00ff00;');

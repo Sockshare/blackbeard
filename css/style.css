@@ -1,147 +1,80 @@
-/* General Styling */
+/* styles.css */
+
+/* General Body Styling */
 body {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: 'Roboto', sans-serif;
+    background-color: #000; /* Pure black background */
+    color: #00ff00; /* Neon green text color */
+    font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background-image: radial-gradient(circle, #161b22 20%, #0d1117 100%);
-    background-attachment: fixed;
-    background-size: cover;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-/* Navbar Styling */
-.navbar {
-    background-color: #161b22;
-    border-bottom: 2px solid #00FFFF;
-}
-.navbar-brand, .nav-link {
-    color: #00FFFF !important;
-    text-shadow: 0 0 5px #00FFFF;
-}
-.navbar-brand:hover, .nav-link:hover {
-    color: #FFFFFF !important;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
-    text-align: center;
-    padding: 100px 20px;
-}
-.hero h1 {
-    font-size: 4rem;
-    color: #00FFFF;
-    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
-    animation: floating 3s ease-in-out infinite;
-}
-.hero p {
-    color: #c9d1d9;
-    font-size: 1.2rem;
-}
-
-/* Floating Animation */
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Section Titles */
-h2 {
-    color: #00FFFF;
-    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+/* Header Styling */
+header {
     text-align: center;
     margin-bottom: 20px;
-    animation: floating 3s ease-in-out infinite;
 }
 
-/* Project Cards */
-.project-card {
-    background-color: #161b22;
-    border: 1px solid #00FFFF;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00FFFF;
-    transition: transform 0.3s, box-shadow 0.3s;
+.title {
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Neon glow */
 }
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px #00FFFF;
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #0f0; /* Softer neon green */
 }
-.project-card h5, .project-card p {
-    color: #c9d1d9;
+
+/* Section Styling */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    text-align: center;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.project p {
+    font-size: 1rem;
+    color: #c9ffc9; /* Slightly lighter green for readability */
 }
 
 /* Blog Section */
-.bg-light {
-    background-color: #21262d !important;
-    color: #c9d1d9;
-}
-
-/* Contact Form */
-form .form-control {
-    background-color: #161b22;
-    color: #c9d1d9;
-    border: 1px solid #00FFFF;
-}
-form .form-control:focus {
-    box-shadow: 0 0 10px #00FFFF;
-    border-color: #00FFFF;
-}
-form button {
-    background-color: #00FFFF;
-    color: #0d1117;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-form button:hover {
-    background-color: #00b3cc;
-}
-
-/* Footer */
-footer {
-    background-color: #161b22;
-    color: #c9d1d9;
+#blog p {
     text-align: center;
-    padding: 20px 0;
-    border-top: 2px solid #00FFFF;
+    font-size: 1.2rem;
+    color: #00ff80; /* Softer neon green */
 }
 
-/* Utilities */
-.neon-text {
-    color: #00FFFF;
-    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+/* About Section */
+#about p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #00ff80;
 }
 
-/* Floating Decorative Elements */
-.floating-element {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: rgba(0, 255, 255, 0.1);
-    border: 2px solid #00FFFF;
-    border-radius: 50%;
-    animation: floatAround 10s infinite ease-in-out;
+/* Horizontal Line Styling */
+hr {
+    border: 1px dashed #00ff00; /* Dashed neon green lines */
+    margin: 20px 0;
 }
 
-@keyframes floatAround {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(20px, -20px);
-    }
-    50% {
-        transform: translate(-20px, 20px);
-    }
-    75% {
-        transform: translate(10px, -10px);
-    }
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #00ff00;
+    border-top: 1px dashed #00ff00;
+    padding-top: 10px;
 }

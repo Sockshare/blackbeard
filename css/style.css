@@ -19,7 +19,7 @@ body {
 /* Cards are visible above the section background */
 .card {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* Ensure the background or other elements do not interfere with modals */

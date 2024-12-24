@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Particle Background -->
-    <div id="interactive-particle-container"></div>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
@@ -35,11 +32,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero text-center text-white bg-dark py-5">
+    <header class="hero text-center text-white py-5">
         <div class="container">
             <h1 class="display-4 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
             <p class="lead neon-text-blue" data-aos="fade-up" data-aos-duration="1000">Showcasing Expertise and Innovation</p>
-            <a href="#projects" class="btn btn-primary btn-lg mt-3" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
+            <a href="#projects" class="btn btn-primary btn-lg mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
         </div>
     </header>
 
@@ -81,10 +78,44 @@
                     </div>
                 </div>
 
-                <!-- Additional cards can follow the same structure as above -->
+                <!-- Project 2 -->
+                <div class="col" data-aos="flip-up" data-aos-duration="1500">
+                    <div class="card h-100 d-flex flex-column project-hover">
+                        <img src="assets/images/car_2.jpg" class="card-img-top" alt="Car 2">
+                        <div class="card-body flex-grow-1">
+                            <h5 class="card-title">Car Project 2</h5>
+                            <p class="card-text">Revolutionizing automotive engineering.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCar2">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal for Project 2 -->
+                <div class="modal fade" id="modalCar2" tabindex="-1" aria-labelledby="modalCar2Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalCar2Label">Car Project 2</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/car_2.jpg" class="img-fluid mb-3" alt="Car 2">
+                                <p>Details on how Car Project 2 is revolutionizing automotive engineering with cutting-edge innovations.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Interactive Animation at the Bottom -->
+    <div id="interactive-particle-container" style="height: 200px; position: relative;"></div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">

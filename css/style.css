@@ -5,7 +5,6 @@ body {
     font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
 }
 
 /* Navbar */
@@ -29,7 +28,6 @@ body {
     padding: 100px 20px;
     text-align: center;
     background: linear-gradient(180deg, #000, #111); /* Subtle gradient */
-    animation: glow 3s ease-in-out infinite;
 }
 
 .hero-title {
@@ -43,8 +41,23 @@ body {
     color: #00bfff; /* Neon blue */
 }
 
+/* Particles Section */
+#particles-js {
+    position: absolute; /* Ensures it stays in the background */
+    width: 100%;
+    height: 300px; /* Adjust the height of the particle section */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keep it behind other content */
+    overflow: hidden; /* Prevent particles from overflowing */
+}
+
 /* Section Titles */
-.neon-section-title {
+.neon-section {
+    margin: 50px 0;
+}
+
+.section-title {
     text-align: center;
     font-size: 2rem;
     color: #9a00ff; /* Neon purple */
@@ -59,7 +72,6 @@ body {
     border: 1px solid #00ff00; /* Neon green border */
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow */
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
@@ -83,8 +95,6 @@ body {
     background-color: #111; /* Dark background for modals */
     color: #fff; /* Light text for contrast */
     border-radius: 8px;
-    border: 1px solid #00ff00; /* Neon border */
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Neon glow */
 }
 
 .modal-header, .modal-footer {
@@ -92,37 +102,11 @@ body {
 }
 
 .modal img {
-    display: block;
-    margin: 0 auto; /* Center the image */
-    max-width: 100%; /* Ensure images fit within modal */
-    max-height: 70vh; /* Limit modal image height */
+    width: 100%; /* Ensure images span the full modal width */
+    max-height: 80vh; /* Restrict height to fit the viewport */
     object-fit: contain; /* Maintain aspect ratio */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
-}
-
-/* Particle Background */
-#particle-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Place behind content */
-    background: #000; /* Ensure background is black */
-}
-
-/* Animations */
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #00ff00, 0 0 15px #00bfff, 0 0 20px #9a00ff;
-    }
-    50% {
-        text-shadow: 0 0 15px #00ff00, 0 0 25px #00bfff, 0 0 30px #9a00ff;
-    }
-    100% {
-        text-shadow: 0 0 5px #00ff00, 0 0 15px #00bfff, 0 0 20px #9a00ff;
-    }
+    display: block; /* Center the image */
+    margin: 0 auto; /* Center alignment */
 }
 
 /* Footer */
@@ -134,17 +118,18 @@ footer {
     margin-top: 20px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2rem;
-    }
+/* Animations */
+.project-image {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #00ff00; /* Neon green border */
+    border-radius: 8px;
+}
 
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .card img {
-        height: auto; /* Allow flexible height for smaller screens */
-    }
+.project-image:hover {
+    transform: translateY(-10px); /* Hover jump effect */
+    box-shadow: 0 0 20px #00ff00; /* Neon glow */
 }

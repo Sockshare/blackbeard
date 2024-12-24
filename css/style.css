@@ -19,6 +19,7 @@ body {
     padding: 100px 20px;
     background: transparent;
     position: relative;
+    z-index: 2; /* Ensure hero section is above particle container */
 }
 
 .hero .neon-text {
@@ -47,6 +48,7 @@ body {
     background: transparent;
     padding: 50px 20px;
     position: relative;
+    z-index: 2; /* Ensure projects section is above particle container */
 }
 
 .neon-section-title {
@@ -126,13 +128,14 @@ body {
 
 /* Particle Animation Background */
 #interactive-particle-container {
-    position: absolute;
-    top: 56px;
-    bottom: 0;
+    position: fixed; /* Fixed to cover the full viewport */
+    top: 0;
     left: 0;
-    right: 0;
-    z-index: 1;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    z-index: 1; /* Behind all content */
     background: transparent;
+    pointer-events: auto; /* Allow interaction with particles */
 }
 
 /* Main Content Styling */

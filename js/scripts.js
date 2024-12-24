@@ -69,12 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 push: {
                     particles_nb: 10 // Number of particles added on click
-                },
-                grab: {
-                    distance: 200, // Makes particles "grab" towards cursor
-                    line_linked: {
-                        opacity: 1
-                    }
                 }
             }
         },

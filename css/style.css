@@ -68,38 +68,37 @@ body {
 }
 
 /* Projects Section */
+/* Projects Section */
 #projects {
-    position: relative; /* Allow layering of child elements */
+    position: relative; /* Ensure correct layering within the section */
     padding: 50px 0; /* Add padding for visual spacing */
-    z-index: 1; /* Ensure content is above other elements */
+    z-index: 1; /* Ensure this section appears above other elements */
 }
 
 /* Cards */
 .card {
-    position: relative; /* Ensure cards are layered correctly */
-    z-index: 2; /* Explicitly bring cards above any backgrounds */
-    background-color: #111; /* Ensure contrast against the background */
-    border-radius: 10px;
-    border: 1px solid #00ff00; /* Subtle neon border */
+    position: relative; /* Ensure the card is properly layered */
+    z-index: 2; /* Explicitly bring cards above other elements */
+    background-color: #111; /* Ensure good contrast against the background */
+    border-radius: 10px; /* Smooth edges */
+    border: 1px solid #00ff00; /* Neon green border */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Card Images */
 .card img {
     width: 100%; /* Full width for consistency */
     height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Crop images to fit the card */
-    border-radius: 10px 10px 0 0;
+    object-fit: cover; /* Ensure images fit well within the card */
+    border-radius: 10px 10px 0 0; /* Rounded corners for the top */
 }
 
-.card-footer {
-    margin-top: auto; /* Pushes the footer to the bottom for alignment */
-    text-align: center;
-}
-
+/* Card Hover Effect */
 .card:hover {
-    transform: translateY(-5px); /* Hover effect */
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Enhanced neon glow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Neon glow effect */
 }
+
 
 /* Footer */
 footer {

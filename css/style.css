@@ -27,6 +27,13 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Adds neon glow effect */
 }
 
+.modal img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
 .nav-link:hover {
     color: #9a00ff !important; /* Neon purple hover effect */
     text-shadow: 0 0 15px #9a00ff;

@@ -1,6 +1,4 @@
-// Keep all existing functionality intact and add the new interactive animation
-
-// Initialize Particles.js for Green Interactive Animation Above Navbar
+// Initialize Particles.js for Interactive Animation at the Bottom of the Page
 document.addEventListener('DOMContentLoaded', function () {
     particlesJS('interactive-particle-container', {
         particles: {
@@ -78,8 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-// Smooth Scroll for Navigation Links (Existing functionality)
+// Smooth Scroll for Navigation Links (Existing Functionality)
 document.querySelectorAll('a.nav-link').forEach(anchor => {
     const href = anchor.getAttribute('href');
     if (href.startsWith('#')) {
@@ -97,14 +94,14 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
     }
 });
 
-// Animate on Scroll (AOS) Initialization (Existing functionality)
+// Animate on Scroll (AOS) Initialization (Existing Functionality)
 AOS.init({
     duration: 1200,
     easing: 'ease-in-out',
     once: true
 });
 
-// Hover Effects for Cards (Existing functionality)
+// Hover Effects for Cards (Existing Functionality)
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'scale(1.05)';
@@ -115,7 +112,7 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-// Back to Top Button (Optional - Existing functionality)
+// Back to Top Button (Optional - Existing Functionality)
 const backToTopBtn = document.getElementById('back-to-top');
 if (backToTopBtn) {
     window.addEventListener('scroll', () => {

@@ -2,7 +2,7 @@
 particlesJS('particle-container', {
     particles: {
         number: {
-            value: 50, // Adjust for the desired density
+            value: 50,
             density: {
                 enable: true,
                 value_area: 800
@@ -104,3 +104,52 @@ particlesJS('particle-container', {
     },
     retina_detect: true
 });
+
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('a.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Animate on Scroll (AOS) Initialization
+AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true, // Ensure animations only happen once
+});
+
+// Hover Effects for Cards
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.05)';
+        card.style.transition = 'transform 0.3s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
+
+// Back to Top Button (Optional)
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}

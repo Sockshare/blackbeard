@@ -104,6 +104,12 @@ particlesJS('interactive-particle-container', {
     },
     retina_detect: true
 });
+particlesJS('particles-js', {
+    // Other particle configuration
+    canvas: {
+        height: '100%' // This might conflict with your CSS
+    }
+});
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a.nav-link').forEach(anchor => {

@@ -15,15 +15,15 @@ html, body {
     color: #00ff00; /* Neon green text */
 }
 
-/* Interactive Animation Background */
+/* Interactive Animation Above Footer */
 #interactive-particle-container {
-    position: fixed; /* Covers the entire viewport */
-    top: 0;
+    position: absolute; /* Positioned relative to the content */
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%; /* Full viewport height */
-    z-index: -1; /* Places it behind all content */
-    background-color: transparent; /* Ensure it's transparent */
+    width: 100%; /* Full width */
+    height: 200px; /* Height just above the footer */
+    z-index: 1; /* Ensure it's above the footer but below other content */
+    background-color: transparent; /* Transparent background */
     pointer-events: none; /* Prevent interaction blocking other elements */
 }
 
@@ -107,46 +107,4 @@ html, body {
 .card:hover {
     transform: translateY(-5px); /* Hover effect */
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Enhanced neon glow on hover */
-}
-
-/* Modal Styles */
-.modal-content {
-    background-color: #111; /* Dark background for modals */
-    color: #fff; /* Light text for contrast */
-    border-radius: 8px;
-}
-
-.modal-header, .modal-footer {
-    border: none; /* Remove default borders */
-}
-
-.modal img {
-    width: 100%; /* Ensure images span the full modal width */
-    max-height: 80vh; /* Restrict height to fit the viewport */
-    object-fit: contain; /* Maintain aspect ratio */
-    display: block; /* Center the image */
-    margin: 0 auto; /* Center alignment */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #00bfff; /* Neon blue */
-    border-top: 2px solid #9a00ff; /* Neon purple border */
-    margin-top: 20px;
-}
-
-/* Animations and Effects */
-@keyframes glow {
-    0% { box-shadow: 0 0 5px #00ff00; }
-    50% { box-shadow: 0 0 20px #00ff00; }
-    100% { box-shadow: 0 0 5px #00ff00; }
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
 }

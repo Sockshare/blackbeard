@@ -1,19 +1,16 @@
-// Initialize AOS for animations
-AOS.init();
-
-// Load Particles.js configuration for the interactive particle animation
+// Initialize Particles.js for Interactive Animation
 document.addEventListener('DOMContentLoaded', function () {
     particlesJS('interactive-particle-container', {
         particles: {
             number: {
-                value: 80,
+                value: 80, // Number of particles
                 density: {
                     enable: true,
-                    value_area: 800
+                    value_area: 800 // Area for particle density
                 }
             },
             color: {
-                value: "#00ff00"
+                value: "#00ff00" // Neon green particles
             },
             shape: {
                 type: "circle",
@@ -53,29 +50,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         interactivity: {
-            detect_on: "canvas",
+            detect_on: "canvas", // Detect interactions on canvas
             events: {
                 onhover: {
                     enable: true,
-                    mode: "repulse"
+                    mode: "repulse" // Particles repel on hover
                 },
                 onclick: {
                     enable: true,
-                    mode: "push"
+                    mode: "push" // Adds particles on click
                 },
-                resize: true
+                resize: true // Adjust particles on window resize
             },
             modes: {
                 repulse: {
-                    distance: 100,
+                    distance: 100, // Distance of repulsion
                     duration: 0.4
                 },
                 push: {
-                    particles_nb: 10
+                    particles_nb: 10 // Number of particles added on click
                 }
             }
         },
-        retina_detect: true
+        retina_detect: true // Optimize for high-resolution displays
     });
 });
 
@@ -97,7 +94,14 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
     }
 });
 
-// Card Hover Effects (Optional Additional Effects)
+// Animate on Scroll (AOS) Initialization
+AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true // Ensure animations only happen once
+});
+
+// Hover Effects for Cards
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'scale(1.05)';
@@ -108,13 +112,18 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-// Modal Focus Fix for Accessibility
-const modals = document.querySelectorAll('.modal');
-modals.forEach(modal => {
-    modal.addEventListener('shown.bs.modal', () => {
-        document.body.classList.add('modal-open');
+// Back to Top Button (Optional)
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
     });
-    modal.addEventListener('hidden.bs.modal', () => {
-        document.body.classList.remove('modal-open');
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-});
+}

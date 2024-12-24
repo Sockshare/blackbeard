@@ -93,7 +93,7 @@ body, html {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    z-index: 2; /* Above particle container */
+    z-index: 3; /* Above particle container */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

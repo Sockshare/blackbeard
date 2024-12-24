@@ -28,6 +28,23 @@ body {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
 }
 
+.card {
+    min-height: 100%; /* Ensures cards stretch to fill their container */
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card img {
+    height: 200px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensures images are cropped properly */
+}
+
+.card-footer {
+    margin-top: auto; /* Pushes the footer to the bottom for alignment */
+}
+
 
 .navbar-brand, .nav-link {
     color: #00bfff !important; /* Neon blue */

@@ -1,144 +1,120 @@
-// Initialize Particles.js for the particle background
-particlesJS("particle-container", {
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 1200, // Animation duration in ms
+    once: true,     // Only animate elements once
+    offset: 200,    // Offset for triggering animations
+});
+
+// Initialize Particles.js
+particlesJS('particles-js', {
     particles: {
         number: {
-            value: 100,
+            value: 80, // Number of particles
             density: {
                 enable: true,
-                value_area: 800
-            }
+                value_area: 800, // Area density
+            },
         },
         color: {
-            value: "#00bfff" // Neon blue particles
+            value: '#00ff00', // Neon green particles
         },
         shape: {
-            type: "circle",
+            type: 'circle', // Shape of particles
             stroke: {
                 width: 0,
-                color: "#000000"
+                color: '#000000',
             },
-            polygon: {
-                nb_sides: 5
-            }
         },
         opacity: {
             value: 0.5,
-            random: true,
+            random: false,
             anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false
-            }
+                enable: false,
+            },
         },
         size: {
             value: 3,
             random: true,
             anim: {
-                enable: true,
-                speed: 10,
-                size_min: 0.1,
-                sync: false
-            }
+                enable: false,
+            },
         },
         line_linked: {
             enable: true,
             distance: 150,
-            color: "#00ff00", // Neon green connections
+            color: '#00ff00', // Line color
             opacity: 0.4,
-            width: 1
+            width: 1,
         },
         move: {
             enable: true,
-            speed: 2,
-            direction: "none",
+            speed: 3,
+            direction: 'none',
             random: false,
             straight: false,
-            out_mode: "out",
+            out_mode: 'out',
             bounce: false,
             attract: {
                 enable: false,
-                rotateX: 600,
-                rotateY: 1200
-            }
-        }
+            },
+        },
     },
     interactivity: {
-        detect_on: "canvas",
+        detect_on: 'canvas',
         events: {
             onhover: {
                 enable: true,
-                mode: "grab"
+                mode: 'repulse', // Repel particles on hover
             },
             onclick: {
                 enable: true,
-                mode: "push"
+                mode: 'push', // Add particles on click
             },
-            resize: true
+            resize: true,
         },
         modes: {
             grab: {
-                distance: 140,
+                distance: 200,
                 line_linked: {
-                    opacity: 1
-                }
+                    opacity: 0.5,
+                },
             },
             bubble: {
-                distance: 400,
-                size: 40,
+                distance: 200,
+                size: 8,
                 duration: 2,
-                opacity: 8,
-                speed: 3
+                opacity: 0.8,
             },
             repulse: {
-                distance: 200,
-                duration: 0.4
+                distance: 100,
             },
             push: {
-                particles_nb: 4
+                particles_nb: 4,
             },
             remove: {
-                particles_nb: 2
-            }
-        }
+                particles_nb: 2,
+            },
+        },
     },
-    retina_detect: true
+    retina_detect: true, // High DPI support
 });
 
-// Floating Card Effect
-const cards = document.querySelectorAll('.project-hover');
+// Adjust particles container height (if needed)
+const particlesElement = document.getElementById('particles-js');
+if (particlesElement) {
+    particlesElement.style.height = '40px'; // Set explicit height for particles container
+}
 
-cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.transform = `rotateY(${(x - rect.width / 2) / 20}deg) rotateX(${-(y - rect.height / 2) / 20}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-});
-
-// Smooth Scrolling
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Modal Animations
-document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('show.bs.modal', () => {
-        modal.querySelector('.modal-content').classList.add('animate__animated', 'animate__fadeInDown');
-    });
-
-    modal.addEventListener('hide.bs.modal', () => {
-        modal.querySelector('.modal-content').classList.remove('animate__fadeInDown');
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
     });
 });

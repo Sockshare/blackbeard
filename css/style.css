@@ -71,24 +71,13 @@ body {
 #projects {
     position: relative; /* Allow layering of child elements */
     padding: 50px 0; /* Add padding for visual spacing */
-    z-index: 1; /* Ensure content is above the canvas */
-}
-
-/* ASCII Rain Background */
-#ascii-rain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Ensure it covers the entire projects section */
-    z-index: -1; /* Ensure it stays in the background */
-    pointer-events: none; /* Prevent it from blocking interactions */
+    z-index: 1; /* Ensure content is above other elements */
 }
 
 /* Cards */
 .card {
-    position: relative; /* Ensure cards are layered above the background */
-    z-index: 2; /* Explicitly bring cards above the canvas */
+    position: relative; /* Ensure cards are layered correctly */
+    z-index: 2; /* Explicitly bring cards above any backgrounds */
     background-color: #111; /* Ensure contrast against the background */
     border-radius: 10px;
     border: 1px solid #00ff00; /* Subtle neon border */
@@ -110,15 +99,6 @@ body {
 .card:hover {
     transform: translateY(-5px); /* Hover effect */
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Enhanced neon glow on hover */
-}
-
-/* Modal Styles */
-.modal {
-    z-index: 1050; /* Ensure it appears above all other elements */
-}
-
-.modal-backdrop {
-    z-index: 1049; /* Backdrop is just below the modal */
 }
 
 /* Footer */

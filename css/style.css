@@ -10,21 +10,21 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #000; /* Black background */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; /* Prevent horizontal scroll */
     font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
     color: #00ff00; /* Neon green text */
 }
 
-/* Interactive Animation as Background */
+/* Interactive Animation Background */
 #interactive-particle-container {
-    position: fixed; /* Fixes it to the viewport for full background coverage */
+    position: fixed; /* Covers the entire viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; /* Full viewport height */
-    z-index: -1; /* Ensures it's behind all content */
-    background-color: transparent; /* Transparent background */
-    pointer-events: none; /* Prevents blocking clicks and interactions */
+    z-index: -1; /* Places it behind all content */
+    background-color: transparent; /* Ensure it's transparent */
+    pointer-events: none; /* Prevent interaction blocking other elements */
 }
 
 /* Navbar */

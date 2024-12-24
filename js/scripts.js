@@ -1,120 +1,152 @@
-// Initialize AOS (Animate On Scroll)
-AOS.init({
-    duration: 1200, // Animation duration in ms
-    once: true,     // Only animate elements once
-    offset: 200,    // Offset for triggering animations
-});
-
 // Initialize Particles.js
 particlesJS('particles-js', {
     particles: {
         number: {
-            value: 80, // Number of particles
+            value: 50,
             density: {
                 enable: true,
-                value_area: 800, // Area density
-            },
+                value_area: 800
+            }
         },
         color: {
-            value: '#00ff00', // Neon green particles
+            value: "#00ff00" // Neon green particles
         },
         shape: {
-            type: 'circle', // Shape of particles
+            type: "circle",
             stroke: {
                 width: 0,
-                color: '#000000',
+                color: "#000000"
             },
+            polygon: {
+                nb_sides: 5
+            }
         },
         opacity: {
             value: 0.5,
             random: false,
             anim: {
                 enable: false,
-            },
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+            }
         },
         size: {
             value: 3,
             random: true,
             anim: {
                 enable: false,
-            },
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+            }
         },
         line_linked: {
             enable: true,
             distance: 150,
-            color: '#00ff00', // Line color
+            color: "#00ff00",
             opacity: 0.4,
-            width: 1,
+            width: 1
         },
         move: {
             enable: true,
             speed: 3,
-            direction: 'none',
+            direction: "none",
             random: false,
             straight: false,
-            out_mode: 'out',
+            out_mode: "out",
             bounce: false,
             attract: {
                 enable: false,
-            },
-        },
+                rotateX: 600,
+                rotateY: 1200
+            }
+        }
     },
     interactivity: {
-        detect_on: 'canvas',
+        detect_on: "canvas",
         events: {
             onhover: {
                 enable: true,
-                mode: 'repulse', // Repel particles on hover
+                mode: "grab"
             },
             onclick: {
                 enable: true,
-                mode: 'push', // Add particles on click
+                mode: "push"
             },
-            resize: true,
+            resize: true
         },
         modes: {
             grab: {
                 distance: 200,
                 line_linked: {
-                    opacity: 0.5,
-                },
+                    opacity: 0.5
+                }
             },
             bubble: {
-                distance: 200,
-                size: 8,
+                distance: 400,
+                size: 40,
                 duration: 2,
-                opacity: 0.8,
+                opacity: 8,
+                speed: 3
             },
             repulse: {
-                distance: 100,
+                distance: 200,
+                duration: 0.4
             },
             push: {
-                particles_nb: 4,
+                particles_nb: 4
             },
             remove: {
-                particles_nb: 2,
-            },
-        },
+                particles_nb: 2
+            }
+        }
     },
-    retina_detect: true, // High DPI support
+    retina_detect: true
 });
 
-// Adjust particles container height (if needed)
-const particlesElement = document.getElementById('particles-js');
-if (particlesElement) {
-    particlesElement.style.height = '40px'; // Set explicit height for particles container
-}
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('a.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
             });
         }
+    });
+});
+
+// Animate on Scroll (AOS) Initialization
+AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true, // Ensure animations only happen once
+});
+
+// Back to Top Button (Optional)
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Hover Effects for Cards
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.05)';
+        card.style.transition = 'transform 0.3s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
     });
 });

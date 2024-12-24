@@ -66,25 +66,25 @@ body {
 
 /* Card Styling */
 .card {
-    background-color: #222; /* Dark background for cards */
-    border: 1px solid #333; /* Subtle border */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Prevent overflow */
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
     z-index: 2;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 .card-img-top {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #444; /* Divider between image and body */
+    border-bottom: 1px solid #444;
 }
 
 .card-body {
@@ -94,13 +94,13 @@ body {
 
 .card-title {
     font-size: 1.25rem;
-    color: #fff; /* Bright text color for titles */
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .card-text {
     font-size: 1rem;
-    color: #bbb; /* Softer text color for descriptions */
+    color: #bbb;
 }
 
 .card-footer {
@@ -127,18 +127,18 @@ body {
 /* Particle Animation Background */
 #interactive-particle-container {
     position: absolute;
-    top: 56px; /* Adjust based on your navbar height */
+    top: 56px;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1; /* Behind main content */
-    background: transparent; /* Set transparent or suitable background */
+    z-index: 1;
+    background: transparent;
 }
 
 /* Main Content Styling */
 #content {
     position: relative;
-    z-index: 2; /* Above the particle animation */
+    z-index: 2;
 }
 
 /* Footer Styling */
@@ -154,4 +154,13 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Modal Overrides */
+.modal-backdrop {
+    z-index: 1040;
+}
+
+.modal {
+    z-index: 1050;
 }

@@ -1,5 +1,5 @@
 // Initialize Particles.js
-particlesJS('particles-js', {
+particlesJS('particle-container', {
     particles: {
         number: {
             value: 50,
@@ -127,19 +127,6 @@ AOS.init({
     once: true, // Ensure animations only happen once
 });
 
-// Back to Top Button (Optional)
-const backToTopBtn = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-});
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
 // Hover Effects for Cards
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
@@ -150,3 +137,19 @@ document.querySelectorAll('.card').forEach(card => {
         card.style.transform = 'scale(1)';
     });
 });
+
+// Back to Top Button (Optional)
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}

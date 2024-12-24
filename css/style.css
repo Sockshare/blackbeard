@@ -6,6 +6,26 @@ body {
     margin: 0;
     padding: 0;
 }
+/* Ensure the modal is above all other elements */
+.modal {
+    z-index: 1050; /* Standard Bootstrap z-index for modals */
+}
+
+/* Modal backdrop layering */
+.modal-backdrop {
+    z-index: 1049; /* Just below the modal */
+}
+
+/* Cards are visible above the section background */
+.card {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure the background or other elements do not interfere with modals */
+body.modal-open {
+    overflow: hidden; /* Prevent scrolling when modal is open */
+}
 
 /* Green Bar at the Top */
 .green-bar {

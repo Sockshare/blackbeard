@@ -23,6 +23,11 @@ body {
     border: none; /* Remove default borders */
 }
 
+.modal img {
+    max-width: 100%;
+    height: auto;
+}
+
 .modal-body img {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */

@@ -20,13 +20,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Black Beard's Portfolio</a>
+            <a class="navbar-brand" href="index.html">Black Beard's Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
         <div class="container">
             <h1 class="display-4 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
             <p class="lead neon-text-blue" data-aos="fade-up" data-aos-duration="1000">Showcasing Expertise and Innovation</p>
-            <a href="#projects" class="btn btn-primary btn-lg mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
+            <a href="projects.html" class="btn btn-primary btn-lg mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
         </div>
     </header>
 
@@ -56,7 +56,26 @@
                             <p class="card-text">An innovative approach to car design.</p>
                         </div>
                         <div class="card-footer text-center">
-                            <button class="btn btn-outline-primary">Learn More</button>
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCar1">More Info</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal for Project 1 -->
+                <div class="modal fade" id="modalCar1" tabindex="-1" aria-labelledby="modalCar1Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalCar1Label">Car Project 1</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/car_1.jpg" class="img-fluid mb-3" alt="Car 1">
+                                <p>Details about the innovative car design.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>

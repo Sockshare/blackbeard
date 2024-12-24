@@ -1,8 +1,8 @@
 // Initialize Particles.js for Main Background
-particlesJS('particle-container', {
+particlesJS('interactive-particle-container', {
     particles: {
         number: {
-            value: 50,
+            value: 30, // Adjust number of particles
             density: {
                 enable: true,
                 value_area: 800
@@ -17,50 +17,26 @@ particlesJS('particle-container', {
                 width: 0,
                 color: "#000000"
             },
-            polygon: {
-                nb_sides: 5
-            }
         },
         opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-                enable: false,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false
-            }
+            value: 0.6,
+            random: true,
         },
         size: {
-            value: 3,
+            value: 4,
             random: true,
-            anim: {
-                enable: false,
-                speed: 40,
-                size_min: 0.1,
-                sync: false
-            }
         },
         line_linked: {
             enable: true,
-            distance: 150,
+            distance: 120,
             color: "#00ff00",
             opacity: 0.4,
             width: 1
         },
         move: {
             enable: true,
-            speed: 3,
+            speed: 2,
             direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200
-            }
         }
     },
     interactivity: {
@@ -68,42 +44,17 @@ particlesJS('particle-container', {
         events: {
             onhover: {
                 enable: true,
-                mode: "grab"
+                mode: "repulse" // Makes particles repel on hover
             },
             onclick: {
                 enable: true,
-                mode: "push"
+                mode: "push" // Adds particles on click
             },
-            resize: true
         },
-        modes: {
-            grab: {
-                distance: 200,
-                line_linked: {
-                    opacity: 0.5
-                }
-            },
-            bubble: {
-                distance: 400,
-                size: 40,
-                duration: 2,
-                opacity: 8,
-                speed: 3
-            },
-            repulse: {
-                distance: 200,
-                duration: 0.4
-            },
-            push: {
-                particles_nb: 4
-            },
-            remove: {
-                particles_nb: 2
-            }
-        }
     },
     retina_detect: true
 });
+
 
 // Initialize Particles.js for Green Animation Above Navbar
 particlesJS('interactive-particle-container', {

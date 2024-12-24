@@ -1,95 +1,155 @@
-// Interactive Particle Effect for Green Bar
-const canvas = document.getElementById('particle-canvas');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = 40; // Fixed height for the green bar
-
-const particles = [];
-const mouse = { x: null, y: null };
-
-class Particle {
-    constructor(x, y, radius) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-        this.dx = Math.random() * 2 - 1;
-        this.dy = Math.random() * 2 - 1;
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = '#00ff00';
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    update() {
-        this.x += this.dx;
-        this.y += this.dy;
-
-        // Bounce off edges
-        if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
-
-        // Interaction with mouse
-        const distance = Math.hypot(this.x - mouse.x, this.y - mouse.y);
-        if (distance < 100) {
-            this.dx += (this.x - mouse.x) * 0.01;
-            this.dy += (this.y - mouse.y) * 0.01;
+// Initialize Particles.js
+particlesJS('particle-container', {
+    particles: {
+        number: {
+            value: 50,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: "#00ff00" // Neon green particles
+        },
+        shape: {
+            type: "circle",
+            stroke: {
+                width: 0,
+                color: "#000000"
+            },
+            polygon: {
+                nb_sides: 5
+            }
+        },
+        opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+            }
+        },
+        size: {
+            value: 3,
+            random: true,
+            anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+            }
+        },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#00ff00",
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 3,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
+            }
         }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: {
+                enable: true,
+                mode: "grab"
+            },
+            onclick: {
+                enable: true,
+                mode: "push"
+            },
+            resize: true
+        },
+        modes: {
+            grab: {
+                distance: 200,
+                line_linked: {
+                    opacity: 0.5
+                }
+            },
+            bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3
+            },
+            repulse: {
+                distance: 200,
+                duration: 0.4
+            },
+            push: {
+                particles_nb: 4
+            },
+            remove: {
+                particles_nb: 2
+            }
+        }
+    },
+    retina_detect: true
+});
 
-        this.draw();
-    }
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('a.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Animate on Scroll (AOS) Initialization
+AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true, // Ensure animations only happen once
+});
+
+// Hover Effects for Cards
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.05)';
+        card.style.transition = 'transform 0.3s ease';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
+
+// Back to Top Button (Optional)
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
-// Ensure scrolling is disabled when modal is open
-const modals = document.querySelectorAll('.modal');
-modals.forEach((modal) => {
-    modal.addEventListener('shown.bs.modal', () => {
-        document.body.style.overflow = 'hidden';
-    });
-
-    modal.addEventListener('hidden.bs.modal', () => {
-        document.body.style.overflow = '';
-    });
-});
-
-// Initialize Particles
-for (let i = 0; i < 50; i++) {
-    particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height, 2));
-}
-
-// Animation Loop
-function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach((particle) => particle.update());
-
-    requestAnimationFrame(animateParticles);
-}
-
-// Event Listeners for Interaction
-canvas.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY - canvas.getBoundingClientRect().top;
-});
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = 40;
-});
-
-animateParticles();
-
-// Modal Bootstrap Fix
-const modals = document.querySelectorAll('.modal');
-modals.forEach((modal) => {
-    modal.addEventListener('shown.bs.modal', () => {
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    });
-
-    modal.addEventListener('hidden.bs.modal', () => {
-        document.body.style.overflow = ''; // Restore scrolling after closing modal
-    });
-});

@@ -76,14 +76,14 @@ const asciiRainCanvas = document.getElementById('ascii-rain');
 if (asciiRainCanvas) {
     const asciiCtx = asciiRainCanvas.getContext('2d');
 
-    // Resize the ASCII Rain canvas to match the #projects section
-    function resizeAsciiRain() {
+    // Dynamically set canvas size based on #projects section
+    function resizeAsciiCanvas() {
         const projectsSection = document.getElementById('projects');
         asciiRainCanvas.width = projectsSection.offsetWidth;
         asciiRainCanvas.height = projectsSection.offsetHeight;
     }
 
-    resizeAsciiRain();
+    resizeAsciiCanvas();
 
     const symbols = '01'; // Binary characters
     const fontSize = 16;
@@ -94,16 +94,15 @@ if (asciiRainCanvas) {
         asciiCtx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Fade effect
         asciiCtx.fillRect(0, 0, asciiRainCanvas.width, asciiRainCanvas.height);
 
-        asciiCtx.fillStyle = '#00ff00'; // Neon green text
+        asciiCtx.fillStyle = '#00ff00'; // Neon green for ASCII
         asciiCtx.font = `${fontSize}px monospace`;
 
         drops.forEach((y, x) => {
             const text = symbols[Math.floor(Math.random() * symbols.length)];
             asciiCtx.fillText(text, x * fontSize, y * fontSize);
 
-            // Reset drop to top randomly
             if (y * fontSize > asciiRainCanvas.height && Math.random() > 0.95) {
-                drops[x] = 0;
+                drops[x] = 0; // Reset drop to top randomly
             }
 
             drops[x]++;
@@ -114,6 +113,5 @@ if (asciiRainCanvas) {
 
     drawAsciiRain();
 
-    // Update canvas size on window resize
-    window.addEventListener('resize', resizeAsciiRain);
+    window.addEventListener('resize', resizeAsciiCanvas);
 }

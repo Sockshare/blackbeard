@@ -69,17 +69,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* ASCII Rain Canvas */
-#ascii-rain {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Full height of the #projects section */
-    z-index: 0; /* Ensures it's behind the content */
-    pointer-events: none; /* Prevent interactions with the canvas */
-}
-
 /* Projects Section */
 #projects {
     position: relative; /* Allow layering of child elements */
@@ -90,7 +79,7 @@ body {
 /* Cards */
 .card {
     position: relative; /* Ensure cards are layered above the background */
-    z-index: 10 !important; /* Explicitly bring cards above the canvas */
+    z-index: 2; /* Explicitly bring cards above the canvas */
     background-color: #111; /* Ensure contrast against the background */
     border-radius: 10px;
     border: 1px solid #00ff00; /* Subtle neon border */

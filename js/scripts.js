@@ -1,16 +1,19 @@
-// Initialize Particles.js for Interactive Animation
+// Initialize AOS for animations
+AOS.init();
+
+// Load Particles.js configuration for the interactive particle animation
 document.addEventListener('DOMContentLoaded', function () {
     particlesJS('interactive-particle-container', {
         particles: {
             number: {
-                value: 80, // Number of particles
+                value: 80,
                 density: {
                     enable: true,
-                    value_area: 800 // Area for particle density
+                    value_area: 800
                 }
             },
             color: {
-                value: "#00ff00" // Neon green particles
+                value: "#00ff00"
             },
             shape: {
                 type: "circle",
@@ -50,36 +53,36 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         interactivity: {
-            detect_on: "canvas", // Detect interactions on canvas
+            detect_on: "canvas",
             events: {
                 onhover: {
                     enable: true,
-                    mode: "repulse" // Particles repel on hover
+                    mode: "repulse"
                 },
                 onclick: {
                     enable: true,
-                    mode: "push" // Adds particles on click
+                    mode: "push"
                 },
-                resize: true // Adjust particles on window resize
+                resize: true
             },
             modes: {
                 repulse: {
-                    distance: 100, // Distance of repulsion
+                    distance: 100,
                     duration: 0.4
                 },
                 push: {
-                    particles_nb: 10 // Number of particles added on click
+                    particles_nb: 10
                 }
             }
         },
-        retina_detect: true // Optimize for high-resolution displays
+        retina_detect: true
     });
 });
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a.nav-link').forEach(anchor => {
     const href = anchor.getAttribute('href');
-    if (href && href.startsWith('#')) {
+    if (href.startsWith('#')) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = href.substring(1);
@@ -94,14 +97,7 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
     }
 });
 
-// Animate on Scroll (AOS) Initialization
-AOS.init({
-    duration: 1200,
-    easing: 'ease-in-out',
-    once: true // Ensure animations only happen once
-});
-
-// Hover Effects for Cards
+// Card Hover Effects (Optional Additional Effects)
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'scale(1.05)';
@@ -112,31 +108,13 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-// Back to Top Button (Optional)
-const backToTopBtn = document.getElementById('back-to-top');
-if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.style.display = 'block';
-        } else {
-            backToTopBtn.style.display = 'none';
-        }
+// Modal Focus Fix for Accessibility
+const modals = document.querySelectorAll('.modal');
+modals.forEach(modal => {
+    modal.addEventListener('shown.bs.modal', () => {
+        document.body.classList.add('modal-open');
     });
-
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-// Modal Functionality
-document.querySelectorAll('[data-bs-toggle="modal"]').forEach(modalTrigger => {
-    modalTrigger.addEventListener('click', () => {
-        const targetModalId = modalTrigger.getAttribute('data-bs-target');
-        const targetModal = document.querySelector(targetModalId);
-
-        if (targetModal) {
-            const modal = new bootstrap.Modal(targetModal);
-            modal.show();
-        }
+    modal.addEventListener('hidden.bs.modal', () => {
+        document.body.classList.remove('modal-open');
     });
 });

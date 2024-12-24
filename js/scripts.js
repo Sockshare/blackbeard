@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     particlesJS('interactive-particle-container', {
         particles: {
             number: {
-                value: 30, // Adjust the number of particles
+                value: 30, // Number of particles
                 density: {
                     enable: true,
-                    value_area: 800 // Area of particle density
+                    value_area: 800 // Particle density area
                 }
             },
             color: {
@@ -20,16 +20,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             },
             opacity: {
-                value: 0.6, // Transparency of particles
+                value: 0.6, // Particle opacity
                 random: true
             },
             size: {
-                value: 4, // Size of particles
+                value: 4, // Particle size
                 random: true
             },
             line_linked: {
                 enable: true,
-                distance: 120, // Link distance
+                distance: 120, // Distance between linked particles
                 color: "#00ff00",
                 opacity: 0.4,
                 width: 1
@@ -41,15 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         interactivity: {
-            detect_on: "canvas", // Interactivity detection
+            detect_on: "canvas", // Interactivity detection on canvas
             events: {
                 onhover: {
                     enable: true,
-                    mode: "repulse" // Particles repel on hover
+                    mode: "repulse" // Repel particles on hover
                 },
                 onclick: {
                     enable: true,
-                    mode: "push" // Adds particles on click
+                    mode: "push" // Add particles on click
                 }
             }
         },
@@ -78,19 +78,19 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
 
 // Animate on Scroll (AOS) Initialization
 AOS.init({
-    duration: 1200,
-    easing: 'ease-in-out',
+    duration: 1200, // Animation duration
+    easing: 'ease-in-out', // Easing function
     once: true // Ensure animations only happen once
 });
 
 // Hover Effects for Cards
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
+        card.style.transform = 'scale(1.05)'; // Slight zoom on hover
         card.style.transition = 'transform 0.3s ease';
     });
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
+        card.style.transform = 'scale(1)'; // Reset scale on mouse leave
     });
 });
 
@@ -99,13 +99,13 @@ const backToTopBtn = document.getElementById('back-to-top');
 if (backToTopBtn) {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-            backToTopBtn.style.display = 'block';
+            backToTopBtn.style.display = 'block'; // Show button after scrolling 300px
         } else {
-            backToTopBtn.style.display = 'none';
+            backToTopBtn.style.display = 'none'; // Hide button otherwise
         }
     });
 
     backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top smoothly
     });
 }

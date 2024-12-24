@@ -1,97 +1,82 @@
-// Initialize Particles.js for ASCII Rain Background
-particlesJS('ascii-rain', {
-    particles: {
-        number: {
-            value: 120,
-            density: {
-                enable: true,
-                value_area: 1000,
-            },
-        },
-        color: {
-            value: "#00bfff", // Neon blue particles
-        },
-        shape: {
-            type: "circle",
-            stroke: {
-                width: 0,
-                color: "#000000",
-            },
-            polygon: {
-                nb_sides: 5,
-            },
-        },
-        opacity: {
-            value: 0.3,
-            random: false,
-            anim: {
-                enable: false,
-            },
-        },
-        size: {
-            value: 3,
-            random: true,
-            anim: {
-                enable: false,
-            },
-        },
-        line_linked: {
-            enable: false,
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: "bottom",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-        },
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: {
-                enable: false,
-            },
-            onclick: {
-                enable: false,
-            },
-            resize: true,
-        },
-    },
-    retina_detect: true,
-});
+// Particle Effect for Green Bar
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
 
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('a.nav-link').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+canvas.width = window.innerWidth;
+canvas.height = 40; // Height of the green bar
 
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-            });
+const particles = [];
+const particleCount = 50;
+
+class Particle {
+    constructor(x, y, radius) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.dx = Math.random() * 2 - 1;
+        this.dy = Math.random() * 2 - 1;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#00ff00';
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    update() {
+        this.x += this.dx;
+        this.y += this.dy;
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
+
+        this.draw();
+    }
+}
+
+// Initialize Particles
+for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height, 2));
+}
+
+// Draw Connections Between Particles
+function connectParticles() {
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 100) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = 'rgba(0, 255, 0, 0.2)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+                ctx.closePath();
+            }
         }
-    });
-});
+    }
+}
 
-// Animate on Scroll (AOS) Initialization
-AOS.init({
-    duration: 1200,
-    easing: 'ease-in-out',
-    once: true, // Ensure animations only happen once
-});
+// Animation Loop
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// Hover Effects for Cards
-document.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
-        card.style.transition = 'transform 0.3s ease';
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
-    });
+    particles.forEach((particle) => particle.update());
+    connectParticles();
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Resize Event
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = 40;
 });

@@ -17,6 +17,15 @@ body {
     color: #00bfff !important; /* Neon blue */
     font-size: 1.2rem;
 }
+.modal img {
+    display: block;
+    width: 100%; /* Ensures the image fills the modal width */
+    max-height: 80vh; /* Limits the height to fit within the viewport */
+    object-fit: contain; /* Maintains aspect ratio without cropping */
+    margin: 0 auto; /* Centers the image */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Adds neon glow effect */
+}
 
 .nav-link:hover {
     color: #9a00ff !important; /* Neon purple hover effect */

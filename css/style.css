@@ -64,6 +64,66 @@ body {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
+/* Card Styling */
+.card {
+    background-color: #222; /* Dark background for cards */
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #444; /* Divider between image and body */
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #fff; /* Bright text color for titles */
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #bbb; /* Softer text color for descriptions */
+}
+
+.card-footer {
+    background-color: #111;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.card-footer button {
+    border: 1px solid #0ff;
+    background: transparent;
+    color: #0ff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-footer button:hover {
+    background-color: #0ff;
+    color: #000;
+}
+
 /* Particle Animation Background */
 #interactive-particle-container {
     position: absolute;

@@ -71,7 +71,7 @@ window.addEventListener('resize', () => {
 
 animateParticles();
 
-// Bootstrap Modal Fix
+// Modal Bootstrap Fix
 const modals = document.querySelectorAll('.modal');
 modals.forEach((modal) => {
     modal.addEventListener('shown.bs.modal', () => {

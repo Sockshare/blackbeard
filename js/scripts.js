@@ -1,12 +1,12 @@
-// Initialize Particles.js for Full Background Animation
+// Initialize Particles.js for Animation Above Footer
 document.addEventListener('DOMContentLoaded', function () {
     particlesJS('interactive-particle-container', {
         particles: {
             number: {
-                value: 80, // Number of particles
+                value: 50, // Number of particles
                 density: {
                     enable: true,
-                    value_area: 800 // Area for particle density
+                    value_area: 600 // Area for particle density
                 }
             },
             color: {
@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             opacity: {
                 value: 0.5,
-                random: false
+                random: true
             },
             size: {
-                value: 3,
+                value: 4,
                 random: true
             },
             line_linked: {

@@ -9,9 +9,8 @@ body {
 
 /* Navbar */
 .navbar {
-    position: relative; /* Ensure it doesn't interfere with the particles */
-    z-index: 10; /* Ensure it stays above the particle effect */
-    margin-top: 10vh; /* Adjust if the particles overlap the navbar */
+    background-color: #000;
+    border-bottom: 2px solid #00ff00;
 }
 
 .navbar-brand, .nav-link {
@@ -35,27 +34,12 @@ body {
     font-size: 3rem;
     color: #00ff00; /* Neon green */
     text-shadow: 0 0 15px #00ff00, 0 0 25px #00bfff;
-    animation: glow 2s infinite; /* Glow animation */
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     color: #00bfff; /* Neon blue */
 }
-
-/* Particles.js Container */
-#particle-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh; /* Adjust the height to make it smaller (10% of viewport height) */
-    min-height: 50px; /* Ensure a minimum height for visibility */
-    background-color: transparent; /* Transparent background to blend with content */
-    overflow: hidden; /* Prevent particles from overflowing */
-    z-index: -1; /* Ensure it appears behind all other content */
-}
-
 
 /* Section Titles */
 .section-title {
@@ -66,7 +50,25 @@ body {
     margin-bottom: 30px;
 }
 
+/* ASCII Rain Styles */
+#ascii-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind content */
+    background-color: transparent; /* Transparent to blend with background */
+    pointer-events: none; /* Prevent interaction */
+    overflow: hidden;
+}
+
 /* Projects Section */
+#projects {
+    position: relative;
+    overflow: hidden;
+}
+
 .card {
     min-height: 100%; /* Ensures cards stretch to fill their container */
     background-color: #111; /* Card background */
@@ -74,7 +76,6 @@ body {
     border: 1px solid #00ff00; /* Neon green border */
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow */
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
 }
 
 .card img {
@@ -100,37 +101,4 @@ footer {
     color: #00bfff; /* Neon blue */
     border-top: 2px solid #9a00ff; /* Neon purple border */
     margin-top: 20px;
-}
-
-/* Modal Styles */
-.modal-content {
-    background-color: #111; /* Dark background for modals */
-    color: #fff; /* Light text for contrast */
-    border-radius: 8px;
-}
-
-.modal-header, .modal-footer {
-    border: none; /* Remove default borders */
-}
-
-.modal img {
-    width: 100%; /* Ensure images span the full modal width */
-    max-height: 80vh; /* Restrict height to fit the viewport */
-    object-fit: contain; /* Maintain aspect ratio */
-    display: block; /* Center the image */
-    margin: 0 auto; /* Center alignment */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
-}
-
-/* Animations and Effects */
-@keyframes glow {
-    0% { box-shadow: 0 0 5px #00ff00; }
-    50% { box-shadow: 0 0 20px #00ff00; }
-    100% { box-shadow: 0 0 5px #00ff00; }
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
 }

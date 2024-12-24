@@ -50,29 +50,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         interactivity: {
-            detect_on: "canvas",
+            detect_on: "canvas", // Detect interactions on canvas
             events: {
                 onhover: {
                     enable: true,
-                    mode: "repulse" // Repel particles on hover
+                    mode: "repulse" // Particles repel on hover
                 },
                 onclick: {
                     enable: true,
-                    mode: "push" // Add particles on click
+                    mode: "push" // Adds particles on click
                 },
-                resize: true
+                resize: true // Adjust particles on window resize
             },
             modes: {
                 repulse: {
-                    distance: 100,
+                    distance: 100, // Distance of repulsion
                     duration: 0.4
                 },
                 push: {
-                    particles_nb: 4
+                    particles_nb: 4 // Number of particles added on click
                 }
             }
         },
-        retina_detect: true
+        retina_detect: true // Optimize for high-resolution displays
     });
 });
 

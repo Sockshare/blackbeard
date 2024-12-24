@@ -18,6 +18,7 @@ html, body {
 /* Interactive Animation Above Footer */
 #interactive-particle-container {
     position: absolute; /* Positioned relative to the content */
+    top: 0;
     bottom: 0;
     left: 0;
     width: 100%; /* Full width */

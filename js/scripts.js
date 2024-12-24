@@ -76,13 +76,13 @@ const asciiRainCanvas = document.getElementById('ascii-rain');
 if (asciiRainCanvas) {
     const asciiCtx = asciiRainCanvas.getContext('2d');
 
-    asciiRainCanvas.width = window.innerWidth;
+    asciiRainCanvas.width = document.getElementById('projects').offsetWidth;
     asciiRainCanvas.height = document.getElementById('projects').offsetHeight;
 
     const symbols = '01'; // Binary characters
     const fontSize = 16;
-    const columns = asciiRainCanvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+    const columns = Math.floor(asciiRainCanvas.width / fontSize);
+    const drops = Array(columns).fill(1);
 
     function drawAsciiRain() {
         asciiCtx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Fade effect
@@ -108,7 +108,7 @@ if (asciiRainCanvas) {
     drawAsciiRain();
 
     window.addEventListener('resize', () => {
-        asciiRainCanvas.width = window.innerWidth;
+        asciiRainCanvas.width = document.getElementById('projects').offsetWidth;
         asciiRainCanvas.height = document.getElementById('projects').offsetHeight;
     });
 }

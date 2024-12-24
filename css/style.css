@@ -90,7 +90,7 @@ body {
 /* Cards */
 .card {
     position: relative; /* Ensure cards are layered above the background */
-    z-index: 2; /* Explicitly bring cards above the canvas */
+    z-index: 10 !important; /* Explicitly bring cards above the canvas */
     background-color: #111; /* Ensure contrast against the background */
     border-radius: 10px;
     border: 1px solid #00ff00; /* Subtle neon border */

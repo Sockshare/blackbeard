@@ -110,7 +110,12 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(); // Initialize AOS for animations
+        AOS.init({
+            duration: 1200, // Animation duration
+            easing: 'ease-in-out', // Animation easing
+            once: true, // Animation happens only once
+            offset: 100 // Offset from the element before animation triggers
+        });
     </script>
 </body>
 </html>

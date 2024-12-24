@@ -21,6 +21,16 @@ body, html {
     border-bottom: none; /* No border for a seamless look */
 }
 
+.modal {
+    z-index: 1055 !important; /* Ensure modal is above other elements */
+    background-color: rgba(0, 0, 0, 0.9); /* Optional: Dim background for focus */
+}
+
+.modal-backdrop {
+    z-index: 1050 !important; /* Backdrop below modal */
+}
+
+
 /* Hero Section Styling */
 .hero {
     text-align: center;

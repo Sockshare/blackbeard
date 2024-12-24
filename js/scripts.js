@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a.nav-link').forEach(anchor => {
     const href = anchor.getAttribute('href');
-    if (href.startsWith('#')) {
+    if (href && href.startsWith('#')) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = href.substring(1);
@@ -127,3 +127,16 @@ if (backToTopBtn) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+// Modal Functionality
+document.querySelectorAll('[data-bs-toggle="modal"]').forEach(modalTrigger => {
+    modalTrigger.addEventListener('click', () => {
+        const targetModalId = modalTrigger.getAttribute('data-bs-target');
+        const targetModal = document.querySelector(targetModalId);
+
+        if (targetModal) {
+            const modal = new bootstrap.Modal(targetModal);
+            modal.show();
+        }
+    });
+});

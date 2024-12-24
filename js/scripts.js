@@ -43,6 +43,17 @@ class Particle {
         this.draw();
     }
 }
+// Ensure scrolling is disabled when modal is open
+const modals = document.querySelectorAll('.modal');
+modals.forEach((modal) => {
+    modal.addEventListener('shown.bs.modal', () => {
+        document.body.style.overflow = 'hidden';
+    });
+
+    modal.addEventListener('hidden.bs.modal', () => {
+        document.body.style.overflow = '';
+    });
+});
 
 // Initialize Particles
 for (let i = 0; i < 50; i++) {

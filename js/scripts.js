@@ -1,58 +1,60 @@
 // Initialize Particles.js for Green Interactive Animation Above Navbar
-particlesJS('interactive-particle-container', {
-    particles: {
-        number: {
-            value: 30, // Adjust the number of particles
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: "#00ff00" // Neon green particles
-        },
-        shape: {
-            type: "circle",
-            stroke: {
-                width: 0,
-                color: "#000000"
-            }
-        },
-        opacity: {
-            value: 0.6,
-            random: true
-        },
-        size: {
-            value: 4,
-            random: true
-        },
-        line_linked: {
-            enable: true,
-            distance: 120,
-            color: "#00ff00",
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: "none"
-        }
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: {
-                enable: true,
-                mode: "repulse" // Particles move away on hover
+document.addEventListener('DOMContentLoaded', function () {
+    particlesJS('interactive-particle-container', {
+        particles: {
+            number: {
+                value: 30, // Adjust the number of particles
+                density: {
+                    enable: true,
+                    value_area: 800 // Area of particle density
+                }
             },
-            onclick: {
+            color: {
+                value: "#00ff00" // Neon green particles
+            },
+            shape: {
+                type: "circle", // Shape of particles
+                stroke: {
+                    width: 0,
+                    color: "#000000"
+                }
+            },
+            opacity: {
+                value: 0.6, // Transparency of particles
+                random: true
+            },
+            size: {
+                value: 4, // Size of particles
+                random: true
+            },
+            line_linked: {
                 enable: true,
-                mode: "push" // Adds particles on click
+                distance: 120, // Link distance
+                color: "#00ff00",
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2, // Speed of particle movement
+                direction: "none"
             }
-        }
-    },
-    retina_detect: true
+        },
+        interactivity: {
+            detect_on: "canvas", // Interactivity detection
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "repulse" // Particles repel on hover
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push" // Adds particles on click
+                }
+            }
+        },
+        retina_detect: true // Optimize for high-resolution displays
+    });
 });
 
 // Smooth Scroll for Navigation Links

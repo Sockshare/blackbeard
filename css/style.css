@@ -82,20 +82,15 @@ body {
 
 /* Projects Section */
 #projects {
-    position: relative; /* Needed for proper layering with the canvas */
-    z-index: 1; /* Ensures it overlays the ASCII rain */
+    position: relative; /* Necessary for layering the canvas and content */
+    z-index: 1;
+    padding: 20px 0; /* Add padding for better spacing */
 }
 
 /* Cards */
 .card {
-    z-index: 1; /* Ensures cards stay above the canvas */
-    background-color: #111; /* Card background */
-    color: #fff; /* Card text color */
-    border: 2px solid #00ff00; /* Neon green border */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow */
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    position: relative;
+    z-index: 2; /* Ensure it's above the canvas */
 }
 
 .card img {

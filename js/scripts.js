@@ -5,41 +5,50 @@ document.addEventListener('DOMContentLoaded', function () {
     particlesJS('interactive-particle-container', {
         particles: {
             number: {
-                value: 50, // Number of particles
+                value: 80, // Number of particles
                 density: {
                     enable: true,
-                    value_area: 1000 // Area for particle density
+                    value_area: 800 // Area for particle density
                 }
             },
             color: {
                 value: "#00ff00" // Neon green particles
             },
             shape: {
-                type: "circle", // Particle shape
+                type: "circle",
                 stroke: {
-                    width: 1,
-                    color: "#00ff00" // Neon green outline
+                    width: 0,
+                    color: "#000000"
                 }
             },
             opacity: {
-                value: 0.5, // Transparency of particles
-                random: true
+                value: 0.5,
+                random: false
             },
             size: {
-                value: 3, // Particle size
+                value: 3,
                 random: true
             },
             line_linked: {
                 enable: true,
-                distance: 150, // Distance for lines between particles
-                color: "#00ff00", // Neon green lines
+                distance: 150,
+                color: "#00ff00",
                 opacity: 0.4,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 2, // Speed of particle movement
-                direction: "none"
+                speed: 2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
             }
         },
         interactivity: {
@@ -52,12 +61,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 onclick: {
                     enable: true,
                     mode: "push" // Add particles on click
+                },
+                resize: true
+            },
+            modes: {
+                repulse: {
+                    distance: 100,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 4
                 }
             }
         },
-        retina_detect: true // Optimize for high-resolution displays
+        retina_detect: true
     });
 });
+
 
 // Smooth Scroll for Navigation Links (Existing functionality)
 document.querySelectorAll('a.nav-link').forEach(anchor => {

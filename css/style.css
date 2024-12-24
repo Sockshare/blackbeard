@@ -41,23 +41,23 @@ body {
     color: #00bfff; /* Neon blue */
 }
 
-/* Particles Section */
+/* Particles.js Container */
 #particles-js {
-    height: 40px;
-    min-height: 40px;
-    background-color: #000; /* Optional: black background to make particles visible */
+    height: 40px; /* Fixed height */
+    min-height: 40px; /* Ensures a minimum height */
+    background-color: transparent; /* Transparent to blend with background */
+    overflow: hidden; /* Ensures particles don’t overflow */
+    position: relative; /* Ensures proper positioning */
+    z-index: 1; /* Ensures it displays above the background but below other content */
 }
 
 /* Section Titles */
-.neon-section {
-    margin: 50px 0;
-}
-
 .section-title {
     text-align: center;
     font-size: 2rem;
     color: #9a00ff; /* Neon purple */
     text-shadow: 0 0 15px #9a00ff, 0 0 25px #00bfff;
+    margin-bottom: 30px;
 }
 
 /* Projects Section */
@@ -86,6 +86,15 @@ body {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Enhanced neon glow on hover */
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #00bfff; /* Neon blue */
+    border-top: 2px solid #9a00ff; /* Neon purple border */
+    margin-top: 20px;
+}
+
 /* Modal Styles */
 .modal-content {
     background-color: #111; /* Dark background for modals */
@@ -103,29 +112,22 @@ body {
     object-fit: contain; /* Maintain aspect ratio */
     display: block; /* Center the image */
     margin: 0 auto; /* Center alignment */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #00bfff; /* Neon blue */
-    border-top: 2px solid #9a00ff; /* Neon purple border */
-    margin-top: 20px;
-}
-
-/* Animations */
-.project-image {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 20px auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #00ff00; /* Neon green border */
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
 }
 
-.project-image:hover {
-    transform: translateY(-10px); /* Hover jump effect */
-    box-shadow: 0 0 20px #00ff00; /* Neon glow */
+/* Animations and Effects */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #00ff00; }
+    50% { box-shadow: 0 0 20px #00ff00; }
+    100% { box-shadow: 0 0 5px #00ff00; }
+}
+
+.hero-title {
+    animation: glow 2s infinite; /* Glow animation for hero title */
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
 }

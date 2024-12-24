@@ -58,7 +58,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100vh; /* Fullscreen height */
-    z-index: 1; /* Place behind all content */
+    z-index: 2; /* Place behind all content */
     pointer-events: auto; /* Enable interactivity */
     background-color: transparent; /* Fully transparent background */
 }

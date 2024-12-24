@@ -51,6 +51,40 @@
                 <h2 class="text-center mb-4 neon-section-title" data-aos="fade-right" data-aos-duration="1000">Featured Projects</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <!-- Project Cards -->
+
+<div class="col">
+    <div class="card">
+        <img src="assets/images/project_image.jpg" class="card-img-top" alt="Project Image">
+        <div class="card-body">
+            <h5 class="card-title">Project Title</h5>
+            <p class="card-text">This is a brief description of the project highlighting its key features.</p>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalProject1">Learn More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Project Details -->
+<div class="modal fade" id="modalProject1" tabindex="-1" aria-labelledby="modalProject1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProject1Label">Project Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="assets/images/project_image.jpg" class="img-fluid mb-3" alt="Project Image">
+                <p>Detailed information about the project, its goals, and the technologies used.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
                     <!-- Content remains unchanged -->
                 </div>
             </div>
@@ -67,9 +101,10 @@
     <script>
         AOS.init(); // Initialize AOS for animations
     </script>
-</body>
+
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Black Beard's Portfolio. All Rights Reserved.</p>
     </footer>
+    </body>
 </html>

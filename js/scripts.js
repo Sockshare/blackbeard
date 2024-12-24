@@ -1,25 +1,25 @@
 // Initialize Particles.js
-particlesJS('particle-container', {
+particlesJS('ascii-rain', {
     particles: {
         number: {
-            value: 50,
+            value: 100,
             density: {
                 enable: true,
-                value_area: 800
-            }
+                value_area: 800,
+            },
         },
         color: {
-            value: "#00ff00" // Neon green particles
+            value: "#00bfff", // Neon blue particles
         },
         shape: {
             type: "circle",
             stroke: {
                 width: 0,
-                color: "#000000"
+                color: "#000000",
             },
             polygon: {
-                nb_sides: 5
-            }
+                nb_sides: 5,
+            },
         },
         opacity: {
             value: 0.5,
@@ -28,8 +28,8 @@ particlesJS('particle-container', {
                 enable: false,
                 speed: 1,
                 opacity_min: 0.1,
-                sync: false
-            }
+                sync: false,
+            },
         },
         size: {
             value: 3,
@@ -38,19 +38,19 @@ particlesJS('particle-container', {
                 enable: false,
                 speed: 40,
                 size_min: 0.1,
-                sync: false
-            }
+                sync: false,
+            },
         },
         line_linked: {
             enable: true,
             distance: 150,
-            color: "#00ff00",
+            color: "#00bfff",
             opacity: 0.4,
-            width: 1
+            width: 1,
         },
         move: {
             enable: true,
-            speed: 3,
+            speed: 2,
             direction: "none",
             random: false,
             straight: false,
@@ -59,50 +59,57 @@ particlesJS('particle-container', {
             attract: {
                 enable: false,
                 rotateX: 600,
-                rotateY: 1200
-            }
-        }
+                rotateY: 1200,
+            },
+        },
     },
     interactivity: {
         detect_on: "canvas",
         events: {
             onhover: {
                 enable: true,
-                mode: "grab"
+                mode: "repulse",
             },
             onclick: {
                 enable: true,
-                mode: "push"
+                mode: "push",
             },
-            resize: true
+            resize: true,
         },
         modes: {
             grab: {
                 distance: 200,
                 line_linked: {
-                    opacity: 0.5
-                }
+                    opacity: 0.5,
+                },
             },
             bubble: {
                 distance: 400,
                 size: 40,
                 duration: 2,
                 opacity: 8,
-                speed: 3
+                speed: 3,
             },
             repulse: {
-                distance: 200,
-                duration: 0.4
+                distance: 100,
+                duration: 0.4,
             },
             push: {
-                particles_nb: 4
+                particles_nb: 4,
             },
             remove: {
-                particles_nb: 2
-            }
-        }
+                particles_nb: 2,
+            },
+        },
     },
-    retina_detect: true
+    retina_detect: true,
+});
+
+// Animate on Scroll (AOS) Initialization
+AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true, // Ensure animations only happen once
 });
 
 // Smooth Scroll for Navigation Links
@@ -114,17 +121,10 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
 
         if (targetElement) {
             targetElement.scrollIntoView({
-                behavior: 'smooth'
+                behavior: 'smooth',
             });
         }
     });
-});
-
-// Animate on Scroll (AOS) Initialization
-AOS.init({
-    duration: 1200,
-    easing: 'ease-in-out',
-    once: true, // Ensure animations only happen once
 });
 
 // Hover Effects for Cards
@@ -137,19 +137,3 @@ document.querySelectorAll('.card').forEach(card => {
         card.style.transform = 'scale(1)';
     });
 });
-
-// Back to Top Button (Optional)
-const backToTopBtn = document.getElementById('back-to-top');
-if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.style.display = 'block';
-        } else {
-            backToTopBtn.style.display = 'none';
-        }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}

@@ -57,10 +57,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure it stays behind content */
-    background-color: transparent; /* Transparent to blend with background */
-    pointer-events: none; /* Prevent interaction */
-    overflow: hidden;
+    z-index: -1; /* Ensure it is behind the content */
+    pointer-events: none; /* Prevent interaction with the rain */
+    background-color: transparent;
 }
 
 /* Projects Section */

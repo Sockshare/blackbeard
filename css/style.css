@@ -21,16 +21,6 @@ body, html {
     border-bottom: none; /* No border for a seamless look */
 }
 
-.modal {
-    z-index: 1055 !important; /* Ensure modal is above other elements */
-    background-color: rgba(0, 0, 0, 0.9); /* Optional: Dim background for focus */
-}
-
-.modal-backdrop {
-    z-index: 1050 !important; /* Backdrop below modal */
-}
-
-
 /* Hero Section Styling */
 .hero {
     text-align: center;
@@ -68,7 +58,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100vh; /* Fullscreen height */
-    z-index: 2; /* Place behind all content */
+    z-index: -1; /* Place behind all content */
     pointer-events: auto; /* Enable interactivity */
     background-color: transparent; /* Fully transparent background */
 }
@@ -156,6 +146,36 @@ body, html {
     color: #000;
 }
 
+/* Modal Styling */
+.modal {
+    z-index: 1055 !important; /* Ensure modal is above all other elements */
+    background-color: rgba(0, 0, 0, 0.9); /* Dimmed background */
+}
+
+.modal-backdrop {
+    z-index: 1050 !important; /* Backdrop below modal */
+}
+
+.modal-content {
+    background-color: #000; /* Match site theme */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Add neon glow effect */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Neon glow for the image */
+}
+
 /* Footer Styling */
 footer {
     position: relative;
@@ -169,13 +189,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-/* Modal Overrides */
-.modal-backdrop {
-    z-index: 1040;
-}
-
-.modal {
-    z-index: 1050;
 }

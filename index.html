@@ -13,11 +13,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body style="background-color: black;">
-    <!-- Green Top Bar with Interactive Particle Effect -->
-    <div class="green-bar">
-        <canvas id="particle-canvas"></canvas>
-    </div>
+<body>
+    <!-- Particle Background -->
+    <div id="particle-container"></div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -28,7 +26,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 </ul>
             </div>
@@ -36,20 +34,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero text-center text-white py-3">
+    <header class="hero text-center text-white py-5">
         <div class="container">
-            <h1 class="display-5 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
+            <h1 class="display-4 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
             <p class="lead neon-text-blue" data-aos="fade-up" data-aos-duration="1000">Showcasing Expertise and Innovation</p>
-            <a href="#projects" class="btn btn-primary btn-sm mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
+            <a href="#projects" class="btn btn-primary btn-lg mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
         </div>
     </header>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 position-relative">
+    <section id="projects" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4 neon-section-title" data-aos="fade-right" data-aos-duration="1000">Featured Projects</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Project 1 -->
+                <!-- Example Project -->
                 <div class="col" data-aos="flip-left" data-aos-duration="1500">
                     <div class="card h-100 d-flex flex-column project-hover">
                         <img src="assets/images/car_1.jpg" class="card-img-top" alt="Car 1">
@@ -64,27 +62,23 @@
                 </div>
 
                 <!-- Modal for Project 1 -->
-               <div class="modal fade" id="modalCar1" tabindex="-1" aria-labelledby="modalCar1Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalCar1Label">Car Project 1</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="assets/images/car_1.jpg" class="img-fluid mb-3" alt="Car Project 1">
-                <p>An in-depth look at an innovative approach to car design that combines efficiency and style.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                <!-- Additional Cards -->
-                <!-- Add more cards here as needed -->
+                <div class="modal fade" id="modalCar1" tabindex="-1" aria-labelledby="modalCar1Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalCar1Label">Car Project 1</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/car_1.jpg" class="img-fluid mb-3" alt="Car 1">
+                                <p>An in-depth look at an innovative approach to car design that focuses on efficiency and style.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -98,6 +92,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
     <script>
         AOS.init(); // Initialize AOS for animations
     </script>

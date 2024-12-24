@@ -33,6 +33,13 @@ body {
     object-fit: contain;
 }
 
+/* Ensure all images in projects scale consistently */
+.img-fluid {
+    width: 100%; /* Ensures the image fills the width of its container */
+    max-height: 80vh; /* Prevents the image from exceeding viewport height */
+    object-fit: contain; /* Maintains the aspect ratio without cropping */
+}
+
 
 .nav-link:hover {
     color: #9a00ff !important; /* Neon purple hover effect */

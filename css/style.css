@@ -91,6 +91,15 @@ body {
 }
 
 .modal img {
+    width: 100%; /* Ensure images span the full modal width */
+    max-height: 80vh; /* Restrict height to fit the viewport */
+    object-fit: contain; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+    margin: 0 auto; /* Center alignment */
+}
+
+
+.modal img {
     display: block;
     margin: 0 auto; /* Center the image */
     max-width: 100%; /* Ensure images fit within modal */

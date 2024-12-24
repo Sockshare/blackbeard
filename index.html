@@ -11,12 +11,9 @@
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <!-- Particle Background -->
-    <div id="particle-container"></div>
-
+<body style="background-color: black;">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
@@ -34,20 +31,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero text-center text-white py-5">
+    <header class="hero text-center text-white py-3" style="background-color: black; height: 50vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
-            <h1 class="display-4 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
+            <h1 class="display-5 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
             <p class="lead neon-text-blue" data-aos="fade-up" data-aos-duration="1000">Showcasing Expertise and Innovation</p>
-            <a href="#projects" class="btn btn-primary btn-lg mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
+            <a href="#projects" class="btn btn-primary btn-sm mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
         </div>
     </header>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 position-relative">
+        <!-- ASCII Rain Background -->
+        <div id="ascii-rain"></div>
+
         <div class="container">
             <h2 class="text-center mb-4 neon-section-title" data-aos="fade-right" data-aos-duration="1000">Featured Projects</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Example Project -->
+                <!-- Project 1 -->
                 <div class="col" data-aos="flip-left" data-aos-duration="1500">
                     <div class="card h-100 d-flex flex-column project-hover">
                         <img src="assets/images/car_1.jpg" class="card-img-top" alt="Car 1">
@@ -79,6 +79,9 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Additional Projects (2-6) -->
+                <!-- Add similar structure for Projects 2-6 here -->
             </div>
         </div>
     </section>

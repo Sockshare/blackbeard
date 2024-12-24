@@ -79,8 +79,11 @@ if (asciiRainCanvas) {
     // Dynamically set canvas size based on #projects section
     function resizeAsciiCanvas() {
         const projectsSection = document.getElementById('projects');
-        asciiRainCanvas.width = projectsSection.offsetWidth;
-        asciiRainCanvas.height = projectsSection.offsetHeight;
+        if (projectsSection) {
+            asciiRainCanvas.width = projectsSection.offsetWidth;
+            asciiRainCanvas.height = projectsSection.offsetHeight;
+            console.log('ASCII Canvas resized to:', asciiRainCanvas.width, asciiRainCanvas.height); // Debugging
+        }
     }
 
     resizeAsciiCanvas();
@@ -113,5 +116,8 @@ if (asciiRainCanvas) {
 
     drawAsciiRain();
 
-    window.addEventListener('resize', resizeAsciiCanvas);
+    window.addEventListener('resize', () => {
+        resizeAsciiCanvas();
+        console.log('Window resized. Updated canvas size.');
+    });
 }

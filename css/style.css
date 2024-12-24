@@ -7,10 +7,29 @@ body {
     padding: 0;
 }
 
+/* Green Bar at the Top */
+.green-bar {
+    background-color: transparent; /* The canvas handles the green effect */
+    height: 40px; /* Fixed height */
+    width: 100%; /* Full width */
+    position: fixed; /* Stays at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Above all other content */
+    overflow: hidden;
+}
+
+#particle-canvas {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: block;
+}
+
 /* Navbar */
 .navbar {
     background-color: #000;
     border-bottom: 2px solid #00ff00;
+    margin-top: 40px; /* Accounts for the green bar */
 }
 
 .navbar-brand, .nav-link {
@@ -52,12 +71,12 @@ body {
 
 /* ASCII Rain Styles */
 #ascii-rain {
-    position: absolute;
+    position: fixed; /* Fixed to the viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure it is behind the content */
+    z-index: -1; /* Behind all content */
     pointer-events: none; /* Prevent interaction with the rain */
     background-color: transparent;
 }

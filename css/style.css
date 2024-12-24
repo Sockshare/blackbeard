@@ -13,44 +13,6 @@ body {
     border-bottom: 2px solid #00ff00;
 }
 
-.modal-content {
-    background-color: #111; /* Dark background for modals */
-    color: #fff;           /* Light text for contrast */
-    border-radius: 8px;
-}
-
-.modal-header, .modal-footer {
-    border: none; /* Remove default borders */
-}
-
-.modal img {
-    max-width: 100%;
-    height: auto;
-}
-
-.modal-body img {
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
-}
-
-.card {
-    min-height: 100%; /* Ensures cards stretch to fill their container */
-}
-
-.card-body {
-    text-align: center;
-}
-
-.card img {
-    height: 200px; /* Set a fixed height for images */
-    object-fit: cover; /* Ensures images are cropped properly */
-}
-
-.card-footer {
-    margin-top: auto; /* Pushes the footer to the bottom for alignment */
-}
-
-
 .navbar-brand, .nav-link {
     color: #00bfff !important; /* Neon blue */
     font-size: 1.2rem;
@@ -92,23 +54,50 @@ body {
 }
 
 /* Projects Section */
-.project {
-    text-align: center;
+.card {
+    min-height: 100%; /* Ensures cards stretch to fill their container */
+    background-color: #111; /* Card background */
+    color: #fff; /* Card text color */
+    border: 1px solid #00ff00; /* Neon green border */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow */
+    border-radius: 10px;
 }
 
-.project-image {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 20px auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #00ff00; /* Neon green border */
+.card img {
+    width: 100%; /* Full width for consistency */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crop images to fit the card */
+    border-radius: 5px 5px 0 0;
+}
+
+.card-footer {
+    margin-top: auto; /* Pushes the footer to the bottom for alignment */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Enhanced neon glow on hover */
+}
+
+/* Modal Styles */
+.modal-content {
+    background-color: #111; /* Dark background for modals */
+    color: #fff; /* Light text for contrast */
     border-radius: 8px;
 }
 
-.project-image:hover {
-    transform: translateY(-10px); /* Hover jump effect */
-    box-shadow: 0 0 20px #00ff00; /* Neon glow */
+.modal-header, .modal-footer {
+    border: none; /* Remove default borders */
+}
+
+.modal img {
+    display: block;
+    margin: 0 auto; /* Center the image */
+    max-width: 100%; /* Ensure images fit within modal */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent cropping */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
 }
 
 /* Footer */

@@ -107,24 +107,28 @@ particlesJS('particle-container', {
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+    const href = anchor.getAttribute('href');
+    // Apply smooth scroll only for internal links (starting with #)
+    if (href.startsWith('#')) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
 
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 });
 
 // Animate on Scroll (AOS) Initialization
 AOS.init({
     duration: 1200,
     easing: 'ease-in-out',
-    once: true, // Ensure animations only happen once
+    once: true // Ensure animations only happen once
 });
 
 // Hover Effects for Cards

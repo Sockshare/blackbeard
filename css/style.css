@@ -1,142 +1,171 @@
-/* General Styles */
-body {
-    background-color: #000; /* Black background */
-    color: #00ff00; /* Neon green text */
-    font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
+/* Reset Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Navbar */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #000; /* Black background */
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Styling */
 .navbar {
-    background-color: #000;
-    border-bottom: 2px solid #00ff00; /* Neon green border */
+    z-index: 3; /* Ensure navbar is always above content */
+    background-color: transparent; /* Transparent navbar */
+    border-bottom: none; /* No border for a seamless look */
 }
 
-.navbar-brand, .nav-link {
-    color: #00bfff !important; /* Neon blue */
-    font-size: 1.2rem;
-}
-
-.nav-link:hover {
-    color: #9a00ff !important; /* Neon purple hover effect */
-    text-shadow: 0 0 15px #9a00ff;
-}
-
-/* Interactive Animation Container */
-#interactive-particle-container {
-    position: absolute; /* Positioned at the top for global animation */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Fullscreen height for interactive effects */
-    background-color: transparent; /* No background to ensure visibility of animation */
-    pointer-events: auto; /* Allow interaction with the particles */
-    z-index: -1; /* Place it behind other content like the navbar and sections */
-}
-
-/* Hero Section */
+/* Hero Section Styling */
 .hero {
-    padding: 100px 20px;
     text-align: center;
-    background: linear-gradient(180deg, #000, #111); /* Subtle gradient */
+    padding: 100px 20px;
+    background: transparent; /* Transparent background */
+    position: relative;
+    z-index: 2; /* Place hero content above particle container */
 }
 
 .hero .neon-text {
     font-size: 3rem;
-    color: #00ff00; /* Neon green */
-    text-shadow: 0 0 15px #00ff00, 0 0 25px #00bfff;
-    animation: glow 2s infinite; /* Glow animation */
+    font-weight: bold;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
 .hero .neon-text-blue {
-    font-size: 1.2rem;
-    color: #00bfff; /* Neon blue */
+    text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 20px #00f;
 }
 
-.glow-button {
-    box-shadow: 0 0 15px #00ff00, 0 0 25px #00bfff;
-    transition: box-shadow 0.3s ease;
+.hero .glow-button {
+    background-color: #0ff;
+    border: none;
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.glow-button:hover {
-    box-shadow: 0 0 30px #00ff00, 0 0 50px #00bfff;
+.hero .glow-button:hover {
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
-/* Section Titles */
+/* Particle Animation Background */
+#interactive-particle-container {
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Fullscreen height */
+    z-index: -1; /* Place behind all content */
+    pointer-events: auto; /* Enable interactivity */
+    background-color: transparent; /* Fully transparent background */
+}
+
+/* Projects Section Styling */
+#projects {
+    position: relative;
+    z-index: 2; /* Place above particle container */
+    padding: 50px 20px;
+    background: transparent;
+}
+
 .neon-section-title {
-    text-align: center;
-    font-size: 2rem;
-    color: #9a00ff; /* Neon purple */
-    text-shadow: 0 0 15px #9a00ff, 0 0 25px #00bfff;
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
 }
 
-/* Projects Section */
+/* Project Card Styling */
+.project-hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
 .card {
-    min-height: 100%; /* Ensures cards stretch to fill their container */
-    background-color: #111; /* Card background */
-    color: #fff; /* Card text color */
-    border: 1px solid #00ff00; /* Neon green border */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow */
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
-}
-
-.card img {
-    width: 100%; /* Full width for consistency */
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Crop images to fit the card */
-    border-radius: 5px 5px 0 0;
-}
-
-.card-footer {
-    margin-top: auto; /* Pushes the footer to the bottom for alignment */
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2; /* Above particle container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Hover effect */
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Enhanced neon glow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* Modal Styles */
-.modal-content {
-    background-color: #111; /* Dark background for modals */
-    color: #fff; /* Light text for contrast */
-    border-radius: 8px;
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #444;
 }
 
-.modal-header, .modal-footer {
-    border: none; /* Remove default borders */
-}
-
-.modal img {
-    width: 100%; /* Ensure images span the full modal width */
-    max-height: 80vh; /* Restrict height to fit the viewport */
-    object-fit: contain; /* Maintain aspect ratio */
-    display: block; /* Center the image */
-    margin: 0 auto; /* Center alignment */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Add neon glow effect */
-}
-
-/* Footer */
-footer {
-    text-align: center;
+.card-body {
     padding: 20px;
-    color: #00bfff; /* Neon blue */
-    border-top: 2px solid #9a00ff; /* Neon purple border */
-    margin-top: 20px;
-}
-
-/* Animations and Effects */
-@keyframes glow {
-    0% { box-shadow: 0 0 5px #00ff00; }
-    50% { box-shadow: 0 0 20px #00ff00; }
-    100% { box-shadow: 0 0 5px #00ff00; }
-}
-
-/* Utility Classes */
-.text-center {
     text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.card-footer {
+    background-color: #111;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.card-footer button {
+    border: 1px solid #0ff;
+    background: transparent;
+    color: #0ff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-footer button:hover {
+    background-color: #0ff;
+    color: #000;
+}
+
+/* Footer Styling */
+footer {
+    position: relative;
+    z-index: 2; /* Place above particle container */
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Modal Overrides */
+.modal-backdrop {
+    z-index: 1040;
+}
+
+.modal {
+    z-index: 1050;
 }

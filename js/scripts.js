@@ -2,7 +2,7 @@
 particlesJS('interactive-particle-container', {
     particles: {
         number: {
-            value: 30, // Adjust number of particles
+            value: 30, // Adjust the number of particles
             density: {
                 enable: true,
                 value_area: 800

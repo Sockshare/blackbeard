@@ -58,15 +58,16 @@ body {
 
 /* Green Interactive Animation */
 #interactive-particle-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px; /* Set height to 40px */
-    background-color: transparent;
-    z-index: 1; /* Ensure it appears above other elements */
-    pointer-events: none; /* Allow interactions without blocking other elements */
+    height: 40px; /* Sets the height above the navbar */
+    background-color: transparent; /* Transparent background */
+    z-index: 2; /* Places it above the navbar */
+    pointer-events: none; /* Makes it interactive but doesn't block clicks */
 }
+
 
 /* Section Titles */
 .section-title {

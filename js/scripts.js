@@ -71,52 +71,6 @@ window.addEventListener('resize', () => {
 
 animateParticles();
 
-// ASCII Rain for the Projects Section
-const asciiRainCanvas = document.getElementById('ascii-rain');
-if (asciiRainCanvas) {
-    const asciiCtx = asciiRainCanvas.getContext('2d');
-
-    // Dynamically resize the canvas to match the #projects section
-    function resizeAsciiCanvas() {
-        const projectsSection = document.getElementById('projects');
-        asciiRainCanvas.width = projectsSection.offsetWidth;
-        asciiRainCanvas.height = projectsSection.offsetHeight;
-    }
-
-    resizeAsciiCanvas();
-
-    const symbols = '01'; // Binary characters for the rain
-    const fontSize = 16;
-    const columns = Math.floor(asciiRainCanvas.width / fontSize);
-    const drops = Array(columns).fill(1);
-
-    function drawAsciiRain() {
-        asciiCtx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Background fade effect
-        asciiCtx.fillRect(0, 0, asciiRainCanvas.width, asciiRainCanvas.height);
-
-        asciiCtx.fillStyle = '#00ff00'; // Neon green for ASCII rain
-        asciiCtx.font = `${fontSize}px monospace`;
-
-        drops.forEach((y, x) => {
-            const text = symbols[Math.floor(Math.random() * symbols.length)];
-            asciiCtx.fillText(text, x * fontSize, y * fontSize);
-
-            // Reset drop to the top randomly
-            if (y * fontSize > asciiRainCanvas.height && Math.random() > 0.95) {
-                drops[x] = 0;
-            }
-
-            drops[x]++;
-        });
-
-        requestAnimationFrame(drawAsciiRain);
-    }
-
-    drawAsciiRain();
-
-    window.addEventListener('resize', resizeAsciiCanvas);
-}
-
 // Bootstrap Modal Fix
 const modals = document.querySelectorAll('.modal');
 modals.forEach((modal) => {

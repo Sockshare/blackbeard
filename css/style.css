@@ -13,13 +13,16 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scroll */
     font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
     color: #00ff00; /* Neon green text */
+
+
+    /* Project Details Image */
+.project-details img {
+    width: 100%; /* Ensure full width within its column */
+    height: 400px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures the image is cropped to fit */
+    border-radius: 10px; /* Matches the rounded style */
 }
-.card img {
-    width: 100%; /* Ensures full-width scaling */
-    height: 200px; /* Uniform height for all card images */
-    object-fit: cover; /* Ensures the image fills the space while maintaining aspect ratio */
-    border-radius: 5px 5px 0 0; /* Adds rounded corners at the top */
-}
+
 
 /* Interactive Animation Above Footer */
 #interactive-particle-container {

@@ -13,16 +13,22 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scroll */
     font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
     color: #00ff00; /* Neon green text */
+}
 
-
-    /* Project Details Image */
+/* Project Details Image */
 .project-details img {
     width: 100%; /* Ensure full width within its column */
-    height: 400px; /* Set a fixed height for consistency */
+    max-height: 400px; /* Set a maximum height */
     object-fit: cover; /* Ensures the image is cropped to fit */
     border-radius: 10px; /* Matches the rounded style */
 }
 
+/* Add media queries for better control on smaller screens */
+@media (max-width: 768px) {
+    .project-details img {
+        max-height: 300px; /* Reduce height on smaller screens */
+    }
+}
 
 /* Interactive Animation Above Footer */
 #interactive-particle-container {

@@ -18,16 +18,9 @@ html, body {
 /* Project Details Image */
 .project-details img {
     width: 100%; /* Ensure full width within its column */
-    max-height: 400px; /* Set a maximum height */
-    object-fit: cover; /* Ensures the image is cropped to fit */
+    height: auto; /* Maintain aspect ratio and adjust height automatically */
+    object-fit: contain; /* Ensure the entire image is visible */
     border-radius: 10px; /* Matches the rounded style */
-}
-
-/* Add media queries for better control on smaller screens */
-@media (max-width: 768px) {
-    .project-details img {
-        max-height: 300px; /* Reduce height on smaller screens */
-    }
 }
 
 /* Interactive Animation Above Footer */
@@ -111,8 +104,8 @@ html, body {
 
 .card img {
     width: 100%; /* Full width for consistency */
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Crop images to fit the card */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
     border-radius: 5px 5px 0 0;
 }
 

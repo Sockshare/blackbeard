@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Engineering stories and deep dives by Julian Morrisette covering Run Nexus, Model Context Protocol (MCP) servers, multi-agent LLM blackboards, CMMC automation, and cybersecurity.">
     <title>Blog | Black Beard&#x27;s Portfolio — AI Engineering, LLMs, MCP &amp; Security Stories</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animations CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <!-- Custom Cyber-Neon Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="css/style.css?v=20261106v3">
 </head>
 <body>
     <!-- Navigation -->
@@ -43,13 +41,13 @@
         </div>
     </nav>
 
-    <header class="hero py-5">
+    <header class="hero">
         <div class="container">
-            <div class="hero-kicker" data-aos="fade-down">
+            <div class="hero-kicker">
                 <i class="fa-solid fa-feather-pointed"></i> Field Notes &amp; Architecture Dispatches
             </div>
-            <h1 class="neon-text" data-aos="fade-up">AI Engineering, <span class="hero-gradient-span">MCP Workflows</span> &amp; Security Stories</h1>
-            <p class="neon-text-blue mb-0" data-aos="fade-up" data-aos-delay="80">
+            <h1 class="neon-text">AI Engineering, <span class="hero-gradient-span">MCP Workflows</span> &amp; Security Stories</h1>
+            <p class="neon-text-blue mb-0">
                 First-hand stories from architecting Run Nexus, building custom Model Context Protocol servers, scaling deterministic multi-agent LLMs, and navigating cybersecurity engineering.
             </p>
         </div>
@@ -57,7 +55,7 @@
 
     <section class="py-5">
         <div class="container">
-            <div class="filter-bar" data-filter-group="#blog-stories-grid" data-aos="fade-up">
+            <div class="filter-bar" data-filter-group="#blog-stories-grid">
                 <button class="filter-btn active" data-filter="all">All Stories (12)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Architecture</button>
                 <button class="filter-btn" data-filter="llm">LLM Engineering &amp; GenAI</button>
@@ -67,10 +65,10 @@
 
             <div id="blog-stories-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <!-- Blog Story 7: Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio -->
-                <div class="col" data-category="mcp" data-aos="fade-up">
+                <div class="col" data-category="mcp">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_7.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio" loading="lazy">
+                            <img src="assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -83,17 +81,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #07</span>
                             <a href="stories/blog_7.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 8: Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows -->
-                <div class="col" data-category="mcp" data-aos="fade-up">
+                <div class="col" data-category="mcp">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_8.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                            <img src="assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -106,17 +104,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #08</span>
                             <a href="stories/blog_8.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 9: Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards -->
-                <div class="col" data-category="security" data-aos="fade-up">
+                <div class="col" data-category="security">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_9.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                            <img src="assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -129,17 +127,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #09</span>
                             <a href="stories/blog_9.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 10: Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs -->
-                <div class="col" data-category="llm" data-aos="fade-up">
+                <div class="col" data-category="llm">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_10.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_10_img1.jpg" class="card-img-top" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs" loading="lazy">
+                            <img src="assets/images/blog_10_img1.jpg" class="card-img-top" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -152,17 +150,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #10</span>
                             <a href="stories/blog_10.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 11: Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1 -->
-                <div class="col" data-category="llm" data-aos="fade-up">
+                <div class="col" data-category="llm">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_11.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_11_img1.jpg" class="card-img-top" alt="Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1" loading="lazy">
+                            <img src="assets/images/blog_11_img1.jpg" class="card-img-top" alt="Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -175,17 +173,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #11</span>
                             <a href="stories/blog_11.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 12: Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems -->
-                <div class="col" data-category="llm" data-aos="fade-up">
+                <div class="col" data-category="llm">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_12.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_12_img1.jpg" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems" loading="lazy">
+                            <img src="assets/images/blog_12_img1.jpg" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -198,17 +196,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #12</span>
                             <a href="stories/blog_12.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 1: How I Built My Portfolio -->
-                <div class="col" data-category="culture" data-aos="fade-up">
+                <div class="col" data-category="culture">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_1.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/story_1_img1.jpg" class="card-img-top" alt="How I Built My Portfolio" loading="lazy">
+                            <img src="assets/images/story_1_img1.jpg" class="card-img-top" alt="How I Built My Portfolio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -221,17 +219,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #01</span>
                             <a href="stories/blog_1.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 2: Mastering the Art of Prompt Engineering -->
-                <div class="col" data-category="llm" data-aos="fade-up">
+                <div class="col" data-category="llm">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_2.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_2_img1.jpg" class="card-img-top" alt="Mastering the Art of Prompt Engineering" loading="lazy">
+                            <img src="assets/images/blog_2_img1.jpg" class="card-img-top" alt="Mastering the Art of Prompt Engineering">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -244,17 +242,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #02</span>
                             <a href="stories/blog_2.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 3: AI Meets Cybersecurity -->
-                <div class="col" data-category="security" data-aos="fade-up">
+                <div class="col" data-category="security">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_3.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_3_img1.jpg" class="card-img-top" alt="AI Meets Cybersecurity" loading="lazy">
+                            <img src="assets/images/blog_3_img1.jpg" class="card-img-top" alt="AI Meets Cybersecurity">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -267,17 +265,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #03</span>
                             <a href="stories/blog_3.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 4: Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges -->
-                <div class="col" data-category="culture" data-aos="fade-up">
+                <div class="col" data-category="culture">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_4.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_4_img1.jpg" class="card-img-top" alt="Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges" loading="lazy">
+                            <img src="assets/images/blog_4_img1.jpg" class="card-img-top" alt="Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -290,17 +288,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #04</span>
                             <a href="stories/blog_4.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 5: Designing AI-Driven Workflows to Save Time and Boost Productivity -->
-                <div class="col" data-category="llm" data-aos="fade-up">
+                <div class="col" data-category="llm">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_5.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_5_img1.jpg" class="card-img-top" alt="Designing AI-Driven Workflows to Save Time and Boost Productivity" loading="lazy">
+                            <img src="assets/images/blog_5_img1.jpg" class="card-img-top" alt="Designing AI-Driven Workflows to Save Time and Boost Productivity">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -313,17 +311,17 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #05</span>
                             <a href="stories/blog_5.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blog Story 6: What I Wish I Knew When I Started in Cybersecurity -->
-                <div class="col" data-category="security" data-aos="fade-up">
+                <div class="col" data-category="security">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_6.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_6_img1.jpg" class="card-img-top" alt="What I Wish I Knew When I Started in Cybersecurity" loading="lazy">
+                            <img src="assets/images/blog_6_img1.jpg" class="card-img-top" alt="What I Wish I Knew When I Started in Cybersecurity">
                         </a>
                         <div class="card-body flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -336,7 +334,7 @@
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #06</span>
                             <a href="stories/blog_6.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                                Read More <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -369,13 +367,11 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Particles JS -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <!-- Portfolio Interactive Scripts -->
-    <script src="js/scripts.js"></script>
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="js/scripts.js?v=20261106v3"></script>
 </body>
 </html>

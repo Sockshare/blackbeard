@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A full-scale autonomous learning platform spanning 285 structured courses and 8,300+ Gemini-synthesized lessons with background prefetching, interactive JS simulations, Python labs, rubric LLM grading, and neural TTS.">
     <title>Self-Taught AI University | Black Beard&#x27;s Portfolio</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animations CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <!-- Custom Cyber-Neon Stylesheet -->
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
 </head>
 <body>
     <!-- Navigation -->
@@ -46,13 +44,13 @@
     <!-- Project Deep-Dive Section -->
     <section class="py-5 project-details">
         <div class="container">
-            <div class="breadcrumb-cyber" data-aos="fade-down">
+            <div class="breadcrumb-cyber">
                 <a href="../index.html">Home</a> <span>/</span>
                 <a href="../projects.html">Projects</a> <span>/</span>
                 <span>Self-Taught AI University</span>
             </div>
 
-            <div class="detail-hero-box" data-aos="fade-up">
+            <div class="detail-hero-box">
                 <div class="row g-4 align-items-start">
                     <div class="col-lg-5">
                         <img src="../assets/images/self_taught_uni.jpg" class="project-img" alt="Self-Taught AI University">
@@ -62,10 +60,10 @@
                         <span class="category-badge badge-nexus">LLM EdTech Platform</span>
                         <h1 class="text-white fw-bold mb-3">Self-Taught AI University</h1>
 
-                        <h2><i class="fa-solid fa-compass-drafting"></i> Overview</h2>
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
                         <p>Self-Taught AI University is a flagship Run Nexus application engineered to deliver rigorous, interactive mastery across computer science, mathematics, AI/ML engineering, physics, cybersecurity, and systems design. Rather than serving static pre-recorded videos, the platform orchestrates frontier Gemini models to synthesize 8,300+ deep, textbook-caliber lessons across 285 structured courses—complete with interactive JavaScript simulations, executable coding &amp; mathematical proof labs, rubric-driven LLM evaluation, and neural text-to-speech audio lectures.</p>
 
-                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Capabilities &amp; Agentic Features</h2>
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
                         <ul>
                             <li><strong>285 Structured Courses &amp; 8,300+ Live Lessons:</strong> Covers undergraduate-to-graduate curricula with prerequisite graphs, modular syllabi, worked derivations, and real-world engineering case studies.</li>
                             <li><strong>Zero-Latency Background Lesson Prefetcher:</strong> Asynchronous worker queue pre-generates upcoming syllabus modules in SQLite while the student studies the current lesson, eliminating LLM wait times.</li>
@@ -79,8 +77,8 @@
 
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="detail-section-card h-100" data-aos="fade-up">
-                        <h2><i class="fa-solid fa-layer-group"></i> Architecture &amp; Tech Stack</h2>
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
                         <ul class="mb-0">
                             <li><strong>Generative AI Core:</strong> Google Gemini Pro / Flash APIs, Structured JSON Syllabus &amp; Lesson Synthesis, Socratic Grader Prompts</li>
                             <li><strong>Backend &amp; Queueing:</strong> Python, Flask, Multi-Threaded Async Prefetch Workers, SQLite Content &amp; Progress Vault</li>
@@ -89,30 +87,30 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="detail-section-card h-100" data-aos="fade-up" data-aos-delay="80">
-                        <h2><i class="fa-solid fa-brain"></i> Engineering Philosophy &amp; Systems Theory</h2>
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
                         <p class="mb-0">Most AI tutors fail because they act like unstructured chat boxes—answering isolated questions without curricular scaffolding or active verification. Self-Taught AI University pairs the generative depth of LLMs with deterministic instructional architecture: structured syllabi, predictive caching for instant UX, interactive manipulation of variables, and rigorous rubric-based assessment.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-5" data-aos="zoom-in">
+            <div class="text-center mt-5">
                 <a href="../projects.html" class="btn-cyber-outline">
-                    <i class="fa-solid fa-arrow-left"></i> Back to All 15 Projects
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Explore Related Projects -->
+    <!-- Explore Other Projects -->
     <section class="py-5 related-section">
         <div class="container">
-            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Explore Related Systems</h3>
+            <h3 class="text-center mb-4 neon-section-title">Explore Other Projects</h3>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col" data-aos="fade-up">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="project_7.html" class="card-img-wrapper d-block">
-                            <img src="../assets/images/run_nexus.jpg" class="card-img-top" alt="Run Nexus &amp; Skill Holders Studio" loading="lazy">
+                            <img src="../assets/images/run_nexus.jpg" class="card-img-top" alt="Run Nexus &amp; Skill Holders Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-nexus">Flagship AI Hub</span>
@@ -121,14 +119,14 @@
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">#07</span>
-                            <a href="project_7.html" class="btn-card-action btn-card-primary">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="project_7.html" class="btn-card-action btn-card-primary">View Project <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col" data-aos="fade-up">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="project_14.html" class="card-img-wrapper d-block">
-                            <img src="../assets/images/omni_producer.jpg" class="card-img-top" alt="Omni-Producer &amp; Multi-Model Media Generation Studio" loading="lazy">
+                            <img src="../assets/images/omni_producer.jpg" class="card-img-top" alt="Omni-Producer &amp; Multi-Model Media Generation Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-nexus">Multi-Modal GenAI</span>
@@ -137,14 +135,14 @@
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">#14</span>
-                            <a href="project_14.html" class="btn-card-action btn-card-primary">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="project_14.html" class="btn-card-action btn-card-primary">View Project <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col" data-aos="fade-up">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="project_15.html" class="card-img-wrapper d-block">
-                            <img src="../assets/images/agentic_taskmasters.jpg" class="card-img-top" alt="Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer" loading="lazy">
+                            <img src="../assets/images/agentic_taskmasters.jpg" class="card-img-top" alt="Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-mcp">Edge + Cloud Agents</span>
@@ -153,7 +151,7 @@
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">#15</span>
-                            <a href="project_15.html" class="btn-card-action btn-card-primary">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="project_15.html" class="btn-card-action btn-card-primary">View Project <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -185,13 +183,11 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Particles JS -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <!-- Portfolio Interactive Scripts -->
-    <script src="../js/scripts.js"></script>
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
 </body>
 </html>

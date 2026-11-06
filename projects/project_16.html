@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Live prediction-market terminal uniting Polymarket & Kalshi orderbooks with FRED, NOAA & GDELT fair-value models, cross-venue arbitrage detection, and a 5-agent adversarial research pipeline.">
+    <title>Oracle Desk: Prediction-Market Intelligence Terminal | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Deep-Dive Section -->
+    <section class="py-5 project-details">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>Oracle Desk: Prediction-Market Intelligence Terminal</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/oracle_desk.jpg" class="project-img" alt="Oracle Desk: Prediction-Market Intelligence Terminal">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">Polymarket + Kalshi</span><span class="tech-pill">Cross-Venue Arbitrage</span><span class="tech-pill">5-Agent Debate</span><span class="tech-pill">FRED / NOAA / GDELT</span><span class="tech-pill">Brier Paper Desk</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-mcp">Quant + Multi-Agent AI</span>
+                        <h1 class="text-white fw-bold mb-3">Oracle Desk: Prediction-Market Intelligence Terminal</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
+                        <p>Oracle Desk is a quantitative prediction-market research and paper-trading terminal engineered for transparent edge discovery. It ingests live markets from Polymarket and Kalshi without requiring paid data feeds or trading accounts, pairs them against independent statistical reference models (FRED economic indicators, NOAA weather forecasts, CoinGecko implied volatility, and GDELT news velocity), and runs a 5-agent adversarial pipeline where a mandatory Skeptic agent attacks the Quant agent's fair-value thesis before any paper trade is logged.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>Cross-Venue Arbitrage &amp; Spread Scanner:</strong> Matches equivalent contracts across Polymarket and Kalshi using token-similarity plus strict polarity, numeric-strike, and settlement-date guards—reporting net spreads after Kalshi quadratic taker fees and orderbook depth penalties.</li>
+                            <li><strong>Transparent Reality Reference Models:</strong> Computes independent fair-value probabilities and 90% confidence intervals from live FRED macro time series, NOAA Weather.gov hourly gridpoints, CoinGecko log-normal spot drift, and GDELT news tone.</li>
+                            <li><strong>5-Agent Adversarial Research Pipeline:</strong> Orchestrates Scout, Evidence Researcher, Bayesian Quant, mandatory Skeptic (steel-manning the market price), and Trade Journal agents with full step-by-step provenance.</li>
+                            <li><strong>Whale Tape &amp; Anomaly Detection:</strong> Flags statistically outsized trades (robust MAD z-score &gt; 2.5 and notional thresholds) across live venue trade tapes.</li>
+                            <li><strong>Brier-Scored Paper Portfolio &amp; Calibration Lab:</strong> Tracks virtual YES/NO positions, unrealized PnL, and proper Brier Score decomposition (reliability, resolution, uncertainty) against market baselines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Backend &amp; Quant Engine:</strong> Python, FastAPI, SQLite WAL Telemetry Cache, NumPy / SciPy Calibration &amp; Log-Normal Pricing</li>
+                            <li><strong>Live Data Connectors:</strong> Polymarket Gamma &amp; CLOB APIs, Kalshi v2 Public API, FRED Macro Series, NOAA Weather.gov, CoinGecko, GDELT</li>
+                            <li><strong>Multi-Agent Layer:</strong> Deterministic Rule Pipeline + Optional Local Ollama / OpenAI / Gemini Provider Adapter</li>
+                            <li><strong>Frontend &amp; Verification:</strong> Zero-Build Responsive Terminal UI, SVG Calibration Curves, 40 Automated Pytest + Playwright Gates</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">Prediction markets aggregate crowd beliefs efficiently on average, yet exhibit systematic microstructure distortions around fee tiers, long-shot bias, stale low-liquidity contracts, and breaking macro releases. By combining fee-aware cross-venue matching with independent non-market reference models and a mandatory Skeptic agent that steel-mans the counterparty view, Oracle Desk turns raw contract prices into an auditable decision-support discipline.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/oracle-desk" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

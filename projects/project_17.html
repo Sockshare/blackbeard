@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adversarial 5-agent investment committee (Analyst, Forensic Accountant, Legal, Skeptic, Editor) that ingests live SEC EDGAR XBRL filings to produce fully cited institutional memos.">
+    <title>Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Deep-Dive Section -->
+    <section class="py-5 project-details">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/due_diligence_room.jpg" class="project-img" alt="Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">SEC EDGAR XBRL</span><span class="tech-pill">5-Agent War Room</span><span class="tech-pill">Beneish M / Altman Z</span><span class="tech-pill">Citation Gatekeeper</span><span class="tech-pill">SSE Blackboard</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-mcp">Multi-Agent FinTech</span>
+                        <h1 class="text-white fw-bold mb-3">Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
+                        <p>Due-Diligence Room is a local-first multi-agent financial research war room that produces institutional-grade investment memos with zero unverified numbers. Given any US ticker (or private-company documents), five specialized agents—Financial Analyst, Forensic Accountant, Legal &amp; Governance Reviewer, Short-Seller Skeptic, and Managing Editor—work over a shared evidence blackboard streamed live via Server-Sent Events (SSE), where every claim and ratio links directly to its exact SEC filing accession number or document snippet.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>Live SEC EDGAR XBRL &amp; 10-K Ingestion:</strong> Fetches multi-year GAAP CompanyFacts and recent 10-K/10-Q filings directly from data.sec.gov with compliant rate-limiting and local caching.</li>
+                            <li><strong>Deterministic Forensic Accounting Suite:</strong> Computes all 8 Beneish M-Score ratios (DSRI, GMI, AQI, SGI, DEPI, SGAI, LVGI, TATA), Altman Z / Z''-Scores, 9-point Piotroski F-Score, Sloan Accrual Ratio, and FCF conversion in pure Python—never delegated to LLM arithmetic.</li>
+                            <li><strong>Mandatory Adversarial Skeptic &amp; Rebuttal Loop:</strong> Requires the Skeptic agent to build the strongest evidence-backed bear case and attack every optimistic assumption before the Analyst and Forensic Accountant issue rebuttals.</li>
+                            <li><strong>Zero-Hallucination Citation Verification Gate:</strong> Enforces an automated verification pass confirming 0 unsourced figures and valid [ev:ID] provenance chips across every section of the finished memo.</li>
+                            <li><strong>Interactive Human Checkpoint &amp; Export:</strong> Allows analysts to pin custom thesis questions, inspect raw evidence cards, and export standalone HTML or Markdown investment memos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Agent Blackboard &amp; Streaming:</strong> Python, FastAPI, Server-Sent Events (SSE), SQLite Evidence &amp; Claim Ledger</li>
+                            <li><strong>Forensic &amp; Financial Math:</strong> Pure-Python XBRL Normalizer, Beneish M-Score, Altman Z-Score, Piotroski F-Score, DuPont ROE</li>
+                            <li><strong>Data &amp; Document Parsing:</strong> SEC EDGAR REST APIs, pypdf Local PDF Extractor, CSV Financial Parser</li>
+                            <li><strong>LLM &amp; Offline Architecture:</strong> 100% Functional Deterministic Synthesis Mode + Optional Ollama / Gemini / OpenAI / Anthropic LLM Enhancement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">Single-prompt LLM stock summaries suffer from sycophancy, arithmetic hallucination, and recency bias. Due-Diligence Room solves all three architectural flaws: Python computes every financial ratio deterministically from primary XBRL filings, a dedicated Skeptic agent enforces structural adversarial tension, and a strict citation gate rejects any prose number that cannot trace back to a registered evidence artifact.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/due-diligence-room" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

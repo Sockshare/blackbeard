@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Honest, local-first career copilot that scores resume-to-job fit, rewrites bullet points using only verified experience, drafts tailored cover letters, and builds role-specific interview prep.">
+    <title>Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Deep-Dive Section -->
+    <section class="py-5 project-details">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/job_hunt_copilot.jpg" class="project-img" alt="Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">Resume vs JD Matcher</span><span class="tech-pill">Zero-Fabrication Rewrites</span><span class="tech-pill">ATS Keyword Audit</span><span class="tech-pill">Interview Prep Deck</span><span class="tech-pill">Local Application CRM</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-mcp">Career Agent Workspace</span>
+                        <h1 class="text-white fw-bold mb-3">Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
+                        <p>Job-Hunt Copilot is a local-first career strategy and application workspace that helps candidates tailor resumes, evaluate job fit honestly, and prepare for interviews without generic AI fluff or fabricated credentials. It parses a candidate's resume alongside a target job posting, maps exact skill overlaps and missing requirements, proposes truthful high-impact bullet rewrites grounded strictly in the user's real history, and organizes every application in a local pipeline board.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>Evidence-Grounded Fit Score &amp; Gap Matrix:</strong> Breaks down hard skills, tools, and domain requirements into Matched, Partial, and Missing buckets so candidates know immediately where they stand.</li>
+                            <li><strong>Zero-Fabrication Bullet Point Optimizer:</strong> Strengthens weak resume phrasing using action verbs and measurable framing while strictly prohibiting invented employers, metrics, or skills.</li>
+                            <li><strong>Tailored Cover Letter &amp; Outreach Drafter:</strong> Generates concise, human-sounding cover letters and recruiter notes that connect the candidate's actual projects to the company's stated needs.</li>
+                            <li><strong>Role-Specific Interview Question &amp; STAR Coach:</strong> Builds likely technical and behavioral interview questions for the specific role along with STAR-method talking points drawn from the user's resume.</li>
+                            <li><strong>Built-In Local Application Tracker:</strong> Tracks saved jobs, fit scores, status stages, and notes locally on disk with zero cloud lock-in.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Core Engine:</strong> Python, FastAPI, Skill &amp; Requirement Extraction Pipeline, Local JSON/SQLite Store</li>
+                            <li><strong>LLM &amp; Offline Support:</strong> 100% Functional Offline Rule Engine + Local Ollama / OpenAI / Gemini Provider Support</li>
+                            <li><strong>Frontend Experience:</strong> Clean Multi-Step Workspace, Side-by-Side Resume Diffs, Printable Interview Prep Sheets</li>
+                            <li><strong>Quality Gates:</strong> Automated Unit, API Smoke, Readability, and Headless Chromium Playwright Tests</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">Most AI resume tools hurt candidates by stuffing buzzwords or hallucinating experience that collapses under interview questioning. Job-Hunt Copilot treats career positioning as an evidence-alignment problem: surfacing genuine intersections between a candidate's past work and a role's requirements, and turning gaps into transparent interview preparation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/job-hunt-copilot" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

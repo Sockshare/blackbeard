@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How hierarchical Director/Worker agents, self-healing bpy code synthesis, and Pydantic continuity schemas turn generative 3D and video into deterministic pipelines.">
+    <title>Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1 | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #11</span>
+            </div>
+
+            <article class="story-article" data-aos="fade-up">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-mcp mb-0">Generative 3D &amp; Video</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>7 min read
+                    </span>
+                </div>
+
+                <h1>Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1</h1>
+                <img src="../assets/images/blog_11_img1.jpg" class="story-hero-img" alt="Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1">
+
+<p class="lead">
+    Generative AI is often split into two camps: rigid enterprise automation on one side, and chaotic creative prompting on the other. Building <strong>Blender Generator</strong> and <strong>Omni-Producer / Media Generation Studio</strong> inside Run Nexus proved to me that creative pipelines become ten times more powerful when you apply strict multi-agent systems engineering to 3D meshes, shaders, and cinematic video.
+</p>
+
+<h2>Zero-UI 3D Engineering: Teaching Agents to Drive Headless Blender 5.0</h2>
+<p>
+    Traditional 3D asset creation requires thousands of manual viewport clicks across modeling, UV unwrapping, PBR material nodes, skeletal rigging, and keyframe animation. Yet under the hood, Blender exposes a remarkably complete Python API (<code>bpy</code>). That sparked a question: <em>what if an autonomous team of LLM agents wrote, executed, inspected, and debugged Blender Python scripts completely headlessly?</em>
+</p>
+<p>
+    In <strong>Blender Generator</strong>, a top-level <strong>Director Agent</strong> decomposes a prompt or reference image into modular engineering specs, dispatching specialized <strong>Worker Agents</strong> for:
+</p>
+<ul>
+    <li><strong>Parametric Mesh &amp; Proportion Morphing:</strong> Synthesizing clean geometry and anatomical/stylized proportion sliders via code.</li>
+    <li><strong>Armature Rigging &amp; Secondary-Motion Physics:</strong> Constructing bone hierarchies, retargeting Mixamo motion clips, and attaching spring/cloth physics modifiers.</li>
+    <li><strong>Self-Healing Subprocess Execution:</strong> Every script runs inside headless Blender 5.0. If <code>bpy</code> throws an attribute error or produces degenerate bounding boxes, the agent reads the traceback, patches the script, and re-renders automatically before exporting clean GLB/FBX assets.</li>
+</ul>
+
+<div class="story-callout">
+    <strong>Key Insight:</strong> Treating 3D scene construction as self-healing code generation gives LLMs deterministic feedback loops—turning Blender 5.0 into an autonomous procedural compiler.
+</div>
+
+<h2>Solving Narrative Drift in Omni-Producer with Pydantic Contracts</h2>
+<p>
+    When I shifted from 3D meshes to multi-shot cinema in <strong>Omni-Producer</strong> and my <strong>Media Generation Studio</strong>, the core engineering challenge changed from syntax errors to <em>visual continuity drift</em>. Ask a video model for ten separate shots of a protagonist, and you'll get ten different faces, jackets, and lighting setups.
+</p>
+<p>
+    My solution was to enforce strict <strong>Pydantic v2 schemas</strong> across a multi-agent writers' room:
+</p>
+<ol>
+    <li><strong>Showrunner Agent (<code>ShowBible</code>):</strong> Locks canonical character descriptors, wardrobe tokens, color palettes, lens focal lengths, and world rules into an immutable JSON schema.</li>
+    <li><strong>Screenwriter &amp; Cinematographer Agents (<code>ScreenplaySequence</code>):</strong> Break scenes into timed shot beats that programmatically inherit the exact continuity tokens from the <code>ShowBible</code>.</li>
+    <li><strong>Multi-Model Synthesis (Imagen + Veo 3.1):</strong> Generates locked high-resolution reference keyframes first, then orchestrates <strong>Veo 3.1</strong> video generation so motion, framing, and atmosphere stay cohesive from opening frame to final cut.</li>
+</ol>
+
+<h2>One Architecture, Infinite Mediums</h2>
+<p>
+    Whether an agent is auditing a CMMC firewall rule or rigging a 3D character for a sci-fi short, the underlying architecture is identical: decompose complexity across specialist agents, enforce typed state contracts, and ground every step in automated verification.
+</p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Stories
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore the Systems Behind This Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_7.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Agentic Architecture</span>
+                            <h5 class="card-title">Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h5>
+                            <p class="card-text">How 14+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_7.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_8.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">MCP &amp; Multi-Agent</span>
+                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
+                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">8 min read</span>
+                            <a href="blog_8.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_12.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_12_img1.jpg" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">LLM Engineering</span>
+                            <h5 class="card-title">Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems</h5>
+                            <p class="card-text">Connecting formal Generative AI certification foundations—token economics, RAG, grounding, and AI safety—directly to real-world multi-agent systems.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">6 min read</span>
+                            <a href="blog_12.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

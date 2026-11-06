@@ -3,104 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Meets Cybersecurity - Blog</title>
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="How artificial intelligence is reshaping the high-stakes chess match between cyber attackers and defenders.">
+    <title>AI Meets Cybersecurity | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">Black Beard's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Blog Content -->
-   <!-- Story Content -->
-<!-- Story Content -->
-<section class="py-5">
-    <div class="container">
-        <h1 class="text-center">AI Meets Cybersecurity</h1>
-        <img src="images/story_ai_cybersecurity.jpg" class="img-fluid mb-4" alt="AI and Cybersecurity">
-        <p class="lead">
-            When I was younger, my fascination with technology often felt like stepping into the world of science fiction. I vividly remember playing games like <em>Watch Dogs</em>, imagining what it would be like to live in an interconnected city where every device, every system, was part of a greater web. It was exhilarating—and a little terrifying. Movies like <em>Her</em> and <em>Terminator</em> fueled my curiosity further, showing me both the beauty and the dangers of artificial intelligence.
-        </p>
-        
-        <p>
-            Years later, when I started my career in cybersecurity, that fascination became more than just daydreams. AI wasn’t just the subject of futuristic games or Hollywood blockbusters anymore; it was being hailed as the next big revolution in the workforce. I still remember someone telling me, almost as a warning, “AI will be the future of jobs. You either get ahead of it, or it buries you.” That sentence stuck with me, and it shaped the way I approached my career from that moment forward.
-        </p>
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #03</span>
+            </div>
 
-        <h2 class="mt-5">Exploring AI in Cybersecurity</h2>
-        <p>
-            It didn’t take long for me to see how AI was starting to reshape the field of cybersecurity. My first dive into AI research wasn’t out of sheer curiosity—it was out of necessity. Cybersecurity was (and still is) my career, so I wanted to understand how AI could transform it.
-        </p>
-        <p>
-            What I found was both exciting and sobering. On one hand, AI was helping organizations stay ahead of threats in ways we’d never seen before. It could analyze massive amounts of data in real time, spot anomalies, and automate responses to attacks—all at speeds no human could match. But on the other hand, AI was also being weaponized. I saw how attackers were using it to automate the creation of malware, design sophisticated phishing schemes, and even predict the defenses they might encounter.
-        </p>
-        <p>
-            It was a double-edged sword. AI was making both attackers and defenders smarter, faster, and more dangerous.
-        </p>
+            <article class="story-article" data-aos="fade-up">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge mb-0">AI + Security</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>5 min read
+                    </span>
+                </div>
 
-        <h2 class="mt-5">The Power of AI: A Double-Edged Sword</h2>
-        <p>
-            One of the most striking things I’ve learned is how AI doesn’t pick sides. It’s a tool—a powerful one—and how it’s used depends entirely on who wields it.
-        </p>
-        <ul>
-            <li><strong>Attackers leverage AI to:</strong> Automate the creation of malware, accelerate reconnaissance, and identify vulnerabilities with surgical precision.</li>
-            <li><strong>Defenders leverage AI to:</strong> Spot anomalies in network traffic, expedite vulnerability detection, and automate responses to potential threats.</li>
-        </ul>
-        <p>
-            This constant battle between attackers and defenders, fueled by AI, has made the cybersecurity landscape more dynamic than ever. It’s like a high-stakes game of chess, where both sides are constantly adapting and learning from one another.
-        </p>
+                <h1>AI Meets Cybersecurity</h1>
+                <img src="../assets/images/blog_3_img1.jpg" class="story-hero-img" alt="AI Meets Cybersecurity">
 
-        <h2 class="mt-5">My Journey with AI in Cybersecurity</h2>
-        <p>
-            Working in cybersecurity has given me a front-row seat to this evolution. I’ve seen AI used to automate workflows that once took days, helping teams identify vulnerabilities faster and respond to incidents more effectively. At the same time, I’ve watched how attackers have embraced AI, creating tools that bypass traditional defenses with alarming speed.
-        </p>
-        <p>
-            There’s a strange irony to it all. AI has made both sides of the equation better. It’s raised the stakes, forcing defenders to innovate and adapt just as quickly as attackers do.
-        </p>
-        <p>
-            For me, this isn’t just a professional challenge—it’s a personal one. Every time I see AI being used for harm, I’m reminded why I chose this field in the first place. It’s not just about protecting systems or data; it’s about staying ahead of the curve and ensuring that the tools we create are used for good.
-        </p>
+<p class="lead">
+    When I was younger, my fascination with technology often felt like stepping into the world of science fiction. I vividly remember playing games like <em>Watch Dogs</em>, imagining what it would be like to live in an interconnected city where every device, every system, was part of a greater web. It was exhilarating—and a little terrifying. Movies like <em>Her</em> and <em>Terminator</em> fueled my curiosity further, showing me both the beauty and the dangers of artificial intelligence.
+</p>
 
-        <h2 class="mt-5">Looking Ahead</h2>
-        <p>
-            As I reflect on my journey, I can’t help but feel both excitement and responsibility. AI is here to stay, and its role in cybersecurity will only grow. The tools and strategies we develop today will shape the future of this field, for better or worse.
-        </p>
-        <p>
-            What I’ve learned is that the key isn’t just in building smarter AI—it’s in building smarter humans who can collaborate with AI effectively. It’s about understanding that AI isn’t a replacement for human ingenuity; it’s a partner, a force multiplier that can help us tackle challenges we couldn’t face alone.
-        </p>
-        <p>
-            Cybersecurity has always been about staying one step ahead of the threat. With AI, that step has become a leap—and I’m here for the journey.
-        </p>
+<p>
+    Years later, when I started my career in cybersecurity, that fascination became more than just daydreams. AI wasn’t just the subject of futuristic games or Hollywood blockbusters anymore; it was being hailed as the next big revolution in the workforce. I still remember someone telling me, almost as a warning, “AI will be the future of jobs. You either get ahead of it, or it buries you.” That sentence stuck with me, and it shaped the way I approached my career from that moment forward.
+</p>
 
-        <a href="../blog.html" class="btn btn-primary">Back to Blog</a>
-    </div>
-</section>
+<h2>Exploring AI in Cybersecurity</h2>
+<p>
+    It didn’t take long for me to see how AI was starting to reshape the field of cybersecurity. My first dive into AI research wasn’t out of sheer curiosity—it was out of necessity. Cybersecurity was (and still is) my career, so I wanted to understand how AI could transform it.
+</p>
+<p>
+    What I found was both exciting and sobering. On one hand, AI was helping organizations stay ahead of threats in ways we’d never seen before. It could analyze massive amounts of data in real time, spot anomalies, and automate responses to attacks—all at speeds no human could match. But on the other hand, AI was also being weaponized. I saw how attackers were using it to automate the creation of malware, design sophisticated phishing schemes, and even predict the defenses they might encounter.
+</p>
+<p>
+    It was a double-edged sword. AI was making both attackers and defenders smarter, faster, and more dangerous.
+</p>
 
+<h2>The Power of AI: A Double-Edged Sword</h2>
+<p>
+    One of the most striking things I’ve learned is how AI doesn’t pick sides. It’s a tool—a powerful one—and how it’s used depends entirely on who wields it.
+</p>
+<ul>
+    <li><strong>Attackers leverage AI to:</strong> Automate the creation of malware, accelerate reconnaissance, and identify vulnerabilities with surgical precision.</li>
+    <li><strong>Defenders leverage AI to:</strong> Spot anomalies in network traffic, expedite vulnerability detection, and automate responses to potential threats.</li>
+</ul>
+<p>
+    This constant battle between attackers and defenders, fueled by AI, has made the cybersecurity landscape more dynamic than ever. It’s like a high-stakes game of chess, where both sides are constantly adapting and learning from one another.
+</p>
 
+<h2>My Journey with AI in Cybersecurity</h2>
+<p>
+    Working in cybersecurity has given me a front-row seat to this evolution. I’ve seen AI used to automate workflows that once took days, helping teams identify vulnerabilities faster and respond to incidents more effectively. At the same time, I’ve watched how attackers have embraced AI, creating tools that bypass traditional defenses with alarming speed.
+</p>
+<p>
+    There’s a strange irony to it all. AI has made both sides of the equation better. It’s raised the stakes, forcing defenders to innovate and adapt just as quickly as attackers do.
+</p>
+<p>
+    For me, this isn’t just a professional challenge—it’s a personal one. Every time I see AI being used for harm, I’m reminded why I chose this field in the first place. It’s not just about protecting systems or data; it’s about staying ahead of the curve and ensuring that the tools we create are used for good.
+</p>
+
+<h2>Looking Ahead</h2>
+<p>
+    As I reflect on my journey, I can’t help but feel both excitement and responsibility. AI is here to stay, and its role in cybersecurity will only grow. The tools and strategies we develop today will shape the future of this field, for better or worse.
+</p>
+<p>
+    What I’ve learned is that the key isn’t just in building smarter AI—it’s in building smarter humans who can collaborate with AI effectively. It’s about understanding that AI isn’t a replacement for human ingenuity; it’s a partner, a force multiplier that can help us tackle challenges we couldn’t face alone.
+</p>
+<p>
+    Cybersecurity has always been about staying one step ahead of the threat. With AI, that step has become a leap—and I’m here for the journey.
+</p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Stories
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore the Systems Behind This Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_9.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">AI + Compliance</span>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_9.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_10.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_10_img1.jpg" class="card-img-top" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Hybrid ML + LLM</span>
+                            <h5 class="card-title">Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs</h5>
+                            <p class="card-text">Why LLMs shouldn&#x27;t replace graph algorithms or anomaly math—and how combining BFS traversal, autoencoders, and SmartExplain solved enterprise access review fatigue.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">6 min read</span>
+                            <a href="blog_10.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_6.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_6_img1.jpg" class="card-img-top" alt="What I Wish I Knew When I Started in Cybersecurity" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Career &amp; SecOps</span>
+                            <h5 class="card-title">What I Wish I Knew When I Started in Cybersecurity</h5>
+                            <p class="card-text">Seven hard-earned lessons on automation, stakeholder communication, continuous learning, and thriving in security engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">5 min read</span>
+                            <a href="blog_6.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Black Beard's Portfolio. All Rights Reserved.</p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
 </body>
 </html>

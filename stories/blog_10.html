@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Why LLMs shouldn&#x27;t replace graph algorithms or anomaly math—and how combining BFS traversal, autoencoders, and SmartExplain solved enterprise access review fatigue.">
+    <title>Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #10</span>
+            </div>
+
+            <article class="story-article" data-aos="fade-up">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Hybrid ML + LLM</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>6 min read
+                    </span>
+                </div>
+
+                <h1>Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs</h1>
+                <img src="../assets/images/blog_10_img1.jpg" class="story-hero-img" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs">
+
+<p class="lead">
+    When you are staring at half a million identity group memberships nested six layers deep, dumping a CSV into an LLM prompt isn't engineering—it's wishful thinking. Building my <strong>Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine</strong> taught me one of the most important lessons in modern AI development: <em>use graph algorithms for structure, unsupervised ML for statistical outliers, and LLMs for human-legible explanation.</em>
+</p>
+
+<h2>The Hidden Danger of Transitive Entitlements</h2>
+<p>
+    In large enterprises, permissions are rarely granted directly to individuals; they flow through deeply nested group-in-group hierarchies. Worse, organic growth inevitably introduces circular group references that crash naive recursive scripts, alongside lingering standing privileges that violate Zero-Standing-Privilege (<strong>NoPE</strong>) principles.
+</p>
+<p>
+    To establish ground truth before any machine learning touched the data, I built a <strong>cycle-safe Breadth-First Search (BFS)</strong> graph crawler paired with my <strong>Groups Scanner</strong> microservice. It flattens multi-hop inheritance trees, tracks exact lineage paths (<code>User &rarr; Team Group &rarr; Service Group &rarr; Prod Role</code>), and flags standing human production entitlements that lack Just-In-Time (JIT) or Multi-Party Authorization (MPA) guardrails.
+</p>
+
+<h2>7-Attribute Information-Content + Neural Autoencoders</h2>
+<p>
+    Once effective access is resolved, the real question becomes: <em>which of these 500,000 grants doesn't belong?</em> A role held by 95% of engineers under the same manager and cost center is routine; an entitlement held by a single person whose job family, org unit, and reporting chain share zero overlap with every other holder is a glaring least-privilege risk.
+</p>
+<p>
+    To quantify that intuition mathematically, I engineered a hybrid two-layer scoring engine:
+</p>
+<ul>
+    <li><strong>7-Attribute Information-Content (IC) Peer Similarity:</strong> Weights HR/organizational attributes by their Shannon self-information (<code>-log P(x)</code>)—so sharing a small 6-person sub-team carries far stronger peer signal than sharing a 20,000-person country code.</li>
+    <li><strong>Neural Autoencoder Divergence:</strong> Learns the compressed latent representation of normal identity-to-entitlement matrices and flags high reconstruction error grants—catching subtle multi-role toxic combinations that pairwise heuristics miss.</li>
+</ul>
+
+<h2>Closing the Last Mile with SmartExplain</h2>
+<p>
+    Even the cleanest anomaly score fails if a compliance reviewer just sees <code>Divergence = 0.94</code>. That's where <strong>SmartExplain</strong> and LLM synthesis shine. By feeding the exact feature-attribution vector and transitive group path into a constrained explanation layer, every flagged grant receives a crisp, plain-English rationale—<em>"Flagged High Risk: 0 of 14 peers under the same manager or job family hold this production entitlement, inherited transitively via a legacy migration group."</em>
+</p>
+<p>
+    Graph math gives you completeness. Neural scoring gives you scale. Language models give you clarity. Put all three together, and 500,000 opaque rows turn into a surgical, high-signal security review.
+</p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Stories
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore the Systems Behind This Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_9.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">AI + Compliance</span>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_9.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_8.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">MCP &amp; Multi-Agent</span>
+                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
+                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">8 min read</span>
+                            <a href="blog_8.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_12.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_12_img1.jpg" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">LLM Engineering</span>
+                            <h5 class="card-title">Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems</h5>
+                            <p class="card-text">Connecting formal Generative AI certification foundations—token economics, RAG, grounding, and AI safety—directly to real-world multi-agent systems.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">6 min read</span>
+                            <a href="blog_12.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

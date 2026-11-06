@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How 14+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.">
+    <title>Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #07</span>
+            </div>
+
+            <article class="story-article" data-aos="fade-up">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Agentic Architecture</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>7 min read
+                    </span>
+                </div>
+
+                <h1>Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h1>
+                <img src="../assets/images/blog_7_img1.jpg" class="story-hero-img" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio">
+
+<p class="lead">
+    Every AI builder eventually hits the same wall: you start with one clean prototype, then a second, then a dozen—and suddenly your workstation is a tangle of conflicting localhost ports, half-remembered launch flags, scattered SQLite databases, and brilliant prompt pipelines trapped inside single-purpose repositories. I built <strong>Run Nexus</strong> and <strong>Skill Holders Studio</strong> to turn that chaos into a true personal AI operating system.
+</p>
+
+<h2>From Isolated Scripts to an Integrated AI Fleet</h2>
+<p>
+    Over the past year of intense agentic engineering, my projects stopped looking like standalone demos and started behaving like an interconnected ecosystem. On any given day, I was running a 5-agent CMMC compliance engine, a 500,000-row ML access-review workbench, a 3D WebGL OSINT globe backed by a custom Model Context Protocol (MCP) server, a headless Blender 5.0 3D studio, a Veo 3.1 media pipeline, and a 285-course generative university.
+</p>
+<p>
+    Spinning those services up manually across eight terminal tabs wasn't just annoying—it broke creative and investigative flow. I wanted a single glassmorphic command deck on port <code>5000</code> where every application, CLI parser suite, storage vault, and agent skill lived as a first-class citizen.
+</p>
+
+<div class="story-callout">
+    <strong>Core Design Principle:</strong> Treat every AI application as an observable microservice, and treat every repeatable engineering workflow as a portable, machine-readable <em>Agent Skill</em>.
+</div>
+
+<h2>Inside the Run Nexus Control Plane</h2>
+<p>
+    Under the hood, Run Nexus is driven by a declarative service registry (<code>apps.json</code>) paired with a process-orchestration core and live Server-Sent Events (SSE) telemetry:
+</p>
+<ul>
+    <li><strong>Deterministic Lifecycle Management:</strong> Each app declares its runtime environment, working directory, health endpoint, and dedicated port—from <code>5050</code> for Media Generation Studio to <code>8087</code> for PROJECT ARGUS and <code>32123</code> for the SAFER AI Workbench.</li>
+    <li><strong>Real-Time Process &amp; Log Telemetry:</strong> Instead of tailing blind log files, Run Nexus streams subprocess stdout/stderr directly into the browser UI and tracks live PID/port health.</li>
+    <li><strong>Unified Storage Manager:</strong> Compliance reports, DOCX/XLSX executive bundles, SQLite caches, and rendered 3D/video artifacts can be inspected and cleaned from a single storage plane.</li>
+</ul>
+
+<h2>Skill Holders Studio: Turning Engineering Know-How into Portable Agency</h2>
+<p>
+    The biggest leap inside Run Nexus was building <strong>Skill Holders Studio</strong> as a native Flask Blueprint. As I worked extensively with agentic coding environments and custom MCP servers, I realized that prompts alone don't scale—<em>skills</em> do.
+</p>
+<p>
+    A great AI Agent Skill bundles three things into a clean, portable directory:
+</p>
+<ol>
+    <li><strong><code>SKILL.md</code> Specification:</strong> Crisp YAML frontmatter defining exact activation triggers alongside step-by-step operational guardrails, schemas, and verification rules.</li>
+    <li><strong>Deterministic Helper Scripts:</strong> Python utilities and API connectors so the LLM never wastes tokens reinventing math, SQL parsing, or binary provenance checks.</li>
+    <li><strong>Reference Schemas &amp; Templates:</strong> Canonical output contracts (HTML, DOCX, JSON) that guarantee consistent executive-grade deliverables every single run.</li>
+</ol>
+<p>
+    That exact pattern allowed me to take my <strong>Vulnerability Verifier</strong> application and package its core SLA engine into a portable <code>vulnerability-verifier</code> agent skill—meaning an autonomous agent can now audit P0–P3 security backlogs, generate charts, and assemble a ZIP compliance bundle from a single sentence.
+</p>
+
+<h2>What Building an Ecosystem Taught Me</h2>
+<p>
+    When your tools live under one roof, cross-pollination happens naturally. Techniques I perfected for asynchronous background prefetching in <strong>Self-Taught AI University</strong> informed how I queued Veo 3.1 shots in <strong>Omni-Producer</strong>; strict JSON quality gates from <strong>SAFER</strong> made my <strong>Blender Generator</strong> agents dramatically more resilient. Run Nexus isn't just a launcher—it's the compounding flywheel behind everything I build.
+</p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Stories
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore the Systems Behind This Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_8.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">MCP &amp; Multi-Agent</span>
+                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
+                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">8 min read</span>
+                            <a href="blog_8.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_9.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">AI + Compliance</span>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_9.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_12.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_12_img1.jpg" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">LLM Engineering</span>
+                            <h5 class="card-title">Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems</h5>
+                            <p class="card-text">Connecting formal Generative AI certification foundations—token economics, RAG, grounding, and AI safety—directly to real-world multi-agent systems.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">6 min read</span>
+                            <a href="blog_12.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

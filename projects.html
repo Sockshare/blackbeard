@@ -3,143 +3,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="Explore 15 AI, LLM, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
+    <title>Projects | Black Beard&#x27;s Portfolio — Run Nexus, MCP Servers &amp; AI Systems</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <!-- Custom CSS -->
+    <!-- Custom Cyber-Neon Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Black Beard's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <header class="hero py-5">
         <div class="container">
-            <h2 class="text-center mb-4 neon-section-title" data-aos="fade-right" data-aos-duration="1000">My Projects</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Project 1 -->
-                <div class="col" data-aos="flip-left" data-aos-duration="1500">
-                    <a href="projects/project_1.html" class="text-decoration-none project-hover">
-                        <div class="card h-100 d-flex flex-column">
-                            <img src="assets/images/operation_hades.jpg" class="card-img-top" alt="Car Project 1">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title neon-text">Operation Hades</h5>
-                                <p class="card-text">A cutting-edge cybersecurity tool that integrates 
-                                    Nmap and Metasploit to automate malware deployment and security vulnerability research, 
-                                    leveraging reconnaissance data to execute tailored scripts for achieving shell access or persistent 
-                                    control over target systems.</p>
-                            </div>
+            <div class="hero-kicker" data-aos="fade-down">
+                <i class="fa-solid fa-code-branch"></i> 15 Production &amp; Research Systems
+            </div>
+            <h1 class="neon-text" data-aos="fade-up">AI Systems, <span class="hero-gradient-span">Run Nexus</span> &amp; Security Engineering</h1>
+            <p class="neon-text-blue mb-0" data-aos="fade-up" data-aos-delay="80">
+                Every project below pairs custom AI-generated concept artwork with architectural breakdowns of the LLM pipelines, MCP tool servers, ML models, and security automations powering it.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="filter-bar" data-filter-group="#all-projects-grid" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects (15)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus Ecosystem (9)</button>
+                <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Workflows</button>
+                <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
+                <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; Hardware</button>
+            </div>
+
+            <div id="all-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 7: Run Nexus &amp; Skill Holders Studio -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_7.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/run_nexus.jpg" class="card-img-top" alt="Run Nexus &amp; Skill Holders Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Flagship AI Hub</span>
+                            <h5 class="card-title">Run Nexus &amp; Skill Holders Studio</h5>
+                            <p class="card-text">A full-stack personal AI operating system and microservice orchestrator managing 14+ specialized LLM applications, live SSE process telemetry, workspace storage, and Skill Holders Studio for building portable AI Agent Skills and MCP-ready workflows.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Multi-Agent Hub</span><span class="tech-pill">SKILL.md Studio</span><span class="tech-pill">MCP Workflows</span><span class="tech-pill">SSE Telemetry</span></div>
                         </div>
-                    </a>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#07</span>
+                            <a href="projects/project_7.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="col" data-aos="flip-up" data-aos-duration="1500">
-                    <a href="projects/project_2.html" class="text-decoration-none project-hover">
-                        <div class="card h-100 d-flex flex-column">
-                            <img src="assets/images/operation_nemesis.jpg" class="card-img-top" alt="Car Project 2">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title neon-text">Operation Nemesis</h5>
-                                <p class="card-text">An AI-powered system that combines Metasploit, NSE scripts, and 
-                                    reconnaissance data to dynamically analyze vulnerabilities 
-                                    and deploy customized exploits, achieving precise and efficient system 
-                                    penetration or persistent access.</p>
-                            </div>
+                <!-- Project 8: SAFER AI Workbench &amp; CMMC Multi-Agent Engine -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_8.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/safer_cmmc.jpg" class="card-img-top" alt="SAFER AI Workbench &amp; CMMC Multi-Agent Engine" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Multi-Agent LLM</span>
+                            <h5 class="card-title">SAFER AI Workbench &amp; CMMC Multi-Agent Engine</h5>
+                            <p class="card-text">An enterprise-grade 5-agent sequential LLM compliance engine operating at T=0.0 over a Shared Team Blackboard with strict JSON quality gates across 6 CMMC domains and 17 security practices.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">5-Agent Blackboard</span><span class="tech-pill">T=0.0 LLM</span><span class="tech-pill">CMMC L1 / NIST</span><span class="tech-pill">JSON Quality Gates</span><span class="tech-pill">Python</span></div>
                         </div>
-                    </a>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#08</span>
+                            <a href="projects/project_8.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="col" data-aos="flip-right" data-aos-duration="1500">
-                    <a href="projects/project_3.html" class="text-decoration-none project-hover">
-                        <div class="card h-100 d-flex flex-column">
-                            <img src="assets/images/operation_hermes.jpg" class="card-img-top" alt="Car Project 3">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title neon-text">Operation Hermes</h5>
-                                <p class="card-text">A secure Bluetooth communication system built on a Raspberry Pi, designed for portable, 
-                                    encrypted message exchanges between devices, ensuring privacy and efficiency in real-world applications.</p>
-                            </div>
+                <!-- Project 9: Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_9.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/uar_divergence.jpg" class="card-img-top" alt="Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">ML + Identity AI</span>
+                            <h5 class="card-title">Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine</h5>
+                            <p class="card-text">High-scale Identity Governance &amp; User Access Review platform combining cycle-safe BFS group graph traversal, NoPE Zero-Standing-Privilege checks, and hybrid Neural + Information-Content ML Peer Divergence.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">BFS Graph Engine</span><span class="tech-pill">Neural Autoencoder</span><span class="tech-pill">500K+ Grants</span><span class="tech-pill">Zero Standing Priv</span><span class="tech-pill">SmartExplain AI</span></div>
                         </div>
-                    </a>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#09</span>
+                            <a href="projects/project_9.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="col" data-aos="flip-left" data-aos-duration="1500">
-                    <a href="projects/project_4.html" class="text-decoration-none project-hover">
-                        <div class="card h-100 d-flex flex-column">
-                            <img src="assets/images/operation_apollo.jpg" class="card-img-top" alt="Car Project 4">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title neon-text">Operation Apollo</h5>
-                                <p class="card-text">An AI-driven stock advisor system that analyzes market
-                                    trends and financial data to provide tailored investment recommendations
-                                    for both long-term strategies and short-term trading opportunities.</p>
-                            </div>
+                <!-- Project 10: Vulnerability Verifier &amp; Supply-Chain Provenance Suite -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_10.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/vuln_verifier.jpg" class="card-img-top" alt="Vulnerability Verifier &amp; Supply-Chain Provenance Suite" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Agent Skill + SecOps</span>
+                            <h5 class="card-title">Vulnerability Verifier &amp; Supply-Chain Provenance Suite</h5>
+                            <p class="card-text">Browser-coupled security remediation agent and portable AI Agent Skill auditing P0–P3 vulnerability SLAs, paired with cryptographic SLSA/BCID binary provenance verification and 13-widget executive dashboards.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Portable SKILL.md</span><span class="tech-pill">SLO Audit Engine</span><span class="tech-pill">SLSA / BCID</span><span class="tech-pill">REST Workspace API</span><span class="tech-pill">DOCX/XLSX Gen</span></div>
                         </div>
-                    </a>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#10</span>
+                            <a href="projects/project_10.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 5 -->
-                <div class="col" data-aos="flip-up" data-aos-duration="1500">
-                    <a href="projects/project_5.html" class="text-decoration-none project-hover">
-                        <div class="card h-100 d-flex flex-column">
-                            <img src="assets/images/operation_icarus.jpg" class="card-img-top" alt="Car Project 5">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title neon-text">Operation Icarus</h5>
-                                <p class="card-text">A stealth-focused Nmap overlay with a web-based GUI, enabling efficient network scans
-                                    and script execution while minimizing noise to avoid detection and maintain operational discretion.</p>
-                            </div>
+                <!-- Project 11: PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server -->
+                <div class="col" data-category="nexus mcp cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_11.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/project_argus.jpg" class="card-img-top" alt="PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Custom MCP Server</span>
+                            <h5 class="card-title">PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server</h5>
+                            <p class="card-text">A custom Model Context Protocol (MCP) server and interactive 3D geospatial command deck exposing 11 real-time OSINT telemetry disciplines as structured JSON-RPC tools for autonomous LLM agents.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Model Context Protocol</span><span class="tech-pill">JSON-RPC Tools</span><span class="tech-pill">3D WebGL Globe</span><span class="tech-pill">11 OSINT Streams</span><span class="tech-pill">Agentic Recon</span></div>
                         </div>
-                    </a>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#11</span>
+                            <a href="projects/project_11.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 6 -->
-                <div class="col" data-aos="flip-right" data-aos-duration="1500">
-                    <a href="projects/project_6.html" class="text-decoration-none project-hover">
-                        <div class="card h-100 d-flex flex-column">
-                            <img src="assets/images/operation_yggdrasil.jpg" class="card-img-top" alt="Car Project 6">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title neon-text">Operation Yggdrasil</h5>
-                                <p class="card-text">An AI-powered OSINT tool designed to gather, analyze, and connect extensive public 
-                                    information from diverse sources, revealing deep insights and relationships through a comprehensive 
-                                    digital network.</p>
-                            </div>
+                <!-- Project 12: Self-Taught AI University -->
+                <div class="col" data-category="nexus media" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_12.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/self_taught_uni.jpg" class="card-img-top" alt="Self-Taught AI University" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">LLM EdTech Platform</span>
+                            <h5 class="card-title">Self-Taught AI University</h5>
+                            <p class="card-text">A full-scale autonomous learning platform spanning 285 structured courses and 8,300+ Gemini-synthesized lessons with background prefetching, interactive JS simulations, Python labs, rubric LLM grading, and neural TTS.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Gemini API</span><span class="tech-pill">8,300+ Lessons</span><span class="tech-pill">Async Prefetch</span><span class="tech-pill">LLM Rubric Grader</span><span class="tech-pill">Neural Edge-TTS</span></div>
                         </div>
-                    </a>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#12</span>
+                            <a href="projects/project_12.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 13: Blender Generator: Zero-UI Multi-Agent 3D Studio -->
+                <div class="col" data-category="nexus media mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_13.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blender_generator.jpg" class="card-img-top" alt="Blender Generator: Zero-UI Multi-Agent 3D Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">GenAI 3D Agents</span>
+                            <h5 class="card-title">Blender Generator: Zero-UI Multi-Agent 3D Studio</h5>
+                            <p class="card-text">A zero-UI multi-agent 3D engineering pipeline where specialized LLM Director and Worker agents write, execute, and self-heal headless Blender 5.0 Python (bpy) scripts for rigged characters, physics, and worlds.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Headless Blender 5.0</span><span class="tech-pill">Director/Worker LLMs</span><span class="tech-pill">bpy Code Synthesis</span><span class="tech-pill">Rigging &amp; Physics</span><span class="tech-pill">GLB/FBX Pipeline</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#13</span>
+                            <a href="projects/project_13.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 14: Omni-Producer &amp; Multi-Model Media Generation Studio -->
+                <div class="col" data-category="nexus media" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_14.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/omni_producer.jpg" class="card-img-top" alt="Omni-Producer &amp; Multi-Model Media Generation Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Multi-Modal GenAI</span>
+                            <h5 class="card-title">Omni-Producer &amp; Multi-Model Media Generation Studio</h5>
+                            <p class="card-text">Autonomous multi-modal film and media production suite uniting Pydantic-typed Showrunner/Screenwriter agents with Run Nexus Media Generation Studio across Gemini, Imagen/Nanobanana, and Veo 3.1.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Veo 3.1 Video</span><span class="tech-pill">Gemini 3.1 / Pro</span><span class="tech-pill">Pydantic Schemas</span><span class="tech-pill">Showrunner Agents</span><span class="tech-pill">Imagen Synthesis</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#14</span>
+                            <a href="projects/project_14.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 15: Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_15.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/agentic_taskmasters.jpg" class="card-img-top" alt="Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Edge + Cloud Agents</span>
+                            <h5 class="card-title">Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer</h5>
+                            <p class="card-text">Production agentic workflow duo: an autonomous Feedback Triage Taskmaster (FastAPI, Gemini, Cloud Firestore) and a privacy-first Hybrid Edge/Cloud Benefits Auto-Filer using local Gemma PII scrubbing.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">FastAPI + Firestore</span><span class="tech-pill">Local Gemma PII</span><span class="tech-pill">Gemini Structured IO</span><span class="tech-pill">Drive REST API</span><span class="tech-pill">Hackathon Build</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#15</span>
+                            <a href="projects/project_15.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1: Operation Hades -->
+                <div class="col" data-category="cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_1.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_hades.jpg" class="card-img-top" alt="Operation Hades" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Offensive SecOps</span>
+                            <h5 class="card-title">Operation Hades</h5>
+                            <p class="card-text">A cutting-edge cybersecurity tool that integrates Nmap and Metasploit to automate malware deployment and security vulnerability research, leveraging reconnaissance data to execute tailored scripts.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap</span><span class="tech-pill">Metasploit</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Vuln Research</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#01</span>
+                            <a href="projects/project_1.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Operation Nemesis -->
+                <div class="col" data-category="cyber mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_2.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_nemesis.jpg" class="card-img-top" alt="Operation Nemesis" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">AI Red Teaming</span>
+                            <h5 class="card-title">Operation Nemesis</h5>
+                            <p class="card-text">An AI-powered system that combines Metasploit, NSE scripts, and reconnaissance data to dynamically analyze vulnerabilities and deploy customized exploits with precision.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">AI Decision Engine</span><span class="tech-pill">Metasploit</span><span class="tech-pill">Nmap NSE</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#02</span>
+                            <a href="projects/project_2.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Operation Hermes -->
+                <div class="col" data-category="cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_3.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_hermes.jpg" class="card-img-top" alt="Operation Hermes" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Hardware &amp; Crypto</span>
+                            <h5 class="card-title">Operation Hermes</h5>
+                            <p class="card-text">A secure Bluetooth communication system built on a Raspberry Pi, designed for portable, encrypted off-grid message exchanges between devices in sensitive field environments.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Raspberry Pi</span><span class="tech-pill">Python &amp; C++</span><span class="tech-pill">AES Encryption</span><span class="tech-pill">Bluetooth RF</span><span class="tech-pill">OpenSSL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#03</span>
+                            <a href="projects/project_3.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Operation Apollo -->
+                <div class="col" data-category="media" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_4.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_apollo.jpg" class="card-img-top" alt="Operation Apollo" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">FinTech AI</span>
+                            <h5 class="card-title">Operation Apollo</h5>
+                            <p class="card-text">An AI-driven stock advisor system that analyzes real-time market trends, volatility, and financial telemetry to deliver risk-adjusted investment insights.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Python ML</span><span class="tech-pill">LLM Synthesis</span><span class="tech-pill">Market APIs</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#04</span>
+                            <a href="projects/project_4.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Operation Icarus -->
+                <div class="col" data-category="cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_5.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_icarus.jpg" class="card-img-top" alt="Operation Icarus" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Recon &amp; Stealth UI</span>
+                            <h5 class="card-title">Operation Icarus</h5>
+                            <p class="card-text">A stealth-focused Nmap overlay with an intuitive web GUI, enabling multi-tab network scans, live streaming output, visual topology heatmaps, and categorized NSE script execution.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap &amp; NSE</span><span class="tech-pill">Live Telemetry</span><span class="tech-pill">Topology Maps</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#05</span>
+                            <a href="projects/project_5.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Operation Yggdrasil -->
+                <div class="col" data-category="cyber mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_6.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_yggdrasil.jpg" class="card-img-top" alt="Operation Yggdrasil" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">AI Graph OSINT</span>
+                            <h5 class="card-title">Operation Yggdrasil</h5>
+                            <p class="card-text">An AI-powered OSINT platform designed to gather, correlate, and visualize public intelligence across diverse sources using LLM NLP pipelines and interactive Cytoscape relationship graphs.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Cytoscape.js</span><span class="tech-pill">LLM Entity NLP</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#06</span>
+                            <a href="projects/project_6.html" class="btn-card-action btn-card-primary">
+                                Explore Architecture <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Black Beard's Portfolio. All Rights Reserved.</p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="index.html">Home</a>
+                    <a class="nav-icon-link" href="projects.html">Projects</a>
+                    <a class="nav-icon-link" href="blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init(); // Initialize AOS for animations
-    </script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>

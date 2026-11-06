@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.">
+    <title>Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #09</span>
+            </div>
+
+            <article class="story-article" data-aos="fade-up">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-mcp mb-0">AI + Compliance</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>7 min read
+                    </span>
+                </div>
+
+                <h1>Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h1>
+                <img src="../assets/images/blog_9_img1.jpg" class="story-hero-img" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards">
+
+<p class="lead">
+    Assessing enterprise applications against <strong>CMMC Level 1 (FAR 52.204-21 / NIST SP 800-171)</strong> requires zero guesswork. Across 6 security domains and 17 rigorous practices—from Access Control and Identification &amp; Authentication to System &amp; Communications Protection—every single determination must be backed by hard technical evidence. Here is how I engineered a deterministic 5-agent LLM pipeline to automate the heavy lifting without sacrificing an ounce of audit rigor.
+</p>
+
+<h2>The Anatomy of a High-Stakes Security Assessment</h2>
+<p>
+    When evaluating a portfolio of production enterprise applications, the sheer diversity of evidence is staggering. For every system in scope, an assessor has to correlate:
+</p>
+<ul>
+    <li><strong>Identity &amp; Access Governance:</strong> Recursive group memberships, Zero-Standing-Privilege enforcement, Multi-Party Authorization (MPA) for administrative actions, and automated offboarding SLAs.</li>
+    <li><strong>Network &amp; Cryptographic Boundaries:</strong> Perimeter isolation policies (such as VPC Service Controls), FIPS-validated TLS/mTLS transport encryption, and strict boundary segmentation for Federal Contract Information (FCI).</li>
+    <li><strong>System Integrity &amp; Provenance:</strong> Binary build provenance attestations (SLSA / BCID), automated malware defenses, and P0–P3 vulnerability remediation SLO compliance.</li>
+</ul>
+<p>
+    Doing that correlation manually across multiple complex applications meant days of parsing config dumps, cross-referencing SQL outputs, and formatting executive reports. I knew LLMs could accelerate synthesis—but only if hallucination risk was engineered down to zero.
+</p>
+
+<h2>Designing the 5-Agent Sequential Blackboard</h2>
+<p>
+    Inside the <strong>SAFER AI Workbench</strong>, I rejected single-prompt summarization in favor of a five-stage assembly line operating at <code>Temperature = 0.0</code> over a <strong>Shared Team Blackboard</strong>:
+</p>
+<ol>
+    <li><strong>Agent 1 — Evidence Ingestion &amp; Normalization Specialist:</strong> Consumes outputs from my custom CLI parsers (firewall rules, IAM graphs, vulnerability exports, binary provenance checks) and indexes structured facts onto the blackboard.</li>
+    <li><strong>Agent 2 — CMMC Practice Evaluator:</strong> Evaluates each of the 17 CMMC Level 1 practices individually against NIST SP 800-171 assessment objectives, requiring explicit artifact citations for every finding.</li>
+    <li><strong>Agent 3 — Executive Briefing Synthesizer:</strong> Translates granular control statuses into clear risk posture summaries for engineering leadership and system owners.</li>
+    <li><strong>Agent 4 — Remediation Roadmap Architect:</strong> Generates concrete, prioritized engineering action items with target owners and technical verification steps for any control gaps.</li>
+    <li><strong>Agent 5 — Independent QA Gatekeeper:</strong> Audits Agents 2–4 against the raw evidence on the blackboard. If a claim lacks a verifiable citation or violates JSON schema constraints, the QA gate rejects and routes it back automatically.</li>
+</ol>
+
+<div class="story-callout">
+    <strong>Why It Works:</strong> Separating <em>extraction</em>, <em>evaluation</em>, <em>remediation planning</em>, and <em>adversarial QA</em> prevents confirmation bias and keeps every prompt tightly focused within the model's peak reasoning window.
+</div>
+
+<h2>Pairing LLM Reasoning with Live Telemetry Dashboards</h2>
+<p>
+    To close the loop for stakeholders, I paired the workbench with automated REST pipelines that push verified assessment metrics and vulnerability burn-down telemetry into 13-widget live tracking dashboards and formatted executive reports. The result wasn't just faster assessments—it was a repeatable, transparent engineering standard where AI handles exhaustive evidence correlation so human security engineers can focus on architectural risk decisions.
+</p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Stories
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore the Systems Behind This Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_10.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_10_img1.jpg" class="card-img-top" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Hybrid ML + LLM</span>
+                            <h5 class="card-title">Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs</h5>
+                            <p class="card-text">Why LLMs shouldn&#x27;t replace graph algorithms or anomaly math—and how combining BFS traversal, autoencoders, and SmartExplain solved enterprise access review fatigue.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">6 min read</span>
+                            <a href="blog_10.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_8.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">MCP &amp; Multi-Agent</span>
+                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
+                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">8 min read</span>
+                            <a href="blog_8.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_7.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Agentic Architecture</span>
+                            <h5 class="card-title">Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h5>
+                            <p class="card-text">How 14+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_7.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

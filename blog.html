@@ -3,127 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Black Beard's Portfolio</title>
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="Engineering stories and deep dives by Julian Morrisette covering Run Nexus, Model Context Protocol (MCP) servers, multi-agent LLM blackboards, CMMC automation, and cybersecurity.">
+    <title>Blog | Black Beard&#x27;s Portfolio — AI Engineering, LLMs, MCP &amp; Security Stories</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <!-- Custom CSS -->
+    <!-- Custom Cyber-Neon Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Black Beard's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Blog Section -->
+    <header class="hero py-5">
+        <div class="container">
+            <div class="hero-kicker" data-aos="fade-down">
+                <i class="fa-solid fa-feather-pointed"></i> Field Notes &amp; Architecture Dispatches
+            </div>
+            <h1 class="neon-text" data-aos="fade-up">AI Engineering, <span class="hero-gradient-span">MCP Workflows</span> &amp; Security Stories</h1>
+            <p class="neon-text-blue mb-0" data-aos="fade-up" data-aos-delay="80">
+                First-hand stories from architecting Run Nexus, building custom Model Context Protocol servers, scaling deterministic multi-agent LLMs, and navigating cybersecurity engineering.
+            </p>
+        </div>
+    </header>
+
     <section class="py-5">
         <div class="container">
-            <h1 class="mb-4 text-center neon-section-title" data-aos="fade-right" data-aos-duration="1000">Blog</h1>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Blog Post 1 -->
-                <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="card h-100 blog-hover">
-                        <img src="assets/images/story_1_img1.jpg" class="card-img-top" alt="Blog Post 1">
-                        <div class="card-body">
-                            <h5 class="card-title neon-text">How I Built My Portfolio</h5>
-                            <p class="card-text">A detailed account of the journey to building a professional portfolio.</p>
-                            <a href="stories/blog_1.html" class="btn btn-outline-primary">Read More</a>
+            <div class="filter-bar" data-filter-group="#blog-stories-grid" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Stories (12)</button>
+                <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Architecture</button>
+                <button class="filter-btn" data-filter="llm">LLM Engineering &amp; GenAI</button>
+                <button class="filter-btn" data-filter="security">AI + Cybersecurity</button>
+                <button class="filter-btn" data-filter="culture">Engineering Leadership</button>
+            </div>
+
+            <div id="blog-stories-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Blog Story 7: Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio -->
+                <div class="col" data-category="mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_7.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Agentic Architecture</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h5>
+                            <p class="card-text">How 14+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #07</span>
+                            <a href="stories/blog_7.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 2 -->
-                <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="card h-100 blog-hover">
-                        <img src="assets/images/blog_2_img1.jpg" class="card-img-top" alt="Blog Post 2">
-                        <div class="card-body">
-                            <h5 class="card-title neon-text">Mastering The Art Of Prompt Engineering</h5>
-                            <p class="card-text">Exploring the art of refining AI interactions to unlock powerful solutions.</p>
-                            <a href="stories/blog_2.html" class="btn btn-outline-primary">Read More</a>
+                <!-- Blog Story 8: Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows -->
+                <div class="col" data-category="mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_8.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">MCP &amp; Multi-Agent</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            </div>
+                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
+                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #08</span>
+                            <a href="stories/blog_8.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 3 -->
-                <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="card h-100 blog-hover">
-                        <img src="stories/images/blog_3_img1.jpg" class="card-img-top" alt="Blog Post 3">
-                        <div class="card-body">
-                            <h5 class="card-title neon-text">AI Meets Cybersecurity</h5>
-                            <p class="card-text">How AI is transforming cybersecurity by automating workflows and enhancing threat detection.</p>
-                            <a href="stories/blog_3.html" class="btn btn-outline-primary">Read More</a>
+                <!-- Blog Story 9: Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards -->
+                <div class="col" data-category="security" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_9.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">AI + Compliance</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #09</span>
+                            <a href="stories/blog_9.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 4 -->
-                <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="card h-100 blog-hover">
-                        <img src="stories/images/blog_4_img1.jpg" class="card-img-top" alt="Blog Post 4">
-                        <div class="card-body">
-                            <h5 class="card-title neon-text">Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges</h5>
-                            <p class="card-text">Learn how overcoming challenges can transform workflows and unlock valuable insights in tech.</p>
-                            <a href="stories/blog_4.html" class="btn btn-outline-primary">Read More</a>
+                <!-- Blog Story 10: Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs -->
+                <div class="col" data-category="llm" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_10.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_10_img1.jpg" class="card-img-top" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Hybrid ML + LLM</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs</h5>
+                            <p class="card-text">Why LLMs shouldn&#x27;t replace graph algorithms or anomaly math—and how combining BFS traversal, autoencoders, and SmartExplain solved enterprise access review fatigue.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #10</span>
+                            <a href="stories/blog_10.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 5 -->
-                <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="card h-100 blog-hover">
-                        <img src="stories/images/blog_5_img1.jpg" class="card-img-top" alt="Blog Post 5">
-                        <div class="card-body">
-                            <h5 class="card-title neon-text">Designing AI-Driven Workflows to Save Time and Boost Productivity</h5>
-                            <p class="card-text">Discover how AI-driven workflows can streamline processes, enhance accuracy, and boost efficiency.</p>
-                            <a href="stories/blog_5.html" class="btn btn-outline-primary">Read More</a>
+                <!-- Blog Story 11: Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1 -->
+                <div class="col" data-category="llm" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_11.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_11_img1.jpg" class="card-img-top" alt="Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">Generative 3D &amp; Video</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1</h5>
+                            <p class="card-text">How hierarchical Director/Worker agents, self-healing bpy code synthesis, and Pydantic continuity schemas turn generative 3D and video into deterministic pipelines.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #11</span>
+                            <a href="stories/blog_11.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 6 -->
-                <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-                    <div class="card h-100 blog-hover">
-                        <img src="stories/images/blog_6_img1.jpg" class="card-img-top" alt="Blog Post 6">
-                        <div class="card-body">
-                            <h5 class="card-title neon-text">What I Wish I Knew When I Started in Cybersecurity</h5>
-                            <p class="card-text">Uncover valuable lessons and insights for navigating the dynamic world of cybersecurity."</p>
-                            <a href="stories/blog_6.html" class="btn btn-outline-primary">Read More</a>
+                <!-- Blog Story 12: Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems -->
+                <div class="col" data-category="llm" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_12.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_12_img1.jpg" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">LLM Engineering</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems</h5>
+                            <p class="card-text">Connecting formal Generative AI certification foundations—token economics, RAG, grounding, and AI safety—directly to real-world multi-agent systems.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #12</span>
+                            <a href="stories/blog_12.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Add more blog posts here -->
+                <!-- Blog Story 1: How I Built My Portfolio -->
+                <div class="col" data-category="culture" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_1.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/story_1_img1.jpg" class="card-img-top" alt="How I Built My Portfolio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge mb-0">Web Architecture</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>4 min read</span>
+                            </div>
+                            <h5 class="card-title">How I Built My Portfolio</h5>
+                            <p class="card-text">A detailed account of the architectural vision, tech stack, and iterative design journey behind building Black Beard&#x27;s Portfolio.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #01</span>
+                            <a href="stories/blog_1.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 2: Mastering the Art of Prompt Engineering -->
+                <div class="col" data-category="llm" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_2.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_2_img1.jpg" class="card-img-top" alt="Mastering the Art of Prompt Engineering" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge mb-0">Prompt Engineering</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>4 min read</span>
+                            </div>
+                            <h5 class="card-title">Mastering the Art of Prompt Engineering</h5>
+                            <p class="card-text">Exploring the art of refining human-AI collaboration to unlock faster engineering workflows and creative solutions.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #02</span>
+                            <a href="stories/blog_2.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 3: AI Meets Cybersecurity -->
+                <div class="col" data-category="security" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_3.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_3_img1.jpg" class="card-img-top" alt="AI Meets Cybersecurity" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge mb-0">AI + Security</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
+                            </div>
+                            <h5 class="card-title">AI Meets Cybersecurity</h5>
+                            <p class="card-text">How artificial intelligence is reshaping the high-stakes chess match between cyber attackers and defenders.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #03</span>
+                            <a href="stories/blog_3.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 4: Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges -->
+                <div class="col" data-category="culture" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_4.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_4_img1.jpg" class="card-img-top" alt="Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge mb-0">Engineering Leadership</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
+                            </div>
+                            <h5 class="card-title">Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges</h5>
+                            <p class="card-text">How data-driven storytelling, patience, and organizational awareness helped overcome a severe security assessment backlog.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #04</span>
+                            <a href="stories/blog_4.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 5: Designing AI-Driven Workflows to Save Time and Boost Productivity -->
+                <div class="col" data-category="llm" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_5.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_5_img1.jpg" class="card-img-top" alt="Designing AI-Driven Workflows to Save Time and Boost Productivity" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge mb-0">RAG &amp; Workflows</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
+                            </div>
+                            <h5 class="card-title">Designing AI-Driven Workflows to Save Time and Boost Productivity</h5>
+                            <p class="card-text">How RAG-grounded prompt workflows modernized legacy manual checks, slashed turnaround times, and elevated accuracy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #05</span>
+                            <a href="stories/blog_5.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 6: What I Wish I Knew When I Started in Cybersecurity -->
+                <div class="col" data-category="security" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_6.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_6_img1.jpg" class="card-img-top" alt="What I Wish I Knew When I Started in Cybersecurity" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge mb-0">Career &amp; SecOps</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
+                            </div>
+                            <h5 class="card-title">What I Wish I Knew When I Started in Cybersecurity</h5>
+                            <p class="card-text">Seven hard-earned lessons on automation, stakeholder communication, continuous learning, and thriving in security engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #06</span>
+                            <a href="stories/blog_6.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Black Beard's Portfolio. All Rights Reserved.</p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="index.html">Home</a>
+                    <a class="nav-icon-link" href="projects.html">Projects</a>
+                    <a class="nav-icon-link" href="blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init(); // Initialize AOS for animations
-    </script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>

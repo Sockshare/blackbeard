@@ -3,95 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What I Wish I Knew When I Started in Cybersecurity</title>
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="Seven hard-earned lessons on automation, stakeholder communication, continuous learning, and thriving in security engineering.">
+    <title>What I Wish I Knew When I Started in Cybersecurity | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">Black Beard's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   <!-- Story Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #06</span>
+            </div>
 
-      <!-- Story Content -->
-<section class="py-5">
-    <div class="container">
-        <h1 class="text-center">What I Wish I Knew When I Started in Cybersecurity</h1>
-        <img src="images/story_cybersecurity_lessons.jpg" class="img-fluid mb-4" alt="Cybersecurity Lessons">
-        <p class="lead">
-            When I first stepped into the world of cybersecurity, I was filled with excitement and curiosity. The idea of protecting systems, uncovering vulnerabilities, and outsmarting attackers was thrilling. But like most journeys, it wasn’t without its surprises. If I could go back in time and share some advice with my younger self, these are the lessons I’d pass along.
-        </p>
+            <article class="story-article" data-aos="fade-up">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge mb-0">Career &amp; SecOps</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>5 min read
+                    </span>
+                </div>
 
-        <h2 class="mt-5">1. Learn to Manage Expectations</h2>
-        <p>
-            Cybersecurity isn’t as black and white as it seems from the outside. When I started, I thought every vulnerability could be patched, every attack could be stopped, and every workflow could be streamlined. The reality? There’s always a trade-off. Whether it’s between speed and thoroughness or between usability and security, you’ll constantly be navigating gray areas.
-        </p>
+                <h1>What I Wish I Knew When I Started in Cybersecurity</h1>
+                <img src="../assets/images/blog_6_img1.jpg" class="story-hero-img" alt="What I Wish I Knew When I Started in Cybersecurity">
 
-        <h2 class="mt-5">2. It’s Not Just About Tech</h2>
-        <p>
-            I thought cybersecurity would be all about tools, scripts, and systems. While those are essential, the real challenges often lie in communication and collaboration. You’ll spend just as much time explaining security concepts to non-technical stakeholders as you will deploying technical solutions. Learning to speak the language of business and leadership is just as important as mastering the latest tools.
-        </p>
+<p class="lead">
+    When I first stepped into the world of cybersecurity, I was filled with excitement and curiosity. The idea of protecting systems, uncovering vulnerabilities, and outsmarting attackers was thrilling. But like most journeys, it wasn’t without its surprises. If I could go back in time and share some advice with my younger self, these are the lessons I’d pass along.
+</p>
 
-        <h2 class="mt-5">3. Automation is Your Friend</h2>
-        <p>
-            Early on, I wasted hours on repetitive tasks—manually combing through logs, running scans, and compiling reports. I wish I had known sooner just how powerful automation can be. Tools like Python scripts, Cron jobs, and AI-assisted analysis aren’t just nice-to-haves; they’re essential for staying ahead in this field.
-        </p>
+<h2>1. Learn to Manage Expectations</h2>
+<p>
+    Cybersecurity isn’t as black and white as it seems from the outside. When I started, I thought every vulnerability could be patched, every attack could be stopped, and every workflow could be streamlined. The reality? There’s always a trade-off. Whether it’s between speed and thoroughness or between usability and security, you’ll constantly be navigating gray areas.
+</p>
 
-        <h2 class="mt-5">4. Politics Matter</h2>
-        <p>
-            Cybersecurity exists within the context of an organization, and organizations are made up of people. It’s not enough to have the right answer or the best solution—you have to navigate the politics of resource allocation, priorities, and team dynamics. Building relationships and understanding the bigger picture can make or break your success.
-        </p>
+<h2>2. It’s Not Just About Tech</h2>
+<p>
+    I thought cybersecurity would be all about tools, scripts, and systems. While those are essential, the real challenges often lie in communication and collaboration. You’ll spend just as much time explaining security concepts to non-technical stakeholders as you will deploying technical solutions. Learning to speak the language of business and leadership is just as important as mastering the latest tools.
+</p>
 
-        <h2 class="mt-5">5. Continuous Learning is Non-Negotiable</h2>
-        <p>
-            This field moves fast. What’s cutting-edge today might be obsolete tomorrow. I’ve learned to stay curious and embrace a mindset of constant growth. Whether it’s learning about AI, diving into new compliance standards, or experimenting with the latest tools, the key is staying adaptable.
-        </p>
+<h2>3. Automation is Your Friend</h2>
+<p>
+    Early on, I wasted hours on repetitive tasks—manually combing through logs, running scans, and compiling reports. I wish I had known sooner just how powerful automation can be. Tools like Python scripts, Cron jobs, and AI-assisted analysis aren’t just nice-to-haves; they’re essential for staying ahead in this field.
+</p>
 
-        <h2 class="mt-5">6. Mistakes Are Part of the Process</h2>
-        <p>
-            When I started, I was terrified of making mistakes. But in cybersecurity, errors are inevitable—whether it’s overlooking a vulnerability or deploying the wrong fix. The important thing is how you respond. Every mistake is an opportunity to learn, improve, and become better at your craft.
-        </p>
+<h2>4. Politics Matter</h2>
+<p>
+    Cybersecurity exists within the context of an organization, and organizations are made up of people. It’s not enough to have the right answer or the best solution—you have to navigate the politics of resource allocation, priorities, and team dynamics. Building relationships and understanding the bigger picture can make or break your success.
+</p>
 
-        <h2 class="mt-5">7. You’re Not Alone</h2>
-        <p>
-            Cybersecurity can feel isolating, especially when you’re handling sensitive issues or trying to convince leadership to take action. I wish I had known how important it is to build a support network. Whether it’s mentors, colleagues, or online communities, having people to share insights, challenges, and successes with makes all the difference.
-        </p>
+<h2>5. Continuous Learning is Non-Negotiable</h2>
+<p>
+    This field moves fast. What’s cutting-edge today might be obsolete tomorrow. I’ve learned to stay curious and embrace a mindset of constant growth. Whether it’s learning about AI, diving into new compliance standards, or experimenting with the latest tools, the key is staying adaptable.
+</p>
 
-        <h2 class="mt-5">Final Thoughts</h2>
-        <p>
-            If I could sum up all these lessons, it would be this: cybersecurity is about more than just stopping threats. It’s about solving problems, collaborating with others, and constantly adapting to a changing landscape. The path isn’t always easy, but it’s one of the most rewarding fields out there.
-        </p>
-        <p>
-            To anyone just starting their journey in cybersecurity: stay curious, stay persistent, and don’t be afraid to fail. You’ll learn more than you ever imagined—and you might just find yourself exactly where you need to be.
-        </p>
+<h2>6. Mistakes Are Part of the Process</h2>
+<p>
+    When I started, I was terrified of making mistakes. But in cybersecurity, errors are inevitable—whether it’s overlooking a vulnerability or deploying the wrong fix. The important thing is how you respond. Every mistake is an opportunity to learn, improve, and become better at your craft.
+</p>
 
-        <a href="../blog.html" class="btn btn-primary">Back to Blog</a>
-    </div>
-</section>
+<h2>7. You’re Not Alone</h2>
+<p>
+    Cybersecurity can feel isolating, especially when you’re handling sensitive issues or trying to convince leadership to take action. I wish I had known how important it is to build a support network. Whether it’s mentors, colleagues, or online communities, having people to share insights, challenges, and successes with makes all the difference.
+</p>
 
+<h2>Final Thoughts</h2>
+<p>
+    If I could sum up all these lessons, it would be this: cybersecurity is about more than just stopping threats. It’s about solving problems, collaborating with others, and constantly adapting to a changing landscape. The path isn’t always easy, but it’s one of the most rewarding fields out there.
+</p>
+<p>
+    To anyone just starting their journey in cybersecurity: stay curious, stay persistent, and don’t be afraid to fail. You’ll learn more than you ever imagined—and you might just find yourself exactly where you need to be.
+</p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to All Stories
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore the Systems Behind This Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_3.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_3_img1.jpg" class="card-img-top" alt="AI Meets Cybersecurity" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">AI + Security</span>
+                            <h5 class="card-title">AI Meets Cybersecurity</h5>
+                            <p class="card-text">How artificial intelligence is reshaping the high-stakes chess match between cyber attackers and defenders.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">5 min read</span>
+                            <a href="blog_3.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_4.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_4_img1.jpg" class="card-img-top" alt="Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Engineering Leadership</span>
+                            <h5 class="card-title">Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges</h5>
+                            <p class="card-text">How data-driven storytelling, patience, and organizational awareness helped overcome a severe security assessment backlog.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">5 min read</span>
+                            <a href="blog_4.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_9.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">AI + Compliance</span>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_9.html" class="btn-card-action btn-card-primary">Read Story <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Black Beard's Portfolio. All Rights Reserved.</p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
 </body>
 </html>

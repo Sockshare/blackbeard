@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A custom Model Context Protocol (MCP) server and interactive 3D geospatial command deck exposing 11 real-time OSINT telemetry disciplines as structured JSON-RPC tools for autonomous LLM agents.">
+    <title>PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Custom Cyber-Neon Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Deep-Dive Section -->
+    <section class="py-5 project-details">
+        <div class="container">
+            <div class="breadcrumb-cyber" data-aos="fade-down">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server</span>
+            </div>
+
+            <div class="detail-hero-box" data-aos="fade-up">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/project_argus.jpg" class="project-img" alt="PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">Model Context Protocol</span><span class="tech-pill">JSON-RPC Tools</span><span class="tech-pill">3D WebGL Globe</span><span class="tech-pill">11 OSINT Streams</span><span class="tech-pill">Agentic Recon</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-mcp">Custom MCP Server</span>
+                        <h1 class="text-white fw-bold mb-3">PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Overview</h2>
+                        <p>PROJECT ARGUS is a next-generation geospatial intelligence platform and custom Model Context Protocol (MCP) server hosted within Run Nexus. While humans interact with ARGUS through a high-frame-rate 3D WebGL orbital globe visualizing live global telemetry, LLM agents connect directly to ARGUS&#x27;s custom MCP server (mcp_server.py)—calling strongly typed tools across 11 intelligence disciplines to perform autonomous multi-hop reconnaissance, infrastructure correlation, and anomaly triage.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Capabilities &amp; Agentic Features</h2>
+                        <ul>
+                            <li><strong>Custom Model Context Protocol (MCP) Server:</strong> Exposes deterministic, schema-validated MCP tools over JSON-RPC so Claude, Gemini, and custom agent loops can query live external intelligence without brittle screen-scraping.</li>
+                            <li><strong>11 Live Intelligence Disciplines:</strong> Unifies ADS-B Aviation tracking, NORAD/TLE Orbital Satellites, BGP Routing &amp; ASN telemetry, Certificate Transparency &amp; DNS, Cyber Threat Feeds, Seismic sensors, Maritime AIS, NOAA Space/Weather, RF Spectrum, and Geopolitical events.</li>
+                            <li><strong>Interactive 3D WebGL Geospatial Command Deck:</strong> Renders thousands of concurrent moving entities, orbital arcs, and network vector overlays on a hardware-accelerated 3D globe.</li>
+                            <li><strong>Autonomous Multi-Hop Agent Investigations:</strong> Enables an LLM agent to pivot seamlessly from a suspicious domain -&gt; ASN/BGP prefix -&gt; TLS certificate -&gt; physical PoP coordinates -&gt; regional infrastructure alerts in a single reasoning loop.</li>
+                            <li><strong>Rate-Limited Caching &amp; Resilient Fallbacks:</strong> Implements intelligent TTL caching, circuit breakers, and normalized Pydantic/JSON schemas so agent tool calls remain fast and deterministic.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100" data-aos="fade-up">
+                        <h2><i class="fa-solid fa-layer-group"></i> Architecture &amp; Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>MCP &amp; Agent Interface:</strong> Python Model Context Protocol (MCP) SDK, JSON-RPC 2.0, Typed Tool Schemas</li>
+                            <li><strong>Backend &amp; Ingestion:</strong> Python, Flask / Async HTTP Collectors, GeoJSON &amp; TLE Orbital Propagators</li>
+                            <li><strong>3D Visualization:</strong> Three.js / Globe.gl WebGL Shaders, Spatial HUD Overlays, Real-Time Telemetry Bus</li>
+                            <li><strong>Data Disciplines:</strong> OpenSky ADS-B, CelesTrak TLE, RIPE/BGP, crt.sh TLS, USGS, Threat Intel APIs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100" data-aos="fade-up" data-aos-delay="80">
+                        <h2><i class="fa-solid fa-brain"></i> Engineering Philosophy &amp; Systems Theory</h2>
+                        <p class="mb-0">LLMs are extraordinary reasoning engines trapped behind static training cutoffs unless given clean sensory organs. Model Context Protocol (MCP) is the universal USB-C port for AI agency. By wrapping 11 heterogeneous real-world telemetry APIs behind a unified MCP tool server, PROJECT ARGUS transforms an LLM from a passive text generator into a live situational-awareness analyst capable of grounding every hypothesis in real-time global data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="zoom-in">
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to All 15 Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Related Projects -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title" data-aos="fade-up">Explore Related Systems</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="project_7.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/run_nexus.jpg" class="card-img-top" alt="Run Nexus &amp; Skill Holders Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Flagship AI Hub</span>
+                            <h5 class="card-title">Run Nexus &amp; Skill Holders Studio</h5>
+                            <p class="card-text">Central multi-agent AI operating hub orchestrating 14+ LLM apps, MCP tool pipelines, and portable SKILL.md agent packages.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#07</span>
+                            <a href="project_7.html" class="btn-card-action btn-card-primary">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="project_6.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/operation_yggdrasil.jpg" class="card-img-top" alt="Operation Yggdrasil" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">AI Graph OSINT</span>
+                            <h5 class="card-title">Operation Yggdrasil</h5>
+                            <p class="card-text">AI-powered OSINT entity resolution and Cytoscape graph intelligence platform.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#06</span>
+                            <a href="project_6.html" class="btn-card-action btn-card-primary">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="project_8.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/safer_cmmc.jpg" class="card-img-top" alt="SAFER AI Workbench &amp; CMMC Multi-Agent Engine" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Multi-Agent LLM</span>
+                            <h5 class="card-title">SAFER AI Workbench &amp; CMMC Multi-Agent Engine</h5>
+                            <p class="card-text">Deterministic 5-agent LLM blackboard pipeline automating NIST SP 800-171 / CMMC Level 1 compliance audits.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">#08</span>
+                            <a href="project_8.html" class="btn-card-action btn-card-primary">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Portfolio Interactive Scripts -->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

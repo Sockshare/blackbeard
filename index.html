@@ -3,237 +3,977 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Beard's Portfolio</title>
-    <!-- Bootstrap CSS -->
+    <meta name="description" content="Portfolio of Julian Morrisette (Black Beard): Full-Stack AI Developer, LLM Workflow Architect, Model Context Protocol (MCP) Server Builder, and Multi-Agent Security Engineer.">
+    <title>Black Beard&#x27;s Portfolio | Julian Morrisette — AI Developer, LLM &amp; MCP Systems Architect</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <!-- Custom CSS -->
+    <!-- Custom Cyber-Neon Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Black Beard's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero text-center text-white py-5">
+    <header class="hero">
         <div class="container">
-            <h1 class="display-4 neon-text" data-aos="fade-down" data-aos-duration="1000">Welcome to My Portfolio</h1>
-            <p class="lead neon-text-blue" data-aos="fade-up" data-aos-duration="1000">Showcasing Expertise and Innovation</p>
-            <a href="#projects" class="btn btn-primary btn-lg mt-3 glow-button" data-aos="zoom-in" data-aos-duration="1200">View Projects</a>
+            <div class="hero-kicker" data-aos="fade-down">
+                <i class="fa-solid fa-microchip"></i>
+                AI Developer &bull; LLM Systems &bull; MCP &amp; Multi-Agent Architect &bull; GenAI Certified
+            </div>
+            <h1 class="neon-text" data-aos="fade-up" data-aos-delay="60">
+                Engineering <span class="hero-gradient-span">Autonomous LLM Agents</span>,<br class="d-none d-md-inline">
+                MCP Workflows &amp; Security Systems
+            </h1>
+            <p class="neon-text-blue" data-aos="fade-up" data-aos-delay="120">
+                I'm <strong>Julian Morrisette</strong>—an AI Developer and Security Systems Engineer building production-grade
+                Large Language Model pipelines, custom <strong>Model Context Protocol (MCP)</strong> tool servers, portable
+                <strong>AI Agent Skills</strong>, and the 14+ application <strong>Run Nexus</strong> ecosystem.
+            </p>
+            <div class="hero-cta-group" data-aos="zoom-in" data-aos-delay="180">
+                <a href="#projects" class="btn-cyber-primary">
+                    <i class="fa-solid fa-layer-group"></i> Explore Run Nexus &amp; Projects
+                </a>
+                <a href="projects/project_7.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-diagram-project"></i> Inside the 14-App AI Hub
+                </a>
+                <a href="blog.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-pen-nib"></i> Read AI Engineering Stories
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <!-- Core AI & Agentic Engineering Pillars -->
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4 neon-section-title">Featured Projects</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Project 1 -->
-                <div class="col" data-aos="fade-up">
-                    <div class="card h-100">
-                        <img src="assets/images/operation_hades.jpg" class="card-img-top" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Operation Hades</h5>
-                            <p class="card-text">Vulnerability exploration and malware research.</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCar1">Learn More</button>
-                        </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                        <h4>MCP Servers &amp; Agent Skills</h4>
+                        <p>Custom Model Context Protocol (<code>JSON-RPC</code>) tool servers and portable <code>SKILL.md</code> packages equipping autonomous agents with live OSINT, compliance, and build tools.</p>
                     </div>
                 </div>
-
-                <!-- Modal for Project 1 -->
-                <div class="modal fade" id="modalCar1" tabindex="-1" aria-labelledby="modalCar1Label" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalCar1Label">Operation Hades</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="assets/images/operation_hades.jpg" class="img-fluid mb-3" alt="Operation Hades">
-                                <p>An advanced cybersecurity tool utilizing Nmap and Metasploit to explore and exploit vulnerabilities, pushing the boundaries of malware research.</p>
-                            </div>
-                        </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h4>Multi-Agent LLM Pipelines</h4>
+                        <p>Deterministic <code>T=0.0</code> 5-agent Shared Blackboards, Director/Worker code synthesis loops, and strict Pydantic schema gates across Gemini, OpenAI, and local Gemma models.</p>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="col" data-aos="fade-up">
-                    <div class="card h-100">
-                        <img src="assets/images/operation_nemesis.jpg" class="card-img-top" alt="Project 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Operation Nemesis</h5>
-                            <p class="card-text">AI-driven malware and exploitation automation.</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCar2">Learn More</button>
-                        </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>AI Security &amp; Governance</h4>
+                        <p>Automated CMMC Level 1 / NIST SP 800-171 audits, 500K+ grant BFS &amp; Neural ML access-divergence scoring, Zero-Standing-Privilege (NoPE), and SLSA/BCID provenance.</p>
                     </div>
                 </div>
-
-                <!-- Modal for Project 2 -->
-                <div class="modal fade" id="modalCar2" tabindex="-1" aria-labelledby="modalCar2Label" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalCar2Label">Operation Nemesis</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="assets/images/operation_nemesis.jpg" class="img-fluid mb-3" alt="Car 2">
-                                <p>Operation Nemesis leverages AI to analyze reconnaissance data, OSINT, and fuzzing results, selecting the most effective Metasploit or NSE scripts for targeted exploitation. The system automates script deployment to achieve shell access or persistent control, optimizing penetration testing workflows.</p>
-                            </div>
-                        </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <h4>Run Nexus &amp; Multi-Modal AI</h4>
+                        <p>GlobalLogic GenAI Certified builder operating a 14+ microservice AI hub spanning headless Blender 5.0 3D studios, Veo 3.1 cinema pipelines, and an 8,300-lesson AI university.</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Project 3 -->
-                <div class="col" data-aos="fade-up">
-                    <div class="card h-100">
-                        <img src="assets/images/operation_hermes.jpg" class="card-img-top" alt="Project 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Operation Hermes</h5>
-                            <p class="card-text">Secure portable Bluetooth communication device..</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCar3">Learn More</button>
+            <!-- Run Nexus Spotlight Banner -->
+            <div class="detail-hero-box mt-4" data-aos="fade-up">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="category-badge badge-nexus">Flagship Ecosystem &bull; 14+ Integrated Applications</span>
+                        <h2 class="text-white mt-1 mb-2">The Run Nexus AI Operating Hub</h2>
+                        <p class="mb-3 text-secondary">
+                            Run Nexus unifies every AI workbench, custom MCP server, compliance engine, and generative studio I've built inside Jetski into a single local-first microservice control plane—complete with <strong>Skill Holders Studio</strong> for authoring portable AI Agent Skills.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="projects/project_7.html" class="btn-card-action btn-card-primary">Explore Full 14-App Matrix <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="stories/blog_7.html" class="btn-card-action btn-card-ghost">Read the Architecture Story</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Modal for Project 3 -->
-                <div class="modal fade" id="modalCar3" tabindex="-1" aria-labelledby="modalCar3Label" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalCar3Label">Operation Hermes</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="col-lg-4">
+                        <div class="row g-2 text-center">
+                            <div class="col-6">
+                                <div class="nexus-app-mini">
+                                    <h5 class="text-info mb-0">14+</h5>
+                                    <p>Orchestrated AI Apps &amp; Suites</p>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <img src="assets/images/operation_hermes.jpg" class="img-fluid mb-3" alt="Car 3">
-                                <p>Operation Hermes develops a physical Bluetooth communication device using a Raspberry Pi and external battery pack. The system will enable secure, portable, and efficient communication, inspired by the covert communication setup in the movie Blackhat.</p>
+                            <div class="col-6">
+                                <div class="nexus-app-mini">
+                                    <h5 class="text-info mb-0">5-Agent</h5>
+                                    <p>T=0.0 Blackboard Pipelines</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="nexus-app-mini">
+                                    <h5 class="text-info mb-0">11 Feeds</h5>
+                                    <p>Live OSINT MCP Disciplines</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="nexus-app-mini">
+                                    <h5 class="text-info mb-0">500K+</h5>
+                                    <p>ML-Scored Access Grants</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Project 4 -->
-<div class="col" data-aos="fade-up">
-    <div class="card h-100">
-        <img src="assets/images/operation_apollo.jpg" class="card-img-top" alt="Car 4">
-        <div class="card-body">
-            <h5 class="card-title">Operation Apollo</h5>
-            <p class="card-text">AI-powered intelligent stock advisor.</p>
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCar4">Learn More</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Project 4 -->
-<div class="modal fade" id="modalCar4" tabindex="-1" aria-labelledby="modalCar4Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalCar4Label">Operation Apollo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="assets/images/operation_apollo.jpg" class="img-fluid mb-3" alt="Car 4">
-                <p>Operation Apollo is an AI-driven stock advisor that analyzes market data and trends to make informed investment decisions. It supports both long-term investments and short-term trading strategies, tailored to the user's financial goals and risk tolerance.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Project 5 -->
-<div class="col" data-aos="fade-up">
-    <div class="card h-100">
-        <img src="assets/images/operation_icarus.jpg" class="card-img-top" alt="Car 5">
-        <div class="card-body">
-            <h5 class="card-title">Operation Icarus</h5>
-            <p class="card-text">Stealth-focused Nmap GUI overlay.</p>
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCar5">Learn More</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Project 5 -->
-<div class="modal fade" id="modalCar5" tabindex="-1" aria-labelledby="modalCar5Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalCar5Label">Operation Icarus</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="assets/images/operation_icarus.jpg" class="img-fluid mb-3" alt="Car 5">
-                <p>Operation Icarus creates a user-friendly web-based interface for Nmap, enabling efficient network scans and advanced script execution. Designed to maintain stealth, the system ensures minimal noise to avoid detection while providing powerful scanning capabilities.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Project 6 -->
-<div class="col" data-aos="fade-up">
-    <div class="card h-100">
-        <img src="assets/images/operation_yggdrasil.jpg" class="card-img-top" alt="Car 6">
-        <div class="card-body">
-            <h5 class="card-title">Operation Yggdrasil</h5>
-            <p class="card-text">Comprehensive AI-powered OSINT tool.</p>
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCar6">Learn More</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Project 6 -->
-<div class="modal fade" id="modalCar6" tabindex="-1" aria-labelledby="modalCar6Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalCar6Label">Operation Yggdrasil</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="assets/images/operation_yggdrasil.jpg" class="img-fluid mb-3" alt="Car 6">
-                <p>Operation Yggdrasil is a powerful AI-driven OSINT tool designed to gather and analyze extensive public information about a target. By leveraging deep searches across platforms and records, it reveals meaningful insights through interconnected knowledge and advanced AI analysis.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
             </div>
         </div>
     </section>
 
-    <!-- Interactive Animation Above Footer -->
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="neon-section-title" data-aos="fade-up">Featured Systems &amp; Projects</h2>
+                <p class="section-subtitle" data-aos="fade-up">
+                    Filter across my <strong>Run Nexus</strong> applications, custom <strong>MCP &amp; Multi-Agent LLM</strong> workflows, generative 3D/media studios, and offensive/defensive cybersecurity tools.
+                </p>
+            </div>
+
+            <div class="filter-bar" data-filter-group="#home-projects-grid" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Systems (15)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus Ecosystem</button>
+                <button class="filter-btn" data-filter="mcp">MCP &amp; Multi-Agent AI</button>
+                <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
+                <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; OSINT Ops</button>
+            </div>
+
+            <div id="home-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 7: Run Nexus &amp; Skill Holders Studio -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_7.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/run_nexus.jpg" class="card-img-top" alt="Run Nexus &amp; Skill Holders Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Flagship AI Hub</span>
+                            <h5 class="card-title">Run Nexus &amp; Skill Holders Studio</h5>
+                            <p class="card-text">Central multi-agent AI operating hub orchestrating 14+ LLM apps, MCP tool pipelines, and portable SKILL.md agent packages.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Multi-Agent Hub</span><span class="tech-pill">SKILL.md Studio</span><span class="tech-pill">MCP Workflows</span><span class="tech-pill">SSE Telemetry</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject7">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_7.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 7 -->
+                <div class="modal fade" id="modalProject7" tabindex="-1" aria-labelledby="modalProject7Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">Flagship AI Hub</span>
+                                    <h5 class="modal-title text-white" id="modalProject7Label">Run Nexus &amp; Skill Holders Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/run_nexus.jpg" class="img-fluid mb-3" alt="Run Nexus &amp; Skill Holders Studio">
+                                <p class="mb-3">Run Nexus is my flagship local-first AI command center built to unify over 14 specialized AI, security, and creative microservices under one glassmorphic control plane. Paired with Skill Holders Studio, it manages subprocess lifecycles, port routing, live streaming logs, and standardized SKILL.md agent packages that plug directly into autonomous coding and security agents.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Multi-Agent Hub</span><span class="tech-pill">SKILL.md Studio</span><span class="tech-pill">MCP Workflows</span><span class="tech-pill">SSE Telemetry</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_7.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: SAFER AI Workbench &amp; CMMC Multi-Agent Engine -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_8.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/safer_cmmc.jpg" class="card-img-top" alt="SAFER AI Workbench &amp; CMMC Multi-Agent Engine" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Multi-Agent LLM</span>
+                            <h5 class="card-title">SAFER AI Workbench &amp; CMMC Multi-Agent Engine</h5>
+                            <p class="card-text">Deterministic 5-agent LLM blackboard pipeline automating NIST SP 800-171 / CMMC Level 1 compliance audits.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">5-Agent Blackboard</span><span class="tech-pill">T=0.0 LLM</span><span class="tech-pill">CMMC L1 / NIST</span><span class="tech-pill">JSON Quality Gates</span><span class="tech-pill">Python</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject8">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_8.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 8 -->
+                <div class="modal fade" id="modalProject8" tabindex="-1" aria-labelledby="modalProject8Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-mcp mb-1">Multi-Agent LLM</span>
+                                    <h5 class="modal-title text-white" id="modalProject8Label">SAFER AI Workbench &amp; CMMC Multi-Agent Engine</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/safer_cmmc.jpg" class="img-fluid mb-3" alt="SAFER AI Workbench &amp; CMMC Multi-Agent Engine">
+                                <p class="mb-3">Built inside the Run Nexus ecosystem, the SAFER AI Workbench replaces weeks of manual compliance evidence review with a deterministic 5-agent LLM pipeline. Specialized agents synthesize multi-source evidence, evaluate 17 CMMC Level 1 practices at Temperature 0.0, generate executive briefings and remediation roadmaps, and enforce automated QA gatekeeping.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">5-Agent Blackboard</span><span class="tech-pill">T=0.0 LLM</span><span class="tech-pill">CMMC L1 / NIST</span><span class="tech-pill">JSON Quality Gates</span><span class="tech-pill">Python</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_8.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_9.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/uar_divergence.jpg" class="card-img-top" alt="Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">ML + Identity AI</span>
+                            <h5 class="card-title">Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine</h5>
+                            <p class="card-text">Graph-theoretic &amp; neural ML access governance auditing 500,000+ identity grants and Zero-Standing-Privilege policies.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">BFS Graph Engine</span><span class="tech-pill">Neural Autoencoder</span><span class="tech-pill">500K+ Grants</span><span class="tech-pill">Zero Standing Priv</span><span class="tech-pill">SmartExplain AI</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject9">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_9.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 9 -->
+                <div class="modal fade" id="modalProject9" tabindex="-1" aria-labelledby="modalProject9Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">ML + Identity AI</span>
+                                    <h5 class="modal-title text-white" id="modalProject9Label">Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/uar_divergence.jpg" class="img-fluid mb-3" alt="Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine">
+                                <p class="mb-3">Engineered to audit over 500,000 transitive identity memberships without reviewer fatigue, this platform pairs cycle-safe Breadth-First Search (BFS) nested-group resolution and Zero-Standing-Privilege (NoPE / MPA) verification with a custom Neural Autoencoder and 7-attribute Information-Content Peer Divergence engine.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">BFS Graph Engine</span><span class="tech-pill">Neural Autoencoder</span><span class="tech-pill">500K+ Grants</span><span class="tech-pill">Zero Standing Priv</span><span class="tech-pill">SmartExplain AI</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_9.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: Vulnerability Verifier &amp; Supply-Chain Provenance Suite -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_10.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/vuln_verifier.jpg" class="card-img-top" alt="Vulnerability Verifier &amp; Supply-Chain Provenance Suite" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Agent Skill + SecOps</span>
+                            <h5 class="card-title">Vulnerability Verifier &amp; Supply-Chain Provenance Suite</h5>
+                            <p class="card-text">Autonomous SLO compliance agent, portable SKILL.md package, and SLSA/BCID binary provenance verifier.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Portable SKILL.md</span><span class="tech-pill">SLO Audit Engine</span><span class="tech-pill">SLSA / BCID</span><span class="tech-pill">REST Workspace API</span><span class="tech-pill">DOCX/XLSX Gen</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject10">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_10.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 10 -->
+                <div class="modal fade" id="modalProject10" tabindex="-1" aria-labelledby="modalProject10Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-mcp mb-1">Agent Skill + SecOps</span>
+                                    <h5 class="modal-title text-white" id="modalProject10Label">Vulnerability Verifier &amp; Supply-Chain Provenance Suite</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/vuln_verifier.jpg" class="img-fluid mb-3" alt="Vulnerability Verifier &amp; Supply-Chain Provenance Suite">
+                                <p class="mb-3">Vulnerability Verifier combines a dedicated Run Nexus web agent, a portable SKILL.md AI Agent Skill, and the BCID Binary Provenance Checker. It autonomously audits P0–P3 security tickets against strict remediation SLOs, verifies cryptographic build provenance, and compiles executive DOCX/XLSX/HTML/chart bundles.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Portable SKILL.md</span><span class="tech-pill">SLO Audit Engine</span><span class="tech-pill">SLSA / BCID</span><span class="tech-pill">REST Workspace API</span><span class="tech-pill">DOCX/XLSX Gen</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_10.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 11: PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server -->
+                <div class="col" data-category="nexus mcp cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_11.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/project_argus.jpg" class="card-img-top" alt="PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Custom MCP Server</span>
+                            <h5 class="card-title">PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server</h5>
+                            <p class="card-text">Custom Model Context Protocol (MCP) tool server &amp; 3D WebGL globe fusing 11 live global intelligence disciplines.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Model Context Protocol</span><span class="tech-pill">JSON-RPC Tools</span><span class="tech-pill">3D WebGL Globe</span><span class="tech-pill">11 OSINT Streams</span><span class="tech-pill">Agentic Recon</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject11">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_11.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 11 -->
+                <div class="modal fade" id="modalProject11" tabindex="-1" aria-labelledby="modalProject11Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-mcp mb-1">Custom MCP Server</span>
+                                    <h5 class="modal-title text-white" id="modalProject11Label">PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/project_argus.jpg" class="img-fluid mb-3" alt="PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server">
+                                <p class="mb-3">PROJECT ARGUS pairs a real-time 3D WebGL global intelligence globe with a custom-engineered Model Context Protocol (MCP) server (mcp_server.py). Autonomous LLM agents can invoke typed MCP tools across 11 live telemetry streams—from ADS-B aviation and orbital satellites to BGP routing, DNS/TLS certificates, and cyber threat feeds.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Model Context Protocol</span><span class="tech-pill">JSON-RPC Tools</span><span class="tech-pill">3D WebGL Globe</span><span class="tech-pill">11 OSINT Streams</span><span class="tech-pill">Agentic Recon</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_11.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 12: Self-Taught AI University -->
+                <div class="col" data-category="nexus media" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_12.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/self_taught_uni.jpg" class="card-img-top" alt="Self-Taught AI University" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">LLM EdTech Platform</span>
+                            <h5 class="card-title">Self-Taught AI University</h5>
+                            <p class="card-text">Generative AI university with 285 courses, 8,300+ live Gemini lessons, JS physics sims, code labs &amp; LLM grading.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Gemini API</span><span class="tech-pill">8,300+ Lessons</span><span class="tech-pill">Async Prefetch</span><span class="tech-pill">LLM Rubric Grader</span><span class="tech-pill">Neural Edge-TTS</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject12">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_12.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 12 -->
+                <div class="modal fade" id="modalProject12" tabindex="-1" aria-labelledby="modalProject12Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">LLM EdTech Platform</span>
+                                    <h5 class="modal-title text-white" id="modalProject12Label">Self-Taught AI University</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/self_taught_uni.jpg" class="img-fluid mb-3" alt="Self-Taught AI University">
+                                <p class="mb-3">Self-Taught AI University turns frontier LLMs into an interactive degree-scale academy: 285 rigorous courses, 8,300+ dynamically generated lessons, asynchronous background prefetching, interactive HTML5/JS simulations, browser coding labs, automated rubric-based LLM proof/code grading, and neural Edge-TTS lectures.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Gemini API</span><span class="tech-pill">8,300+ Lessons</span><span class="tech-pill">Async Prefetch</span><span class="tech-pill">LLM Rubric Grader</span><span class="tech-pill">Neural Edge-TTS</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_12.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 13: Blender Generator: Zero-UI Multi-Agent 3D Studio -->
+                <div class="col" data-category="nexus media mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_13.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blender_generator.jpg" class="card-img-top" alt="Blender Generator: Zero-UI Multi-Agent 3D Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">GenAI 3D Agents</span>
+                            <h5 class="card-title">Blender Generator: Zero-UI Multi-Agent 3D Studio</h5>
+                            <p class="card-text">Autonomous LLM Director &amp; Worker agents driving headless Blender 5.0 for rigged 3D assets, physics &amp; worlds.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Headless Blender 5.0</span><span class="tech-pill">Director/Worker LLMs</span><span class="tech-pill">bpy Code Synthesis</span><span class="tech-pill">Rigging &amp; Physics</span><span class="tech-pill">GLB/FBX Pipeline</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject13">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_13.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 13 -->
+                <div class="modal fade" id="modalProject13" tabindex="-1" aria-labelledby="modalProject13Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-mcp mb-1">GenAI 3D Agents</span>
+                                    <h5 class="modal-title text-white" id="modalProject13Label">Blender Generator: Zero-UI Multi-Agent 3D Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/blender_generator.jpg" class="img-fluid mb-3" alt="Blender Generator: Zero-UI Multi-Agent 3D Studio">
+                                <p class="mb-3">Blender Generator eliminates manual 3D viewport labor by orchestrating specialized LLM Director and Worker agents over headless Blender 5.0. From natural-language specs or reference images, agents synthesize bpy code for rigged characters, proportion morphs, secondary-motion physics, Mixamo animation upgrades, procedural worlds, and 3D audio.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Headless Blender 5.0</span><span class="tech-pill">Director/Worker LLMs</span><span class="tech-pill">bpy Code Synthesis</span><span class="tech-pill">Rigging &amp; Physics</span><span class="tech-pill">GLB/FBX Pipeline</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_13.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 14: Omni-Producer &amp; Multi-Model Media Generation Studio -->
+                <div class="col" data-category="nexus media" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_14.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/omni_producer.jpg" class="card-img-top" alt="Omni-Producer &amp; Multi-Model Media Generation Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Multi-Modal GenAI</span>
+                            <h5 class="card-title">Omni-Producer &amp; Multi-Model Media Generation Studio</h5>
+                            <p class="card-text">Pydantic-structured Showrunner/Writer agents orchestrating Gemini Pro, high-res image synthesis &amp; Veo 3.1 video.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Veo 3.1 Video</span><span class="tech-pill">Gemini 3.1 / Pro</span><span class="tech-pill">Pydantic Schemas</span><span class="tech-pill">Showrunner Agents</span><span class="tech-pill">Imagen Synthesis</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject14">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_14.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 14 -->
+                <div class="modal fade" id="modalProject14" tabindex="-1" aria-labelledby="modalProject14Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">Multi-Modal GenAI</span>
+                                    <h5 class="modal-title text-white" id="modalProject14Label">Omni-Producer &amp; Multi-Model Media Generation Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/omni_producer.jpg" class="img-fluid mb-3" alt="Omni-Producer &amp; Multi-Model Media Generation Studio">
+                                <p class="mb-3">Omni-Producer &amp; Media Generation Studio unify multi-agent narrative engineering with multi-model visual synthesis. Showrunner and Writer agents enforce strict Pydantic schemas (ShowBible, ScreenplaySequence) to maintain character and visual continuity across Gemini reasoning, high-res keyframe generation, and Veo 3.1 cinematic video.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Veo 3.1 Video</span><span class="tech-pill">Gemini 3.1 / Pro</span><span class="tech-pill">Pydantic Schemas</span><span class="tech-pill">Showrunner Agents</span><span class="tech-pill">Imagen Synthesis</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_14.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 15: Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer -->
+                <div class="col" data-category="nexus mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_15.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/agentic_taskmasters.jpg" class="card-img-top" alt="Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">Edge + Cloud Agents</span>
+                            <h5 class="card-title">Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer</h5>
+                            <p class="card-text">Cloud-native FastAPI + Gemini + Firestore hackathon agent &amp; hybrid local Gemma PII-scrubbing PDF auto-filer.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">FastAPI + Firestore</span><span class="tech-pill">Local Gemma PII</span><span class="tech-pill">Gemini Structured IO</span><span class="tech-pill">Drive REST API</span><span class="tech-pill">Hackathon Build</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject15">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_15.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 15 -->
+                <div class="modal fade" id="modalProject15" tabindex="-1" aria-labelledby="modalProject15Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-mcp mb-1">Edge + Cloud Agents</span>
+                                    <h5 class="modal-title text-white" id="modalProject15Label">Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/agentic_taskmasters.jpg" class="img-fluid mb-3" alt="Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer">
+                                <p class="mb-3">Showcasing practical enterprise and public-interest agentic design: (1) Feedback Triage Taskmaster built for the All Things Agentic Hackathon using FastAPI, Gemini, and Cloud Firestore to cluster, prioritize, and route product issues autonomously; and (2) Benefits Auto-Filer pairing local on-device Gemma PII redaction with Gemini PDF form automation.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">FastAPI + Firestore</span><span class="tech-pill">Local Gemma PII</span><span class="tech-pill">Gemini Structured IO</span><span class="tech-pill">Drive REST API</span><span class="tech-pill">Hackathon Build</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_15.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1: Operation Hades -->
+                <div class="col" data-category="cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_1.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_hades.jpg" class="card-img-top" alt="Operation Hades" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Offensive SecOps</span>
+                            <h5 class="card-title">Operation Hades</h5>
+                            <p class="card-text">Automated vulnerability exploration, reconnaissance, and malware research framework.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap</span><span class="tech-pill">Metasploit</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Vuln Research</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject1">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_1.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 1 -->
+                <div class="modal fade" id="modalProject1" tabindex="-1" aria-labelledby="modalProject1Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge mb-1">Offensive SecOps</span>
+                                    <h5 class="modal-title text-white" id="modalProject1Label">Operation Hades</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/operation_hades.jpg" class="img-fluid mb-3" alt="Operation Hades">
+                                <p class="mb-3">An advanced cybersecurity tool utilizing Nmap and Metasploit to explore and exploit vulnerabilities, pushing the boundaries of malware research and automated penetration testing workflows.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap</span><span class="tech-pill">Metasploit</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Vuln Research</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_1.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Operation Nemesis -->
+                <div class="col" data-category="cyber mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_2.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_nemesis.jpg" class="card-img-top" alt="Operation Nemesis" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">AI Red Teaming</span>
+                            <h5 class="card-title">Operation Nemesis</h5>
+                            <p class="card-text">AI-driven reconnaissance correlation and automated Metasploit/NSE exploitation engine.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">AI Decision Engine</span><span class="tech-pill">Metasploit</span><span class="tech-pill">Nmap NSE</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject2">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_2.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 2 -->
+                <div class="modal fade" id="modalProject2" tabindex="-1" aria-labelledby="modalProject2Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge mb-1">AI Red Teaming</span>
+                                    <h5 class="modal-title text-white" id="modalProject2Label">Operation Nemesis</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/operation_nemesis.jpg" class="img-fluid mb-3" alt="Operation Nemesis">
+                                <p class="mb-3">Operation Nemesis leverages AI to analyze reconnaissance data, OSINT, and fuzzing results, selecting the most effective Metasploit or NSE scripts for targeted exploitation and optimizing penetration testing workflows.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">AI Decision Engine</span><span class="tech-pill">Metasploit</span><span class="tech-pill">Nmap NSE</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_2.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Operation Hermes -->
+                <div class="col" data-category="cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_3.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_hermes.jpg" class="card-img-top" alt="Operation Hermes" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Hardware &amp; Crypto</span>
+                            <h5 class="card-title">Operation Hermes</h5>
+                            <p class="card-text">Encrypted, off-grid portable Raspberry Pi Bluetooth communication hub.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Raspberry Pi</span><span class="tech-pill">Python &amp; C++</span><span class="tech-pill">AES Encryption</span><span class="tech-pill">Bluetooth RF</span><span class="tech-pill">OpenSSL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject3">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_3.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 3 -->
+                <div class="modal fade" id="modalProject3" tabindex="-1" aria-labelledby="modalProject3Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge mb-1">Hardware &amp; Crypto</span>
+                                    <h5 class="modal-title text-white" id="modalProject3Label">Operation Hermes</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/operation_hermes.jpg" class="img-fluid mb-3" alt="Operation Hermes">
+                                <p class="mb-3">Operation Hermes develops a physical Bluetooth communication device using a Raspberry Pi and external battery pack, enabling encrypted, off-grid, portable communication inspired by covert field setups.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Raspberry Pi</span><span class="tech-pill">Python &amp; C++</span><span class="tech-pill">AES Encryption</span><span class="tech-pill">Bluetooth RF</span><span class="tech-pill">OpenSSL</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_3.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Operation Apollo -->
+                <div class="col" data-category="media" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_4.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_apollo.jpg" class="card-img-top" alt="Operation Apollo" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">FinTech AI</span>
+                            <h5 class="card-title">Operation Apollo</h5>
+                            <p class="card-text">AI-powered market telemetry &amp; quantitative stock advisory platform.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Python ML</span><span class="tech-pill">LLM Synthesis</span><span class="tech-pill">Market APIs</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject4">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_4.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 4 -->
+                <div class="modal fade" id="modalProject4" tabindex="-1" aria-labelledby="modalProject4Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge mb-1">FinTech AI</span>
+                                    <h5 class="modal-title text-white" id="modalProject4Label">Operation Apollo</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/operation_apollo.jpg" class="img-fluid mb-3" alt="Operation Apollo">
+                                <p class="mb-3">Operation Apollo is an AI-driven stock advisor that analyzes market data and trends to support informed decisions across both long-term portfolio allocation and short-term trading strategies.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Python ML</span><span class="tech-pill">LLM Synthesis</span><span class="tech-pill">Market APIs</span><span class="tech-pill">PostgreSQL</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_4.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Operation Icarus -->
+                <div class="col" data-category="cyber" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_5.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_icarus.jpg" class="card-img-top" alt="Operation Icarus" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">Recon &amp; Stealth UI</span>
+                            <h5 class="card-title">Operation Icarus</h5>
+                            <p class="card-text">Stealth-focused web GUI overlay and visual telemetry dashboard for Nmap &amp; NSE.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap &amp; NSE</span><span class="tech-pill">Live Telemetry</span><span class="tech-pill">Topology Maps</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject5">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_5.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 5 -->
+                <div class="modal fade" id="modalProject5" tabindex="-1" aria-labelledby="modalProject5Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge mb-1">Recon &amp; Stealth UI</span>
+                                    <h5 class="modal-title text-white" id="modalProject5Label">Operation Icarus</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/operation_icarus.jpg" class="img-fluid mb-3" alt="Operation Icarus">
+                                <p class="mb-3">Operation Icarus provides a sleek web-based GUI for Nmap and NSE scripts, combining stealth-tuned scan profiles, live progress telemetry, and visual network maps to maintain operational discretion.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap &amp; NSE</span><span class="tech-pill">Live Telemetry</span><span class="tech-pill">Topology Maps</span><span class="tech-pill">PostgreSQL</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_5.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Operation Yggdrasil -->
+                <div class="col" data-category="cyber mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_6.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/operation_yggdrasil.jpg" class="card-img-top" alt="Operation Yggdrasil" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge">AI Graph OSINT</span>
+                            <h5 class="card-title">Operation Yggdrasil</h5>
+                            <p class="card-text">AI-powered OSINT entity resolution and Cytoscape graph intelligence platform.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Cytoscape.js</span><span class="tech-pill">LLM Entity NLP</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject6">
+                                <i class="fa-solid fa-bolt"></i> Quick View
+                            </button>
+                            <a href="projects/project_6.html" class="btn-card-action btn-card-primary">
+                                Deep Dive <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 6 -->
+                <div class="modal fade" id="modalProject6" tabindex="-1" aria-labelledby="modalProject6Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge mb-1">AI Graph OSINT</span>
+                                    <h5 class="modal-title text-white" id="modalProject6Label">Operation Yggdrasil</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/operation_yggdrasil.jpg" class="img-fluid mb-3" alt="Operation Yggdrasil">
+                                <p class="mb-3">Operation Yggdrasil leverages LLM natural-language extraction and interactive Cytoscape.js graph mapping to connect scattered public records and online footprints into actionable, ethical OSINT reports.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Cytoscape.js</span><span class="tech-pill">LLM Entity NLP</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="projects/project_6.html" class="btn-card-action btn-card-primary">Read Full Technical Deep Dive <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest AI & MCP Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                <div>
+                    <span class="category-badge badge-mcp">Engineering Dispatch</span>
+                    <h2 class="neon-section-title mb-1">Latest Stories from the Lab</h2>
+                    <p class="text-secondary mb-0">Deep dives into LLM systems architecture, MCP servers, multi-agent compliance, and hybrid ML.</p>
+                </div>
+                <a href="blog.html" class="btn-cyber-outline mt-3 mt-md-0">
+                    View All 12 Stories <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Blog Story 7: Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio -->
+                <div class="col" data-category="mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_7.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Agentic Architecture</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h5>
+                            <p class="card-text">How 14+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #07</span>
+                            <a href="stories/blog_7.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 8: Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows -->
+                <div class="col" data-category="mcp" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_8.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_8_img1.jpg" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">MCP &amp; Multi-Agent</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            </div>
+                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
+                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #08</span>
+                            <a href="stories/blog_8.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 9: Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards -->
+                <div class="col" data-category="security" data-aos="fade-up">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_9.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards" loading="lazy">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">AI + Compliance</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #09</span>
+                            <a href="stories/blog_9.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
     <div id="interactive-particle-container"></div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Black Beard's Portfolio. All Rights Reserved.</p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="index.html">Home</a>
+                    <a class="nav-icon-link" href="projects.html">Projects</a>
+                    <a class="nav-icon-link" href="blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
@@ -242,10 +982,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Particles JS -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <!-- Custom JS -->
+    <!-- Portfolio Interactive Scripts -->
     <script src="js/scripts.js"></script>
-    <script>
-        AOS.init(); // Initialize AOS for animations
-    </script>
 </body>
 </html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tactical 5e Virtual Tabletop and autonomous AI Dungeon Master featuring an interactive 2.5D/3D procedural stone-dungeon battlemap, dynamic torchlight raycasting, polyhedral dice tray, and turn-based combat AI.">
+    <title>Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Deep-Dive Section -->
+    <section class="py-5 project-details">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/dungeon_master_os.jpg" class="project-img" alt="Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">Autonomous AI DM</span><span class="tech-pill">Tactical VTT Battlemap</span><span class="tech-pill">Dynamic Torch Lighting</span><span class="tech-pill">5e Combat &amp; Dice Engine</span><span class="tech-pill">WebSocket Multiplayer Sync</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-mcp">Agentic Game AI &amp; 3D VTT</span>
+                        <h1 class="text-white fw-bold mb-3">Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
+                        <p>Dungeon Master OS is a full-stack AI-driven Dungeons &amp; Dragons 5e Virtual Tabletop (VTT) and autonomous Game Master. It pairs a narrative AI Dungeon Master and rule-enforcing 5e combat engine with a rich interactive HTML5 Canvas tactical battlemap featuring bevelled flagstone dungeon rooms, flickering radial torch sconces, chasm lava hazards, animated water currents, fog of war, A* pathfinding previews, and metallic/wooden token miniatures with live HP arcs.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>Interactive 2.5D Tactical Dungeon Battlemap:</strong> Renders multi-room stone dungeons with procedural flagstone textures, 3D wall extrusion shadows, glowing runic altars, flickering wall torches, chasm bridges, and clickable grid coordinates.</li>
+                            <li><strong>Autonomous 5e Combat &amp; Monster Tactics Engine:</strong> Tracks initiative order, armor class (AC), action economy, spell slots, and status conditions while autonomously executing enemy turns with spatial targeting and attack rolls.</li>
+                            <li><strong>Cryptographic Polyhedral Dice Tray (d4–d20):</strong> Built-in dice roller supports advantage/disadvantage, ability modifiers, critical hit/fumble detection, and floating damage/heal combat telemetry directly over tokens.</li>
+                            <li><strong>AI Narrative Chronicle &amp; Quick-Action Bar:</strong> Players can type any freeform roleplay action, click a tile to move, or trigger quick tactical actions (`Attack Nearest`, `Perception Check`, `Cast Sacred Flame`, `Advance Turn`) with rich DM narration.</li>
+                            <li><strong>Full Campaign Persistence &amp; Encounter Builder:</strong> Supports multiple dungeon maps (`The Sunken Reliquary`, `Emberforge Vault`, `Whispering Catacombs`), custom token spawning, fog-of-war toggles, and SQLite campaign save states.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Rules &amp; AI DM Backend:</strong> Python, FastAPI, Deterministic 5e Combat &amp; Dice Resolver, Autonomous Monster Turn AI, Ollama / OpenAI / Gemini DM Narrator</li>
+                            <li><strong>Tactical VTT Renderer:</strong> HTML5 60fps Canvas Engine, Procedural Stone/Water/Torch Shaders, Metallic &amp; Wooden Token Miniatures, Floating Combat Telemetry</li>
+                            <li><strong>State &amp; Realtime Sync:</strong> SQLite Campaign Chronicle Store, WebSocket Live Board Broadcast, Instant Zero-Config Demo Campaign Seeding</li>
+                            <li><strong>Verification:</strong> Pytest Combat/Dice Suite + Headless Playwright Canvas Pixel &amp; Interactive Token Movement Verification</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">Pure LLM text adventures lose spatial coherence during combat, while traditional Virtual Tabletops require hours of manual map prep and a human Game Master. Dungeon Master OS bridges both worlds: a deterministic 5e spatial engine enforces grid geometry, line-of-sight, initiative, and dice math on a visually atmospheric battlemap, while the AI Game Master translates every roll and tactical maneuver into vivid dark-fantasy storytelling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/dungeon-master-os" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

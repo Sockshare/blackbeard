@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How I evolved enterprise CMMC Level 1 compliance assessments through three stages: mastering the audit manually by hand, building full-stack web applications to automate the workflow, and extracting those engines into a 6-skill LLM-orchestrated pipeline with cryptographic SHA-256 determinism.">
+    <title>Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #14</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-mcp mb-0">Agent Skills &amp; Security Automation</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>8 min read
+                    </span>
+                </div>
+
+                <h1>Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills</h1>
+                <img src="../assets/images/blog_14_img1.jpg" class="story-hero-img" alt="Automating My Automations: 3-Stage Evolution of Agent-Orchestrated Compliance">
+
+                <p class="lead">
+                    Most people try to build AI agents backwards: they start with a prompt before they understand the underlying problem, and hope the model figures out the edge cases. When I set out to engineer an end-to-end <strong>CMMC Level 1 (FAR 52.204-21 / NIST SP 800-171 Rev. 2)</strong> compliance assessment pipeline, I took a deliberate three-stage progression: <strong>first, I performed the entire audit by hand</strong> to master the ground truth; <strong>second, I built full-stack web applications</strong> to automate that manual work; and <strong>third, I packaged those web application engines into modular Agent Skills</strong> where an LLM acts as the autonomous orchestrator—<em>automating my own automations</em>.
+                </p>
+
+                <div class="story-callout">
+                    <strong>The 3-Stage Engineering Progression:</strong><br>
+                    <strong>Stage 1 (Manual Mastery):</strong> Execute the compliance review by hand to uncover every edge case in access boundaries, nested identity graphs, build provenance, and vulnerability SLAs.<br>
+                    <strong>Stage 2 (Web App Automation):</strong> Codify that domain logic into interactive FastAPI/Flask web workbenches inside <a href="../projects/project_7.html" class="text-info">Run Nexus</a>.<br>
+                    <strong>Stage 3 (LLM-Orchestrated Agent Skills):</strong> Decouple the deterministic Python engines from the web UI into <strong>6 standalone Agent Skills + 1 Master Orchestrator Skill</strong> capable of auditing any production application end-to-end from a single prompt.
+                </div>
+
+                <h2>Stage 1: Doing It by Hand to Learn Where Reality Breaks</h2>
+                <p>
+                    You cannot automate a high-stakes security audit if you have never felt the pain of doing it manually. Before writing a single line of automation, I walked through the full CMMC Level 1 assessment lifecycle by hand across real production services—tracing configuration files, expanding deeply nested access groups, cross-referencing HR reporting chains, verifying build-provenance policies, and auditing vulnerability tickets against remediation SLAs.
+                </p>
+                <p>
+                    Doing the work by hand exposed subtle real-world edge cases that naive scripts always miss:
+                </p>
+                <ul>
+                    <li><strong>Production vs. Non-Production Pollution:</strong> Repository searches naturally return staging, dev, test, and QA configurations alongside production files. Including non-production configs in a compliance boundary corrupts the entire audit scope.</li>
+                    <li><strong>Transitive Group Exclusions &amp; Policy Denials:</strong> In enterprise identity graphs, a user might be excluded from one nested subgroup via a negative <code>EXCLUDE</code> rule while legitimately inheriting standing permanent access to the parent group through a sibling subgroup—or a paired automation/delegate account might be actively blocked by PII or zero-agent policy tags.</li>
+                    <li><strong>Dual Vulnerability SLA Clocks:</strong> A closed vulnerability ticket can be marked "within SLA" by an issue tracker's pause/reset rules while its raw creation-to-close calendar duration exceeds the nominal priority window (e.g., 30 days for P1 or 90 days for P2), requiring a three-bucket triage model (<code>VALID</code>, <code>BREACHED</code>, and <code>VERIFY</code>).</li>
+                </ul>
+
+                <h2>Stage 2: Building Full-Stack Web Applications to Automate the Manual Work</h2>
+                <p>
+                    Once I knew the exact rules and edge cases, I built specialized full-stack web applications—integrated into my <a href="../projects/project_7.html" class="text-info">Run Nexus</a> control plane—to replace hours of spreadsheet crunching and manual lookups with one-click visual workbenches:
+                </p>
+                <ul>
+                    <li><strong><a href="../projects/project_9.html" class="text-info">UAR &amp; Non-Person Entity (NoPE) Graph Workbench</a>:</strong> A Breadth-First Search (BFS) identity graph engine that expands nested groups, verifies every human member against HR status and management reporting chains, separates findings into disjoint conditions, and evaluates machine-only lockdown tiers (<code>L0–L6</code>).</li>
+                    <li><strong><a href="../projects/project_10.html" class="text-info">Vulnerability Verifier &amp; Supply-Chain Provenance Suite</a>:</strong> An interactive workbench where engineers input an application name and component IDs to audit vulnerability tickets against strict priority SLAs and verify Level 4 build/configuration provenance.</li>
+                </ul>
+                <p>
+                    Building the web applications first was a crucial proving ground. A web dashboard gives you immediate visual feedback: you can inspect tables, verify chart distributions, test edge-case inputs interactively, and refine the data models until the output is rock-solid.
+                </p>
+
+                <h2>Stage 3: Automating My Automations — Turning Web Apps into LLM-Orchestrated Skills</h2>
+                <p>
+                    A web application is fantastic when a human analyst sits down at a browser to audit one system. But what happens when you want to point that entire multi-domain compliance suite at <em>any</em> application across an enterprise, run all five verification domains sequentially, cross-verify their math, and produce a board-ready C-Suite audit package automatically?
+                </p>
+                <p>
+                    Instead of stopping at the web UI, I extracted the battle-tested Python engines out of my web applications and architected a modular <strong>6-Skill + 1-Orchestrator Agent Pipeline</strong>:
+                </p>
+                <ol>
+                    <li><strong>Skill 1 — Production RPC &amp; ACL Boundary Discovery:</strong> Scans production-only service bundles and security policies at repository <code>HEAD</code>, maps every RPC method by access classification (<code>Read</code>, <code>Write/Mutate</code>, <code>Admin</code>), and extracts the authoritative list of production hosting roles and caller groups.</li>
+                    <li><strong>Skill 2 — Unified User Access Review (UAR) Auditor:</strong> Receives the exact group roster discovered by Skill 1 and audits all groups as a single unified estate—computing disjoint findings across <em>Condition 1 (Standing Permanent Access)</em>, <em>Condition 2 (Outside Target Reporting Chain)</em>, and <em>Condition 3 (Former Employees)</em>, while generating asset-by-asset explanations for every principal or delegate agent actively marked <code>Denied</code> by policy controls.</li>
+                    <li><strong>Skill 3 — Non-Person Entity (NoPE) &amp; Role-Account Lockdown Checker:</strong> Audits the same discovered group roster for machine-only lockdown compliance (<code>Level 0</code> through <code>Level 6</code>) and hard policy enforcement tags.</li>
+                    <li><strong>Skill 4 — Level 4 Build &amp; Configuration Provenance Verifier:</strong> Consumes the production scope and hosting roles discovered by Skill 1 to audit governing build/config policies and keystore configurations against Level 4 (submitted and authorized config) standards.</li>
+                    <li><strong>Skill 5 — Vulnerability SLA Verifier:</strong> Audits security and vulnerability tickets across the application's issue-tracking components against strict priority remediation timelines.</li>
+                    <li><strong>Skill 6 — C-Suite CMMC Level 1 Audit Reporter &amp; Cryptographic Verifier:</strong> Synthesizes the outputs of Skills 1–5 into a concise executive audit report, five standalone evidence annexes, a 10-tab Excel workbook, and a cryptographically hashed canonical dataset.</li>
+                </ol>
+
+                <h2>Key Architectural Principles That Make Agent Skills Production-Grade</h2>
+
+                <h3>1. The LLM Orchestrates; Deterministic Code Calculates</h3>
+                <p>
+                    The biggest mistake in enterprise AI is asking an LLM to perform set math over 150,000 identity records inside its context window. In my architecture, the <strong>LLM is the orchestrator and router</strong>—it resolves user intent, chains the six skills in sequence, passes verified file paths between stages, and synthesizes executive context—while <strong>deterministic Python engines</strong> execute the graph traversals, exclusion overrides, and SLA calculations with zero hallucination risk.
+                </p>
+
+                <h3>2. Cross-Domain Mathematical Reconciliation (100% UAR &harr; NoPE Correlation)</h3>
+                <p>
+                    Because Skill 2 (UAR) and Skill 3 (NoPE Lockdown) evaluate the same discovered production groups from two different security perspectives, their numbers <em>must</em> reconcile mathematically. Specifically, any group with standing permanent human members (<code>perm_humans &gt; 0</code>) must classify as <strong>NoPE Level 0</strong>, while any group with zero standing permanent humans (machine-only or 100% Just-in-Time / AoD-eligible) must classify at protected tiers <strong>Level 1–6</strong>.
+                </p>
+                <p>
+                    By aligning how nested subgroup <code>EXCLUDE</code> rules are evaluated against root-group permanent entitlements and displaying total standing permanent humans alongside disjoint UAR conditions, the pipeline achieves a verified <strong>100% group-for-group correlation</strong> between the UAR and NoPE engines.
+                </p>
+
+                <h3>3. Strict Binary <code>PASS / FAIL</code> CMMC Level 1 Reporting (Zero POA&amp;M Allowed) &amp; Standalone Annexes</h3>
+                <p>
+                    Under <strong>32 CFR &sect; 170.21 and FAR 52.204-21</strong>, CMMC Level 1 is a strict binary <strong>Pass or Fail</strong> self-assessment—Plans of Action and Milestones (POA&amp;Ms) are not permitted. If even one former employee retains active group access or a production policy sits below Level 4, the control is <code>FAIL (NOT MET)</code> and becomes a <strong>Mandatory Pre-Affirmation Remediation Blocker</strong>.
+                </p>
+                <p>
+                    Furthermore, C-Suite executives do not want a 120-page raw CSV dump pasted into an audit opinion. I architected the Reporting Skill to produce a clean, <strong>4–5 page C-Suite Executive Audit Report</strong> (<code>.html</code>, <code>.docx</code>, <code>.md</code>) containing the binary Pass/Fail scorecard, a dynamically rendered <strong>5-Layer System Control Boundary Diagram</strong>, aggregated telemetry, and pre-affirmation blockers—while isolating all thousands of row-level evidence records into <strong>five standalone Supporting Evidence Annexes (Annex A–E)</strong> and a <strong>10-tab Excel Evidence Workbook</strong>.
+                </p>
+
+                <h3>4. Two-Run Cryptographic Determinism (<code>SHA-256</code> Attestation)</h3>
+                <p>
+                    Finally, a compliance pipeline is only trustworthy if it is 100% repeatable. I built a <strong>Canonical Reviewed Dataset</strong> normalizer and a <strong>Two-Run Determinism Verifier</strong> that strips volatile execution timestamps, normalizes Office ZIP headers and chart metadata, and computes per-domain and master <code>SHA-256</code> digests—proving cryptographically that two independent assessment runs over the same state produce identical results down to the byte.
+                </p>
+
+                <h2>The Takeaway: Build the Ladder from Manual to Autonomous</h2>
+                <p>
+                    Going from <strong>manual execution &rarr; web application &rarr; LLM-orchestrated Agent Skills</strong> completely changes how you think about software engineering. Each layer compounds the one before it: manual work gives you uncompromising domain accuracy, the web app gives you a visual harness to perfect the engine, and turning that web app into composable Agent Skills lets you automate the automation itself.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Blog
+                    </a>
+                    <a href="../projects.html" class="btn-card-action btn-card-primary">
+                        Explore All 27 Projects <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- More Engineering Stories -->
+    <section class="py-5 related-section">
+        <div class="container">
+            <h3 class="text-center mb-4 neon-section-title">Continue Reading</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_13.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_13_img1.jpg" class="card-img-top" alt="Vibe Coding at Scale: Shipping Six Full-Stack AI Studios to GitHub in a Single Day">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Agentic Velocity &amp; Vibe Coding</span>
+                            <h5 class="card-title">Vibe Coding at Scale: Shipping Six Full-Stack AI Studios to GitHub in a Single Day</h5>
+                            <p class="card-text">A candid look at building, visually polishing, and open-sourcing six interactive AI studios—from 3D VTT battlemaps and AI comic engines to symbolic physics labs.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">6 min read</span>
+                            <a href="blog_13.html" class="btn-card-action btn-card-primary">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_9.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_9_img1.jpg" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">AI + Compliance</span>
+                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
+                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_9.html" class="btn-card-action btn-card-primary">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="blog_7.html" class="card-img-wrapper d-block">
+                            <img src="../assets/images/blog_7_img1.jpg" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Agentic Architecture</span>
+                            <h5 class="card-title">Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h5>
+                            <p class="card-text">How 20+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">7 min read</span>
+                            <a href="blog_7.html" class="btn-card-action btn-card-primary">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

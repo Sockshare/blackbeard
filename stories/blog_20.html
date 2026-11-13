@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A field guide on vulnerability management and SLA verification: why issue-tracker pause clocks and priority downgrades can mask calendar-duration breaches, and how a 3-bucket triage model surfaces the truth.">
+    <title>The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #20</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-mcp mb-0">Field Guide &bull; Vulnerability Management</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>6 min read
+                    </span>
+                </div>
+
+                <h1>The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag</h1>
+                <img src="../assets/images/blog_20_img1.jpg?v=6" class="story-hero-img" alt="The Dual-Clock Trap in Vulnerability SLA Verification">
+
+                <p class="lead">
+                    When auditing a system for Flaw Remediation compliance (such as <strong>NIST SP 800-171 3.14.1</strong>), the most common mistake is trusting an issue tracker's built-in "SLA Met" badge at face value. In the real world, every vulnerability ticket actually runs on <strong>two different clocks</strong>—and ignoring the second clock can blindside you during an assessment.
+                </p>
+
+                <div class="story-callout">
+                    <strong>The Two Clocks of Vulnerability Remediation:</strong><br>
+                    <strong>Clock 1 (The Issue Tracker SLA Clock):</strong> Can be paused when a ticket is blocked on an upstream vendor, reset when a ticket is re-triaged, or adjusted when priority levels change.<br>
+                    <strong>Clock 2 (The Raw Calendar Clock):</strong> The uncompromising number of calendar days elapsed between the moment the flaw was opened and the moment it was resolved.
+                </div>
+
+                <h2>1. How a Ticket Can Be "In SLA" and Still Take 6 Months to Close</h2>
+                <p>
+                    Issue trackers are designed for engineering workflow flexibility, which means their internal SLA timers follow operational rules:
+                </p>
+                <ul>
+                    <li><strong>Blocked / Dependency Pauses:</strong> If a team marks a vulnerability ticket as "Blocked" while waiting on an upstream library patch, many issue trackers pause the SLA countdown.</li>
+                    <li><strong>Priority Re-classifications:</strong> A ticket opened at a lower severity might sit for 100 days before being upgraded to High severity—or a High-severity ticket might be downgraded just before its 30-day window expires.</li>
+                    <li><strong>Component Transfers:</strong> Moving a ticket between engineering queues can sometimes reset the target due date in automated tracking systems.</li>
+                </ul>
+                <p>
+                    As a result, the issue tracker may stamp the closed ticket as "Within SLA," while an external assessor looking at the creation date and closure date sees a High-severity vulnerability that sat open for 140 calendar days against a 30-day policy window.
+                </p>
+
+                <h2>2. The Three-Bucket Triage Model: Valid, Breached, and Verify</h2>
+                <p>
+                    Instead of forcing every vulnerability ticket into a naive binary "Good / Bad" column based solely on one clock, a thorough audit workflow evaluates both clocks simultaneously and sorts tickets into three clear categories:
+                </p>
+                <ul>
+                    <li><strong>Valid (Clean on Both Clocks):</strong> The vulnerability was remediated within the tracker's SLA target <em>and</em> its total raw calendar age from discovery to closure stayed within the nominal window for its priority tier.</li>
+                    <li><strong>Breached (Failed SLA):</strong> An open ticket has already exceeded its remediation deadline, or a closed ticket breached the SLA window without an approved exception. This is a hard compliance blocker.</li>
+                    <li><strong>Verify (Tracker Met, Calendar Exceeded):</strong> The issue tracker marked the ticket compliant (due to a pause, severity adjustment, or clock reset), but the raw calendar duration exceeded the standard priority window. Surfacing these in a dedicated <code>VERIFY</code> bucket lets security engineers inspect the ticket history and confirm that the pause or re-triage was legitimate before an auditor asks about it.</li>
+                </ul>
+
+                <h2>3. Why Assessors Respect Dual-Clock Transparency</h2>
+                <p>
+                    Nothing builds trust with a compliance assessor faster than showing that you already caught and reviewed the exact edge cases they would look for. By separating clean closures, hard breaches, and dual-clock discrepancies up front, you eliminate surprises and prove that your vulnerability management program tracks real-world risk—not just dashboard vanity metrics.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_19.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Auditing User Access
+                    </a>
+                    <a href="blog_21.html" class="btn-card-action btn-card-primary">
+                        Next Story: AI Speed vs. Human Judgment <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

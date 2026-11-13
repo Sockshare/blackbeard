@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A plain-English field guide to CMMC Level 1 (32 CFR § 170.21, FAR 52.204-21, and NIST SP 800-171 Rev. 2): why Level 1 is strictly binary Pass/Fail, why zero POA&Ms are permitted, and how single control failures impact affirmation.">
+    <title>CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&amp;Ms Are Allowed | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #15</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-mcp mb-0">Field Guide &bull; Compliance &amp; Governance</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>7 min read
+                    </span>
+                </div>
+
+                <h1>CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&amp;Ms Are Allowed</h1>
+                <img src="../assets/images/blog_15_img1.jpg?v=6" class="story-hero-img" alt="CMMC Level 1 Explained: Binary Pass/Fail Compliance and Zero POA&M Policy">
+
+                <p class="lead">
+                    One of the most common misconceptions in defense and federal contracting security is treating <strong>CMMC Level 1</strong> like a watered-down version of Level 2 where you can document gaps in a Plan of Action and Milestones (POA&amp;M) and promise to fix them later. Under the federal CMMC rule (<strong>32 CFR &sect; 170.21</strong> and <strong>FAR 52.204-21</strong>), the exact opposite is true: <strong>CMMC Level 1 is strictly binary Pass or Fail, and POA&amp;Ms are not permitted under any circumstances.</strong>
+                </p>
+
+                <div class="story-callout">
+                    <strong>The Bottom-Line Rule for CMMC Level 1:</strong><br>
+                    To achieve CMMC Level 1 status for a system safeguarding Federal Contract Information (FCI), <strong>all 15 basic safeguarding requirements in FAR 52.204-21(b)(1)</strong> (which map to <strong>17 security requirements in NIST SP 800-171 Rev. 2</strong> across 6 domains) must be <strong>100% MET</strong> at the time of assessment. If even one requirement is Not Met, the entire assessment is a binary <strong>FAIL</strong> until remediated.
+                </div>
+
+                <h2>1. What CMMC Level 1 Actually Covers</h2>
+                <p>
+                    CMMC Level 1 exists to protect <strong>Federal Contract Information (FCI)</strong>—information not intended for public release that is provided by or generated for the Government under a contract to develop or deliver a product or service. While Controlled Unclassified Information (CUI) triggers the 110 requirements of CMMC Level 2, FCI triggers the foundational safeguarding controls codified in <strong>FAR 52.204-21</strong>.
+                </p>
+                <p>
+                    Those 15 FAR clauses correspond directly to 17 foundational practices in <strong>NIST SP 800-171 Rev. 2</strong> spanning six security domains:
+                </p>
+                <ul>
+                    <li><strong>Access Control (AC):</strong> Limiting system access to authorized users, processes acting on behalf of authorized users, or devices—and limiting those users to the exact types of transactions and functions they are permitted to execute.</li>
+                    <li><strong>Identification and Authentication (IA):</strong> Identifying system users, processes, and devices, and authenticating those identities before allowing access.</li>
+                    <li><strong>Media Protection (MP):</strong> Sanitizing or destroying system media containing FCI before disposal or release for reuse.</li>
+                    <li><strong>Physical Protection (PE):</strong> Limiting physical access to organizational systems, equipment, and operating environments.</li>
+                    <li><strong>System and Communications Protection (SC):</strong> Monitoring, controlling, and protecting communications at external boundaries and key internal boundaries of the system.</li>
+                    <li><strong>System and Information Integrity (SI):</strong> Identifying, reporting, and correcting information and system flaws in a timely manner, and protecting against malicious code.</li>
+                </ul>
+
+                <h2>2. Why Zero POA&amp;Ms Are Permitted at Level 1</h2>
+                <p>
+                    In many traditional compliance frameworks—and even under specific, restricted conditions in CMMC Level 2—an organization can achieve a conditional status by placing certain lower-weighted controls onto a <strong>Plan of Action and Milestones (POA&amp;M)</strong> and closing them out within 180 days.
+                </p>
+                <p>
+                    Under <strong>32 CFR &sect; 170.15 and &sect; 170.21</strong>, the Department of Defense explicitly prohibited POA&amp;Ms for CMMC Level 1 self-assessments. The reasoning is straightforward: the 15 FAR 52.204-21 practices represent minimum baseline cyber hygiene that federal contractors have already been contractually required to maintain since 2016. Because they are foundational, there is no "partial credit" score at Level 1:
+                </p>
+                <ul>
+                    <li><strong>100% of applicable objectives MET:</strong> The system achieves <strong>PASS</strong> and the Affirming Official can submit the annual affirmation.</li>
+                    <li><strong>1 or more objectives NOT MET:</strong> The system receives a binary <strong>FAIL</strong>. The organization cannot submit a Level 1 affirmation until the underlying technical gap is remediated and re-verified.</li>
+                </ul>
+
+                <h2>3. How a Single Operational Gap Triggers a Binary Fail</h2>
+                <p>
+                    When you evaluate real production systems against a strict binary standard, abstract policy statements are not enough. You have to look at actual system state, because a single unaddressed anomaly in any of the technical domains becomes a <strong>Pre-Affirmation Blocker</strong>:
+                </p>
+                <ul>
+                    <li><strong>Lingering Former Employees or Unreviewed Access (AC &amp; IA):</strong> If an access group granting permissions to an FCI service still contains a departed employee, or if an access group is completely unowned and lacks periodic access review governance, you cannot credibly mark Access Control as Met.</li>
+                    <li><strong>Human Accounts Inside Machine-Only Service Groups (AC &amp; IA):</strong> When a role or group is designated strictly for automated service-to-service communication, finding standing permanent human accounts inside that boundary violates least-privilege separation between human users and non-person entities.</li>
+                    <li><strong>Unauthorized Configuration Changes (AC &amp; SC):</strong> If production service configurations or security policies can be modified without dual-party review and verified submission provenance, the boundary protecting FCI transactions is not enforced.</li>
+                    <li><strong>Overdue Vulnerability Remediation (SI.L1-3.14.1):</strong> Requirement 3.14.1 mandates that system flaws are identified, reported, and corrected in a timely manner. If critical or high-severity security vulnerabilities sit open past the organization's defined remediation SLA window, Flaw Remediation fails.</li>
+                </ul>
+
+                <h2>4. Operational Takeaway: Treat Pre-Assessment Checks as Remediation Gates</h2>
+                <p>
+                    Because CMMC Level 1 leaves zero room for post-assessment POA&amp;Ms, the only sane way to run a Level 1 program is to treat your internal readiness review as a <strong>pre-affirmation engineering gate</strong>. Rather than generating a report that tries to explain away a finding, your assessment workflow should surface every single unmet objective as an actionable engineering blocker—so teams can remove the stale account, lock down the service group, or close the overdue vulnerability <em>before</em> the formal self-assessment record is finalized.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="../blog.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Blog
+                    </a>
+                    <a href="blog_16.html" class="btn-card-action btn-card-primary">
+                        Next Playbook: Structuring Audit Reports <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

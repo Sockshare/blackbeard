@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Why jumping straight into security automation fails if you haven't done the work manually first—and how manual execution uncovers non-production scope pollution, nested access edge cases, and policy nuances.">
+    <title>Why You Should Never Automate a Security Process Until You’ve Done It by Hand | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #17</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Engineering Methodology</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>6 min read
+                    </span>
+                </div>
+
+                <h1>Why You Should Never Automate a Security Process Until You’ve Done It by Hand</h1>
+                <img src="../assets/images/blog_17_img1.jpg?v=6" class="story-hero-img" alt="Mastering Security Workflows Manually by Hand Before Automating">
+
+                <p class="lead">
+                    When engineers are handed a repetitive compliance or security task, the first instinct is almost always to start building a tool immediately. Every time I have watched someone automate a security workflow they have never personally executed by hand, the result is the same: they build a fast, polished machine that confidently produces the wrong answers.
+                </p>
+
+                <div class="story-callout">
+                    <strong>The First Rule of Meaningful Automation:</strong><br>
+                    Doing a task manually is not wasted time—it is your requirements discovery phase. Until you have traced the configurations, opened the group rosters, and reconciled the edge cases with your own eyes, you do not actually know what your automation needs to check.
+                </div>
+
+                <h2>1. The "Clean Data" Illusion</h2>
+                <p>
+                    On a whiteboard, a security assessment sounds deceptively simple: <em>find the services in scope, list who has access, verify their employment and management chain, check build policies, and review open vulnerabilities.</em> If you write an automation based on that whiteboard summary, you assume the underlying data is clean and self-explanatory.
+                </p>
+                <p>
+                    When you sit down and perform the review manually first, you immediately discover where reality diverges from the whiteboard:
+                </p>
+                <ul>
+                    <li><strong>Non-Production Noise Masquerading as Production Scope:</strong> A naive search for an application's configuration files will pull in development, testing, staging, and QA environments alongside real production configs. When you inspect those files by hand, you realize that failing to filter out non-production paths before evaluating access controls will flood your audit with false positives—flagging developer test groups that never touch live production data.</li>
+                    <li><strong>Naming Conventions That Don't Match Reality:</strong> Group names and service labels often reflect how a team was organized three years ago, not what the group actually controls today. Tracing the permissions manually teaches you to verify what a group is actually bound to rather than trusting its title.</li>
+                </ul>
+
+                <h2>2. Spotting Subtle Edge Cases Only a Human Notices First</h2>
+                <p>
+                    Manual execution forces you to ask <em>"Wait, why does this record look like that?"</em> Those moments of friction are where your best engineering rules come from:
+                </p>
+                <ul>
+                    <li><strong>Nested Exclusions vs. Sibling Inheritance:</strong> While manually tracing a multi-layered access group, you might notice that a user was explicitly excluded from one subgroup, yet still holds active standing access to the parent group through a second sibling subgroup. If you hadn't traced that tree by hand, you would never know to test how your automation handles overlapping inclusion and exclusion rules.</li>
+                    <li><strong>Policy Tags That Actively Block Access:</strong> Sometimes a principal appears in a group listing on paper, but an overarching security policy tag actively denies that principal from authenticating or accessing sensitive data. Doing the review by hand teaches you to distinguish between <em>effective access</em> and <em>explicitly denied entries</em>.</li>
+                </ul>
+
+                <h2>3. Earning the Right to Automate</h2>
+                <p>
+                    Once you have completed the process by hand, something powerful happens: you have a <strong>known-good ground truth</strong>. When you move to Stage 2 (building an interactive web application) and Stage 3 (orchestrating the workflow with AI skills), you don't have to guess whether your tool is working. You can run your new automation against the exact system you just audited by hand and verify that every single count, classification, and finding matches your manual baseline 100%.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_16.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Structuring Audit Reports
+                    </a>
+                    <a href="blog_18.html" class="btn-card-action btn-card-primary">
+                        Next Field Guide: Where AI Belongs in Compliance <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

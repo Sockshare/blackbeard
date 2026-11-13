@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A practical field guide on the boundary between LLM reasoning and strict compliance verification: why AI models should orchestrate workflows and summarize findings, but never guess pass/fail math.">
+    <title>Where AI Belongs in Security Compliance—and Where It Doesn&#x27;t | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #18</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-mcp mb-0">Field Guide &bull; AI &amp; Compliance</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>6 min read
+                    </span>
+                </div>
+
+                <h1>Where AI Belongs in Security Compliance—and Where It Doesn&#x27;t</h1>
+                <img src="../assets/images/blog_18_img1.jpg?v=6" class="story-hero-img" alt="Where AI Belongs in Security Compliance vs. Strict Rule Verification">
+
+                <p class="lead">
+                    Whenever you mention using Large Language Models (LLMs) in a security or compliance workflow, experienced auditors immediately raise a fair concern: <em>"How can you trust a probabilistic AI model not to hallucinate a compliance finding?"</em> The honest answer is simple: <strong>you don't let the AI model do the compliance math in the first place.</strong>
+                </p>
+
+                <div class="story-callout">
+                    <strong>The Golden Division of Labor:</strong><br>
+                    <strong>What AI Should Never Do:</strong> Count thousands of identity rows in a chat window, guess whether an access group is compliant, or improvise regulatory pass/fail thresholds.<br>
+                    <strong>What AI Does Brilliantly:</strong> Act as the project manager and orchestrator—interpreting your goal, running specialized verification tools in the right sequence, handing verified outputs from step to step, and organizing the final human-readable narrative.
+                </div>
+
+                <h2>1. Where LLMs Fail in Security Audits</h2>
+                <p>
+                    Language models are built to predict tokens and synthesize context, not to act as a spreadsheet calculator over tens of thousands of records. If you paste a massive list of user memberships or vulnerability tickets directly into an AI chat prompt and ask it to count how many violated a rule, three things go wrong:
+                </p>
+                <ul>
+                    <li><strong>Context Window Drift:</strong> Once a dataset grows past a few hundred entries, language models inevitably skip rows, double-count duplicates, or lose track of nested relationships.</li>
+                    <li><strong>Non-Repeatable Answers:</strong> Ask a raw chat prompt to tally a complex dataset twice, and you risk getting two slightly different numbers—which is fatal in an audit where every number must reconcile to the exact record.</li>
+                    <li><strong>Unverifiable Logic:</strong> An auditor cannot sign off on "the AI thought this looked fine." Every pass or fail decision must trace back to an explicit, repeatable rule.</li>
+                </ul>
+
+                <h2>2. Where LLMs Shine: Orchestrating the Pipeline</h2>
+                <p>
+                    Once you take raw calculation off the LLM's plate and keep those rules inside strict, deterministic verification engines, the LLM becomes an incredible force multiplier as the <strong>orchestrator</strong>:
+                </p>
+                <ul>
+                    <li><strong>Sequential Workflow Routing:</strong> Instead of a human manually running step 1 (discovering in-scope production services and groups), copying the output list, feeding it into step 2 (access review) and step 3 (service group lockdown), and then running step 4 (provenance) and step 5 (vulnerabilities), the LLM coordinates the entire sequence automatically.</li>
+                    <li><strong>File-Based Handoffs Instead of Chat Copy-Paste:</strong> Rather than passing thousands of records through the AI's conversation memory, the AI instructs each specialized tool to read and write verified files directly on disk. That keeps the data 100% intact from start to finish.</li>
+                    <li><strong>Translating Metrics into Executive Context:</strong> Once the strict engines finish calculating the exact numbers and Pass/Fail statuses, the orchestrator can help assemble those verified facts into a clear, well-structured briefing for leadership.</li>
+                </ul>
+
+                <h2>3. Proving Trust Through Two-Run Repeatability</h2>
+                <p>
+                    The ultimate test of any AI-assisted compliance workflow is simple: <em>if you run the exact same assessment twice against the same system state, do you get the exact same result?</em> By keeping all scoring rules strict and verifying that two independent runs produce identical underlying datasets, you get the speed of autonomous AI orchestration with the rock-solid reliability of traditional engineering.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_17.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Manual Before Automation
+                    </a>
+                    <a href="blog_19.html" class="btn-card-action btn-card-primary">
+                        Next Playbook: Auditing User Access <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

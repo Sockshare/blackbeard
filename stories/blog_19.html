@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An operational playbook for User Access Reviews (UAR) and machine-only group lockdown: untangling nested subgroups, separating human findings into non-overlapping buckets, and reconciling human vs. service access.">
+    <title>How to Audit User Access Without Drowning in Group Sprawl | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #19</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Identity &amp; Access</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>7 min read
+                    </span>
+                </div>
+
+                <h1>How to Audit User Access Without Drowning in Group Sprawl</h1>
+                <img src="../assets/images/blog_19_img1.jpg?v=6" class="story-hero-img" alt="Auditing User Access and Untangling Identity Group Sprawl">
+
+                <p class="lead">
+                    In any large organization, access control is rarely a flat list of usernames. Instead, permissions are granted to groups, which contain subgroups, which inherit from other teams' groups—mixing human engineers, temporary on-call responders, and automated service accounts across dozens of layers. If you try to audit that sprawl without a structured classification model, your access review quickly turns into an unreadable mess.
+                </p>
+
+                <div class="story-callout">
+                    <strong>The 4-Step Mental Model for Clean Access Reviews:</strong><br>
+                    1. <strong>Flatten the Full Tree First:</strong> Expand every nested subgroup down to the individual human and machine principals while respecting explicit exclusions.<br>
+                    2. <strong>Sort Humans into Non-Overlapping Risk Buckets:</strong> Never double-count the same person across multiple failure categories.<br>
+                    3. <strong>Document Explicitly Denied Principals Separately:</strong> Show who is actively blocked by policy rules and why.<br>
+                    4. <strong>Reconcile Human Access Against Machine-Only Group Lockdown:</strong> Ensure your user access numbers and your service-group lockdown numbers tell the exact same story.
+                </div>
+
+                <h2>1. Why Looking Only at Top-Level Groups Fails</h2>
+                <p>
+                    A top-level production group might look clean at first glance because it only lists three child groups as members. However, two levels deeper, one of those child groups might include a broad departmental mailing list, a departed contractor, or fifty permanent human accounts who no longer work on the system. An effective User Access Review (UAR) has to traverse the entire hierarchy—evaluating both active permanent members and temporary/just-in-time eligible members—so nothing hides inside a nested subgroup.
+                </p>
+
+                <h2>2. Using Mutually Exclusive Buckets So the Math Adds Up</h2>
+                <p>
+                    One of the fastest ways to lose credibility during an audit is presenting overlapping numbers that don't add up to the total headcount. For example, if a former employee also happens to be outside the current manager's reporting chain and had standing permanent access, counting them in all three columns makes it look like three separate violations instead of one person.
+                </p>
+                <p>
+                    To keep reporting crystal clear, every evaluated human principal should be triaged in strict priority order into non-overlapping conditions:
+                </p>
+                <ul>
+                    <li><strong>Highest Priority — Former or Inactive Personnel:</strong> Any account belonging to someone who has left the organization or no longer holds active status. This is an immediate revocation blocker.</li>
+                    <li><strong>Second Priority — Outside Target Management Alignment:</strong> Active personnel who transferred to a different org or sit outside the designated system owner's reporting chain without a documented cross-team exception.</li>
+                    <li><strong>Third Priority — Standing Permanent Access vs. Just-in-Time Eligibility:</strong> Active, properly aligned team members who still hold always-on standing access where policy prefers temporary, on-demand elevation.</li>
+                </ul>
+
+                <h2>3. Accounting for Machine-Only Groups and Policy Denials</h2>
+                <p>
+                    Finally, a complete access audit looks beyond human employees in two critical ways:
+                </p>
+                <ul>
+                    <li><strong>Explaining Active Policy Denials:</strong> When an identity system actively blocks a specific user or automated delegate account because of data-protection or role-restriction policies, simply dropping them from the report leaves auditors guessing. Listing denied principals in their own dedicated view—with a clear explanation of which asset and policy rule blocked them—turns a potential question mark into positive proof of enforcement.</li>
+                    <li><strong>Cross-Checking Machine-Only Lockdown:</strong> Every group that contains standing permanent humans is, by definition, a human-bearing group (`Level 0` on a machine-only lockdown scale). Conversely, every group intended strictly for automated service-to-service traffic must have zero standing permanent humans and proper lockdown enforcement. Making sure your human UAR counts and your machine-group lockdown counts match 1-for-1 guarantees complete audit consistency.</li>
+                </ul>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_18.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Where AI Belongs in Compliance
+                    </a>
+                    <a href="blog_20.html" class="btn-card-action btn-card-primary">
+                        Next Field Guide: Vulnerability SLA Traps <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

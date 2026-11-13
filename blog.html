@@ -26,6 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About &amp; Methodology</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                     <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                     <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
@@ -44,11 +45,11 @@
     <header class="hero">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-feather-pointed"></i> Field Notes &amp; Architecture Dispatches
+                <i class="fa-solid fa-feather-pointed"></i> Field Notes, Operational Playbooks &amp; Architecture Dispatches
             </div>
-            <h1 class="neon-text">AI Engineering, <span class="hero-gradient-span">MCP Workflows</span> &amp; Security Stories</h1>
+            <h1 class="neon-text">AI Engineering, <span class="hero-gradient-span">Compliance Playbooks</span> &amp; Security Stories</h1>
             <p class="neon-text-blue mb-0">
-                First-hand stories from architecting Run Nexus, building custom Model Context Protocol servers, scaling deterministic multi-agent LLMs, and navigating cybersecurity engineering.
+                First-hand operational field guides, CMMC &amp; security governance playbooks, and engineering stories from architecting Run Nexus, multi-agent LLM workflows, and deterministic audit pipelines.
             </p>
         </div>
     </header>
@@ -56,16 +57,178 @@
     <section class="py-5">
         <div class="container">
             <div class="filter-bar" data-filter-group="#blog-stories-grid">
-                <button class="filter-btn active" data-filter="all">All Stories (14)</button>
+                <button class="filter-btn active" data-filter="all">All Stories (21)</button>
+                <button class="filter-btn" data-filter="playbook">Playbooks &amp; Field Guides (7)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Architecture</button>
                 <button class="filter-btn" data-filter="llm">LLM Engineering &amp; GenAI</button>
-                <button class="filter-btn" data-filter="security">AI + Cybersecurity</button>
+                <button class="filter-btn" data-filter="security">Compliance &amp; Cybersecurity</button>
                 <button class="filter-btn" data-filter="culture">Engineering Leadership</button>
             </div>
 
             <div id="blog-stories-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Blog Story 15: CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&Ms Are Allowed -->
+                <div class="col" data-category="playbook security">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_15.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_15_img1.jpg?v=6" class="card-img-top" alt="CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&Ms Are Allowed">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">Field Guide &bull; CMMC Level 1</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&amp;Ms Are Allowed</h5>
+                            <p class="card-text">A plain-English regulatory and operational guide to 32 CFR &sect; 170.21 and FAR 52.204-21: why all 15 FAR practices (17 NIST SP 800-171 requirements) must be 100% MET, why POA&amp;Ms are prohibited at Level 1, and how a single operational gap triggers a binary Fail.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #15</span>
+                            <a href="stories/blog_15.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 16: How to Structure a Security Audit Report So Executives Actually Read It -->
+                <div class="col" data-category="playbook security culture">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_16.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_16_img1.jpg?v=6" class="card-img-top" alt="How to Structure a Security Audit Report So Executives Actually Read It">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Reporting</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">How to Structure a Security Audit Report So Executives Actually Read It: Executive Summaries vs. Evidence Annexes</h5>
+                            <p class="card-text">Why a 150-page raw data dump fails executives while a 2-page summary fails auditors—and how splitting deliverables into a 4–5 page C-Suite Executive Report backed by five standalone Supporting Evidence Annexes solves both.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #16</span>
+                            <a href="stories/blog_16.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 17: Why You Should Never Automate a Security Process Until You’ve Done It by Hand -->
+                <div class="col" data-category="playbook security culture">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_17.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_17_img1.jpg?v=6" class="card-img-top" alt="Why You Should Never Automate a Security Process Until You’ve Done It by Hand">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Methodology</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">Why You Should Never Automate a Security Process Until You’ve Done It by Hand</h5>
+                            <p class="card-text">How executing security reviews manually first exposes non-production scope pollution, nested access exclusions, and policy edge cases that whiteboard automations always miss.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #17</span>
+                            <a href="stories/blog_17.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 18: Where AI Belongs in Security Compliance—and Where It Doesn't -->
+                <div class="col" data-category="playbook llm security mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_18.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_18_img1.jpg?v=6" class="card-img-top" alt="Where AI Belongs in Security Compliance—and Where It Doesn't">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">Field Guide &bull; AI &amp; Compliance</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">Where AI Belongs in Security Compliance—and Where It Doesn&#x27;t</h5>
+                            <p class="card-text">Why you never ask a language model to count thousands of identity rows or guess whether a control passed—and why the right role for AI is orchestrating strict verification tools and assembling human-readable reports.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #18</span>
+                            <a href="stories/blog_18.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 19: How to Audit User Access Without Drowning in Group Sprawl -->
+                <div class="col" data-category="playbook security">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_19.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_19_img1.jpg?v=6" class="card-img-top" alt="How to Audit User Access Without Drowning in Group Sprawl">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Access Review</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title">How to Audit User Access Without Drowning in Group Sprawl</h5>
+                            <p class="card-text">A step-by-step mental model for untangling nested subgroups, sorting human findings into mutually exclusive risk buckets, documenting policy-denied principals, and reconciling human access against machine-only group lockdown.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #19</span>
+                            <a href="stories/blog_19.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 20: The Hidden Trap in Vulnerability Management: Why "Closed Within SLA" Can Still Be a Red Flag -->
+                <div class="col" data-category="playbook security">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_20.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_20_img1.jpg?v=6" class="card-img-top" alt="The Hidden Trap in Vulnerability Management: Why Closed Within SLA Can Still Be a Red Flag">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-mcp mb-0">Field Guide &bull; Vulnerability SLAs</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag</h5>
+                            <p class="card-text">How issue-tracker pause clocks, priority re-classifications, and queue transfers can mask calendar-duration breaches—and why a 3-bucket triage model (Valid, Breached, Verify) prevents audit blind spots.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #20</span>
+                            <a href="stories/blog_20.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Story 21: How I Use AI to Build Creative & Technical Projects Faster—And What Still Requires Human Judgment -->
+                <div class="col" data-category="playbook llm culture">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_21.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_21_img1.jpg?v=6" class="card-img-top" alt="How I Use AI to Build Creative & Technical Projects Faster—And What Still Requires Human Judgment">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Engineering Leadership &bull; AI Workflow</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            </div>
+                            <h5 class="card-title">How I Use AI to Build Creative &amp; Technical Projects Faster—And What Still Requires Human Judgment</h5>
+                            <p class="card-text">An honest reflection on building 27 AI and security projects: what generative AI accelerates in scaffolding and visual design, and where human taste, quality control, and domain ownership remain non-negotiable.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #21</span>
+                            <a href="stories/blog_21.html" class="btn-card-action btn-card-primary">
+                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Blog Story 14: Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills -->
-                <div class="col" data-category="mcp security llm">
+                <div class="col" data-category="playbook mcp security llm">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_14.html" class="card-img-wrapper d-block">
                             <img src="assets/images/blog_14_img1.jpg?v=5" class="card-img-top" alt="Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills">

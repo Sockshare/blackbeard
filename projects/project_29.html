@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive 3D biomimetic robotics field simulator and procedural teardown workbench featuring 9 multi-DOF units (Robotic Octopus, 18-DOF Hexapod, Scorpion, Honeybee, Quadruped Dog, Peregrine Raptor, Tarantula, Sidewinder Snake, and Cheetah).">
+    <title>Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/pelagos_simulator.jpg?v=6" class="project-img" alt="Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">9 Biomimetic Robot Units</span><span class="tech-pill">202-Link Octopus &amp; 18-DOF Walker</span><span class="tech-pill">X-Ray &amp; Thermal Overlays</span><span class="tech-pill">WebGL Bloom + CPU Fallback</span><span class="tech-pill">Single-File Offline Export</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-nexus">Biomimetic 3D Robotics Sim</span>
+                        <h1 class="text-white fw-bold mb-3">Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
+                        <p>Pelagos OC-8 &amp; 18-DOF Hexapod is an interactive 3D biomimetic robotics field simulator and teardown workbench built on a 1600×900 8-panel engineering HUD. Operators can switch across a 9-unit biomimetic fleet, scrub a continuous 3D teardown slider, isolate individual mechanical sub-assemblies, inspect X-Ray and thermal heatmaps, inject subsystem faults, and export the entire simulator as a self-contained offline HTML bundle.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>9 Articulated Biomimetic Robotic Units:</strong> Includes <code>OC-8</code> (Robotic Octopus with 202 arm links and 409 suction rollers), <code>HX-18</code> (18-DOF Six-Legged Walker), <code>SC-8</code> (Robotic Scorpion), <code>HB-7</code> (Piezo-Driven Honeybee), <code>CN-12</code> (12-DOF Quadruped Dog), <code>AV-6</code> (Peregrine Raptor), <code>AR-8</code> (8-Legged Tarantula), <code>OP-24</code> (24-Joint Sidewinder Snake), and <code>AC-14</code> (Flex-Spine Cheetah).</li>
+                            <li><strong>Continuous 3D Teardown &amp; Sub-Assembly Isolation:</strong> Explode any unit from 0% to 100% along radial assembly vectors and isolate specific subsystems (<code>OPTICS</code>, <code>MANTLE</code>, <code>ARM R2</code>, <code>SIPHON</code>, <code>BEAK</code>, <code>CHASSIS</code>, <code>SERVOS</code>, <code>CORE</code>) with synchronized 2D screen-space callout leaders.</li>
+                            <li><strong>X-Ray, Thermal Heatmap &amp; Fault Injection Lab:</strong> Toggle translucent X-Ray housing, inspect actuator thermal load gradients, trigger simulated actuator/seal faults, and cycle through 6 anodized livery arrangements.</li>
+                            <li><strong>WebGL Post-Processing + Automatic CPU Canvas Fallback:</strong> Renders with Three.js <code>EffectComposer</code> and <code>UnrealBloomPass</code> when GPU acceleration is present, and seamlessly switches to a custom 2D canvas software rasterizer in headless or remote-desktop environments.</li>
+                            <li><strong>Zero-Dependency Single-File Offline Exporter:</strong> <code>GET /api/export/offline.html</code> inlines WOFF2 fonts, stylesheets, Three.js, and procedural model builders into one portable HTML file.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>3D Procedural Kinematics &amp; Fleet Engine:</strong> Vanilla JavaScript (~6,000 LOC across <code>pelagos_sim.js</code> and <code>pelagos_fleet.js</code>), Multi-Joint Forward/Inverse Kinematic Pose Evaluators</li>
+                            <li><strong>Rendering Pipeline:</strong> Three.js r128, UnrealBloomPass Post-Processing, Custom 2D Canvas Software Projector &amp; Depth-Sorted Rasterizer</li>
+                            <li><strong>Telemetry HUD &amp; Audio:</strong> 8-Panel 1600×900 Responsive Studio Layout, Web Audio API Synthesized Telemetry &amp; Servo Acoustics</li>
+                            <li><strong>Backend &amp; Packaging:</strong> Python, Flask, Base64 Asset Inliner for Standalone Offline HTML Export</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">Inspecting complex multi-DOF robots—like an eight-arm continuum manipulator or an 18-servo hexapod—requires seeing how outer fairings, internal pump cores, and joint actuators relate in space and time. By generating every link, gear, lens, and seal procedurally in code and pairing exploded-view vectors with live kinematic gaits, the simulator lets engineers move fluidly between whole-body motion and component-level inspection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/pelagos-oc8-simulator" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

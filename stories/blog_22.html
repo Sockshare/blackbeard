@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside the engineering of three interactive simulation studios: BattleBot Designer (3D combat-robot CAD &amp; arena simulator), Pelagos OC-8 &amp; 18-DOF Hexapod (9-unit biomimetic teardown simulator), and LingoForge (10-language Half-Life SRS &amp; AI roleplay studio).">
+    <title>From Combat-Robot CAD to Biomimetic Teardowns &amp; 10-Language AI Tutors: Engineering Three Interactive Simulation Studios | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #22</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-media mb-0">3D Simulation &bull; Robotics CAD &bull; EdTech AI</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>8 min read
+                    </span>
+                </div>
+
+                <h1>From Combat-Robot CAD to Biomimetic Teardowns &amp; 10-Language AI Tutors: Engineering Three Interactive Simulation Studios</h1>
+                <img src="../assets/images/blog_22_img1.jpg?v=6" class="story-hero-img" alt="Three Engineering Workbenches: BattleBot Designer, Pelagos Biomimetic Simulator, and LingoForge">
+
+                <p class="lead">
+                    What do a 250-pound combat-robot CAD studio, a nine-unit biomimetic underwater/arthropod teardown simulator, and a 10-language spaced-repetition AI tutor have in common? <strong>Each one only becomes genuinely useful when you replace canned, brittle presets with a real underlying graph and mathematical model—and build clean fallbacks so the application works anywhere.</strong>
+                </p>
+
+                <div class="story-callout">
+                    <strong>Three New Open-Source Studios Shipped (#28–#30):</strong><br>
+                    1. <a href="../projects/project_28.html" class="text-info">BattleBot Designer</a> — 3D combat-robot CAD studio, 12-station Factory Floor, swept-volume interference solver, and live Arena combat simulator (<a href="https://github.com/Sockshare/battlebot-designer" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).<br>
+                    2. <a href="../projects/project_29.html" class="text-info">Pelagos OC-8 &amp; 18-DOF Hexapod</a> — 9-unit biomimetic 3D robotics teardown and diagnostic field simulator (<a href="https://github.com/Sockshare/pelagos-oc8-simulator" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).<br>
+                    3. <a href="../projects/project_30.html" class="text-info">LingoForge</a> — 10-language CEFR learning studio with Half-Life Regression SRS, Levenshtein grading, neural TTS, and AI roleplay (<a href="https://github.com/Sockshare/lingoforge" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).
+                </div>
+
+                <h2>1. BattleBot Designer: Treating a Combat Robot as a Connected Graph</h2>
+                <p>
+                    Early iterations of <a href="../projects/project_28.html" class="text-info">BattleBot Designer</a> made the mistake most configurators make: locking certain weapons to certain chassis and treating the 3D preview as static blocks. Rebuilding it properly meant throwing out arbitrary restrictions and modeling the robot as a physical graph:
+                </p>
+                <ul>
+                    <li><strong>Universal Hardpoints &amp; Swept-Volume Clash Detection:</strong> Every one of the 17 chassis (from 4WD billet boxes and tracked crawlers to quadruped/hexapod walkers, U-frames, H-frames, and melty-brain pucks) exposes five hardpoints (<code>front</code>, <code>top</code>, <code>rear</code>, <code>left</code>, <code>right</code>). Any of the 36 weapon modules can bolt onto any mount—unless their 3D swept motion envelopes or turret lines of fire physically intersect.</li>
+                    <li><strong>Anatomically &amp; Mechanically Correct Full-Body Shells:</strong> When a full-body spinning shell is installed, another module cannot simply clip through the spinning armor. Side hardpoints move onto the shell wall, spin with it, and add to its rotational inertia and unbalance forces (requiring a rotary slip ring for power), while a top-mounted turret can either ride the roof or sit stationary on a hollow dead-shaft mast wired through the bore.</li>
+                    <li><strong>Piece-Level Teardown Without Spin Wobble:</strong> Scrubbing the teardown slider first separates major assemblies, then pulls individual motor bells, copper stators, ESC heat sinks, and fasteners apart. Because piece offsets are transformed using live local quaternions after each frame's pose pass, spinning the weapon or driving the wheels at 100% teardown introduces <code>0.00 mm</code> of extra wobble.</li>
+                    <li><strong>From the Factory Floor to the Arena:</strong> After assembling a robot station by station on the 12-stage Factory Floor, you can take it directly into the 2D Arena—driving with <code>WASD</code> and firing directional weapons with <code>SPACE</code> + arrow keys (<code>↑</code> Front, <code>↓</code> Rear, <code>←</code> Left, <code>→</code> Right, or <code>SPACE</code> alone for the top weapon) against AI opponents across kill saws, wall screws, flame jets, and a timed pit.</li>
+                </ul>
+
+                <h2>2. Pelagos OC-8 &amp; 18-DOF Hexapod: Procedural Biomimetic Teardowns</h2>
+                <p>
+                    <a href="../projects/project_29.html" class="text-info">Pelagos OC-8 &amp; 18-DOF Hexapod</a> explores a different branch of robotics: soft-arm subsea manipulation and multi-legged arthropod locomotion across a nine-unit biomimetic fleet:
+                </p>
+                <ul>
+                    <li><strong>Nine Procedural Units in Pure Code:</strong> Alongside the eight-arm <code>Pelagos OC-8</code> robotic octopus (202 articulated links, 409 suction rollers, 6-petal mantle shell, 7-piston pump core) and the <code>Hexapod HX-18</code> (18 servo joints across six 3-DOF legs), the hangar includes a robotic scorpion (<code>SC-8</code>), piezo-driven honeybee (<code>HB-7</code>), 12-DOF quadruped dog (<code>CN-12</code>), peregrine raptor (<code>AV-6</code>), tarantula (<code>AR-8</code>), 24-joint sidewinder snake (<code>OP-24</code>), and flex-spine cheetah (<code>AC-14</code>).</li>
+                    <li><strong>X-Ray, Thermal &amp; Sub-Assembly Isolation:</strong> Every mesh is tagged with its subsystem, explosion vector, and thermal load curve—allowing operators to isolate a single tentacle or leg, switch into translucent X-Ray or thermal heatmap views, and export the entire simulator as a single offline HTML file.</li>
+                </ul>
+
+                <h2>3. Dual Rendering: Why Both 3D Studios Include a CPU Software Rasterizer</h2>
+                <p>
+                    A recurring lesson across both 3D robotics studios was environmental resilience. On a workstation with hardware WebGL, Three.js renders with environment maps, shadows, and bloom post-processing. But inside headless verification runners or remote-desktop sessions where GPU acceleration is disabled, a WebGL-only app shows a blank screen. Both <strong>BattleBot Designer</strong> and <strong>Pelagos</strong> therefore include a built-in CPU software rasterizer (with perspective-correct z-buffering and Gouraud PBR shading in BattleBot Designer) so every view mode, teardown slider, and headless Node test renders deterministically without a GPU.
+                </p>
+
+                <h2>4. LingoForge: Mathematical Spaced Repetition Meets Conversational AI</h2>
+                <p>
+                    On the EdTech side, <a href="../projects/project_30.html" class="text-info">LingoForge</a> pairs structured daily language drills across 10 languages with conversational AI tutoring:
+                </p>
+                <ul>
+                    <li><strong>Half-Life Regression SRS &amp; Levenshtein Grading:</strong> Instead of fixed intervals, LingoForge tracks each vocabulary item's memory half-life $h$ in SQLite ($p = 2^{-\Delta t / h}$) and uses Levenshtein edit distance to separate 1-character typos from conceptual grammar mistakes.</li>
+                    <li><strong>AI Roleplay &amp; Grammar Breakdowns with Offline Fallbacks:</strong> Learners can ask <em>"Explain My Answer"</em> after any exercise or step into multi-turn Roleplay missions with live Gemini coaching—and if no API key or internet connection is present, the engine falls back cleanly to deterministic local explanations and browser speech synthesis.</li>
+                </ul>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_21.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Building Faster with AI &amp; Human Judgment
+                    </a>
+                    <a href="../blog.html" class="btn-card-action btn-card-primary">
+                        View All 22 Blog Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

@@ -60,13 +60,13 @@
             </p>
             <div class="hero-cta-group">
                 <a href="#projects" class="btn-cyber-primary">
-                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (27)
+                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (30)
                 </a>
                 <a href="#about" class="btn-cyber-outline">
                     <i class="fa-solid fa-compass-drafting"></i> About &amp; 3-Stage Methodology
                 </a>
                 <a href="blog.html" class="btn-cyber-outline">
-                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (21)
+                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (22)
                 </a>
             </div>
         </div>
@@ -83,15 +83,156 @@
             </div>
 
             <div class="filter-bar" data-filter-group="#home-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (27)</button>
+                <button class="filter-btn active" data-filter="all">All Projects (30)</button>
                 <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (21)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (24)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Multi-Agent AI</button>
                 <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
                 <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; OSINT Ops</button>
             </div>
 
             <div id="home-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 28: BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_28.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/battlebot_designer.jpg?v=6" class="card-img-top" alt="BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-media">3D Robotics CAD &amp; Combat Sim</span>
+                            <h5 class="card-title">BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator</h5>
+                            <p class="card-text">Full-stack 3D combat-robot CAD studio with 17 chassis (including walkers, tracked, U/H-frames, and melty-brain pucks), 36 weapon modules across 5 hardpoints, swept-volume interference blocking, a 12-station Factory Floor, and a live Arena combat simulator.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">17 Chassis × 36 Modules</span><span class="tech-pill">Swept-Volume Clash Solver</span><span class="tech-pill">Piece-Level 3D Teardown</span><span class="tech-pill">WebGL + CPU Z-Buffer Rasterizer</span><span class="tech-pill">Live Arena Combat Sim</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject28">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_28.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 28 -->
+                <div class="modal fade" id="modalProject28" tabindex="-1" aria-labelledby="modalProject28Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-media mb-1">3D Robotics CAD &amp; Combat Sim</span>
+                                    <h5 class="modal-title text-white" id="modalProject28Label">BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/battlebot_designer.jpg?v=6" class="img-fluid mb-3" alt="BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator">
+                                <p class="mb-3">BattleBot Designer is an interactive 3D combat-robot engineering workbench, piece-by-piece Factory Floor assembler, and Arena combat simulator. Every robot is modeled as a connected graph: 17 chassis architectures expose five universal hardpoints (Front, Top, Rear, Left, Right), any of 36 kinetic, control, thermal, electrical, projectile, or passive modules can bolt onto any mount, and a swept-volume interference solver automatically blocks only combinations whose motion envelopes or lines of fire physically clash.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">17 Chassis × 36 Modules</span><span class="tech-pill">Swept-Volume Clash Solver</span><span class="tech-pill">Piece-Level 3D Teardown</span><span class="tech-pill">WebGL + CPU Z-Buffer Rasterizer</span><span class="tech-pill">Live Arena Combat Sim</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/battlebot-designer" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_28.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 29: Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_29.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/pelagos_simulator.jpg?v=6" class="card-img-top" alt="Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Biomimetic 3D Robotics Sim</span>
+                            <h5 class="card-title">Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</h5>
+                            <p class="card-text">Interactive 3D biomimetic robotics teardown simulator featuring 9 articulated units—including the 8-arm Pelagos OC-8 subsea octopus (202 links, 409 suction rollers) and 18-DOF Hexapod walker—with X-Ray, thermal overlays, and sub-assembly isolation.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">9 Biomimetic Robot Units</span><span class="tech-pill">202-Link Octopus &amp; 18-DOF Walker</span><span class="tech-pill">X-Ray &amp; Thermal Overlays</span><span class="tech-pill">WebGL Bloom + CPU Fallback</span><span class="tech-pill">Single-File Offline Export</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject29">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_29.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 29 -->
+                <div class="modal fade" id="modalProject29" tabindex="-1" aria-labelledby="modalProject29Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">Biomimetic 3D Robotics Sim</span>
+                                    <h5 class="modal-title text-white" id="modalProject29Label">Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/pelagos_simulator.jpg?v=6" class="img-fluid mb-3" alt="Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator">
+                                <p class="mb-3">Pelagos OC-8 &amp; 18-DOF Hexapod is an interactive 3D biomimetic robotics field simulator and teardown workbench built on a 1600×900 8-panel engineering HUD. Operators can switch across a 9-unit biomimetic fleet, scrub a continuous 3D teardown slider, isolate individual mechanical sub-assemblies, inspect X-Ray and thermal heatmaps, inject subsystem faults, and export the entire simulator as a self-contained offline HTML bundle.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">9 Biomimetic Robot Units</span><span class="tech-pill">202-Link Octopus &amp; 18-DOF Walker</span><span class="tech-pill">X-Ray &amp; Thermal Overlays</span><span class="tech-pill">WebGL Bloom + CPU Fallback</span><span class="tech-pill">Single-File Offline Export</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/pelagos-oc8-simulator" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_29.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 30: LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_30.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/lingoforge.jpg?v=6" class="card-img-top" alt="LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">EdTech &amp; Conversational AI</span>
+                            <h5 class="card-title">LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</h5>
+                            <p class="card-text">Self-hosted 10-language learning studio and CLI with CEFR skill trees, 8 interactive exercise mechanics, Half-Life Regression spaced repetition (SRS), Levenshtein typo-tolerant grading, neural Edge-TTS audio, and live AI roleplay missions.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">10 CEFR Language Courses</span><span class="tech-pill">Half-Life Regression SRS</span><span class="tech-pill">AI Roleplay &amp; Explain Answer</span><span class="tech-pill">Neural Edge-TTS Audio</span><span class="tech-pill">1:1 CLI Parity</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject30">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_30.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 30 -->
+                <div class="modal fade" id="modalProject30" tabindex="-1" aria-labelledby="modalProject30Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-mcp mb-1">EdTech &amp; Conversational AI</span>
+                                    <h5 class="modal-title text-white" id="modalProject30Label">LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/lingoforge.jpg?v=6" class="img-fluid mb-3" alt="LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio">
+                                <p class="mb-3">LingoForge is an independent, self-hosted 10-language learning web application and CLI built with Flask and SQLite. It combines CEFR-aligned skill trees, 8 interactive exercise mechanics, voiced dialogue stories, non-Latin script trainers, Half-Life Regression spaced repetition, and Levenshtein typo-tolerant grading with AI-powered grammar explanations, live conversational roleplay missions, and on-demand custom unit synthesis.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">10 CEFR Language Courses</span><span class="tech-pill">Half-Life Regression SRS</span><span class="tech-pill">AI Roleplay &amp; Explain Answer</span><span class="tech-pill">Neural Edge-TTS Audio</span><span class="tech-pill">1:1 CLI Parity</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/lingoforge" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_30.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                                 <!-- Project 22: WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader -->
                 <div class="col" data-category="media nexus mcp">
                     <div class="card h-100 d-flex flex-column">
@@ -1543,10 +1684,33 @@
                     <p class="text-secondary mb-0">Practical field guides on CMMC Level 1 compliance, executive audit reporting, user access reviews, and LLM orchestration.</p>
                 </div>
                 <a href="blog.html" class="btn-cyber-outline mt-3 mt-md-0">
-                    View All 21 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    View All 22 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                <!-- Blog Story 22: From Combat-Robot CAD to Biomimetic Teardowns & 10-Language AI Tutors -->
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_22.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_22_img1.jpg?v=6" class="card-img-top" alt="From Combat-Robot CAD to Biomimetic Teardowns & 10-Language AI Tutors">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-media mb-0">3D Simulation &bull; Robotics CAD &bull; EdTech AI</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            </div>
+                            <h5 class="card-title">From Combat-Robot CAD to Biomimetic Teardowns &amp; 10-Language AI Tutors: Engineering Three Interactive Simulation Studios</h5>
+                            <p class="card-text">How we architected BattleBot Designer (17 chassis, 36 modules, swept-volume clash solver, and 2D Arena combat), the 9-unit Pelagos biomimetic 3D teardown simulator, and the 10-language LingoForge SRS &amp; AI roleplay studio.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #22</span>
+                            <a href="stories/blog_22.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Blog Story 15: CMMC Level 1 Explained -->
                 <div class="col">
                     <div class="card h-100 d-flex flex-column">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore 27 AI, LLM, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
+    <meta name="description" content="Explore 30 AI, LLM, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
     <title>Projects | Black Beard&#x27;s Portfolio — Run Nexus, MCP Servers &amp; AI Systems</title>
     <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
     <link href="assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
@@ -45,7 +45,7 @@
     <header class="hero">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-code-branch"></i> 27 Production &amp; Research Systems
+                <i class="fa-solid fa-code-branch"></i> 30 Production &amp; Research Systems
             </div>
             <h1 class="neon-text">AI Systems, <span class="hero-gradient-span">Run Nexus</span> &amp; Security Engineering</h1>
             <p class="neon-text-blue mb-0">
@@ -57,15 +57,84 @@
     <section class="py-5">
         <div class="container">
             <div class="filter-bar" data-filter-group="#all-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (27)</button>
+                <button class="filter-btn active" data-filter="all">All Projects (30)</button>
                 <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (21)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (24)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Workflows</button>
                 <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
                 <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; Hardware</button>
             </div>
 
             <div id="all-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 28: BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_28.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/battlebot_designer.jpg?v=6" class="card-img-top" alt="BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-media">3D Robotics CAD &amp; Combat Sim</span>
+                            <h5 class="card-title">BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator</h5>
+                            <p class="card-text">BattleBot Designer is an interactive 3D combat-robot engineering workbench, piece-by-piece Factory Floor assembler, and Arena combat simulator. Every robot is modeled as a connected graph: 17 chassis architectures expose five universal hardpoints (Front, Top, Rear, Left, Right), any of 36 kinetic, control, thermal, electrical, projectile, or passive modules can bolt onto any mount, and a swept-volume interference solver automatically blocks only combinations whose motion envelopes or lines of fire physically clash.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">17 Chassis × 36 Modules</span><span class="tech-pill">Swept-Volume Clash Solver</span><span class="tech-pill">Piece-Level 3D Teardown</span><span class="tech-pill">WebGL + CPU Z-Buffer Rasterizer</span><span class="tech-pill">Live Arena Combat Sim</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/Sockshare/battlebot-designer" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="projects/project_28.html" class="btn-card-action btn-card-primary">
+                                View Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 29: Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_29.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/pelagos_simulator.jpg?v=6" class="card-img-top" alt="Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Biomimetic 3D Robotics Sim</span>
+                            <h5 class="card-title">Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</h5>
+                            <p class="card-text">Pelagos OC-8 &amp; 18-DOF Hexapod is an interactive 3D biomimetic robotics field simulator and teardown workbench built on a 1600×900 8-panel engineering HUD. Operators can switch across a 9-unit biomimetic fleet, scrub a continuous 3D teardown slider, isolate individual mechanical sub-assemblies, inspect X-Ray and thermal heatmaps, inject subsystem faults, and export the entire simulator as a self-contained offline HTML bundle.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">9 Biomimetic Robot Units</span><span class="tech-pill">202-Link Octopus &amp; 18-DOF Walker</span><span class="tech-pill">X-Ray &amp; Thermal Overlays</span><span class="tech-pill">WebGL Bloom + CPU Fallback</span><span class="tech-pill">Single-File Offline Export</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/Sockshare/pelagos-oc8-simulator" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="projects/project_29.html" class="btn-card-action btn-card-primary">
+                                View Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 30: LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_30.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/lingoforge.jpg?v=6" class="card-img-top" alt="LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-mcp">EdTech &amp; Conversational AI</span>
+                            <h5 class="card-title">LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</h5>
+                            <p class="card-text">LingoForge is an independent, self-hosted 10-language learning web application and CLI built with Flask and SQLite. It combines CEFR-aligned skill trees, 8 interactive exercise mechanics, voiced dialogue stories, non-Latin script trainers, Half-Life Regression spaced repetition, and Levenshtein typo-tolerant grading with AI-powered grammar explanations, live conversational roleplay missions, and on-demand custom unit synthesis.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">10 CEFR Language Courses</span><span class="tech-pill">Half-Life Regression SRS</span><span class="tech-pill">AI Roleplay &amp; Explain Answer</span><span class="tech-pill">Neural Edge-TTS Audio</span><span class="tech-pill">1:1 CLI Parity</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/Sockshare/lingoforge" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="projects/project_30.html" class="btn-card-action btn-card-primary">
+                                View Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                                 <!-- Project 22: WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader -->
                 <div class="col" data-category="media nexus mcp">
                     <div class="card h-100 d-flex flex-column">

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Self-hosted 10-language learning web application and CLI featuring CEFR skill trees, 8 exercise mechanics, Half-Life Regression spaced repetition, Levenshtein grading, neural TTS, and AI roleplay.">
+    <title>LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/lingoforge.jpg?v=6" class="project-img" alt="LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">10 CEFR Language Courses</span><span class="tech-pill">Half-Life Regression SRS</span><span class="tech-pill">AI Roleplay &amp; Explain Answer</span><span class="tech-pill">Neural Edge-TTS Audio</span><span class="tech-pill">1:1 CLI Parity</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-mcp">EdTech &amp; Conversational AI</span>
+                        <h1 class="text-white fw-bold mb-3">LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</h1>
+
+                        <h2><i class="fa-solid fa-compass-drafting"></i> Summary</h2>
+                        <p>LingoForge is an independent, self-hosted 10-language learning web application and CLI built with Flask and SQLite. It combines CEFR-aligned skill trees, 8 interactive exercise mechanics, voiced dialogue stories, non-Latin script trainers, Half-Life Regression spaced repetition, and Levenshtein typo-tolerant grading with AI-powered grammar explanations, live conversational roleplay missions, and on-demand custom unit synthesis.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>10 Complete Language Courses with Non-Latin Script Trainers:</strong> Supports Spanish, French, Japanese, German, Italian, Korean, Mandarin Chinese, Portuguese, Russian, and Arabic—including dedicated trainers for Hiragana/Katakana, Hangul, Cyrillic, Arabic Abjad, and Pinyin tones.</li>
+                            <li><strong>8 Interactive Exercise Mechanics &amp; Voiced Stories:</strong> Multiple-choice translation, word-bank tile assembly, normal/slow listening comprehension, free-type input with diacritic bars, tap-pair matching, cloze fill-in-the-blank, visual card selection, and speaking checks, plus interactive multi-character stories.</li>
+                            <li><strong>Half-Life Regression SRS &amp; Levenshtein Typo Grader:</strong> Models per-word recall probability $p = 2^{-\Delta t / h}$, adapts memory half-life $h$ on every review, separates 1-edit typos from conceptual errors, and logs misses to a Mistakes Inbox for targeted weak-word restoration.</li>
+                            <li><strong>AI Tutor (&quot;Explain My Answer&quot;), Roleplay Missions &amp; Custom Units:</strong> Delivers token-by-token grammar breakdowns, multi-turn roleplay missions with CEFR coaching tips, and custom topic unit generation via Gemini (<code>google-genai</code>) with deterministic offline fallbacks.</li>
+                            <li><strong>Neural Edge-TTS Caching &amp; 1:1 CLI Parity:</strong> Synthesizes and caches SHA-256-indexed MP3 speech via <code>edge-tts</code> (falling back to browser Web Speech API offline) and exposes every engine action through <code>cli.py</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Learning &amp; SRS Engine:</strong> Python, Flask, SQLite State Persistence, Half-Life Regression Spaced Repetition, Levenshtein Distance Grader</li>
+                            <li><strong>Conversational AI &amp; Speech:</strong> Google GenAI SDK (Gemini) with Deterministic Offline Fallbacks, Microsoft Neural <code>edge-tts</code> Audio Synthesizer &amp; Cache</li>
+                            <li><strong>Frontend &amp; CLI:</strong> Responsive Single-Page Web App (Light/Dark Theme, Web Speech API) + <code>cli.py</code> Terminal Interface</li>
+                            <li><strong>Verification:</strong> Python <code>unittest</code> Suite verifying 10-language course generation, SRS state transitions, Levenshtein grading, and offline AI tutor responses</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">Effective language acquisition requires pairing structured, low-friction repetition with open-ended conversational production. LingoForge unifies both in a local-first architecture: a mathematical Half-Life Regression scheduler governs vocabulary retention and typo-tolerant drills, while roleplay scenarios and structured grammar explanations let learners practice unscripted dialogue with or without an external cloud API key.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/lingoforge" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

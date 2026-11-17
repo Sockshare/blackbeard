@@ -60,13 +60,13 @@
             </p>
             <div class="hero-cta-group">
                 <a href="#projects" class="btn-cyber-primary">
-                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (32)
+                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (34)
                 </a>
                 <a href="#about" class="btn-cyber-outline">
                     <i class="fa-solid fa-compass-drafting"></i> About &amp; 3-Stage Methodology
                 </a>
                 <a href="blog.html" class="btn-cyber-outline">
-                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (23)
+                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (24)
                 </a>
             </div>
         </div>
@@ -83,15 +83,109 @@
             </div>
 
             <div class="filter-bar" data-filter-group="#home-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (32)</button>
+                <button class="filter-btn active" data-filter="all">All Projects (34)</button>
                 <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (26)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (28)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Multi-Agent AI</button>
                 <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
                 <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; OSINT Ops</button>
             </div>
 
             <div id="home-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 34: TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio -->
+                <div class="col" data-category="compliance cyber mcp nexus">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_34.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/trustforge_soc2.jpg?v=8" class="card-img-top" alt="TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-security">GRC &bull; SOC 2 Type II &bull; Privacy &amp; InfoSec</span>
+                            <h5 class="card-title">TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio</h5>
+                            <p class="card-text">Autonomous AICPA SOC 2 Type I &amp; Type II readiness, 5 Trust Services Categories (28 criteria + 2022 Revised Points of Focus) continuous evidence engine, 7-Gate exception triage (True Positive vs. Compensating Control False Positive), vendor CUEC analyzer, and ISO 27001 / NIST 800-53 / HIPAA / GDPR / PCI-DSS crosswalk studio.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">AICPA SOC 2 (5 TSCs / 28 Criteria)</span><span class="tech-pill">Type I &amp; Type II Sampling</span><span class="tech-pill">7-Gate Exception Triage</span><span class="tech-pill">Vendor CUEC &amp; Bridge Letters</span><span class="tech-pill">ISO 27001 / NIST / HIPAA / GDPR</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject34">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_34.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 34 -->
+                <div class="modal fade" id="modalProject34" tabindex="-1" aria-labelledby="modalProject34Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-security mb-1">GRC &bull; SOC 2 Type II &bull; Privacy &amp; InfoSec</span>
+                                    <h5 class="modal-title text-white" id="modalProject34Label">TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/trustforge_soc2.jpg?v=8" class="img-fluid mb-3" alt="TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio">
+                                <p class="mb-3">TrustForge SOC 2 is an open-source, deterministic AICPA SOC 2 Type I &amp; Type II readiness, continuous evidence evaluation, and multi-framework compliance studio covering all 5 Trust Services Categories (Security CC1–CC9, Availability A1, Processing Integrity PI1, Confidentiality C1, and Privacy P1–P8). It automates AICPA audit sampling, runs a 7-Gate adversarial exception triage engine, audits upstream vendor SOC 2 CUECs and Bridge Letters, and generates cryptographically hashed Section III/IV auditor workpapers.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">AICPA SOC 2 (5 TSCs / 28 Criteria)</span><span class="tech-pill">Type I &amp; Type II Sampling</span><span class="tech-pill">7-Gate Exception Triage</span><span class="tech-pill">Vendor CUEC &amp; Bridge Letters</span><span class="tech-pill">ISO 27001 / NIST / HIPAA / GDPR</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/trustforge-soc2" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_34.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 33: SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio -->
+                <div class="col" data-category="mcp nexus compliance cyber">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_33.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" alt="SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">Agentic AI &bull; MCP &bull; Compiler Studio</span>
+                            <h5 class="card-title">SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio</h5>
+                            <p class="card-text">Interactive Web-App-to-Agent-Skill (SKILL.md), Deterministic Python CLI, and Model Context Protocol (mcp_server.py JSON-RPC 2.0) Compiler Studio with 6 industry security/GRC/privacy presets, a 4-stage multi-agent synthesis pipeline, and a 5-gate AST security &amp; 3-run SHA-256 determinism verifier.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Open Agent SKILL.md</span><span class="tech-pill">MCP JSON-RPC 2.0</span><span class="tech-pill">4-Stage Compiler</span><span class="tech-pill">5-Gate Verifier</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject33">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_33.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 33 -->
+                <div class="modal fade" id="modalProject33" tabindex="-1" aria-labelledby="modalProject33Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">Agentic AI &bull; MCP &bull; Compiler Studio</span>
+                                    <h5 class="modal-title text-white" id="modalProject33Label">SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/skillforge_ai.jpg?v=8" class="img-fluid mb-3" alt="SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio">
+                                <p class="mb-3">SkillForge AI transforms any OpenAPI 3.1 specification, policy blueprint, or enterprise security/compliance workflow into a portable, cryptographically deterministic AI agent skill bundle (SKILL.md + mcp_server.py + scripts/engine.py + schema.json + test_skill.py) verified across 5 security and determinism gates.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Open Agent SKILL.md</span><span class="tech-pill">MCP JSON-RPC 2.0</span><span class="tech-pill">4-Stage Compiler</span><span class="tech-pill">5-Gate Verifier</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/skillforge-ai" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_33.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 32: Outbreak 3D ("Ant Farm"): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game -->
                 <div class="col" data-category="media nexus mcp">
                     <div class="card h-100 d-flex flex-column">
@@ -1778,10 +1872,33 @@
                     <p class="text-secondary mb-0">Practical field guides on CMMC Level 1 compliance, executive audit reporting, user access reviews, and LLM orchestration.</p>
                 </div>
                 <a href="blog.html" class="btn-cyber-outline mt-3 mt-md-0">
-                    View All 23 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    View All 24 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Blog Story 24: From Web Apps to Deterministic Agent Skills & Autonomous SOC 2 Type II Audit Studios -->
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_24.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_24_img1.jpg?v=8" class="card-img-top" alt="From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-security mb-0">Agentic AI &bull; MCP &bull; SOC 2 Type II &amp; Privacy</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>9 min read</span>
+                            </div>
+                            <h5 class="card-title">From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2</h5>
+                            <p class="card-text">How I built SkillForge AI (a 4-stage Web-App-to-SKILL.md &amp; MCP JSON-RPC 2.0 compiler with 5-gate AST security &amp; 3-run SHA-256 verification) and TrustForge SOC 2 (an autonomous 5-TSC SOC 2 Type II readiness, 7-Gate exception triage, vendor CUEC analyzer, and ISO/NIST/HIPAA/GDPR crosswalk studio).</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #24</span>
+                            <a href="stories/blog_24.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Blog Story 23: From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies -->
                 <div class="col">
                     <div class="card h-100 d-flex flex-column">

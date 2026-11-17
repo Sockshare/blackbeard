@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How I engineered SkillForge AI (a Web-App-to-Agent-Skill SKILL.md and MCP JSON-RPC 2.0 compiler studio) and TrustForge SOC 2 (an autonomous AICPA SOC 2 Type II readiness, 7-Gate exception triage, and privacy crosswalk engine) with 3-run SHA-256 determinism.">
+    <title>From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2 | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #24</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-security mb-0">Agentic AI &bull; MCP JSON-RPC 2.0 &bull; SOC 2 Type II &amp; Privacy</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>9 min read
+                    </span>
+                </div>
+
+                <h1>From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2</h1>
+                <img src="../assets/images/blog_24_img1.jpg?v=8" class="story-hero-img" alt="TrustForge SOC 2 and SkillForge AI Studio">
+
+                <p class="lead">
+                    In enterprise security, governance, risk, compliance (GRC), and data privacy, "close enough" is a failing grade. If an AI agent audits your cloud IAM policies or your AICPA SOC 2 Type II control samples three times and produces three slightly different numbers, no external CPA auditor or CISO will sign off on it. That insight drove my two newest open-source engineering releases: <a href="../projects/project_33.html" class="text-info">SkillForge AI</a> and <a href="../projects/project_34.html" class="text-info">TrustForge SOC 2</a>.
+                </p>
+
+                <div class="story-callout">
+                    <strong>Two New Open-Source Agentic &amp; Security/GRC Web Studios (#33–#34):</strong><br>
+                    1. <a href="../projects/project_33.html" class="text-info">SkillForge AI</a> — Web-App-to-Agent-Skill (<code>SKILL.md</code>), Deterministic Python CLI, and Model Context Protocol (<code>mcp_server.py</code> JSON-RPC 2.0) Compiler Studio with 6 industry security/GRC/privacy presets and 5-Gate verification (<a href="https://github.com/Sockshare/skillforge-ai" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).<br>
+                    2. <a href="../projects/project_34.html" class="text-info">TrustForge SOC 2</a> — Autonomous AICPA SOC 2 Type I &amp; Type II Readiness, 5-TSC Continuous Evidence Engine (28 Criteria), 7-Gate Exception Triage, Vendor CUEC Analyzer, and ISO 27001 / NIST 800-53 / HIPAA / GDPR / PCI-DSS Crosswalk Studio (<a href="https://github.com/Sockshare/trustforge-soc2" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).
+                </div>
+
+                <h2>1. SkillForge AI: Compiling Web Workflows into Verified <code>SKILL.md</code> &amp; MCP Tools</h2>
+                <p>
+                    Everyone is building AI agents, but turning an existing web application, OpenAPI 3.1 service, or security playbook into a reliable agent tool still requires glue code that is rarely tested for determinism. With <a href="../projects/project_33.html" class="text-info">SkillForge AI</a>, I built a 4-stage compiler studio that takes a workflow specification and synthesizes the entire portable agent package automatically:
+                </p>
+                <ul>
+                    <li><strong>Stage 1 — Workflow &amp; Schema Architect:</strong> Parses OpenAPI 3.1 specs, policy rules, or natural-language blueprints into strict JSON Schema Draft 2020-12 input/output contracts and compliance control mappings (CIS AWS, NSA/CISA Kubernetes, AICPA SOC 2, GDPR Art. 25/30/32, OWASP API Top 10, FinOps).</li>
+                    <li><strong>Stage 2 — Deterministic Engine Synthesizer:</strong> Generates a zero-dependency Python CLI engine (<code>scripts/engine.py</code>), an open-standard <code>SKILL.md</code> manifest (with YAML frontmatter and execution guardrails), and a dual stdio/HTTP Model Context Protocol server (<code>mcp_server.py</code>).</li>
+                    <li><strong>Stage 3 — 5-Gate Quality, AST Security &amp; 3-Run Determinism Verifier:</strong> Before a skill can be exported, SkillForge AI parses the generated Python AST to guarantee zero dangerous calls or hardcoded secrets, validates the JSON Schema contract, runs the engine three consecutive times against the workload fixture to prove <code>SHA-256(Run 1) == SHA-256(Run 2) == SHA-256(Run 3)</code>, and tests the live MCP JSON-RPC 2.0 handshake (<code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>).</li>
+                    <li><strong>Stage 4 — Deterministic Multi-Artifact Packager:</strong> Bundles <code>SKILL.md</code>, <code>mcp_server.py</code>, <code>scripts/engine.py</code>, <code>references/schema.json</code>, and <code>tests/test_skill.py</code> into a byte-reproducible <code>.zip</code> archive.</li>
+                </ul>
+
+                <h2>2. TrustForge SOC 2: Autonomous Type II Auditing, 7-Gate Exception Triage &amp; Privacy Crosswalks</h2>
+                <p>
+                    Having led security, compliance, and privacy engineering initiatives across cloud and regulated enterprise environments, I wanted <a href="../projects/project_34.html" class="text-info">TrustForge SOC 2</a> to reflect how a real CPA firm and an internal Security/GRC engineering team actually execute a SOC 2 Type II engagement:
+                </p>
+                <ul>
+                    <li><strong>Full 5 Trust Services Categories (28 AICPA Criteria + 2022 Revised Points of Focus):</strong> Evaluates automated telemetry across <em>Security (CC1.1–CC9.2)</em>, <em>Availability (A1.1–A1.3)</em>, <em>Processing Integrity (PI1.2–PI1.3)</em>, <em>Confidentiality (C1.1–C1.2)</em>, and <em>Privacy (P1.1–P6.1)</em>.</li>
+                    <li><strong>AICPA Audit Guide Sampling Mathematics:</strong> Switching between <code>SOC 2 Type I</code> (Point-in-Time Design) and <code>SOC 2 Type II</code> (3, 6, or 12-Month Operating Effectiveness) dynamically recalculates required audit sample populations—testing up to 661 discrete samples across daily monitoring, weekly infrastructure scans, quarterly access reviews, CI/CD pull requests, and HR termination revocations.</li>
+                    <li><strong>7-Gate Adversarial Exception Triage (True Positive vs. Compensating Control False Positive):</strong> Raw scanner findings create audit panic when teams don't document compensating controls. TrustForge SOC 2 passes every flagged alert through 7 structured gates: verifying whether an asset is in the production boundary (Gate 0), checking network reachability (Gate 1), inspecting compensating controls like AWS Organization SCPs or GDPR Art. 12(3) statutory extensions (Gate 2), evaluating data sensitivity (Gate 3), checking remediation SLAs (Gate 4), and synthesizing a final CPA Section IV verdict (Gates 5–6).</li>
+                    <li><strong>Subservice Vendor SOC 2 CUEC &amp; Bridge-Letter Analyzer (<code>CC9.2</code>):</strong> Audits upstream Carve-Out and Inclusive subservice organizations (AWS, Okta, Snowflake, Stripe, Auth0), calculates report period gap days to the audit end-date, flags missing Bridge Letters, and verifies that every Complementary User Entity Control (CUEC) is mapped to an effective internal control.</li>
+                    <li><strong>6-Framework Crosswalk &amp; 3-Run SHA-256 Determinism:</strong> Every criterion maps live to <code>ISO/IEC 27001:2022</code>, <code>NIST SP 800-53 Rev. 5</code>, <code>HIPAA</code>, <code>GDPR</code>, and <code>PCI-DSS v4.0</code>, and the entire Section III/IV audit pack is verified bit-for-bit identical across 3 runs.</li>
+                </ul>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_23.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: AeroForge 3D &amp; Outbreak 3D Ant-Farm Simulations
+                    </a>
+                    <a href="../blog.html" class="btn-card-action btn-card-primary">
+                        View All 24 Blog Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <script src="../js/particles.js?v=20261106v3"></script>
+</body>
+</html>

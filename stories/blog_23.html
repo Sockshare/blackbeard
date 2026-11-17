@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside the engineering of AeroForge 3D (26 fighter jets, 67-part teardown, Mach CFD &amp; 3D dogfight arena) and Outbreak 3D (an autonomous human-zombie colony &amp; social-drama simulation)—and why this marks the beginning of building ant-farm simulation games.">
+    <title>From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building &quot;Ant-Farm&quot; Simulation Games | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber max-w-story mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #23</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Ant-Farm Simulations &bull; 3D Aerospace CAD &bull; Emergent AI</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>8 min read
+                    </span>
+                </div>
+
+                <h1>From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building &quot;Ant-Farm&quot; Simulation Games</h1>
+                <img src="../assets/images/blog_23_img1.jpg?v=7" class="story-hero-img" alt="Outbreak 3D Ant-Farm Colony Simulation and AeroForge 3D Fighter Jet CAD Studio">
+
+                <p class="lead">
+                    There is a specific moment when you are building a simulation where the system stops feeling like code you wrote and starts feeling like a miniature world you are merely observing through glass. Shipping <a href="../projects/project_31.html" class="text-info">AeroForge 3D</a> and <a href="../projects/project_32.html" class="text-info">Outbreak 3D (&quot;Ant Farm&quot;)</a> back-to-back made something click for me: <strong>this may be the start of me making a whole series of ant-farm simulation type games.</strong>
+                </p>
+
+                <div class="story-callout">
+                    <strong>Two New 3D Simulation Studios Shipped (#31–#32):</strong><br>
+                    1. <a href="../projects/project_31.html" class="text-info">AeroForge 3D</a> — Historical-to-hypersonic fighter jet CAD studio (26 aircraft from 1917–2030), 12-bay / 67-part mechanical teardown, ISA Mach CFD &amp; 360° RCS polar solver, and playable 3D dogfight simulator (<a href="https://github.com/Sockshare/aeroforge-3d" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).<br>
+                    2. <a href="../projects/project_32.html" class="text-info">Outbreak 3D (&quot;Ant Farm&quot;)</a> — Autonomous 3D human-zombie colony, 10-factor emotional psychology engine, emergent social drama (romances, cliques, rivalries, mutinies), generator blackouts, and survival simulation game (<a href="https://github.com/Sockshare/outbreak-3d" target="_blank" rel="noopener noreferrer" class="text-info">GitHub</a>).
+                </div>
+
+                <h2>1. AeroForge 3D: 113 Years of Fighter Engineering in One Parametric Workbench</h2>
+                <p>
+                    With <a href="../projects/project_31.html" class="text-info">AeroForge 3D</a>, I wanted to answer a question that static 3D model viewers never can: <em>what actually changes inside the skin of a combat aircraft as you move from a 1917 rotary-piston biplane to a Mach 6 hypersonic scramjet waverider—and what happens when you modify those trade-offs yourself?</em>
+                </p>
+                <ul>
+                    <li><strong>26 Historical &amp; Next-Gen Aircraft Across 5 Eras:</strong> Every airframe—from the Sopwith Camel, P-51D Mustang, and F-86F Sabre to the F-14D Tomcat, F-22A Raptor, Su-57 Felon, J-20 Mighty Dragon, and NGAD/Darkstar concepts—is generated procedurally from real dimensional, mass, and propulsion parameters across <code>USA</code>, <code>RUS</code>, and <code>CHN</code> design doctrines.</li>
+                    <li><strong>12 Internal Bays &amp; 67 Exploded Sub-Parts:</strong> Pulling the teardown slider from <code>0%</code> to <code>100%</code> peels back the outer fuselage skin and separates 67 internal components along radial and axial vectors: nose radome, AESA T/R brick array, HUD &amp; Martin-Baker ACES II ejection seat, forward avionics racks, titanium wing carry-through bulkheads, self-sealing bladder fuel cells, 3-stage rotating fan/compressor/turbine spools, variable afterburner petals, and internal rotary missile launchers.</li>
+                    <li><strong>Live ISA Aerodynamics, 360° Stealth RCS Polar &amp; 3D Dogfight Arena:</strong> Re-sculpting wing sweep, aspect ratio, or fuselage chine angle immediately updates wave drag across Mach regimes in a 1976 International Standard Atmosphere solver. Hanging external missiles on underwing pylons instead of internal bays visibly spikes your frontal and beam Radar Cross Section (dBsm) on the 360° polar radar plot—and makes you detectable much earlier when you click <strong>Launch Dogfight</strong> to fly your custom jet against an AI bandit in 3D aerial combat.</li>
+                </ul>
+
+                <h2>2. Outbreak 3D (&quot;Ant Farm&quot;): Putting 30 Personalities Inside a Glass-Box Apocalypse</h2>
+                <p>
+                    If AeroForge 3D is about deterministic physical engineering, <a href="../projects/project_32.html" class="text-info">Outbreak 3D</a> is about what happens when you put 30 autonomous humans inside a walled compound surrounded by the undead, give them real psychological flaws, and take your hands off the steering wheel.
+                </p>
+                <p>
+                    Most zombie games make survivors interchangeable workers who chop wood and shoot on command. In <strong>Outbreak 3D</strong>, every survivor is an autonomous agent driven by a <strong>10-factor emotional vector</strong> and a live $-100 \to +100$ pairwise relationship graph:
+                </p>
+                <ul>
+                    <li><strong>10 Dynamic Emotions Driving Real Decisions:</strong> Each survivor continuously updates <code>Fear</code>, <code>Anger</code>, <code>Jealousy</code>, <code>Greed</code>, <code>Paranoia</code>, <code>Pride</code>, <code>Empathy</code>, <code>Loyalty</code>, <code>Hope</code>, and <code>Resentment</code>. When food rations drop below critical thresholds, a survivor with high <code>Greed</code> and <code>Paranoia</code> doesn't just get a stat penalty—they secretly hoard rations from the communal stockpile, triggering fury across the camp if caught.</li>
+                    <li><strong>Romances, Cliques, Love Triangles &amp; Mutinies:</strong> As survivors scavenge together, share meals around the campfire, or rescue each other at the barricades, they form <em>Romances</em>, <em>Ride-or-Die Best Friendships</em>, and named 3–5 person <em>Cliques</em> (<em>The Iron Pact</em>, <em>Watchtower Crew</em>, <em>Night Owls</em>). Conversely, when someone's partner bonds too closely with a third survivor, a <em>Love Triangle</em> ignites—leading to public confrontations, heartbreaks, bitter <em>Exes</em>, fistfights, and flat-out refusals to go on scavenging expeditions with a hated rival.</li>
+                    <li><strong>Season Two Survival Pressure — Blackouts, Amputations &amp; 9 Zombie Classes:</strong> The social drama doesn't happen in a vacuum; it collides with physical survival. The colony has to keep its diesel generator fueled or suffer midnight <code>BLACKOUT</code>s that kill the perimeter floodlights and auto-turrets right as Screamers, Hulks, Bloated Spitters, and Night Stalkers attack. Bitten survivors hide or confess their infection during the incubation window, forcing the medic to attempt high-risk limb amputations in the Med Tent while <strong>Roxy</strong>, the camp's loyal guard dog, patrols the gate.</li>
+                    <li><strong>Solid Collision Physics &amp; 1:1 Headless CLI Verification:</strong> Every survivor and zombie obeys hard AABB and circle collision physics—zombies cannot phase through walls or closed building doors and must physically batter them down while survivors fire through windows. And because the entire simulation core is driven by a seeded Mulberry32 PRNG in a universal module, the exact same colony drama and combat loop runs at 1,000× speed in a headless Node CLI (<code>tools/test_outbreak.js</code>) for automated balancing.</li>
+                </ul>
+
+                <h2>3. Why Ant-Farm Simulations Are What I Want to Build Next</h2>
+                <p>
+                    While testing <strong>Outbreak 3D</strong>, I caught myself opening the <strong>Drama Story Modal</strong> and switching the camera to <code>Drama Cam</code> just to watch what the colony would do next without touching a single God Tool. Watching a selfish survivor hoard medicine during a winter blizzard, get ostracized by the dominant camp clique, and then unexpectedly redeem themselves by holding a breached gate during a Blood Moon blackout felt more compelling than any scripted cutscene.
+                </p>
+                <p>
+                    That experience crystalized a realization: <strong>I love building glass-box &quot;ant-farm&quot; simulations</strong>—worlds where you define honest physical rules, resource constraints, and multi-agent psychology at the bottom layer, and let complex, unscripted stories emerge at the top. Whether the next habitat is a deep-sea research station, a medieval frontier town, an orbital colony, or an actual subterranean insect empire, expect a lot more ant-farm simulation games in this portfolio soon.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_22.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Combat-Robot CAD, Biomimetic Teardowns &amp; LingoForge
+                    </a>
+                    <a href="../blog.html" class="btn-card-action btn-card-primary">
+                        View All 23 Blog Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-icon-link" href="../index.html">Home</a>
+                    <a class="nav-icon-link" href="../index.html#about">About</a>
+                    <a class="nav-icon-link" href="../projects.html">Projects</a>
+                    <a class="nav-icon-link" href="../blog.html">Blog</a>
+                    <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25 my-3">
+            <p class="small mb-0">&copy; 2026 Julian Morrisette (Black Beard's Portfolio). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Self-Hosted) -->
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <!-- Particles JS (Self-Hosted) -->
+    <script src="../assets/vendor/particles.min.js?v=20261106v3"></script>
+    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
+    <script src="../js/scripts.js?v=20261106v3"></script>
+</body>
+</html>

@@ -60,13 +60,13 @@
             </p>
             <div class="hero-cta-group">
                 <a href="#projects" class="btn-cyber-primary">
-                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (30)
+                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (32)
                 </a>
                 <a href="#about" class="btn-cyber-outline">
                     <i class="fa-solid fa-compass-drafting"></i> About &amp; 3-Stage Methodology
                 </a>
                 <a href="blog.html" class="btn-cyber-outline">
-                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (22)
+                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (23)
                 </a>
             </div>
         </div>
@@ -83,15 +83,109 @@
             </div>
 
             <div class="filter-bar" data-filter-group="#home-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (30)</button>
+                <button class="filter-btn active" data-filter="all">All Projects (32)</button>
                 <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (24)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (26)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Multi-Agent AI</button>
                 <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
                 <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; OSINT Ops</button>
             </div>
 
             <div id="home-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 32: Outbreak 3D ("Ant Farm"): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_32.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/outbreak_3d.jpg?v=7" class="card-img-top" alt="Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-nexus">3D Ant-Farm Colony &amp; Multi-Agent Sim</span>
+                            <h5 class="card-title">Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game</h5>
+                            <p class="card-text">Autonomous 3D human-zombie &quot;ant-farm&quot; colony simulator where 30 survivors with 10 dynamic emotional factors scavenge, build defenses, form romances, cliques, love triangles, and mutinies, and fight 9 classes of zombies through winter blizzards and generator blackouts.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">30 Autonomous Survivors</span><span class="tech-pill">10-Factor Emotion &amp; Drama AI</span><span class="tech-pill">9 Zombie Mutation Classes</span><span class="tech-pill">Generator Blackouts &amp; Seasons</span><span class="tech-pill">3D WebGL + Headless CLI</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject32">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_32.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 32 -->
+                <div class="modal fade" id="modalProject32" tabindex="-1" aria-labelledby="modalProject32Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-nexus mb-1">3D Ant-Farm Colony &amp; Multi-Agent Sim</span>
+                                    <h5 class="modal-title text-white" id="modalProject32Label">Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/outbreak_3d.jpg?v=7" class="img-fluid mb-3" alt="Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game">
+                                <p class="mb-3">Outbreak 3D (&quot;Ant Farm&quot; — Season Two) is a deterministic, seeded 3D multi-agent survival and social-drama simulation game. Designed as a living glass-box &quot;ant farm,&quot; 30 named survivors with 12 personality archetypes and 10 dynamic emotional factors autonomously scavenge a procedural 3D town, fortify a walled sanctuary, form romances, cliques, love triangles, and blood feuds, and fight to survive against 9 classes of mutating zombies, winter blizzards, and midnight generator blackouts.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">30 Autonomous Survivors</span><span class="tech-pill">10-Factor Emotion &amp; Drama AI</span><span class="tech-pill">9 Zombie Mutation Classes</span><span class="tech-pill">Generator Blackouts &amp; Seasons</span><span class="tech-pill">3D WebGL + Headless CLI</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/outbreak-3d" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_32.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 31: AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator -->
+                <div class="col" data-category="media nexus mcp">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_31.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/aeroforge_3d.jpg?v=7" class="card-img-top" alt="AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-media">3D Aerospace CAD &amp; Flight Sim</span>
+                            <h5 class="card-title">AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator</h5>
+                            <p class="card-text">Interactive 3D aerospace engineering workbench with 26 historical-to-hypersonic fighter aircraft (1917–2030 across USA, RUS, CHN), a 12-bay / 67-part exploded internal teardown, live ISA Mach wind-tunnel CFD &amp; 360° stealth RCS polar plot, and a playable 3D dogfight arena.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">26 Aircraft (1917–2030)</span><span class="tech-pill">12-Bay / 67-Part Teardown</span><span class="tech-pill">ISA Mach CFD &amp; RCS Polar</span><span class="tech-pill">Playable 3D Dogfight Arena</span><span class="tech-pill">Three.js + CPU Fallback</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject31">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_31.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 31 -->
+                <div class="modal fade" id="modalProject31" tabindex="-1" aria-labelledby="modalProject31Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-media mb-1">3D Aerospace CAD &amp; Flight Sim</span>
+                                    <h5 class="modal-title text-white" id="modalProject31Label">AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/aeroforge_3d.jpg?v=7" class="img-fluid mb-3" alt="AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator">
+                                <p class="mb-3">AeroForge 3D is an interactive 3D aerospace engineering workbench, 67-part mechanical teardown studio, supersonic wind-tunnel solver, and playable 3D dogfight simulator spanning 113 years of combat aviation (1917–2030). Inspect 26 historical and modern fighter aircraft across five eras and three superpowers (USA, RUS, CHN), re-sculpt wing sweep and stealth shaping, scrub a 0–100% exploded view across 12 internal bays, and fly your custom airframe in live 3D aerial combat.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">26 Aircraft (1917–2030)</span><span class="tech-pill">12-Bay / 67-Part Teardown</span><span class="tech-pill">ISA Mach CFD &amp; RCS Polar</span><span class="tech-pill">Playable 3D Dogfight Arena</span><span class="tech-pill">Three.js + CPU Fallback</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/aeroforge-3d" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_31.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 28: BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator -->
                 <div class="col" data-category="media nexus mcp">
                     <div class="card h-100 d-flex flex-column">
@@ -1684,10 +1778,33 @@
                     <p class="text-secondary mb-0">Practical field guides on CMMC Level 1 compliance, executive audit reporting, user access reviews, and LLM orchestration.</p>
                 </div>
                 <a href="blog.html" class="btn-cyber-outline mt-3 mt-md-0">
-                    View All 22 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    View All 23 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Blog Story 23: From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies -->
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_23.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_23_img1.jpg?v=7" class="card-img-top" alt="From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building Ant-Farm Simulation Games">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-nexus mb-0">Ant-Farm Simulations &bull; 3D Aerospace CAD</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            </div>
+                            <h5 class="card-title">From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building &quot;Ant-Farm&quot; Simulation Games</h5>
+                            <p class="card-text">Inside the engineering of AeroForge 3D (26 fighter jets across 1917–2030, 67-part teardown, Mach CFD &amp; 3D dogfights) and Outbreak 3D (30 survivors with 10 emotional factors, cliques, romances, mutinies, and midnight generator blackouts)—and why this is the start of building ant-farm simulation games.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #23</span>
+                            <a href="stories/blog_23.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                                 <!-- Blog Story 22: From Combat-Robot CAD to Biomimetic Teardowns & 10-Language AI Tutors -->
                 <div class="col">
                     <div class="card h-100 d-flex flex-column">

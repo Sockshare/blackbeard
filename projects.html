@@ -45,7 +45,7 @@
     <header class="hero">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-code-branch"></i> 34 Production &amp; Research Systems
+                <i class="fa-solid fa-code-branch"></i> 35 Production &amp; Research Systems
             </div>
             <h1 class="neon-text">AI Systems, <span class="hero-gradient-span">Run Nexus</span> &amp; Security Engineering</h1>
             <p class="neon-text-blue mb-0">
@@ -57,15 +57,38 @@
     <section class="py-5">
         <div class="container">
             <div class="filter-bar" data-filter-group="#all-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (34)</button>
+                <button class="filter-btn active" data-filter="all">All Projects (35)</button>
                 <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (28)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (29)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Workflows</button>
                 <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
                 <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; Hardware</button>
             </div>
 
             <div id="all-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 35: Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio -->
+                <div class="col" data-category="compliance cyber mcp nexus">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_35.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/zero_leak_rag_lab.jpg?v=1" class="card-img-top" alt="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-security">Enterprise RAG &bull; Identity &amp; RLS &bull; Hybrid Search</span>
+                            <h5 class="card-title">Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</h5>
+                            <p class="card-text">Interactive Enterprise AI Grounding &amp; Security Architecture Workbench defeating the &ldquo;Confused Deputy&rdquo; RAG data-leakage anti-pattern via Pre-Retrieval OAuth/IAM ACLs, BigQuery Row-Level Security (RLS), Hybrid Sparse BM25 + Dense Vector Reciprocal Rank Fusion (RRF), Prompt-Injection &amp; Citation Guardrails, and a RAG vs. Long-Context vs. Fine-Tuning trade-off calculator.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Pre-Retrieval IAM &amp; ACLs</span><span class="tech-pill">BigQuery Row-Level Security</span><span class="tech-pill">Hybrid BM25 + Vector RRF</span><span class="tech-pill">Prompt-Injection &amp; Citation Guardrails</span><span class="tech-pill">Local Ollama + Cloud LLMs</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/Sockshare/zero-leak-rag-lab" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="projects/project_35.html" class="btn-card-action btn-card-primary">
+                                View Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 34: TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio -->
                 <div class="col" data-category="compliance cyber mcp nexus">
                     <div class="card h-100 d-flex flex-column">
@@ -89,17 +112,17 @@
                     </div>
                 </div>
 
-                <!-- Project 33: SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio -->
+                <!-- Project 33: SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio -->
                 <div class="col" data-category="mcp nexus compliance cyber">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_33.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" alt="SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio">
+                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" alt="SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-nexus">Agentic AI &bull; MCP &bull; Compiler Studio</span>
-                            <h5 class="card-title">SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio</h5>
-                            <p class="card-text">Interactive Web-App-to-Agent-Skill (SKILL.md), Deterministic Python CLI, and Model Context Protocol (mcp_server.py JSON-RPC 2.0) Compiler Studio. Compiles OpenAPI 3.1 specs and security/GRC/privacy workflows through a 4-stage multi-agent synthesis pipeline and 5-gate AST security &amp; 3-run SHA-256 determinism verifier into portable agent skill bundles.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Open Agent SKILL.md</span><span class="tech-pill">MCP JSON-RPC 2.0</span><span class="tech-pill">4-Stage Compiler</span><span class="tech-pill">5-Gate Verifier</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
+                            <h5 class="card-title">SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio</h5>
+                            <p class="card-text">Local-first Web-App-to-LLM-Skill (SKILL.md) and Multi-Skill MCP JSON-RPC 2.0 Compiler Studio &amp; Live Agent Testbench. Scans local web apps (including bundled TaskPulse) or OpenAPI/GRC blueprints, compiles 5-Gate &amp; 3-run SHA-256 verified skill bundles, and runs live 3-stage Local Ollama or Cloud LLM tool execution.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Web-App-to-SKILL.md</span><span class="tech-pill">Multi-Skill MCP Hub</span><span class="tech-pill">Live 3-Stage LLM Testbench</span><span class="tech-pill">Local Ollama + Cloud APIs</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
                         </div>
                         <div class="card-footer">
                             <a href="https://github.com/Sockshare/skillforge-ai" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">

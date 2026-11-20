@@ -60,13 +60,13 @@
             </p>
             <div class="hero-cta-group">
                 <a href="#projects" class="btn-cyber-primary">
-                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (34)
+                    <i class="fa-solid fa-layer-group"></i> View Featured Projects (35)
                 </a>
                 <a href="#about" class="btn-cyber-outline">
                     <i class="fa-solid fa-compass-drafting"></i> About &amp; 3-Stage Methodology
                 </a>
                 <a href="blog.html" class="btn-cyber-outline">
-                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (24)
+                    <i class="fa-solid fa-pen-nib"></i> Read Blog &amp; Playbooks (26)
                 </a>
             </div>
         </div>
@@ -83,15 +83,62 @@
             </div>
 
             <div class="filter-bar" data-filter-group="#home-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (34)</button>
+                <button class="filter-btn active" data-filter="all">All Projects (35)</button>
                 <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (28)</button>
+                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (29)</button>
                 <button class="filter-btn" data-filter="mcp">MCP &amp; Multi-Agent AI</button>
                 <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
                 <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; OSINT Ops</button>
             </div>
 
             <div id="home-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Project 35: Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio -->
+                <div class="col" data-category="compliance cyber mcp nexus">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_35.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/zero_leak_rag_lab.jpg?v=1" class="card-img-top" alt="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-security">Enterprise RAG &bull; Identity &amp; RLS &bull; Hybrid Search</span>
+                            <h5 class="card-title">Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</h5>
+                            <p class="card-text">Interactive Enterprise AI Grounding &amp; Security Architecture Workbench defeating the &ldquo;Confused Deputy&rdquo; RAG data-leakage anti-pattern via Pre-Retrieval OAuth/IAM ACLs, BigQuery Row-Level Security (RLS), Hybrid Sparse BM25 + Dense Vector Reciprocal Rank Fusion (RRF), Prompt-Injection &amp; Citation Guardrails, and RAG vs. Long-Context modeling.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Pre-Retrieval IAM &amp; ACLs</span><span class="tech-pill">BigQuery Row-Level Security</span><span class="tech-pill">Hybrid BM25 + Vector RRF</span><span class="tech-pill">Prompt-Injection &amp; Citation Guardrails</span><span class="tech-pill">Local Ollama + Cloud LLMs</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject35">
+                                <i class="fa-solid fa-bolt"></i> Learn More
+                            </button>
+                            <a href="projects/project_35.html" class="btn-card-action btn-card-primary">
+                                Full Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal for Project 35 -->
+                <div class="modal fade" id="modalProject35" tabindex="-1" aria-labelledby="modalProject35Label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <span class="category-badge badge-security mb-1">Enterprise RAG &bull; Identity &amp; RLS &bull; Hybrid Search</span>
+                                    <h5 class="modal-title text-white" id="modalProject35Label">Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/images/zero_leak_rag_lab.jpg?v=1" class="img-fluid mb-3" alt="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio">
+                                <p class="mb-3">Zero-Leak RAG Lab is a zero-dependency, local-first Enterprise AI Grounding &amp; Security Architecture Workbench demonstrating how production RAG systems defeat the &ldquo;Confused Deputy&rdquo; anti-pattern by enforcing Pre-Retrieval IAM/OIDC ACLs, BigQuery Row-Level Security (RLS), Hybrid Sparse BM25 + Dense Vector Reciprocal Rank Fusion (RRF), Prompt-Injection screening, and strict citation verification across Local Ollama or Cloud LLMs.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Pre-Retrieval IAM &amp; ACLs</span><span class="tech-pill">BigQuery Row-Level Security</span><span class="tech-pill">Hybrid BM25 + Vector RRF</span><span class="tech-pill">Prompt-Injection &amp; Citation Guardrails</span><span class="tech-pill">Local Ollama + Cloud LLMs</span></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Sockshare/zero-leak-rag-lab" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                                <a href="projects/project_35.html" class="btn-card-action btn-card-primary">Open Full Technical Page <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 34: TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio -->
                 <div class="col" data-category="compliance cyber mcp nexus">
                     <div class="card h-100 d-flex flex-column">
@@ -139,17 +186,17 @@
                     </div>
                 </div>
 
-                <!-- Project 33: SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio -->
+                <!-- Project 33: SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio -->
                 <div class="col" data-category="mcp nexus compliance cyber">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_33.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" alt="SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio">
+                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" alt="SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-nexus">Agentic AI &bull; MCP &bull; Compiler Studio</span>
-                            <h5 class="card-title">SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio</h5>
-                            <p class="card-text">Interactive Web-App-to-Agent-Skill (SKILL.md), Deterministic Python CLI, and Model Context Protocol (mcp_server.py JSON-RPC 2.0) Compiler Studio with 6 industry security/GRC/privacy presets, a 4-stage multi-agent synthesis pipeline, and a 5-gate AST security &amp; 3-run SHA-256 determinism verifier.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Open Agent SKILL.md</span><span class="tech-pill">MCP JSON-RPC 2.0</span><span class="tech-pill">4-Stage Compiler</span><span class="tech-pill">5-Gate Verifier</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
+                            <h5 class="card-title">SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio</h5>
+                            <p class="card-text">Local-first Web-App-to-LLM-Skill (SKILL.md) and Multi-Skill MCP JSON-RPC 2.0 Compiler Studio &amp; Live Agent Testbench. Scans local web apps (including bundled TaskPulse) or OpenAPI/GRC blueprints, compiles 5-Gate &amp; 3-run SHA-256 verified skill bundles, and runs live 3-stage Local Ollama or Cloud LLM tool execution.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Web-App-to-SKILL.md</span><span class="tech-pill">Multi-Skill MCP Hub</span><span class="tech-pill">Live 3-Stage LLM Testbench</span><span class="tech-pill">Local Ollama + Cloud APIs</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
                         </div>
                         <div class="card-footer">
                             <button type="button" class="btn-card-action btn-card-ghost" data-bs-toggle="modal" data-bs-target="#modalProject33">
@@ -168,14 +215,14 @@
                             <div class="modal-header">
                                 <div>
                                     <span class="category-badge badge-nexus mb-1">Agentic AI &bull; MCP &bull; Compiler Studio</span>
-                                    <h5 class="modal-title text-white" id="modalProject33Label">SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio</h5>
+                                    <h5 class="modal-title text-white" id="modalProject33Label">SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio</h5>
                                 </div>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <img src="assets/images/skillforge_ai.jpg?v=8" class="img-fluid mb-3" alt="SkillForge AI: Web-App-to-Agent-Skill (SKILL.md) &amp; MCP Server Compiler Studio">
-                                <p class="mb-3">SkillForge AI transforms any OpenAPI 3.1 specification, policy blueprint, or enterprise security/compliance workflow into a portable, cryptographically deterministic AI agent skill bundle (SKILL.md + mcp_server.py + scripts/engine.py + schema.json + test_skill.py) verified across 5 security and determinism gates.</p>
-                                <div class="tech-stack-mini"><span class="tech-pill">Open Agent SKILL.md</span><span class="tech-pill">MCP JSON-RPC 2.0</span><span class="tech-pill">4-Stage Compiler</span><span class="tech-pill">5-Gate Verifier</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
+                                <img src="assets/images/skillforge_ai.jpg?v=8" class="img-fluid mb-3" alt="SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio">
+                                <p class="mb-3">SkillForge AI converts any local web application folder (including the bundled TaskPulse reference web app), OpenAPI 3.1 service, or security/compliance blueprint into a multi-tool SKILL.md &amp; MCP JSON-RPC 2.0 bundle verified across 5 security/determinism gates, complete with a live 3-stage Local Ollama or Cloud LLM testbench.</p>
+                                <div class="tech-stack-mini"><span class="tech-pill">Web-App-to-SKILL.md</span><span class="tech-pill">Multi-Skill MCP Hub</span><span class="tech-pill">Live 3-Stage LLM Testbench</span><span class="tech-pill">Local Ollama + Cloud APIs</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn-card-action btn-card-ghost" data-bs-dismiss="modal">Close</button>
@@ -1872,10 +1919,33 @@
                     <p class="text-secondary mb-0">Practical field guides on CMMC Level 1 compliance, executive audit reporting, user access reviews, and LLM orchestration.</p>
                 </div>
                 <a href="blog.html" class="btn-cyber-outline mt-3 mt-md-0">
-                    View All 25 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    View All 26 Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Blog Story 26: Defeating the Confused Deputy in Enterprise RAG & Compiling Web Apps into Live MCP Agent Skills -->
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_26.html" class="card-img-wrapper d-block">
+                            <img src="assets/images/blog_26_img1.jpg?v=1" class="card-img-top" alt="Defeating the Confused Deputy in Enterprise RAG &amp; Compiling Web Apps into Live MCP Agent Skills">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="category-badge badge-security mb-0">Enterprise RAG &bull; Row-Level Security &bull; MCP Skills</span>
+                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>11 min read</span>
+                            </div>
+                            <h5 class="card-title">Defeating the &ldquo;Confused Deputy&rdquo; in Enterprise RAG &amp; Compiling Web Apps into Live MCP Agent Skills</h5>
+                            <p class="card-text">Inside Zero-Leak RAG Lab (pre-retrieval IAM ACLs, BigQuery Row-Level Security, Hybrid BM25 + Vector RRF, and RAG vs. Long-Context modeling) and SkillForge AI (scanning local web apps into SKILL.md &amp; MCP servers tested live with onboard Ollama or Cloud LLMs).</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #26</span>
+                            <a href="stories/blog_26.html" class="btn-card-action btn-card-primary">
+                                Read Story <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Blog Story 25: Defeating Stochasticity — From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow -->
                 <div class="col">
                     <div class="card h-100 d-flex flex-column">

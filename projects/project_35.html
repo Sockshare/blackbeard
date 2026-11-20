@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio enforcing Pre-Retrieval IAM ACLs, BigQuery Row-Level Security (RLS), Hybrid BM25 + Dense Vector Reciprocal Rank Fusion (RRF), Prompt-Injection Guardrails, and RAG vs. Long-Context Architecture Modeling.">
+    <title>Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261106v3">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About &amp; Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/zero_leak_rag_lab.jpg?v=1" class="project-img" alt="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio">
+                        <div class="tech-stack-mini mt-3"><span class="tech-pill">Pre-Retrieval IAM &amp; ACLs</span><span class="tech-pill">BigQuery Row-Level Security</span><span class="tech-pill">Hybrid BM25 + Vector RRF</span><span class="tech-pill">Prompt-Injection &amp; Citation Guardrails</span><span class="tech-pill">Local Ollama + Cloud LLMs</span></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-security">Enterprise RAG &bull; Identity &amp; RLS &bull; Hybrid Search</span>
+                        <h1 class="text-white fw-bold mb-3">Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</h1>
+
+                        <h2><i class="fa-solid fa-shield-halved"></i> Summary</h2>
+                        <p>Zero-Leak RAG Lab is a zero-dependency, local-first Enterprise AI Grounding &amp; Security Architecture Workbench (<code>Port 8111</code>) built to demonstrate and stress-test how production Retrieval-Augmented Generation (<code>RAG</code>) pipelines defeat the <strong>&ldquo;Confused Deputy&rdquo;</strong> data-leakage anti-pattern. Rather than indexing enterprise stores behind a single over-privileged backend service account and hoping a system prompt hides restricted context, Zero-Leak RAG Lab enforces <strong>Pre-Retrieval Identity Propagation</strong>, <strong>BigQuery Row-Level Security (<code>RLS</code>)</strong>, <strong>Hybrid Search (<code>Sparse BM25 + Dense Semantic Vector + Reciprocal Rank Fusion</code>)</strong>, and <strong>Citation Grounding Verification</strong>.</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>Side-by-Side Naive (&ldquo;Confused Deputy&rdquo;) vs. Zero-Leak Identity-Propagated RAG:</strong> Runs both retrieval pipelines concurrently in a <code>ThreadPoolExecutor</code> across 4 caller personas (<em>US-West Sales Rep</em>, <em>Principal SRE</em>, <em>VP Finance</em>, and <em>CEO &mdash; Least-Privilege HR Test</em>), contrasting leaked M&amp;A, out-of-region ARR, and HR/HIPAA records (<code>DOC-MNA-004</code>, <code>BQ-ROW-103</code>, <code>DOC-HR-006</code>) against zero-leak pre-filtered retrieval.</li>
+                            <li><strong>Multi-Connector Pre-Retrieval ACLs &amp; BigQuery Row-Level Security (<code>RLS</code>):</strong> Evaluates OAuth/OIDC group memberships and regional warehouse row predicates (<code>US-WEST</code>, <code>US-EAST</code>, <code>EMEA</code>) <em>before</em> scoring or ranking across 3 unified enterprise connectors: an <em>Enterprise Document Store</em>, a <em>BigQuery RLS Warehouse</em>, and an <em>Issue Tracker MCP Connector</em>.</li>
+                            <li><strong>Hybrid <code>BM25 + Dense Vector + Reciprocal Rank Fusion (RRF)</code> Retrieval:</strong> Demonstrates why pure dense vector embeddings miss exact alphanumeric ticket IDs (<code>SEC-401</code>, <code>OPS-209</code>) while pure keyword search misses semantic synonyms (<code>acquisition</code> &harr; <code>M&amp;A</code>), fusing active rankers cleanly via <code>RRF</code>.</li>
+                            <li><strong><code>RAG vs. Long-Context (1M+) vs. Fine-Tuning</code> Trade-Off Calculator &amp; Connector Bug Hunt:</strong> Models corpus token scale (<code>250K</code>&ndash;<code>50M+</code>), update frequency, query load, citation needs, and per-user ACL feasibility alongside 4 interactive Python/SQL security bug reviews (<em>Post-Filter Top-K Starvation</em>, <em>Dense-Only Ticket ID Miss</em>, <em>Unscoped Semantic Cache Bleed</em>, and <em>Static Service-Account Keys + SQLi</em>).</li>
+                            <li><strong>Local Onboard Ollama Default + Optional Cloud APIs &amp; Citation Verifier:</strong> Auto-detects local Ollama models (<code>:11434</code>) out of the box with optional volatile-session support for Google Gemini, OpenAI, and Anthropic Claude APIs, paired with prompt-injection pattern screening and <code>[ID]</code> citation validation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Retrieval &amp; Security Core:</strong> Python 3.10+ Standard Library (Zero External Dependencies), Pre-Retrieval IAM/OIDC Claim Filter, Regional BigQuery RLS Predicate Evaluator, Sparse BM25 + Dense Concept Embedder + Reciprocal Rank Fusion (<code>RRF</code>)</li>
+                            <li><strong>Guardrails &amp; Grounding:</strong> Prompt-Injection &amp; Privilege-Escalation Screen, Strict <code>[DOC-*]</code> / <code>[BQ-ROW-*]</code> / <code>[SEC-*]</code> Citation Grounding Verifier, Architecture Trade-Off Modeling Engine</li>
+                            <li><strong>LLM Runtime Support:</strong> Local Ollama Onboard Engine (<code>http://127.0.0.1:11434</code> Default) + Optional Cloud APIs (Google Gemini, OpenAI, Anthropic Claude) + Transparent Deterministic Offline Mode</li>
+                            <li><strong>Verification Suite:</strong> 14-test automated <code>unittest</code> suite (<code>tests/test_raglab.py</code>) verifying zero cross-persona leaks across all personas/strategies, regional RLS isolation, RRF exact-ID ranking, and trade-off consistency</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
+                        <p class="mb-0">A system prompt is never an access-control boundary. Once an unauthorized M&amp;A term sheet, out-of-region revenue row, or HR medical record enters an LLM context window via a shared service account, prompt injection or indirect summarization can exfiltrate it—and filtering <em>after</em> vector search starves <code>Top-K</code> slots. Zero-Leak RAG Lab enforces caller identity predicates prior to candidate scoring so unauthorized chunks are mathematically excluded from both ranking and context assembly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/zero-leak-rag-lab" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
+    <script src="../js/particles.js?v=20261106v3"></script>
+</body>
+</html>

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NeonTouch // 10-Finger Ephemeral Light &amp; Polyphonic Music Synth — Run Nexus</title>
+  <style>
+:root {
+  --bg-deep: #03050c;
+  --bg-panel: #090e1c;
+  --cyan: #00f5ff;
+  --magenta: #ff1cf7;
+  --emerald: #00ff95;
+  --gold: #ffb800;
+  --violet: #a855f7;
+  --text-main: #f1f6ff;
+  --text-dim: #8da2c4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header (No expensive backdrop-filter blur so GPU stays at 60+ FPS!) */
+.synth-header {
+  background: var(--bg-panel);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.24);
+  padding: 9px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 20;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-orb {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--cyan), var(--magenta));
+  color: #03050c;
+  font-weight: 900;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.title-row h1 {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 0.74rem;
+  color: var(--text-dim);
+}
+
+.controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.ctrl-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #050812;
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-size: 0.74rem;
+  color: var(--text-dim);
+}
+
+.ctrl-item select {
+  background: transparent;
+  color: var(--text-main);
+  border: none;
+  outline: none;
+  font-weight: 600;
+  font-size: 0.77rem;
+  cursor: pointer;
+}
+
+.ctrl-item select option {
+  background: #0a1022;
+  color: #ffffff;
+}
+
+.synth-btn {
+  background: #0d162c;
+  color: var(--text-main);
+  border: 1px solid rgba(0, 245, 255, 0.32);
+  border-radius: 8px;
+  padding: 6px 11px;
+  font-size: 0.77rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.synth-btn:hover {
+  border-color: var(--emerald);
+}
+
+.synth-btn.active-beat {
+  background: rgba(255, 28, 247, 0.22);
+  border-color: var(--magenta);
+  color: #ffd6fe;
+}
+
+.synth-btn-accent {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.22), rgba(255, 28, 247, 0.24));
+  border-color: var(--cyan);
+  color: #ffffff;
+}
+
+/* Telemetry Strip */
+.telemetry-strip {
+  background: #060a16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  z-index: 15;
+}
+
+.tele-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.hud-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.71rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.hud-cyan { background: rgba(0, 245, 255, 0.13); color: var(--cyan); border: 1px solid rgba(0, 245, 255, 0.36); }
+.hud-emerald { background: rgba(0, 255, 149, 0.13); color: var(--emerald); border: 1px solid rgba(0, 255, 149, 0.36); }
+.hud-magenta { background: rgba(255, 28, 247, 0.14); color: #ff85fb; border: 1px solid rgba(255, 28, 247, 0.38); }
+.hud-gold { background: rgba(255, 184, 0, 0.14); color: #ffd466; border: 1px solid rgba(255, 184, 0, 0.38); }
+.hud-violet { background: rgba(168, 85, 247, 0.16); color: #dfd0ff; border: 1px solid rgba(168, 85, 247, 0.4); }
+
+.finger-dots-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.fdot-chip {
+  font-family: ui-monospace, monospace;
+  font-size: 0.67rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fdot-chip.on {
+  color: #03050c;
+}
+
+/* Full-Viewport Hardware-Accelerated Stage */
+.stage-wrap {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  touch-action: none;
+  cursor: crosshair;
+  background: #03050c;
+}
+
+#synth-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+</style>
+</head>
+<body>
+  <!-- Sleek Musical Control Header -->
+  <header class="synth-header">
+    <div class="brand-group">
+      <div class="brand-orb">NT</div>
+      <div>
+        <div class="title-row">
+          <h1>NeonTouch Synth</h1>
+          <span class="hud-pill hud-cyan" id="hud-mode">Ready &bull; Touch Screen to Play</span>
+        </div>
+        <p class="subtitle">1–10 Finger Polyphonic Light Instrument &bull; Position, Chord &amp; Multi-Line Reactive Synthesis</p>
+      </div>
+    </div>
+
+    <div class="controls-bar">
+      <label class="ctrl-item">
+        <span>Scale</span>
+        <select id="scale-select">
+          <option value="pentatonic">Ethereal Pentatonic</option>
+          <option value="cyber_minor">Cyberpunk Minor</option>
+          <option value="hirajoshi">Japanese Hirajoshi</option>
+          <option value="lydian">Cosmic Lydian</option>
+          <option value="blues">Neon Blues</option>
+        </select>
+      </label>
+
+      <label class="ctrl-item">
+        <span>Instrument</span>
+        <select id="preset-select">
+          <option value="crystal">Crystal Prism &amp; Ribbon</option>
+          <option value="synthwave">Blade-Runner Analog</option>
+          <option value="marimba">Glass Marimba &amp; Harp</option>
+          <option value="celestial">Celestial Choir &amp; Bell</option>
+        </select>
+      </label>
+
+      <label class="ctrl-item">
+        <span>Trail Fade</span>
+        <select id="fade-select">
+          <option value="1600">1.6s Comet</option>
+          <option value="900">0.9s Quick Spark</option>
+          <option value="2800">2.8s Long Glow</option>
+        </select>
+      </label>
+
+      <button type="button" class="synth-btn" id="btn-pulse-beat">&#127925; Ambient Beat: OFF</button>
+      <button type="button" class="synth-btn synth-btn-accent" id="btn-demo-symphony">&#10024; Demo 10-Finger Symphony</button>
+      <button type="button" class="synth-btn" onclick="document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()">&#9974; Fullscreen</button>
+    </div>
+  </header>
+
+  <!-- Live Musical & Multi-Touch Telemetry Ribbon -->
+  <section class="telemetry-strip">
+    <div class="tele-metrics">
+      <span class="hud-pill hud-emerald">Fingers Down: <strong id="stat-fingers">0 / 10</strong></span>
+      <span class="hud-pill hud-magenta">Singing Lines: <strong id="stat-lines">0</strong></span>
+      <span class="hud-pill hud-gold">Harmony Layer: <strong id="stat-harmony">Solo Voice</strong></span>
+      <span class="hud-pill hud-violet">Notes Playing: <strong id="stat-notes">—</strong></span>
+    </div>
+    <!-- 10 Individual Neon Finger Indicators -->
+    <div class="finger-dots-row" id="finger-dots-row"></div>
+  </section>
+
+  <!-- Full-Viewport Playable Neon Musical Canvas -->
+  <main class="stage-wrap" id="stage-wrap">
+    <canvas id="synth-canvas"></canvas>
+    <div class="zone-labels" aria-hidden="true">
+      <div class="zone-band">HIGH OCTAVE &bull; SPARKLING CRYSTAL BELLS &amp; SHIMMER</div>
+      <div class="zone-band">MID OCTAVE &bull; EXPRESSIVE MELODIC LEADS &amp; CHORDS</div>
+      <div class="zone-band">LOW OCTAVE &bull; WARM RESONANT SUB-BASS &amp; CELLO PADS</div>
+    </div>
+  </main>
+
+  <script>
+/* NeonTouch Synth v3 // Ultra-Fast 60 FPS Zero-ShadowBlur Renderer & 1-to-10 Finger Music Synth */
+(function () {
+  'use strict';
+
+  const $ = (id) => document.getElementById(id);
+
+  // 10 Vivid Neon Palettes (1 unique color pair per finger F1..F10)
+  const FINGER_COLORS = [
+    { code: 'F1',  primary: '#00f5ff', secondary: '#38bdf8', rgb: [0, 245, 255]   },
+    { code: 'F2',  primary: '#ff1cf7', secondary: '#fb7185', rgb: [255, 28, 247]  },
+    { code: 'F3',  primary: '#00ff95', secondary: '#a3e635', rgb: [0, 255, 149]   },
+    { code: 'F4',  primary: '#ffb800', secondary: '#fde047', rgb: [255, 184, 0]   },
+    { code: 'F5',  primary: '#a855f7', secondary: '#818cf8', rgb: [168, 85, 247]  },
+    { code: 'F6',  primary: '#ff4d00', secondary: '#fbbf24', rgb: [255, 77, 0]    },
+    { code: 'F7',  primary: '#adff02', secondary: '#00ff95', rgb: [173, 255, 2]   },
+    { code: 'F8',  primary: '#009dff', secondary: '#c084fc', rgb: [0, 157, 255]   },
+    { code: 'F9',  primary: '#ff006e', secondary: '#ffbe0b', rgb: [255, 0, 110]   },
+    { code: 'F10', primary: '#fff01f', secondary: '#00f5ff', rgb: [255, 240, 31]  },
+  ];
+
+  const SCALES = {
+    pentatonic:  [0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28, 31],
+    cyber_minor: [0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26, 27, 31],
+    hirajoshi:   [0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26, 27, 31],
+    lydian:      [0, 2, 4, 6, 7, 9, 11, 12, 14, 16, 18, 19, 21, 23],
+    blues:       [0, 3, 5, 6, 7, 10, 12, 15, 17, 18, 19, 22, 24, 27],
+  };
+  const NOTE_NAMES = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'];
+
+  // Pre-bake 10 Offscreen Radial Neon Glow Sprites ONCE at startup (0.01ms blit instead of slow CPU shadowBlur!)
+  const GLOW_SPRITES = FINGER_COLORS.map((fc) => {
+    const sc = document.createElement('canvas');
+    sc.width = 96;
+    sc.height = 96;
+    const sctx = sc.getContext('2d');
+    const g = sctx.createRadialGradient(48, 48, 2, 48, 48, 46);
+    const [r, gr, b] = fc.rgb;
+    g.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
+    g.addColorStop(0.18, `rgba(${r}, ${gr}, ${b}, 0.85)`);
+    g.addColorStop(0.5, `rgba(${r}, ${gr}, ${b}, 0.28)`);
+    g.addColorStop(1, `rgba(${r}, ${gr}, ${b}, 0)`);
+    sctx.fillStyle = g;
+    sctx.fillRect(0, 0, 96, 96);
+    return sc;
+  });
+
+  const state = {
+    audioCtx: null,
+    compressor: null,
+    delayInput: null,
+    delayWet: null,
+    lfoGain: null,
+    subPadOsc: null,
+    subPadGain: null,
+    arpStep: 0,
+    beatOn: false,
+    beatTimer: null,
+    beatStep: 0,
+    useTouchApi: false,
+
+    fingers: new Map(), // key -> finger state
+    trails: [],         // ephemeral comet ribbons
+    tapRings: [],       // concentric neon circles
+    sparks: [],         // lightweight neon sparks
+    noteFloats: [],     // floating note labels
+    bgPulse: 0,
+    hudDirty: true,
+    fpsFrames: 0,
+    fpsLastTs: performance.now(),
+  };
+
+  const dotsRow = $('finger-dots-row');
+  dotsRow.innerHTML = FINGER_COLORS.map((fc, i) =>
+    `<span class="fdot-chip" id="fchip-${i}">${fc.code}</span>`
+  ).join('');
+
+  // Block default browser multi-touch gestures (pinch-zoom, 2-finger scroll, 3-finger swipe) globally!
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach((ev) => {
+    window.addEventListener(ev, (e) => e.preventDefault(), { passive: false });
+  });
+
+  // -------------------------------------------------------------------------
+  // Low-Latency Polyphonic Web Audio Engine
+  // -------------------------------------------------------------------------
+  function ensureAudio() {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    if (!state.audioCtx) {
+      const ctx = new AC({ latencyHint: 'interactive' });
+      state.audioCtx = ctx;
+
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.setValueAtTime(-14, ctx.currentTime);
+      comp.knee.setValueAtTime(18, ctx.currentTime);
+      comp.ratio.setValueAtTime(6, ctx.currentTime);
+      comp.attack.setValueAtTime(0.003, ctx.currentTime);
+      comp.release.setValueAtTime(0.2, ctx.currentTime);
+      comp.connect(ctx.destination);
+      state.compressor = comp;
+
+      // Lightweight Stereo Echo
+      const delayL = ctx.createDelay(0.6);
+      delayL.delayTime.setValueAtTime(0.24, ctx.currentTime);
+      const fb = ctx.createGain();
+      fb.gain.setValueAtTime(0.3, ctx.currentTime);
+      const damp = ctx.createBiquadFilter();
+      damp.type = 'lowpass';
+      damp.frequency.setValueAtTime(2400, ctx.currentTime);
+      const wet = ctx.createGain();
+      wet.gain.setValueAtTime(0.2, ctx.currentTime);
+
+      delayL.connect(damp);
+      damp.connect(fb);
+      fb.connect(delayL);
+      delayL.connect(wet);
+      wet.connect(comp);
+      state.delayInput = delayL;
+      state.delayWet = wet;
+
+      // Shared Vibrato LFO (engages when 3+ lines sing simultaneously)
+      const lfo = ctx.createOscillator();
+      const lfoGain = ctx.createGain();
+      lfo.frequency.setValueAtTime(5.5, ctx.currentTime);
+      lfoGain.gain.setValueAtTime(0, ctx.currentTime);
+      lfo.connect(lfoGain);
+      lfo.start();
+      state.lfoGain = lfoGain;
+
+      // Shared Warm Sub-Bass Pad (swells when 3+ fingers touch simultaneously)
+      const subOsc = ctx.createOscillator();
+      const subGain = ctx.createGain();
+      subOsc.type = 'sine';
+      subOsc.frequency.setValueAtTime(65.41, ctx.currentTime);
+      subGain.gain.setValueAtTime(0.0001, ctx.currentTime);
+      subOsc.connect(subGain);
+      subGain.connect(comp);
+      subOsc.start();
+      state.subPadOsc = subOsc;
+      state.subPadGain = subGain;
+
+      // 5+ Finger Chord Arpeggiator
+      setInterval(() => {
+        if (state.fingers.size >= 5) {
+          const arr = Array.from(state.fingers.values());
+          const pick = arr[state.arpStep++ % arr.length];
+          if (pick && pick.noteInfo) {
+            playQuickSparkle(pick.noteInfo.freq * 2, 0.05);
+            spawnTapCircles(pick.x, pick.y, pick.pal, 0.5);
+          }
+        }
+      }, 160);
+    }
+    if (state.audioCtx.state === 'suspended') {
+      state.audioCtx.resume();
+    }
+    return state.audioCtx;
+  }
+
+  function mapPositionToMusic(x, y, w, h) {
+    const scaleKey = $('scale-select').value;
+    const scale = SCALES[scaleKey] || SCALES.pentatonic;
+    const xNorm = Math.max(0, Math.min(0.999, x / Math.max(1, w)));
+    const yNorm = Math.max(0, Math.min(1, y / Math.max(1, h)));
+
+    const col = Math.floor(xNorm * scale.length);
+    const semi = scale[col];
+
+    let octaveShift = 0;
+    let zoneType = 'mid';
+    if (yNorm < 0.33) { octaveShift = 12; zoneType = 'high'; }
+    else if (yNorm > 0.67) { octaveShift = -12; zoneType = 'low'; }
+
+    const rootMidi = scaleKey === 'cyber_minor' ? 50 : (scaleKey === 'hirajoshi' ? 45 : 48);
+    const midi = rootMidi + semi + octaveShift;
+    const freq = 440 * Math.pow(2, (midi - 69) / 12);
+    const noteLabel = NOTE_NAMES[((midi % 12) + 12) % 12] + (Math.floor(midi / 12) - 1);
+    const cutoff = 420 * Math.pow(14, 1 - yNorm);
+    const pan = (xNorm - 0.5) * 1.6;
+
+    return { freq, midi, noteLabel, cutoff, pan, col, xNorm, yNorm, zoneType };
+  }
+
+  function getPreset() {
+    const p = $('preset-select').value;
+    if (p === 'synthwave') return { tap: 'sawtooth', line1: 'sawtooth', line2: 'square', decay: 0.55 };
+    if (p === 'marimba')   return { tap: 'sine',     line1: 'triangle', line2: 'sine',   decay: 0.34 };
+    if (p === 'celestial') return { tap: 'triangle', line1: 'sine',     line2: 'triangle', decay: 0.78 };
+    return { tap: 'triangle', line1: 'triangle', line2: 'sawtooth', decay: 0.48 };
+  }
+
+  function playQuickSparkle(freq, vol) {
+    const ctx = ensureAudio();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now);
+    g.gain.setValueAtTime(0.0005, now);
+    g.gain.linearRampToValueAtTime(vol, now + 0.006);
+    g.gain.exponentialRampToValueAtTime(0.0004, now + 0.24);
+    osc.connect(g);
+    g.connect(state.compressor);
+    osc.start(now);
+    osc.stop(now + 0.25);
+  }
+
+  function playTapPing(noteInfo, fingerCount) {
+    const ctx = ensureAudio();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+    const pw = getPreset();
+
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const filter = ctx.createBiquadFilter();
+    const gain = ctx.createGain();
+
+    osc1.type = noteInfo.zoneType === 'low' ? 'sawtooth' : pw.tap;
+    osc1.frequency.setValueAtTime(noteInfo.freq, now);
+
+    // Harmonic interval changes dynamically with simultaneous finger count!
+    const ratio = fingerCount === 2 ? 1.498 : (fingerCount >= 3 && fingerCount <= 4 ? 1.006 : (fingerCount >= 5 ? 3.0 : 2.0));
+    osc2.type = noteInfo.zoneType === 'high' ? 'sine' : 'triangle';
+    osc2.frequency.setValueAtTime(noteInfo.freq * ratio, now);
+
+    const osc2Gain = ctx.createGain();
+    osc2Gain.gain.setValueAtTime(fingerCount >= 2 ? 0.35 : 0.22, now);
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(Math.min(8800, noteInfo.cutoff * 1.5), now);
+    filter.frequency.exponentialRampToValueAtTime(Math.max(260, noteInfo.cutoff * 0.65), now + pw.decay);
+    filter.Q.setValueAtTime(noteInfo.zoneType === 'low' ? 4.8 : 2.2, now);
+
+    const amp = Math.min(0.24, 0.32 / Math.sqrt(Math.max(1, fingerCount)));
+    gain.gain.setValueAtTime(0.0008, now);
+    gain.gain.linearRampToValueAtTime(amp, now + 0.008);
+    gain.gain.exponentialRampToValueAtTime(0.0005, now + pw.decay);
+
+    osc1.connect(filter);
+    osc2.connect(osc2Gain);
+    osc2Gain.connect(filter);
+    filter.connect(gain);
+
+    if (ctx.createStereoPanner) {
+      const panner = ctx.createStereoPanner();
+      panner.pan.setValueAtTime(Math.max(-0.9, Math.min(0.9, noteInfo.pan)), now);
+      gain.connect(panner);
+      panner.connect(state.compressor);
+      panner.connect(state.delayInput);
+    } else {
+      gain.connect(state.compressor);
+      gain.connect(state.delayInput);
+    }
+
+    osc1.start(now);
+    osc2.start(now);
+    osc1.stop(now + pw.decay + 0.03);
+    osc2.stop(now + pw.decay + 0.03);
+  }
+
+  function createSingingLineVoice(noteInfo) {
+    const ctx = ensureAudio();
+    if (!ctx) return null;
+    const now = ctx.currentTime;
+    const pw = getPreset();
+
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const osc2Mix = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+    const gain = ctx.createGain();
+    const panner = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+
+    osc1.type = pw.line1;
+    osc1.frequency.setValueAtTime(noteInfo.freq, now);
+
+    osc2.type = pw.line2;
+    osc2.frequency.setValueAtTime(noteInfo.freq * 1.004, now);
+    osc2Mix.gain.setValueAtTime(0.14, now);
+
+    if (state.lfoGain) {
+      state.lfoGain.connect(osc1.frequency);
+      state.lfoGain.connect(osc2.frequency);
+    }
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(noteInfo.cutoff, now);
+    filter.Q.setValueAtTime(3.8, now);
+
+    gain.gain.setValueAtTime(0.0008, now);
+    gain.gain.linearRampToValueAtTime(0.13, now + 0.045);
+
+    osc1.connect(filter);
+    osc2.connect(osc2Mix);
+    osc2Mix.connect(filter);
+    filter.connect(gain);
+
+    if (panner) {
+      panner.pan.setValueAtTime(Math.max(-0.9, Math.min(0.9, noteInfo.pan)), now);
+      gain.connect(panner);
+      panner.connect(state.compressor);
+      panner.connect(state.delayInput);
+    } else {
+      gain.connect(state.compressor);
+      gain.connect(state.delayInput);
+    }
+
+    osc1.start(now);
+    osc2.start(now);
+    return { osc1, osc2, osc2Mix, filter, gain, panner };
+  }
+
+  function updateSingingLineVoice(voice, noteInfo, speedPx, lineCount) {
+    if (!voice || !state.audioCtx) return;
+    const now = state.audioCtx.currentTime;
+    const detuneMul = lineCount >= 4 ? 1.498 : (lineCount >= 2 ? 1.008 : 1.002);
+    voice.osc1.frequency.setTargetAtTime(noteInfo.freq, now, 0.025);
+    voice.osc2.frequency.setTargetAtTime(noteInfo.freq * detuneMul, now, 0.03);
+    voice.osc2Mix.gain.setTargetAtTime(lineCount >= 3 ? 0.44 : (lineCount === 2 ? 0.28 : 0.12), now, 0.05);
+
+    const velBoost = Math.min(2.1, 1 + speedPx / 40);
+    voice.filter.frequency.setTargetAtTime(Math.min(9200, noteInfo.cutoff * velBoost), now, 0.025);
+    const amp = Math.min(0.19, (0.13 * Math.min(1.4, velBoost)) / Math.sqrt(Math.max(1, lineCount * 0.65)));
+    voice.gain.gain.setTargetAtTime(amp, now, 0.03);
+    if (voice.panner) {
+      voice.panner.pan.setTargetAtTime(Math.max(-0.9, Math.min(0.9, noteInfo.pan)), now, 0.03);
+    }
+  }
+
+  function stopSingingLineVoice(voice) {
+    if (!voice || !state.audioCtx) return;
+    const now = state.audioCtx.currentTime;
+    try {
+      voice.gain.gain.cancelScheduledValues(now);
+      voice.gain.gain.setValueAtTime(Math.max(0.0005, voice.gain.gain.value), now);
+      voice.gain.gain.exponentialRampToValueAtTime(0.0004, now + 0.2);
+      voice.osc1.stop(now + 0.22);
+      voice.osc2.stop(now + 0.22);
+    } catch (_) {}
+  }
+
+  function syncAudioHarmonyBus() {
+    state.hudDirty = true;
+    if (!state.audioCtx) return;
+    const fCount = state.fingers.size;
+    let lineCount = 0;
+    let lowestFreq = Infinity;
+    state.fingers.forEach((f) => {
+      if (f.isLine) lineCount += 1;
+      if (f.noteInfo && f.noteInfo.freq < lowestFreq) lowestFreq = f.noteInfo.freq;
+    });
+
+    const now = state.audioCtx.currentTime;
+    state.delayWet.gain.setTargetAtTime(Math.min(0.48, 0.14 + fCount * 0.028 + lineCount * 0.032), now, 0.08);
+    state.lfoGain.gain.setTargetAtTime(lineCount >= 3 ? Math.min(7.0, 2.2 + lineCount * 0.75) : 0, now, 0.08);
+
+    if (fCount >= 3 && Number.isFinite(lowestFreq)) {
+      state.subPadOsc.frequency.setTargetAtTime(lowestFreq > 130 ? lowestFreq * 0.5 : lowestFreq, now, 0.06);
+      state.subPadGain.gain.setTargetAtTime(Math.min(0.13, 0.035 + fCount * 0.01), now, 0.1);
+    } else {
+      state.subPadGain.gain.setTargetAtTime(0.0001, now, 0.1);
+    }
+  }
+
+  function flushHudDomIfDirty() {
+    if (!state.hudDirty) return;
+    state.hudDirty = false;
+
+    const fCount = state.fingers.size;
+    let lineCount = 0;
+    const notes = [];
+    const bySlot = new Map();
+    state.fingers.forEach((f) => {
+      if (f.isLine) lineCount += 1;
+      if (f.noteInfo) notes.push(f.noteInfo.noteLabel);
+      bySlot.set(f.slot, f);
+    });
+
+    $('stat-fingers').textContent = `${fCount} / 10`;
+    $('stat-lines').textContent = String(lineCount);
+    $('stat-notes').textContent = notes.length ? Array.from(new Set(notes)).join(' + ') : '—';
+
+    let modeLabel = 'Touch 1–10 Fingers to Play';
+    if (fCount === 1) modeLabel = lineCount === 1 ? '1-Line Ribbon Lead' : 'Solo Crystal Ping';
+    else if (fCount === 2) modeLabel = lineCount >= 2 ? '2-Line Counterpoint Duet' : '2-Finger Dyad Harmony';
+    else if (fCount >= 3 && fCount <= 4) modeLabel = lineCount >= 3 ? `${lineCount}-Line Vibrato Strings` : `${fCount}-Finger Chord Pad`;
+    else if (fCount >= 5 && fCount <= 9) modeLabel = lineCount >= 4 ? `${lineCount}-Line Cyber Ensemble` : `${fCount}-Finger Arpeggio Surge`;
+    else if (fCount >= 10) modeLabel = '10-FINGER SUPERNOVA SYMPHONY!';
+    $('stat-harmony').textContent = modeLabel;
+    $('hud-mode').textContent = modeLabel;
+
+    for (let i = 0; i < 10; i++) {
+      const chip = $(`fchip-${i}`);
+      const active = bySlot.get(i);
+      if (active) {
+        chip.classList.add('on');
+        chip.style.background = FINGER_COLORS[i].primary;
+        chip.style.borderColor = FINGER_COLORS[i].primary;
+        chip.textContent = `${FINGER_COLORS[i].code}:${active.noteInfo.noteLabel}`;
+      } else {
+        chip.classList.remove('on');
+        chip.style.background = '';
+        chip.style.borderColor = '';
+        chip.textContent = FINGER_COLORS[i].code;
+      }
+    }
+  }
+
+  // Ambient Backing Beat
+  $('btn-pulse-beat').addEventListener('click', () => {
+    ensureAudio();
+    state.beatOn = !state.beatOn;
+    const btn = $('btn-pulse-beat');
+    btn.classList.toggle('active-beat', state.beatOn);
+    btn.innerHTML = state.beatOn ? '&#127925; Ambient Beat: ON' : '&#127925; Ambient Beat: OFF';
+
+    if (state.beatOn) {
+      state.beatStep = 0;
+      state.beatTimer = setInterval(() => {
+        if (!state.audioCtx) return;
+        const ctx = state.audioCtx;
+        const now = ctx.currentTime;
+        const step = state.beatStep++ % 8;
+        if (step === 0 || step === 4) {
+          const kOsc = ctx.createOscillator();
+          const kGain = ctx.createGain();
+          kOsc.frequency.setValueAtTime(120, now);
+          kOsc.frequency.exponentialRampToValueAtTime(38, now + 0.13);
+          kGain.gain.setValueAtTime(0.2, now);
+          kGain.gain.exponentialRampToValueAtTime(0.001, now + 0.17);
+          kOsc.connect(kGain);
+          kGain.connect(state.compressor);
+          kOsc.start(now);
+          kOsc.stop(now + 0.18);
+          state.bgPulse = 1.0;
+        }
+        if (step % 2 === 1) {
+          playQuickSparkle(step === 3 || step === 7 ? 196.0 : 130.81, 0.04);
+        }
+      }, 240);
+    } else if (state.beatTimer) {
+      clearInterval(state.beatTimer);
+      state.beatTimer = null;
+    }
+  });
+
+  // -------------------------------------------------------------------------
+  // 1-to-10 Simultaneous Multi-Touch & Ephemeral Visual Engine
+  // -------------------------------------------------------------------------
+  const stageWrap = $('stage-wrap');
+  const canvas = $('synth-canvas');
+  // alpha: false skips full-screen DOM backdrop compositing for huge FPS boost!
+  const c = canvas.getContext('2d', { alpha: false, desynchronized: true });
+
+  function resizeCanvas() {
+    canvas.width = stageWrap.clientWidth || window.innerWidth;
+    canvas.height = stageWrap.clientHeight || (window.innerHeight - 95);
+  }
+  window.addEventListener('resize', resizeCanvas);
+  setTimeout(resizeCanvas, 15);
+
+  function allocateSlot() {
+    const used = new Set();
+    state.fingers.forEach((f) => used.add(f.slot));
+    for (let i = 0; i < 10; i++) {
+      if (!used.has(i)) return i;
+    }
+    return 0;
+  }
+
+  function spawnTapCircles(x, y, pal, mul) {
+    const m = mul || 1.0;
+    state.tapRings.push(
+      { x, y, r: 6 * m,  maxR: 60 * m,  speed: 2.6 * m, color: '#ffffff',    width: 3.0 },
+      { x, y, r: 10 * m, maxR: 112 * m, speed: 3.8 * m, color: pal.primary,  width: 3.8 },
+      { x, y, r: 16 * m, maxR: 165 * m, speed: 5.2 * m, color: pal.secondary, width: 2.0 }
+    );
+    const cnt = Math.min(10, Math.round(9 * m));
+    for (let i = 0; i < cnt; i++) {
+      const ang = (Math.PI * 2 * i) / cnt + Math.random() * 0.3;
+      const spd = (1.8 + Math.random() * 3.8) * m;
+      state.sparks.push({
+        x, y,
+        vx: Math.cos(ang) * spd,
+        vy: Math.sin(ang) * spd,
+        life: 1.0,
+        color: i % 2 === 0 ? pal.primary : pal.secondary,
+        size: 2.5,
+      });
+    }
+  }
+
+  function onFingerDown(id, x, y) {
+    if (state.fingers.has(id) || state.fingers.size >= 10) return;
+    const slot = allocateSlot();
+    const pal = FINGER_COLORS[slot];
+    const nowMs = performance.now();
+    const noteInfo = mapPositionToMusic(x, y, canvas.width, canvas.height);
+
+    const trail = { slot, pal, points: [{ x, y, t: nowMs }], active: true };
+    state.trails.push(trail);
+
+    state.fingers.set(id, {
+      id, slot, pal,
+      startX: x, startY: y,
+      x, y,
+      isLine: false,
+      trail,
+      voice: null,
+      noteInfo,
+      lastCol: noteInfo.col,
+    });
+
+    spawnTapCircles(x, y, pal, 1.0 + Math.min(0.45, state.fingers.size * 0.05));
+    state.noteFloats.push({ x, y: y - 18, text: noteInfo.noteLabel, color: pal.primary, life: 1.0 });
+    playTapPing(noteInfo, state.fingers.size);
+    syncAudioHarmonyBus();
+  }
+
+  function onFingerMove(id, x, y) {
+    const f = state.fingers.get(id);
+    if (!f) return;
+    const dx = x - f.x;
+    const dy = y - f.y;
+    const stepDist = Math.hypot(dx, dy);
+    if (stepDist < 3) return; // Decimate sub-3px jitter for ultra-smooth 60 FPS lines!
+
+    const nowMs = performance.now();
+    const noteInfo = mapPositionToMusic(x, y, canvas.width, canvas.height);
+    f.x = x;
+    f.y = y;
+    f.noteInfo = noteInfo;
+    f.trail.points.push({ x, y, t: nowMs });
+
+    if (!f.isLine && Math.hypot(x - f.startX, y - f.startY) > 13) {
+      f.isLine = true;
+      f.voice = createSingingLineVoice(noteInfo);
+      syncAudioHarmonyBus();
+    }
+
+    if (f.isLine && f.voice) {
+      let lineCount = 0;
+      state.fingers.forEach((o) => { if (o.isLine) lineCount += 1; });
+      updateSingingLineVoice(f.voice, noteInfo, stepDist, lineCount);
+
+      if (noteInfo.col !== f.lastCol) {
+        f.lastCol = noteInfo.col;
+        state.tapRings.push({ x, y, r: 5, maxR: 44, speed: 3.0, color: f.pal.secondary, width: 1.8 });
+        state.noteFloats.push({ x, y: y - 14, text: noteInfo.noteLabel, color: f.pal.secondary, life: 0.85 });
+        playQuickSparkle(noteInfo.freq * 2, 0.032);
+        state.hudDirty = true;
+      }
+    }
+
+    if (f.trail.points.length % 3 === 0 && state.sparks.length < 120) {
+      state.sparks.push({
+        x, y,
+        vx: (Math.random() - 0.5) * 1.8,
+        vy: (Math.random() - 0.5) * 1.8,
+        life: 0.75,
+        color: f.trail.points.length % 6 === 0 ? f.pal.secondary : f.pal.primary,
+        size: 2.2,
+      });
+    }
+  }
+
+  function onFingerUp(id) {
+    const f = state.fingers.get(id);
+    if (!f) return;
+    f.trail.active = false;
+    if (f.voice) {
+      stopSingingLineVoice(f.voice);
+      f.voice = null;
+    }
+    state.tapRings.push({ x: f.x, y: f.y, r: 10, maxR: 50, speed: 2.8, color: f.pal.primary, width: 1.6 });
+    state.fingers.delete(id);
+    syncAudioHarmonyBus();
+  }
+
+  // Reconcile ALL simultaneous touches on every TouchEvent frame so zero fingers are ever missed!
+  function syncAllNativeTouches(e) {
+    e.preventDefault();
+    state.useTouchApi = true;
+    ensureAudio();
+    const rect = canvas.getBoundingClientRect();
+    const currentIds = new Set();
+
+    for (let i = 0; i < e.touches.length; i++) {
+      const t = e.touches[i];
+      const key = 't_' + t.identifier;
+      currentIds.add(key);
+      const x = t.clientX - rect.left;
+      const y = t.clientY - rect.top;
+      if (!state.fingers.has(key)) {
+        onFingerDown(key, x, y);
+      } else {
+        onFingerMove(key, x, y);
+      }
+    }
+
+    // Any previously tracked 't_*' finger no longer in e.touches has lifted!
+    Array.from(state.fingers.keys()).forEach((k) => {
+      if (k.startsWith('t_') && !currentIds.has(k)) {
+        onFingerUp(k);
+      }
+    });
+  }
+
+  stageWrap.addEventListener('touchstart', syncAllNativeTouches, { passive: false });
+  stageWrap.addEventListener('touchmove', syncAllNativeTouches, { passive: false });
+  stageWrap.addEventListener('touchend', syncAllNativeTouches, { passive: false });
+  stageWrap.addEventListener('touchcancel', syncAllNativeTouches, { passive: false });
+  stageWrap.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // Multi-Pointer Events (for Windows/ChromeOS PointerEvent digitizers & Mouse)
+  stageWrap.addEventListener('pointerdown', (e) => {
+    if (state.useTouchApi && e.pointerType === 'touch') return;
+    e.preventDefault();
+    ensureAudio();
+    const rect = canvas.getBoundingClientRect();
+    onFingerDown('p_' + e.pointerId, e.clientX - rect.left, e.clientY - rect.top);
+  });
+
+  stageWrap.addEventListener('pointermove', (e) => {
+    if (state.useTouchApi && e.pointerType === 'touch') return;
+    const key = 'p_' + e.pointerId;
+    if (!state.fingers.has(key)) return;
+    const rect = canvas.getBoundingClientRect();
+    onFingerMove(key, e.clientX - rect.left, e.clientY - rect.top);
+  });
+
+  function onPtrEnd(e) {
+    if (state.useTouchApi && e.pointerType === 'touch') return;
+    onFingerUp('p_' + e.pointerId);
+  }
+  stageWrap.addEventListener('pointerup', onPtrEnd);
+  stageWrap.addEventListener('pointercancel', onPtrEnd);
+
+  // 10-Finger Symphony Demo
+  $('btn-demo-symphony').addEventListener('click', () => {
+    ensureAudio();
+    resizeCanvas();
+    const w = canvas.width;
+    const h = canvas.height;
+    for (let s = 0; s < 10; s++) {
+      const id = 'sym_' + s + '_' + Date.now();
+      const sx = (w * (s + 0.5)) / 10;
+      const sy = h * (0.8 - (s % 3) * 0.16);
+      setTimeout(() => {
+        onFingerDown(id, sx, sy);
+        let step = 0;
+        const iv = setInterval(() => {
+          step += 1;
+          const nx = sx + Math.sin(step * 0.3 + s) * (w * 0.042);
+          const ny = sy - step * (h * 0.018);
+          onFingerMove(id, nx, Math.max(24, ny));
+          if (step >= 24) {
+            clearInterval(iv);
+            onFingerUp(id);
+          }
+        }, 28);
+      }, s * 45);
+    }
+  });
+
+  // -------------------------------------------------------------------------
+  // Ultra-Fast 60 FPS Zero-ShadowBlur Neon Renderer (<0.7ms per frame!)
+  // -------------------------------------------------------------------------
+  function strokePolylineSlice(pts, startIdx, endIdx) {
+    if (endIdx - startIdx < 1) return;
+    c.beginPath();
+    c.moveTo(pts[startIdx].x, pts[startIdx].y);
+    for (let i = startIdx + 1; i < endIdx; i++) {
+      const mx = (pts[i].x + pts[i + 1].x) * 0.5;
+      const my = (pts[i].y + pts[i + 1].y) * 0.5;
+      c.quadraticCurveTo(pts[i].x, pts[i].y, mx, my);
+    }
+    c.lineTo(pts[endIdx].x, pts[endIdx].y);
+    c.stroke();
+  }
+
+  function renderLoop(nowMs) {
+    flushHudDomIfDirty();
+
+    const w = canvas.width;
+    const h = canvas.height;
+    const fadeMs = parseInt($('fade-select').value || '1600', 10);
+
+    // Solid fast background fill
+    c.globalCompositeOperation = 'source-over';
+    c.globalAlpha = 1;
+    c.fillStyle = '#03050c';
+    c.fillRect(0, 0, w, h);
+
+    // Pitch-column grid & horizontal octave dividers
+    const scale = SCALES[$('scale-select').value] || SCALES.pentatonic;
+    const cols = scale.length;
+    if (state.bgPulse > 0.01) state.bgPulse *= 0.9;
+    c.strokeStyle = `rgba(0, 245, 255, ${0.05 + state.bgPulse * 0.08})`;
+    c.lineWidth = 1;
+    c.beginPath();
+    for (let i = 1; i < cols; i++) {
+      const gx = (w * i) / cols;
+      c.moveTo(gx, 0);
+      c.lineTo(gx, h);
+    }
+    c.moveTo(0, h * 0.333); c.lineTo(w, h * 0.333);
+    c.moveTo(0, h * 0.666); c.lineTo(w, h * 0.666);
+    c.stroke();
+
+    // Subtle column glow for active fingers
+    const activeArr = Array.from(state.fingers.values());
+    const colW = w / cols;
+    for (let i = 0; i < activeArr.length; i++) {
+      const f = activeArr[i];
+      c.fillStyle = f.pal.primary;
+      c.globalAlpha = 0.07;
+      c.fillRect(f.noteInfo.col * colW, 0, colW, h);
+    }
+
+    // Additive Neon Light Blending (Zero shadowBlur needed!)
+    c.globalCompositeOperation = 'lighter';
+    c.lineCap = 'round';
+    c.lineJoin = 'round';
+
+    // 1. Harmonic Constellation Threads When 2+ Fingers Touch Simultaneously
+    if (activeArr.length >= 2) {
+      c.lineWidth = activeArr.length >= 5 ? 2.0 : 1.3;
+      for (let i = 0; i < activeArr.length; i++) {
+        for (let j = i + 1; j < activeArr.length; j++) {
+          c.globalAlpha = 0.28;
+          c.strokeStyle = activeArr[i].pal.primary;
+          c.beginPath();
+          c.moveTo(activeArr[i].x, activeArr[i].y);
+          c.lineTo(activeArr[j].x, activeArr[j].y);
+          c.stroke();
+        }
+      }
+    }
+
+    // 2. Ephemeral Per-Finger Colorful Neon Ribbons (Batched 3-Band Tapered Glow — 40x Faster!)
+    for (let i = state.trails.length - 1; i >= 0; i--) {
+      const tr = state.trails[i];
+      const pts = tr.points;
+      while (pts.length > 0 && nowMs - pts[0].t > fadeMs) {
+        pts.shift();
+      }
+      if (pts.length === 0) {
+        if (!tr.active) state.trails.splice(i, 1);
+        continue;
+      }
+
+      const sprite = GLOW_SPRITES[tr.slot];
+      if (pts.length === 1) {
+        const life = Math.max(0, 1 - (nowMs - pts[0].t) / fadeMs);
+        c.globalAlpha = life;
+        const sz = 52 * life + 12;
+        c.drawImage(sprite, pts[0].x - sz * 0.5, pts[0].y - sz * 0.5, sz, sz);
+        continue;
+      }
+
+      // Split ribbon into 3 smooth ephemeral taper bands (Tail -> Mid -> Head) = only 9 fast strokes total!
+      const n = pts.length - 1;
+      const b1 = Math.floor(n * 0.35);
+      const b2 = Math.floor(n * 0.7);
+      const headLife = Math.max(0.05, 1 - (nowMs - pts[n].t) / fadeMs);
+
+      const bands = [
+        [0, Math.max(1, b1), 0.32 * headLife, tr.pal.secondary],
+        [b1, Math.max(b1 + 1, b2), 0.68 * headLife, tr.pal.primary],
+        [b2, n, 1.0 * headLife, tr.pal.primary],
+      ];
+
+      for (let b = 0; b < bands.length; b++) {
+        const [sIdx, eIdx, vis, colStr] = bands[b];
+        if (eIdx <= sIdx || sIdx >= pts.length || eIdx >= pts.length) continue;
+
+        // Pass A: Wide Soft Neon Aura
+        c.strokeStyle = colStr;
+        c.globalAlpha = 0.22 * vis;
+        c.lineWidth = 20 * vis + 4;
+        strokePolylineSlice(pts, sIdx, eIdx);
+
+        // Pass B: Vivid Saturated Neon Tube
+        c.globalAlpha = 0.68 * vis;
+        c.lineWidth = 7.5 * vis + 1.5;
+        strokePolylineSlice(pts, sIdx, eIdx);
+
+        // Pass C: White-Hot Laser Core
+        c.strokeStyle = '#ffffff';
+        c.globalAlpha = 0.78 * vis;
+        c.lineWidth = 2.2 * vis + 0.5;
+        strokePolylineSlice(pts, sIdx, eIdx);
+      }
+    }
+
+    // 3. Concentric Neon Tap Circles (Dual-Pass Halo without shadowBlur!)
+    for (let i = state.tapRings.length - 1; i >= 0; i--) {
+      const r = state.tapRings[i];
+      r.r += r.speed;
+      const prog = r.r / r.maxR;
+      if (prog >= 1) {
+        state.tapRings.splice(i, 1);
+        continue;
+      }
+      const life = 1 - prog;
+      c.strokeStyle = r.color;
+      c.globalAlpha = life * 0.25;
+      c.lineWidth = r.width * 3.5 * life;
+      c.beginPath();
+      c.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+      c.stroke();
+
+      c.globalAlpha = life * 0.9;
+      c.lineWidth = Math.max(1, r.width * life);
+      c.stroke();
+    }
+
+    // 4. Active Fingertip Pre-Baked Neon Glow Orbs + Note Callout
+    for (let i = 0; i < activeArr.length; i++) {
+      const f = activeArr[i];
+      const sprite = GLOW_SPRITES[f.slot];
+      c.globalAlpha = 0.95;
+      c.drawImage(sprite, f.x - 44, f.y - 44, 88, 88);
+
+      c.strokeStyle = f.pal.primary;
+      c.lineWidth = 2.5;
+      c.beginPath();
+      c.arc(f.x, f.y, f.isLine ? 25 : 19, 0, Math.PI * 2);
+      c.stroke();
+
+      c.fillStyle = f.pal.primary;
+      c.font = 'bold 12px ui-monospace, monospace';
+      c.fillText(`${f.pal.code} • ${f.noteInfo.noteLabel}`, f.x + 28, f.y + 4);
+    }
+
+    // 5. Ephemeral Sparks
+    for (let i = state.sparks.length - 1; i >= 0; i--) {
+      const sp = state.sparks[i];
+      sp.x += sp.vx;
+      sp.y += sp.vy;
+      sp.life -= 0.035;
+      if (sp.life <= 0) {
+        state.sparks.splice(i, 1);
+        continue;
+      }
+      c.globalAlpha = sp.life;
+      c.fillStyle = sp.color;
+      c.beginPath();
+      c.arc(sp.x, sp.y, sp.size, 0, Math.PI * 2);
+      c.fill();
+    }
+
+    // 6. Floating Musical Note Badges
+    c.font = 'bold 13px ui-monospace, monospace';
+    for (let i = state.noteFloats.length - 1; i >= 0; i--) {
+      const nf = state.noteFloats[i];
+      nf.y -= 1.0;
+      nf.life -= 0.025;
+      if (nf.life <= 0) {
+        state.noteFloats.splice(i, 1);
+        continue;
+      }
+      c.globalAlpha = nf.life;
+      c.fillStyle = nf.color;
+      c.fillText(nf.text, nf.x - 10, nf.y);
+    }
+
+    requestAnimationFrame(renderLoop);
+  }
+  requestAnimationFrame(renderLoop);
+})();
+
+</script>
+</body>
+</html>

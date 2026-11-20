@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore 30 AI, LLM, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
-    <title>Projects | Black Beard&#x27;s Portfolio — Run Nexus, MCP Servers &amp; AI Systems</title>
-    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
-    <link href="assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <meta name="description" content="Search, filter, and explore all 35 AI, Enterprise RAG, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
+    <title>Projects Explorer (35) | Black Beard&#x27;s Portfolio</title>
+    <link href="assets/vendor/bootstrap.min.css?v=20261120v4" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
-    <link rel="stylesheet" href="css/style.css?v=20261106v3">
+    <link rel="stylesheet" href="css/style.css?v=20261120v4">
 </head>
 <body>
     <!-- Navigation -->
@@ -26,10 +23,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About &amp; Methodology</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects (35)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog (26)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 61 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
                         <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
@@ -42,812 +46,304 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero py-4">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-code-branch"></i> 35 Production &amp; Research Systems
+                <i class="fa-solid fa-code-branch"></i> 35 Production &amp; Research Systems &bull; Searchable Multi-View Index
             </div>
-            <h1 class="neon-text">AI Systems, <span class="hero-gradient-span">Run Nexus</span> &amp; Security Engineering</h1>
+            <h1 class="neon-text mb-2">Systems &amp; <span class="hero-gradient-span">Architecture Explorer</span></h1>
             <p class="neon-text-blue mb-0">
-                Every project below pairs custom AI-generated concept artwork with architectural breakdowns of the LLM pipelines, MCP tool servers, ML models, and security automations powering it.
+                Filter by engineering track, search any tech stack in real time, or switch between <strong>Visual Cards</strong>, <strong>Compact 2-Column Cards</strong>, and a single-screen <strong>Directory Table</strong>.
             </p>
         </div>
     </header>
 
-    <section class="py-5">
+    <section class="py-4">
         <div class="container">
-            <div class="filter-bar" data-filter-group="#all-projects-grid">
-                <button class="filter-btn active" data-filter="all">All Projects (35)</button>
-                <button class="filter-btn" data-filter="compliance">Compliance &amp; Security Governance</button>
-                <button class="filter-btn" data-filter="nexus">Run Nexus & Local-First AI (29)</button>
-                <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Workflows</button>
-                <button class="filter-btn" data-filter="media">GenAI 3D, EdTech &amp; Media</button>
-                <button class="filter-btn" data-filter="cyber">Cybersecurity &amp; Hardware</button>
+            <!-- Scalable Explorer Control Shell -->
+            <div class="explorer-shell">
+                <div class="explorer-top-row">
+                    <div class="explorer-search-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="explorer-search" class="explorer-search-input" placeholder="Search 35 systems by name, domain, or stack (e.g., RAG, BigQuery, MCP, SOC 2, CMMC, Three.js, #35)..." autocomplete="off">
+                        <button type="button" id="explorer-clear" class="explorer-clear-btn" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="explorer-controls-right">
+                        <select id="explorer-sort" class="explorer-sort-select" aria-label="Sort projects">
+                            <option value="newest">Sort: Newest (#35 &rarr; #01)</option>
+                            <option value="flagship">Sort: Flagship First</option>
+                            <option value="alpha">Sort: Title (A &rarr; Z)</option>
+                            <option value="oldest">Sort: Chronological (#01 &rarr; #35)</option>
+                        </select>
+                        <div class="view-toggle-group" role="group" aria-label="View density">
+                            <button type="button" class="view-toggle-btn active" data-explorer-view="grid" title="Visual Grid Cards">
+                                <i class="fa-solid fa-grip"></i> Grid
+                            </button>
+                            <button type="button" class="view-toggle-btn" data-explorer-view="compact" title="Compact 2-Column List">
+                                <i class="fa-solid fa-table-cells-large"></i> Compact
+                            </button>
+                            <button type="button" class="view-toggle-btn" data-explorer-view="table" title="Single-Screen Directory Table">
+                                <i class="fa-solid fa-list"></i> Table
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-bar justify-content-start mb-0">
+                    <button class="filter-btn active" data-explorer-cat="all">All Systems (35)</button>
+                    <button class="filter-btn" data-explorer-cat="flagship">&#9733; Flagships (6)</button>
+                    <button class="filter-btn" data-explorer-cat="compliance">Security, RAG &amp; GRC (8)</button>
+                    <button class="filter-btn" data-explorer-cat="mcp">MCP &amp; Agentic Workflows (29)</button>
+                    <button class="filter-btn" data-explorer-cat="nexus">Run Nexus &amp; Local AI (29)</button>
+                    <button class="filter-btn" data-explorer-cat="media">3D, Robotics &amp; Media (14)</button>
+                    <button class="filter-btn" data-explorer-cat="cyber">Cybersecurity &amp; OSINT (12)</button>
+                </div>
             </div>
 
-            <div id="all-projects-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Project 35: Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio -->
-                <div class="col" data-category="compliance cyber mcp nexus">
+            <div class="explorer-status-bar">
+                <div id="explorer-status-text">Showing <strong class="text-white">12</strong> of <strong class="text-info">35</strong> matching systems</div>
+                <div class="text-muted">Tip: Press <span class="kbd-chip">&#8984;K</span> or <span class="kbd-chip">/</span> anywhere to jump directly to any project or blog post.</div>
+            </div>
+
+            <div id="explorer-results-container" data-explorer-type="projects">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_35.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/zero_leak_rag_lab.jpg?v=1" class="card-img-top" alt="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio">
+                            <span class="card-id-ribbon">#35</span>
+                            <span class="card-flagship-ribbon"><i class="fa-solid fa-star me-1"></i>Flagship</span>
+                            <img src="assets/images/zero_leak_rag_lab.jpg?v=1" class="card-img-top" loading="lazy" alt="Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-security">Enterprise RAG &bull; Identity &amp; RLS &bull; Hybrid Search</span>
-                            <h5 class="card-title">Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</h5>
-                            <p class="card-text">Interactive Enterprise AI Grounding &amp; Security Architecture Workbench defeating the &ldquo;Confused Deputy&rdquo; RAG data-leakage anti-pattern via Pre-Retrieval OAuth/IAM ACLs, BigQuery Row-Level Security (RLS), Hybrid Sparse BM25 + Dense Vector Reciprocal Rank Fusion (RRF), Prompt-Injection &amp; Citation Guardrails, and a RAG vs. Long-Context vs. Fine-Tuning trade-off calculator.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Pre-Retrieval IAM &amp; ACLs</span><span class="tech-pill">BigQuery Row-Level Security</span><span class="tech-pill">Hybrid BM25 + Vector RRF</span><span class="tech-pill">Prompt-Injection &amp; Citation Guardrails</span><span class="tech-pill">Local Ollama + Cloud LLMs</span></div>
+                            <span class="category-badge badge-security">Enterprise RAG • Identity &amp; RLS • Hybrid Search</span>
+                            <h5 class="card-title"><a href="projects/project_35.html" class="text-white text-decoration-none">Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding &amp; RLS Studio</a></h5>
+                            <p class="card-text">Interactive Enterprise AI Grounding &amp; Security Architecture Workbench defeating the “Confused Deputy” RAG data-leakage anti-pattern via Pre-Retrieval OAuth/IAM ACLs, BigQuery Row-Level Security (RLS), Hybrid Sparse BM25 + Dense Vector Reciprocal Rank Fusion (RRF), Prompt-Injection &amp; Citation Guardrails, and a RAG vs. Long-Context vs. Fine-Tuning trade-off calculator.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Pre-Retrieval IAM &amp; ACLs</span><span class="tech-pill">BigQuery Row-Level Security</span><span class="tech-pill">Hybrid BM25 + Vector RRF</span><span class="tech-pill">Prompt-Injection &amp; Citation Guardrails</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/zero-leak-rag-lab" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_35.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/zero-leak-rag-lab" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_35.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 34: TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio -->
-                <div class="col" data-category="compliance cyber mcp nexus">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_34.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/trustforge_soc2.jpg?v=8" class="card-img-top" alt="TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio">
+                            <span class="card-id-ribbon">#34</span>
+                            <span class="card-flagship-ribbon"><i class="fa-solid fa-star me-1"></i>Flagship</span>
+                            <img src="assets/images/trustforge_soc2.jpg?v=8" class="card-img-top" loading="lazy" alt="TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-security">GRC &bull; SOC 2 Type II &bull; Privacy &amp; InfoSec</span>
-                            <h5 class="card-title">TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio</h5>
+                            <span class="category-badge badge-security">GRC • SOC 2 Type II • Privacy &amp; InfoSec</span>
+                            <h5 class="card-title"><a href="projects/project_34.html" class="text-white text-decoration-none">TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage &amp; Privacy Crosswalk Studio</a></h5>
                             <p class="card-text">Autonomous AICPA SOC 2 Type I &amp; Type II readiness, 5 Trust Services Categories (28 criteria + 2022 Revised Points of Focus) continuous evidence engine, 7-Gate adversarial exception triage (True Positive vs. Compensating Control False Positive), subservice vendor CUEC &amp; Bridge-Letter analyzer, and ISO 27001 / NIST 800-53 / HIPAA / GDPR / PCI-DSS crosswalk studio with 3-run SHA-256 determinism.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">AICPA SOC 2 (5 TSCs / 28 Criteria)</span><span class="tech-pill">Type I &amp; Type II Sampling</span><span class="tech-pill">7-Gate Exception Triage</span><span class="tech-pill">Vendor CUEC &amp; Bridge Letters</span><span class="tech-pill">ISO 27001 / NIST / HIPAA / GDPR</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">AICPA SOC 2 (5 TSCs / 28 Criteria)</span><span class="tech-pill">Type I &amp; Type II Sampling</span><span class="tech-pill">7-Gate Exception Triage</span><span class="tech-pill">Vendor CUEC &amp; Bridge Letters</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/trustforge-soc2" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_34.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/trustforge-soc2" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_34.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 33: SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio -->
-                <div class="col" data-category="mcp nexus compliance cyber">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_33.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" alt="SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio">
+                            <span class="card-id-ribbon">#33</span>
+                            <span class="card-flagship-ribbon"><i class="fa-solid fa-star me-1"></i>Flagship</span>
+                            <img src="assets/images/skillforge_ai.jpg?v=8" class="card-img-top" loading="lazy" alt="SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Agentic AI &bull; MCP &bull; Compiler Studio</span>
-                            <h5 class="card-title">SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio</h5>
+                            <span class="category-badge badge-nexus">Agentic AI • MCP • Compiler Studio</span>
+                            <h5 class="card-title"><a href="projects/project_33.html" class="text-white text-decoration-none">SkillForge AI: Web-App-to-LLM-Skill &amp; MCP Compiler Studio</a></h5>
                             <p class="card-text">Local-first Web-App-to-LLM-Skill (SKILL.md) and Multi-Skill MCP JSON-RPC 2.0 Compiler Studio &amp; Live Agent Testbench. Scans local web apps (including bundled TaskPulse) or OpenAPI/GRC blueprints, compiles 5-Gate &amp; 3-run SHA-256 verified skill bundles, and runs live 3-stage Local Ollama or Cloud LLM tool execution.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Web-App-to-SKILL.md</span><span class="tech-pill">Multi-Skill MCP Hub</span><span class="tech-pill">Live 3-Stage LLM Testbench</span><span class="tech-pill">Local Ollama + Cloud APIs</span><span class="tech-pill">3-Run SHA-256 Determinism</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">Web-App-to-SKILL.md</span><span class="tech-pill">Multi-Skill MCP Hub</span><span class="tech-pill">Live 3-Stage LLM Testbench</span><span class="tech-pill">Local Ollama + Cloud APIs</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/skillforge-ai" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_33.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/skillforge-ai" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_33.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 32: Outbreak 3D ("Ant Farm"): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_32.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/outbreak_3d.jpg?v=7" class="card-img-top" alt="Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game">
+                            <span class="card-id-ribbon">#32</span>
+                            <span class="card-flagship-ribbon"><i class="fa-solid fa-star me-1"></i>Flagship</span>
+                            <img src="assets/images/outbreak_3d.jpg?v=7" class="card-img-top" loading="lazy" alt="Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-nexus">3D Ant-Farm Colony &amp; Multi-Agent Sim</span>
-                            <h5 class="card-title">Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game</h5>
+                            <h5 class="card-title"><a href="projects/project_32.html" class="text-white text-decoration-none">Outbreak 3D (&quot;Ant Farm&quot;): Autonomous Human-Zombie Colony &amp; Social Drama Simulation Game</a></h5>
                             <p class="card-text">Outbreak 3D (&quot;Ant Farm&quot; — Season Two) is a deterministic, seeded 3D multi-agent survival and social-drama simulation game. Designed as a living glass-box &quot;ant farm,&quot; 30 named survivors with 12 personality archetypes and 10 dynamic emotional factors autonomously scavenge a procedural 3D town, fortify a walled sanctuary, form romances, cliques, love triangles, and blood feuds, and fight to survive against 9 classes of mutating zombies, winter blizzards, and midnight generator blackouts.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">30 Autonomous Survivors</span><span class="tech-pill">10-Factor Emotion &amp; Drama AI</span><span class="tech-pill">9 Zombie Mutation Classes</span><span class="tech-pill">Generator Blackouts &amp; Seasons</span><span class="tech-pill">3D WebGL + Headless CLI</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">30 Autonomous Survivors</span><span class="tech-pill">10-Factor Emotion &amp; Drama AI</span><span class="tech-pill">9 Zombie Mutation Classes</span><span class="tech-pill">Generator Blackouts &amp; Seasons</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/outbreak-3d" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_32.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/outbreak-3d" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_32.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 31: AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_31.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/aeroforge_3d.jpg?v=7" class="card-img-top" alt="AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator">
+                            <span class="card-id-ribbon">#31</span>
+                            
+                            <img src="assets/images/aeroforge_3d.jpg?v=7" class="card-img-top" loading="lazy" alt="AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-media">3D Aerospace CAD &amp; Flight Sim</span>
-                            <h5 class="card-title">AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator</h5>
+                            <h5 class="card-title"><a href="projects/project_31.html" class="text-white text-decoration-none">AeroForge 3D: Fighter Jet CAD, 67-Part Teardown, Mach CFD &amp; 3D Dogfight Simulator</a></h5>
                             <p class="card-text">AeroForge 3D is an interactive 3D aerospace engineering workbench, 67-part mechanical teardown studio, supersonic wind-tunnel solver, and playable 3D dogfight simulator spanning 113 years of combat aviation (1917–2030). Inspect 26 historical and modern fighter aircraft across five eras and three superpowers (USA, RUS, CHN), re-sculpt wing sweep and stealth shaping, scrub a 0–100% exploded view across 12 internal bays, and fly your custom airframe in live 3D aerial combat.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">26 Aircraft (1917–2030)</span><span class="tech-pill">12-Bay / 67-Part Teardown</span><span class="tech-pill">ISA Mach CFD &amp; RCS Polar</span><span class="tech-pill">Playable 3D Dogfight Arena</span><span class="tech-pill">Three.js + CPU Fallback</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">26 Aircraft (1917–2030)</span><span class="tech-pill">12-Bay / 67-Part Teardown</span><span class="tech-pill">ISA Mach CFD &amp; RCS Polar</span><span class="tech-pill">Playable 3D Dogfight Arena</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/aeroforge-3d" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_31.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/aeroforge-3d" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_31.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 28: BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_28.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/battlebot_designer.jpg?v=6" class="card-img-top" alt="BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator">
+                            <span class="card-id-ribbon">#28</span>
+                            
+                            <img src="assets/images/battlebot_designer.jpg?v=6" class="card-img-top" loading="lazy" alt="BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-media">3D Robotics CAD &amp; Combat Sim</span>
-                            <h5 class="card-title">BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator</h5>
+                            <h5 class="card-title"><a href="projects/project_28.html" class="text-white text-decoration-none">BattleBot Designer: 3D Combat-Robot CAD Studio, Factory Floor &amp; Arena Simulator</a></h5>
                             <p class="card-text">BattleBot Designer is an interactive 3D combat-robot engineering workbench, piece-by-piece Factory Floor assembler, and Arena combat simulator. Every robot is modeled as a connected graph: 17 chassis architectures expose five universal hardpoints (Front, Top, Rear, Left, Right), any of 36 kinetic, control, thermal, electrical, projectile, or passive modules can bolt onto any mount, and a swept-volume interference solver automatically blocks only combinations whose motion envelopes or lines of fire physically clash.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">17 Chassis × 36 Modules</span><span class="tech-pill">Swept-Volume Clash Solver</span><span class="tech-pill">Piece-Level 3D Teardown</span><span class="tech-pill">WebGL + CPU Z-Buffer Rasterizer</span><span class="tech-pill">Live Arena Combat Sim</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">17 Chassis × 36 Modules</span><span class="tech-pill">Swept-Volume Clash Solver</span><span class="tech-pill">Piece-Level 3D Teardown</span><span class="tech-pill">WebGL + CPU Z-Buffer Rasterizer</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/battlebot-designer" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_28.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/battlebot-designer" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_28.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 29: Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_29.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/pelagos_simulator.jpg?v=6" class="card-img-top" alt="Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator">
+                            <span class="card-id-ribbon">#29</span>
+                            
+                            <img src="assets/images/pelagos_simulator.jpg?v=6" class="card-img-top" loading="lazy" alt="Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-nexus">Biomimetic 3D Robotics Sim</span>
-                            <h5 class="card-title">Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</h5>
+                            <h5 class="card-title"><a href="projects/project_29.html" class="text-white text-decoration-none">Pelagos OC-8 &amp; 18-DOF Hexapod: 3D Biomimetic Robotics Teardown Field Simulator</a></h5>
                             <p class="card-text">Pelagos OC-8 &amp; 18-DOF Hexapod is an interactive 3D biomimetic robotics field simulator and teardown workbench built on a 1600×900 8-panel engineering HUD. Operators can switch across a 9-unit biomimetic fleet, scrub a continuous 3D teardown slider, isolate individual mechanical sub-assemblies, inspect X-Ray and thermal heatmaps, inject subsystem faults, and export the entire simulator as a self-contained offline HTML bundle.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">9 Biomimetic Robot Units</span><span class="tech-pill">202-Link Octopus &amp; 18-DOF Walker</span><span class="tech-pill">X-Ray &amp; Thermal Overlays</span><span class="tech-pill">WebGL Bloom + CPU Fallback</span><span class="tech-pill">Single-File Offline Export</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">9 Biomimetic Robot Units</span><span class="tech-pill">202-Link Octopus &amp; 18-DOF Walker</span><span class="tech-pill">X-Ray &amp; Thermal Overlays</span><span class="tech-pill">WebGL Bloom + CPU Fallback</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/pelagos-oc8-simulator" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_29.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/pelagos-oc8-simulator" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_29.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 30: LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_30.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/lingoforge.jpg?v=6" class="card-img-top" alt="LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio">
+                            <span class="card-id-ribbon">#30</span>
+                            
+                            <img src="assets/images/lingoforge.jpg?v=6" class="card-img-top" loading="lazy" alt="LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-mcp">EdTech &amp; Conversational AI</span>
-                            <h5 class="card-title">LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</h5>
+                            <h5 class="card-title"><a href="projects/project_30.html" class="text-white text-decoration-none">LingoForge: 10-Language Gamified Learning, Half-Life SRS &amp; AI Roleplay Studio</a></h5>
                             <p class="card-text">LingoForge is an independent, self-hosted 10-language learning web application and CLI built with Flask and SQLite. It combines CEFR-aligned skill trees, 8 interactive exercise mechanics, voiced dialogue stories, non-Latin script trainers, Half-Life Regression spaced repetition, and Levenshtein typo-tolerant grading with AI-powered grammar explanations, live conversational roleplay missions, and on-demand custom unit synthesis.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">10 CEFR Language Courses</span><span class="tech-pill">Half-Life Regression SRS</span><span class="tech-pill">AI Roleplay &amp; Explain Answer</span><span class="tech-pill">Neural Edge-TTS Audio</span><span class="tech-pill">1:1 CLI Parity</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">10 CEFR Language Courses</span><span class="tech-pill">Half-Life Regression SRS</span><span class="tech-pill">AI Roleplay &amp; Explain Answer</span><span class="tech-pill">Neural Edge-TTS Audio</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/lingoforge" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_30.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/lingoforge" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_30.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                                <!-- Project 22: WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_22.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/storybook_studio.jpg" class="card-img-top" alt="WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader">
+                            <span class="card-id-ribbon">#22</span>
+                            
+                            <img src="assets/images/storybook_studio.jpg" class="card-img-top" loading="lazy" alt="WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-media">GenAI Media &amp; Story Studio</span>
-                            <h5 class="card-title">WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader</h5>
+                            <h5 class="card-title"><a href="projects/project_22.html" class="text-white text-decoration-none">WonderBook Studio: AI Children&#x27;s Storybook Creator &amp; 3D Illustrated Reader</a></h5>
                             <p class="card-text">WonderBook Studio is an interactive AI children&#x27;s picture book creation studio and 3D illustrated reader. Every storybook, character, and spread is generated on the fly with bespoke AI artwork—combining live Pollinations/Flux neural illustration synthesis, OpenAI/Gemini multimodal pipelines, and a procedural multi-layer Studio Ghibli &amp; glowing watercolor SVG scene compositor so that no two books or spreads ever look the same. Includes an interactive character &amp; art-style wizard, one-click AI Artwork regeneration per page or full book, word-highlighted Web Speech read-aloud narration, and print-ready HTML/PDF storybook export.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">On-the-Fly AI Artwork</span><span class="tech-pill">3D Page-Turn Reader</span><span class="tech-pill">Bespoke Scene Compositor</span><span class="tech-pill">Read-Aloud Karaoke</span><span class="tech-pill">Print / PDF Export</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">On-the-Fly AI Artwork</span><span class="tech-pill">3D Page-Turn Reader</span><span class="tech-pill">Bespoke Scene Compositor</span><span class="tech-pill">Read-Aloud Karaoke</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/storybook-studio" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_22.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/storybook-studio" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_22.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 23: PanelForge: Studio Ghibli &amp; AI Comic Book / Manga Studio -->
-                <div class="col" data-category="media nexus mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_23.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/panelforge.jpg" class="card-img-top" alt="PanelForge: Studio Ghibli &amp; AI Comic Book / Manga Studio">
+                            <span class="card-id-ribbon">#23</span>
+                            
+                            <img src="assets/images/panelforge.jpg" class="card-img-top" loading="lazy" alt="PanelForge: Studio Ghibli &amp; AI Comic Book / Manga Studio">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-media">GenAI Comic &amp; Manga Studio</span>
-                            <h5 class="card-title">PanelForge: Studio Ghibli &amp; AI Comic Book / Manga Studio</h5>
+                            <h5 class="card-title"><a href="projects/project_23.html" class="text-white text-decoration-none">PanelForge: Studio Ghibli &amp; AI Comic Book / Manga Studio</a></h5>
                             <p class="card-text">PanelForge is an end-to-end AI comic book, graphic novel, and shonen manga creation studio. Writers pitch a concept, select an art style (Studio Ghibli, Shonen Manga, American Superhero, Cyberpunk Noir, Watercolor Fable, or Franco-Belgian Ligne Claire), and PanelForge scripts multi-page issues while synthesizing bespoke panel artwork with dynamic speedlines, cel-shaded characters, atmospheric lighting, and movable SVG speech balloons, thought clouds, and SFX lettering.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">AI Comic Book Creator</span><span class="tech-pill">6 Visual Art Styles</span><span class="tech-pill">Per-Panel AI Art Synth</span><span class="tech-pill">SVG Speech Balloons</span><span class="tech-pill">CBZ / PDF / Webtoon Export</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">AI Comic Book Creator</span><span class="tech-pill">6 Visual Art Styles</span><span class="tech-pill">Per-Panel AI Art Synth</span><span class="tech-pill">SVG Speech Balloons</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/panelforge" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_23.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/panelforge" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_23.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 24: Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap -->
-                <div class="col" data-category="mcp media nexus">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_24.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/dungeon_master_os.jpg" class="card-img-top" alt="Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap">
+                            <span class="card-id-ribbon">#24</span>
+                            
+                            <img src="assets/images/dungeon_master_os.jpg" class="card-img-top" loading="lazy" alt="Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-mcp">Agentic Game AI &amp; 3D VTT</span>
-                            <h5 class="card-title">Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap</h5>
+                            <h5 class="card-title"><a href="projects/project_24.html" class="text-white text-decoration-none">Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap</a></h5>
                             <p class="card-text">Dungeon Master OS is a full-stack AI-driven Dungeons &amp; Dragons 5e Virtual Tabletop (VTT) and autonomous Game Master. It pairs a narrative AI Dungeon Master and rule-enforcing 5e combat engine with a rich interactive HTML5 Canvas tactical battlemap featuring bevelled flagstone dungeon rooms, flickering radial torch sconces, chasm lava hazards, animated water currents, fog of war, A* pathfinding previews, and metallic/wooden token miniatures with live HP arcs.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Autonomous AI DM</span><span class="tech-pill">Tactical VTT Battlemap</span><span class="tech-pill">Dynamic Torch Lighting</span><span class="tech-pill">5e Combat &amp; Dice Engine</span><span class="tech-pill">WebSocket Multiplayer Sync</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">Autonomous AI DM</span><span class="tech-pill">Tactical VTT Battlemap</span><span class="tech-pill">Dynamic Torch Lighting</span><span class="tech-pill">5e Combat &amp; Dice Engine</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/dungeon-master-os" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_24.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/dungeon-master-os" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_24.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 25: Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation -->
-                <div class="col" data-category="mcp nexus media">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_25.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/society_in_a_bottle.jpg" class="card-img-top" alt="Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation">
+                            <span class="card-id-ribbon">#25</span>
+                            
+                            <img src="assets/images/society_in_a_bottle.jpg" class="card-img-top" loading="lazy" alt="Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation">
                         </a>
                         <div class="card-body flex-grow-1">
                             <span class="category-badge badge-mcp">Generative Multi-Agent Sim</span>
-                            <h5 class="card-title">Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation</h5>
+                            <h5 class="card-title"><a href="projects/project_25.html" class="text-white text-decoration-none">Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation</a></h5>
                             <p class="card-text">Society in a Bottle is a generative multi-agent social simulation and interactive 2D town sandbox. Eight distinct AI citizens—each with Big-Five personality traits, private goals, gold balances, and episodic/reflected memory streams—live, work, converse, spread rumors, and vote at the Town Hall across 9 interactive buildings (`Oakhearth Tavern`, `Town Hall`, `Blacksmith Forge`, `Grand Library`, `Apothecary`, `Market Square`, `Watchtower`, `Moonlit Docks`, and `Chapel Gardens`) while the user intervenes via a live God-Mode miracle/crisis console.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">8 Autonomous AI Agents</span><span class="tech-pill">Episodic Memory &amp; Rumors</span><span class="tech-pill">Interactive 2D Town Map</span><span class="tech-pill">God-Mode Interventions</span><span class="tech-pill">Social Trust Graph</span></div>
+                            <div class="tech-stack-mini"><span class="tech-pill">8 Autonomous AI Agents</span><span class="tech-pill">Episodic Memory &amp; Rumors</span><span class="tech-pill">Interactive 2D Town Map</span><span class="tech-pill">God-Mode Interventions</span><span class="tech-pill">+1</span></div>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Sockshare/society-in-a-bottle" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_25.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="https://github.com/Sockshare/society-in-a-bottle" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_25.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project 26: Pantry Chef: Zero-Default Ingredient-Driven Culinary AI Studio -->
-                <div class="col" data-category="nexus mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_26.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/pantry_chef.jpg" class="card-img-top" alt="Pantry Chef: Zero-Default Ingredient-Driven Culinary AI Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Zero-Default Culinary AI</span>
-                            <h5 class="card-title">Pantry Chef: Zero-Default Ingredient-Driven Culinary AI Studio</h5>
-                            <p class="card-text">Pantry Chef is an ingredient-first culinary AI studio built around a strict Zero-Default Ingredient Contract: the application boots with an intentionally empty pantry (`0 ingredients`) and never pre-populates fake groceries or assumes unstated staples. As soon as you add what is actually in your kitchen—via quick autocomplete, bulk text paste, or camera/receipt vision scan—Pantry Chef synthesizes tailored recipes ranked by exact pantry coverage, complete with molecular flavor-pairing explanations, dietary/allergen guardrails, serving-size scaling, and interactive step-by-step cooking timers.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Zero-Default Pantry Contract</span><span class="tech-pill">Flavor Chemistry Engine</span><span class="tech-pill">Strict Dietary Guardrails</span><span class="tech-pill">Interactive Cook Timers</span><span class="tech-pill">Receipt / Fridge Vision Scan</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/pantry-chef" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_26.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 27: Eureka Lab: Autonomous Scientific Discovery &amp; Physics Workbench -->
-                <div class="col" data-category="mcp nexus">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_27.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/eureka_lab.jpg" class="card-img-top" alt="Eureka Lab: Autonomous Scientific Discovery &amp; Physics Workbench">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Autonomous Science &amp; Symbolic AI</span>
-                            <h5 class="card-title">Eureka Lab: Autonomous Scientific Discovery &amp; Physics Workbench</h5>
-                            <p class="card-text">Eureka Lab is an autonomous scientific research and symbolic law-discovery workbench. Researchers select an interactive physical system (`Nonlinear Double Pendulum`, `Lotka-Volterra Predator-Prey`, `SIR Epidemic Dynamics`, `Lorenz Chaotic Attractor`, `Driven Damped Harmonic Oscillator`, or custom CSV experimental telemetry), run noisy numerical simulations, execute Pareto-optimal symbolic regression to rediscover the governing differential equations from raw data, and convene a 5-agent scientific review board to publish a complete LaTeX-formatted research manuscript.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Symbolic Equation Discovery</span><span class="tech-pill">RK4 Physics Simulator</span><span class="tech-pill">Pareto Complexity Frontier</span><span class="tech-pill">5-Agent Peer Review</span><span class="tech-pill">LaTeX Manuscript Export</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/eureka-lab" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_27.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 16: Oracle Desk: Prediction-Market Intelligence Terminal -->
-                <div class="col" data-category="mcp nexus">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_16.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/oracle_desk.jpg" class="card-img-top" alt="Oracle Desk: Prediction-Market Intelligence Terminal">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Quant + Multi-Agent AI</span>
-                            <h5 class="card-title">Oracle Desk: Prediction-Market Intelligence Terminal</h5>
-                            <p class="card-text">Oracle Desk is a local-first prediction-market intelligence terminal that pulls live contracts from Polymarket (Gamma/CLOB) and Kalshi (v2 public API), matches equivalent contracts across venues to flag fee-adjusted arbitrage spreads, and computes transparent reference probabilities from FRED macro series, NOAA gridpoints, CoinGecko log-normal drift, and GDELT news tone—backed by a 5-agent Scout -> Evidence -> Quant -> Skeptic -> Journal workflow and a Brier-scored paper portfolio.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Polymarket + Kalshi</span><span class="tech-pill">Cross-Venue Arbitrage</span><span class="tech-pill">5-Agent Debate</span><span class="tech-pill">FRED / NOAA / GDELT</span><span class="tech-pill">Brier Paper Desk</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/oracle-desk" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_16.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 17: Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio -->
-                <div class="col" data-category="mcp nexus compliance">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_17.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/due_diligence_room.jpg" class="card-img-top" alt="Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Multi-Agent FinTech</span>
-                            <h5 class="card-title">Due-Diligence Room: 5-Agent SEC EDGAR & Forensic Memo Studio</h5>
-                            <p class="card-text">Due-Diligence Room convenes five specialized agents over a shared SQLite blackboard to audit any public US company from live SEC EDGAR 10-K/10-Q XBRL facts or user-uploaded PDFs/CSVs. Every financial metric—Beneish M-Score, Altman Z-Score, Piotroski F-Score, Sloan accrual ratio, and cash conversion—is computed in pure Python and tied to an immutable [ev:ID] citation before the Editor agent compiles the final memo.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">SEC EDGAR XBRL</span><span class="tech-pill">5-Agent War Room</span><span class="tech-pill">Beneish M / Altman Z</span><span class="tech-pill">Citation Gatekeeper</span><span class="tech-pill">SSE Blackboard</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/due-diligence-room" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_17.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 18: Paperwork Pilot: Local-First Document, Bill & Contract Translator -->
-                <div class="col" data-category="nexus mcp compliance">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_18.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/paperwork_pilot.jpg" class="card-img-top" alt="Paperwork Pilot: Local-First Document, Bill & Contract Translator">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Local-First Legal/Doc AI</span>
-                            <h5 class="card-title">Paperwork Pilot: Local-First Document, Bill & Contract Translator</h5>
-                            <p class="card-text">Paperwork Pilot lets everyday users drop in confusing leases, medical bills, debt notices, employment contracts, or government forms and immediately get a plain-English translation, a ranked list of traps and deadlines, side-by-side original-vs-plain clause cards, and ready-to-send dispute or negotiation letters—running 100% locally via rules + Ollama or optional cloud LLMs.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Local PDF/Image OCR</span><span class="tech-pill">Clause Trap Radar</span><span class="tech-pill">6th-Grade Readability</span><span class="tech-pill">Auto Reply Letters</span><span class="tech-pill">Zero-Cloud Privacy</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/paperwork-pilot" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_18.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 19: Money Mirror: Plain-English Bank Statement & Subscription Auditor -->
-                <div class="col" data-category="nexus mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_19.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/money_mirror.jpg" class="card-img-top" alt="Money Mirror: Plain-English Bank Statement & Subscription Auditor">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Personal FinTech AI</span>
-                            <h5 class="card-title">Money Mirror: Plain-English Bank Statement & Subscription Auditor</h5>
-                            <p class="card-text">Money Mirror turns raw bank and credit-card CSV exports into an honest, jargon-free financial reflection—automatically detecting recurring subscriptions, silent price creeps, duplicate charges, and category drift while keeping 100% of transaction data on your local machine.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">On-Device CSV Engine</span><span class="tech-pill">Subscription Radar</span><span class="tech-pill">Price-Creep Alerts</span><span class="tech-pill">Cashflow Breakdown</span><span class="tech-pill">Local Ollama Q&A</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/money-mirror" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_19.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 20: Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio -->
-                <div class="col" data-category="nexus mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_20.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/job_hunt_copilot.jpg" class="card-img-top" alt="Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Career Agent Workspace</span>
-                            <h5 class="card-title">Job-Hunt Copilot: Resume, Job-Fit & Interview Strategy Studio</h5>
-                            <p class="card-text">Job-Hunt Copilot compares your real resume against any job description to surface exact skill matches, honest gaps, ATS keyword coverage, grounded bullet-point rewrites (never inventing fake experience), tailored cover letters, and targeted interview questions—running locally with full application tracking.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Resume vs JD Matcher</span><span class="tech-pill">Zero-Fabrication Rewrites</span><span class="tech-pill">ATS Keyword Audit</span><span class="tech-pill">Interview Prep Deck</span><span class="tech-pill">Local Application CRM</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/job-hunt-copilot" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_20.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 21: Fix-It Assistant: Safety-First Home, Car & Appliance Repair Guide -->
-                <div class="col" data-category="nexus media mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_21.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/fix_it_assistant.jpg" class="card-img-top" alt="Fix-It Assistant: Safety-First Home, Car & Appliance Repair Guide">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Multimodal Diagnostic AI</span>
-                            <h5 class="card-title">Fix-It Assistant: Safety-First Home, Car & Appliance Repair Guide</h5>
-                            <p class="card-text">Fix-It Assistant helps anyone diagnose and fix everyday household, plumbing, electrical, appliance, car, and bike problems in plain 6th-grade English. Hard-coded life-safety rules (gas leaks, carbon monoxide, electrical fire, sagging ceilings) always override the AI, while optional local vision models (Moondream/LLaVA) inspect uploaded photos entirely on your machine.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">45+ Vetted Repair Guides</span><span class="tech-pill">Hard Safety Overrides</span><span class="tech-pill">Local Vision (Moondream)</span><span class="tech-pill">Interactive Triage</span><span class="tech-pill">100% Offline Capable</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/fix-it-assistant" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost" title="View Source on GitHub">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a href="projects/project_21.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Run Nexus &amp; Skill Holders Studio -->
-                <div class="col" data-category="nexus mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_7.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/run_nexus.jpg" class="card-img-top" alt="Run Nexus &amp; Skill Holders Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Flagship AI Hub</span>
-                            <h5 class="card-title">Run Nexus &amp; Skill Holders Studio</h5>
-                            <p class="card-text">A full-stack personal AI operating system and microservice orchestrator managing 14+ specialized LLM applications, live SSE process telemetry, workspace storage, and Skill Holders Studio for building portable AI Agent Skills and MCP-ready workflows.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Multi-Agent Hub</span><span class="tech-pill">SKILL.md Studio</span><span class="tech-pill">MCP Workflows</span><span class="tech-pill">SSE Telemetry</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#07</span>
-                            <a href="projects/project_7.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8: SAFER AI Workbench &amp; CMMC Multi-Agent Engine -->
-                <div class="col" data-category="compliance nexus mcp cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_8.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/safer_cmmc.jpg" class="card-img-top" alt="SAFER AI Workbench &amp; CMMC Multi-Agent Engine">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Multi-Agent LLM &amp; Compliance</span>
-                            <h5 class="card-title">SAFER AI Workbench &amp; CMMC Multi-Agent Engine</h5>
-                            <p class="card-text">An enterprise-grade 5-agent sequential LLM compliance engine operating at T=0.0 over a Shared Team Blackboard with strict JSON quality gates across 6 CMMC domains and 17 security practices.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">5-Agent Blackboard</span><span class="tech-pill">T=0.0 LLM</span><span class="tech-pill">CMMC L1 / NIST</span><span class="tech-pill">JSON Quality Gates</span><span class="tech-pill">Python</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#08</span>
-                            <a href="projects/project_8.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 9: Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine -->
-                <div class="col" data-category="compliance nexus mcp cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_9.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/uar_divergence.jpg" class="card-img-top" alt="Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">ML + Identity Governance</span>
-                            <h5 class="card-title">Autonomous UAR, NoPE &amp; ML Peer-Divergence Engine</h5>
-                            <p class="card-text">High-scale Identity Governance &amp; User Access Review platform combining cycle-safe BFS group graph traversal, NoPE Zero-Standing-Privilege checks, and hybrid Neural + Information-Content ML Peer Divergence.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">BFS Graph Engine</span><span class="tech-pill">Neural Autoencoder</span><span class="tech-pill">500K+ Grants</span><span class="tech-pill">Zero Standing Priv</span><span class="tech-pill">SmartExplain AI</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#09</span>
-                            <a href="projects/project_9.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 10: Vulnerability Verifier &amp; Supply-Chain Provenance Suite -->
-                <div class="col" data-category="compliance nexus mcp cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_10.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/vuln_verifier.jpg" class="card-img-top" alt="Vulnerability Verifier &amp; Supply-Chain Provenance Suite">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Agent Skill + SecOps</span>
-                            <h5 class="card-title">Vulnerability Verifier &amp; Supply-Chain Provenance Suite</h5>
-                            <p class="card-text">Browser-coupled security remediation agent and portable AI Agent Skill auditing P0–P3 vulnerability SLAs, paired with cryptographic SLSA Level 4 binary provenance verification and 13-widget executive dashboards.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Portable SKILL.md</span><span class="tech-pill">SLO Audit Engine</span><span class="tech-pill">SLSA L4 Provenance</span><span class="tech-pill">REST Workspace API</span><span class="tech-pill">DOCX/XLSX Gen</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#10</span>
-                            <a href="projects/project_10.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 11: PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server -->
-                <div class="col" data-category="nexus mcp cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_11.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/project_argus.jpg" class="card-img-top" alt="PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Custom MCP Server</span>
-                            <h5 class="card-title">PROJECT ARGUS: Autonomous 3D OSINT &amp; Custom MCP Server</h5>
-                            <p class="card-text">A custom Model Context Protocol (MCP) server and interactive 3D geospatial command deck exposing 11 real-time OSINT telemetry disciplines as structured JSON-RPC tools for autonomous LLM agents.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Model Context Protocol</span><span class="tech-pill">JSON-RPC Tools</span><span class="tech-pill">3D WebGL Globe</span><span class="tech-pill">11 OSINT Streams</span><span class="tech-pill">Agentic Recon</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#11</span>
-                            <a href="projects/project_11.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 12: Self-Taught AI University -->
-                <div class="col" data-category="nexus media">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_12.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/self_taught_uni.jpg" class="card-img-top" alt="Self-Taught AI University">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">LLM EdTech Platform</span>
-                            <h5 class="card-title">Self-Taught AI University</h5>
-                            <p class="card-text">A full-scale autonomous learning platform spanning 285 structured courses and 8,300+ Gemini-synthesized lessons with background prefetching, interactive JS simulations, Python labs, rubric LLM grading, and neural TTS.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Gemini API</span><span class="tech-pill">8,300+ Lessons</span><span class="tech-pill">Async Prefetch</span><span class="tech-pill">LLM Rubric Grader</span><span class="tech-pill">Neural Edge-TTS</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#12</span>
-                            <a href="projects/project_12.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 13: Blender Generator: Zero-UI Multi-Agent 3D Studio -->
-                <div class="col" data-category="nexus media mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_13.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blender_generator.jpg" class="card-img-top" alt="Blender Generator: Zero-UI Multi-Agent 3D Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">GenAI 3D Agents</span>
-                            <h5 class="card-title">Blender Generator: Zero-UI Multi-Agent 3D Studio</h5>
-                            <p class="card-text">A zero-UI multi-agent 3D engineering pipeline where specialized LLM Director and Worker agents write, execute, and self-heal headless Blender 5.0 Python (bpy) scripts for rigged characters, physics, and worlds.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Headless Blender 5.0</span><span class="tech-pill">Director/Worker LLMs</span><span class="tech-pill">bpy Code Synthesis</span><span class="tech-pill">Rigging &amp; Physics</span><span class="tech-pill">GLB/FBX Pipeline</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#13</span>
-                            <a href="projects/project_13.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 14: Omni-Producer &amp; Multi-Model Media Generation Studio -->
-                <div class="col" data-category="nexus media">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_14.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/omni_producer.jpg" class="card-img-top" alt="Omni-Producer &amp; Multi-Model Media Generation Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-nexus">Multi-Modal GenAI</span>
-                            <h5 class="card-title">Omni-Producer &amp; Multi-Model Media Generation Studio</h5>
-                            <p class="card-text">Autonomous multi-modal film and media production suite uniting Pydantic-typed Showrunner/Screenwriter agents with Run Nexus Media Generation Studio across Gemini, Imagen/Nanobanana, and Veo 3.1.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Veo 3.1 Video</span><span class="tech-pill">Gemini 3.1 / Pro</span><span class="tech-pill">Pydantic Schemas</span><span class="tech-pill">Showrunner Agents</span><span class="tech-pill">Imagen Synthesis</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#14</span>
-                            <a href="projects/project_14.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 15: Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer -->
-                <div class="col" data-category="nexus mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_15.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/agentic_taskmasters.jpg" class="card-img-top" alt="Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Edge + Cloud Agents</span>
-                            <h5 class="card-title">Agentic Taskmasters: Feedback Triage &amp; Benefits Auto-Filer</h5>
-                            <p class="card-text">Production agentic workflow duo: an autonomous Feedback Triage Taskmaster (FastAPI, Gemini, Cloud Firestore) and a privacy-first Hybrid Edge/Cloud Benefits Auto-Filer using local Gemma PII scrubbing.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">FastAPI + Firestore</span><span class="tech-pill">Local Gemma PII</span><span class="tech-pill">Gemini Structured IO</span><span class="tech-pill">Drive REST API</span><span class="tech-pill">Hackathon Build</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#15</span>
-                            <a href="projects/project_15.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 1: Operation Hades -->
-                <div class="col" data-category="cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_1.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/operation_hades.jpg" class="card-img-top" alt="Operation Hades">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge">Offensive SecOps</span>
-                            <h5 class="card-title">Operation Hades</h5>
-                            <p class="card-text">A cutting-edge cybersecurity tool that integrates Nmap and Metasploit to automate malware deployment and security vulnerability research, leveraging reconnaissance data to execute tailored scripts.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap</span><span class="tech-pill">Metasploit</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Vuln Research</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#01</span>
-                            <a href="projects/project_1.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Operation Nemesis -->
-                <div class="col" data-category="cyber mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_2.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/operation_nemesis.jpg" class="card-img-top" alt="Operation Nemesis">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge">AI Red Teaming</span>
-                            <h5 class="card-title">Operation Nemesis</h5>
-                            <p class="card-text">An AI-powered system that combines Metasploit, NSE scripts, and reconnaissance data to dynamically analyze vulnerabilities and deploy customized exploits with precision.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">AI Decision Engine</span><span class="tech-pill">Metasploit</span><span class="tech-pill">Nmap NSE</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#02</span>
-                            <a href="projects/project_2.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Operation Hermes -->
-                <div class="col" data-category="cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_3.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/operation_hermes.jpg" class="card-img-top" alt="Operation Hermes">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge">Hardware &amp; Crypto</span>
-                            <h5 class="card-title">Operation Hermes</h5>
-                            <p class="card-text">A secure Bluetooth communication system built on a Raspberry Pi, designed for portable, encrypted off-grid message exchanges between devices in sensitive field environments.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Raspberry Pi</span><span class="tech-pill">Python &amp; C++</span><span class="tech-pill">AES Encryption</span><span class="tech-pill">Bluetooth RF</span><span class="tech-pill">OpenSSL</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#03</span>
-                            <a href="projects/project_3.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Operation Apollo -->
-                <div class="col" data-category="media">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_4.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/operation_apollo.jpg" class="card-img-top" alt="Operation Apollo">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge">FinTech AI</span>
-                            <h5 class="card-title">Operation Apollo</h5>
-                            <p class="card-text">An AI-driven stock advisor system that analyzes real-time market trends, volatility, and financial telemetry to deliver risk-adjusted investment insights.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Python ML</span><span class="tech-pill">LLM Synthesis</span><span class="tech-pill">Market APIs</span><span class="tech-pill">PostgreSQL</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#04</span>
-                            <a href="projects/project_4.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Operation Icarus -->
-                <div class="col" data-category="cyber">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_5.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/operation_icarus.jpg" class="card-img-top" alt="Operation Icarus">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge">Recon &amp; Stealth UI</span>
-                            <h5 class="card-title">Operation Icarus</h5>
-                            <p class="card-text">A stealth-focused Nmap overlay with an intuitive web GUI, enabling multi-tab network scans, live streaming output, visual topology heatmaps, and categorized NSE script execution.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Python / Flask</span><span class="tech-pill">Nmap &amp; NSE</span><span class="tech-pill">Live Telemetry</span><span class="tech-pill">Topology Maps</span><span class="tech-pill">PostgreSQL</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#05</span>
-                            <a href="projects/project_5.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Operation Yggdrasil -->
-                <div class="col" data-category="cyber mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_6.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/operation_yggdrasil.jpg" class="card-img-top" alt="Operation Yggdrasil">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge">AI Graph OSINT</span>
-                            <h5 class="card-title">Operation Yggdrasil</h5>
-                            <p class="card-text">An AI-powered OSINT platform designed to gather, correlate, and visualize public intelligence across diverse sources using LLM NLP pipelines and interactive Cytoscape relationship graphs.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">React.js</span><span class="tech-pill">Cytoscape.js</span><span class="tech-pill">LLM Entity NLP</span><span class="tech-pill">Python / Flask</span><span class="tech-pill">PostgreSQL</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">#06</span>
-                            <a href="projects/project_6.html" class="btn-card-action btn-card-primary">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            <div id="explorer-more-wrap"></div>
         </div>
     </section>
 
-    <!-- Interactive Neural Particle Network -->
     <div id="interactive-particle-container"></div>
 
-    <!-- Footer -->
     <footer class="text-center">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
@@ -857,8 +353,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <a class="nav-icon-link" href="index.html">Home</a>
-                    <a class="nav-icon-link" href="projects.html">Projects</a>
-                    <a class="nav-icon-link" href="blog.html">Blog</a>
+                    <a class="nav-icon-link" href="projects.html">Projects (35)</a>
+                    <a class="nav-icon-link" href="blog.html">Blog (26)</a>
                     <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -868,11 +364,9 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS (Self-Hosted) -->
-    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
-    <!-- Particles JS (Self-Hosted) -->
-    <script src="assets/vendor/particles.min.js?v=20261106v3"></script>
-    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
-    <script src="js/scripts.js?v=20261106v3"></script>
+    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261120v4"></script>
+    <script src="assets/vendor/particles.min.js?v=20261120v4"></script>
+    <script src="js/catalog-data.js?v=20261120v4"></script>
+    <script src="js/scripts.js?v=20261120v4"></script>
 </body>
 </html>

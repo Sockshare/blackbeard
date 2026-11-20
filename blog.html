@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Engineering stories and deep dives by Julian Morrisette covering Run Nexus, Model Context Protocol (MCP) servers, multi-agent LLM blackboards, CMMC automation, and cybersecurity.">
-    <title>Blog | Black Beard&#x27;s Portfolio — AI Engineering, LLMs, MCP &amp; Security Stories</title>
-    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
-    <link href="assets/vendor/bootstrap.min.css?v=20261106v3" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <meta name="description" content="Search and browse all 26 engineering stories, CMMC &amp; SOC 2 compliance playbooks, Enterprise RAG guides, and MCP architecture dispatches by Julian Morrisette.">
+    <title>Blog &amp; Playbooks Explorer (26) | Black Beard&#x27;s Portfolio</title>
+    <link href="assets/vendor/bootstrap.min.css?v=20261120v4" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
-    <link rel="stylesheet" href="css/style.css?v=20261106v3">
+    <link rel="stylesheet" href="css/style.css?v=20261120v4">
 </head>
 <body>
     <!-- Navigation -->
@@ -26,10 +23,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About &amp; Methodology</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-                    <li class="nav-item ms-lg-2 d-flex align-items-center gap-1 mt-2 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects (35)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog (26)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 61 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
                         <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
                             <i class="fa-brands fa-github"></i>
                         </a>
@@ -42,635 +46,314 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero py-4">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-feather-pointed"></i> Field Notes, Operational Playbooks &amp; Architecture Dispatches
+                <i class="fa-solid fa-feather-pointed"></i> 26 Dispatches, Playbooks &amp; Architecture Field Guides
             </div>
-            <h1 class="neon-text">AI Engineering, <span class="hero-gradient-span">Compliance Playbooks</span> &amp; Security Stories</h1>
+            <h1 class="neon-text mb-2">Engineering Stories &amp; <span class="hero-gradient-span">Field Playbooks</span></h1>
             <p class="neon-text-blue mb-0">
-                First-hand operational field guides, CMMC &amp; security governance playbooks, and engineering stories from architecting Run Nexus, multi-agent LLM workflows, and deterministic audit pipelines.
+                Search across 26 deep-dive dispatches covering Identity-Aware Enterprise RAG, MCP skill compilers, deterministic multi-agent audit workflows, and CMMC / SOC 2 security governance.
             </p>
         </div>
     </header>
 
-    <section class="py-5">
+    <section class="py-4">
         <div class="container">
-            <div class="filter-bar" data-filter-group="#blog-stories-grid">
-                <button class="filter-btn active" data-filter="all">All Stories (26)</button>
-                <button class="filter-btn" data-filter="playbook">Playbooks &amp; Field Guides (9)</button>
-                <button class="filter-btn" data-filter="mcp">MCP &amp; Agentic Architecture</button>
-                <button class="filter-btn" data-filter="llm">LLM Engineering &amp; GenAI</button>
-                <button class="filter-btn" data-filter="security">Compliance &amp; Cybersecurity</button>
-                <button class="filter-btn" data-filter="culture">Engineering Leadership</button>
+            <div class="explorer-shell">
+                <div class="explorer-top-row">
+                    <div class="explorer-search-wrap">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="explorer-search" class="explorer-search-input" placeholder="Search 26 stories &amp; playbooks by keyword (e.g., Confused Deputy, Stochasticity, CMMC, SOC 2, UAR, MCP)..." autocomplete="off">
+                        <button type="button" id="explorer-clear" class="explorer-clear-btn" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="explorer-controls-right">
+                        <select id="explorer-sort" class="explorer-sort-select" aria-label="Sort stories">
+                            <option value="newest">Sort: Latest (Story #26 &rarr; #01)</option>
+                            <option value="flagship">Sort: Essential Playbooks First</option>
+                            <option value="alpha">Sort: Title (A &rarr; Z)</option>
+                            <option value="oldest">Sort: Chronological (#01 &rarr; #26)</option>
+                        </select>
+                        <div class="view-toggle-group" role="group" aria-label="View density">
+                            <button type="button" class="view-toggle-btn active" data-explorer-view="grid" title="Visual Grid Cards">
+                                <i class="fa-solid fa-grip"></i> Grid
+                            </button>
+                            <button type="button" class="view-toggle-btn" data-explorer-view="compact" title="Compact 2-Column List">
+                                <i class="fa-solid fa-table-cells-large"></i> Compact
+                            </button>
+                            <button type="button" class="view-toggle-btn" data-explorer-view="table" title="Single-Screen Reading Index">
+                                <i class="fa-solid fa-list"></i> Table
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-bar justify-content-start mb-0">
+                    <button class="filter-btn active" data-explorer-cat="all">All Dispatches (26)</button>
+                    <button class="filter-btn" data-explorer-cat="playbook">Playbooks &amp; Field Guides (11)</button>
+                    <button class="filter-btn" data-explorer-cat="mcp">MCP &amp; Agentic Architecture (10)</button>
+                    <button class="filter-btn" data-explorer-cat="llm">LLM Engineering &amp; GenAI (14)</button>
+                    <button class="filter-btn" data-explorer-cat="security">Compliance &amp; Cybersecurity (13)</button>
+                    <button class="filter-btn" data-explorer-cat="culture">Engineering Leadership (8)</button>
+                </div>
             </div>
 
-            <div id="blog-stories-grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Blog Story 26: Defeating the Confused Deputy in Enterprise RAG & Compiling Web Apps into Live MCP Agent Skills -->
-                <div class="col" data-category="mcp llm security playbook">
+            <div class="explorer-status-bar">
+                <div id="explorer-status-text">Showing <strong class="text-white">12</strong> of <strong class="text-info">26</strong> matching stories &amp; playbooks</div>
+                <div class="text-muted">Tip: Switch to <strong>Table</strong> view to scan all 26 titles &amp; read times on one screen.</div>
+            </div>
+
+            <div id="explorer-results-container" data-explorer-type="stories">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_26.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_26_img1.jpg?v=1" class="card-img-top" alt="Defeating the Confused Deputy in Enterprise RAG &amp; Compiling Web Apps into Live MCP Agent Skills">
+                            <span class="card-id-ribbon">Story #26</span>
+                            <img src="assets/images/blog_26_img1.jpg?v=1" class="card-img-top" loading="lazy" alt="Defeating the “Confused Deputy” in Enterprise RAG &amp; Compiling Web Apps into Live MCP Agent Skills">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-security mb-0">Enterprise RAG &bull; Row-Level Security &bull; MCP Skills</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>11 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-security mb-0">Enterprise RAG • Row-Level Security • MCP Skills</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>11 min read</span>
                             </div>
-                            <h5 class="card-title">Defeating the &ldquo;Confused Deputy&rdquo; in Enterprise RAG &amp; Compiling Web Apps into Live MCP Agent Skills</h5>
-                            <p class="card-text">Inside Zero-Leak RAG Lab (pre-retrieval IAM ACLs, BigQuery Row-Level Security, Hybrid BM25 + Vector RRF, and RAG vs. Long-Context modeling) and SkillForge AI (scanning local web apps into SKILL.md &amp; MCP servers tested live with onboard Ollama or Cloud LLMs).</p>
+                            <h5 class="card-title"><a href="stories/blog_26.html" class="text-white text-decoration-none">Defeating the “Confused Deputy” in Enterprise RAG &amp; Compiling Web Apps into Live MCP Agent Skills</a></h5>
+                            <p class="card-text mb-0">Inside Zero-Leak RAG Lab (pre-retrieval IAM ACLs, BigQuery Row-Level Security, Hybrid BM25 + Vector RRF, and RAG vs. Long-Context modeling) and SkillForge AI (scanning local web apps into SKILL.md &amp; MCP servers tested live with onboard Ollama or Cloud LLMs).</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #26</span>
-                            <a href="stories/blog_26.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_26.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 25: Defeating Stochasticity — From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow -->
-                <div class="col" data-category="mcp llm security playbook">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_25.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_25_img1.jpg?v=3" class="card-img-top" alt="Defeating Stochasticity: From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow">
+                            <span class="card-id-ribbon">Story #25</span>
+                            <img src="assets/images/blog_25_img1.jpg?v=3" class="card-img-top" loading="lazy" alt="Defeating Stochasticity: From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-security mb-0">Neuro-Symbolic AI &bull; Cryptographic Determinism &bull; Security &amp; GRC</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>15 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-security mb-0">Neuro-Symbolic AI • Cryptographic Determinism • Security &amp; GRC</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>15 min read</span>
                             </div>
-                            <h5 class="card-title">Defeating Stochasticity: From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow</h5>
-                            <p class="card-text">How I evolved from manual audits to web applications, standalone skills, and a full-scale end-to-end deterministic skill workflow—pairing adversarial checks and balances for false positives with recursive binary normalization to defeat stochasticity.</p>
+                            <h5 class="card-title"><a href="stories/blog_25.html" class="text-white text-decoration-none">Defeating Stochasticity: From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow</a></h5>
+                            <p class="card-text mb-0">How I evolved from manual audits to web applications, standalone skills, and a full-scale end-to-end deterministic skill workflow—pairing adversarial checks and balances for false positives with recursive binary normalization to defeat stochasticity.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #25</span>
-                            <a href="stories/blog_25.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_25.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 24: From Web Apps to Deterministic Agent Skills & Autonomous SOC 2 Type II Audit Studios -->
-                <div class="col" data-category="mcp llm security playbook">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_24.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_24_img1.jpg?v=8" class="card-img-top" alt="From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2">
+                            <span class="card-id-ribbon">Story #24</span>
+                            <img src="assets/images/blog_24_img1.jpg?v=8" class="card-img-top" loading="lazy" alt="From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-security mb-0">Agentic AI &bull; MCP &bull; SOC 2 Type II &amp; Privacy</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>9 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-security mb-0">Agentic AI • MCP • SOC 2 Type II &amp; Privacy</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>9 min read</span>
                             </div>
-                            <h5 class="card-title">From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2</h5>
-                            <p class="card-text">How I built SkillForge AI (a 4-stage Web-App-to-SKILL.md &amp; MCP JSON-RPC 2.0 compiler with 5-gate AST security &amp; 3-run SHA-256 verification) and TrustForge SOC 2 (an autonomous 5-TSC SOC 2 Type II readiness, 7-Gate exception triage, vendor CUEC analyzer, and ISO/NIST/HIPAA/GDPR crosswalk studio).</p>
+                            <h5 class="card-title"><a href="stories/blog_24.html" class="text-white text-decoration-none">From Web Apps to Deterministic Agent Skills &amp; Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2</a></h5>
+                            <p class="card-text mb-0">How I built SkillForge AI (a 4-stage Web-App-to-SKILL.md &amp; MCP JSON-RPC 2.0 compiler with 5-gate AST security &amp; 3-run SHA-256 verification) and TrustForge SOC 2 (an autonomous 5-TSC SOC 2 Type II readiness, 7-Gate exception triage, vendor CUEC analyzer, and ISO/NIST/HIPAA/GDPR crosswalk studio).</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #24</span>
-                            <a href="stories/blog_24.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_24.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 23: From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies -->
-                <div class="col" data-category="mcp llm culture">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_23.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_23_img1.jpg?v=7" class="card-img-top" alt="From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building Ant-Farm Simulation Games">
+                            <span class="card-id-ribbon">Story #23</span>
+                            <img src="assets/images/blog_23_img1.jpg?v=7" class="card-img-top" loading="lazy" alt="From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building &quot;Ant-Farm&quot; Simulation Games">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Ant-Farm Simulations &bull; 3D Aerospace CAD</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-nexus mb-0">Ant-Farm Simulations • 3D Aerospace CAD</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
                             </div>
-                            <h5 class="card-title">From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building &quot;Ant-Farm&quot; Simulation Games</h5>
-                            <p class="card-text">Inside the engineering of AeroForge 3D (26 fighter jets across 1917–2030, 67-part teardown, Mach CFD &amp; 3D dogfights) and Outbreak 3D (30 survivors with 10 emotional factors, cliques, romances, mutinies, and midnight generator blackouts)—and why this is the start of building ant-farm simulation games.</p>
+                            <h5 class="card-title"><a href="stories/blog_23.html" class="text-white text-decoration-none">From Hypersonic Fighter Teardowns to Autonomous Human-Zombie Colonies: Why I&#x27;m Hooked on Building &quot;Ant-Farm&quot; Simulation Games</a></h5>
+                            <p class="card-text mb-0">Inside the engineering of AeroForge 3D (26 fighter jets across 1917–2030, 67-part teardown, Mach CFD &amp; 3D dogfights) and Outbreak 3D (30 survivors with 10 emotional factors, cliques, romances, mutinies, and midnight generator blackouts)—and why this is the start of building ant-farm simulation games.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #23</span>
-                            <a href="stories/blog_23.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_23.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 22: From Combat-Robot CAD to Biomimetic Teardowns & 10-Language AI Tutors -->
-                <div class="col" data-category="mcp llm culture">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_22.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_22_img1.jpg?v=6" class="card-img-top" alt="From Combat-Robot CAD to Biomimetic Teardowns & 10-Language AI Tutors">
+                            <span class="card-id-ribbon">Story #22</span>
+                            <img src="assets/images/blog_22_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="From Combat-Robot CAD to Biomimetic Teardowns &amp; 10-Language AI Tutors: Engineering Three Interactive Simulation Studios">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-media mb-0">3D Simulation &bull; Robotics CAD &bull; EdTech AI</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-media mb-0">3D Simulation • Robotics CAD • EdTech AI</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
                             </div>
-                            <h5 class="card-title">From Combat-Robot CAD to Biomimetic Teardowns &amp; 10-Language AI Tutors: Engineering Three Interactive Simulation Studios</h5>
-                            <p class="card-text">How we architected BattleBot Designer (17 chassis, 36 modules, swept-volume clash solver, and 2D Arena combat), the 9-unit Pelagos biomimetic 3D teardown simulator, and the 10-language LingoForge SRS &amp; AI roleplay studio.</p>
+                            <h5 class="card-title"><a href="stories/blog_22.html" class="text-white text-decoration-none">From Combat-Robot CAD to Biomimetic Teardowns &amp; 10-Language AI Tutors: Engineering Three Interactive Simulation Studios</a></h5>
+                            <p class="card-text mb-0">How we architected BattleBot Designer (17 chassis, 36 modules, swept-volume clash solver, and 2D Arena combat), the 9-unit Pelagos biomimetic 3D teardown simulator, and the 10-language LingoForge SRS &amp; AI roleplay studio.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #22</span>
-                            <a href="stories/blog_22.html" class="btn-card-action btn-card-primary">
-                                Read Story <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_22.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 15: CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&Ms Are Allowed -->
-                <div class="col" data-category="playbook security">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_15.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_15_img1.jpg?v=6" class="card-img-top" alt="CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&Ms Are Allowed">
+                            <span class="card-id-ribbon">Story #15</span>
+                            <img src="assets/images/blog_15_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&amp;Ms Are Allowed">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">Field Guide &bull; CMMC Level 1</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-mcp mb-0">Field Guide • CMMC Level 1</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
                             </div>
-                            <h5 class="card-title">CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&amp;Ms Are Allowed</h5>
-                            <p class="card-text">A plain-English regulatory and operational guide to 32 CFR &sect; 170.21 and FAR 52.204-21: why all 15 FAR practices (17 NIST SP 800-171 requirements) must be 100% MET, why POA&amp;Ms are prohibited at Level 1, and how a single operational gap triggers a binary Fail.</p>
+                            <h5 class="card-title"><a href="stories/blog_15.html" class="text-white text-decoration-none">CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&amp;Ms Are Allowed</a></h5>
+                            <p class="card-text mb-0">A plain-English regulatory and operational guide to 32 CFR § 170.21 and FAR 52.204-21: why all 15 FAR practices (17 NIST SP 800-171 requirements) must be 100% MET, why POA&amp;Ms are prohibited at Level 1, and how a single operational gap triggers a binary Fail.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #15</span>
-                            <a href="stories/blog_15.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_15.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 16: How to Structure a Security Audit Report So Executives Actually Read It -->
-                <div class="col" data-category="playbook security culture">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_16.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_16_img1.jpg?v=6" class="card-img-top" alt="How to Structure a Security Audit Report So Executives Actually Read It">
+                            <span class="card-id-ribbon">Story #16</span>
+                            <img src="assets/images/blog_16_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="How to Structure a Security Audit Report So Executives Actually Read It: Executive Summaries vs. Evidence Annexes">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Reporting</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-nexus mb-0">Operational Playbook • Reporting</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
                             </div>
-                            <h5 class="card-title">How to Structure a Security Audit Report So Executives Actually Read It: Executive Summaries vs. Evidence Annexes</h5>
-                            <p class="card-text">Why a 150-page raw data dump fails executives while a 2-page summary fails auditors—and how splitting deliverables into a 4–5 page C-Suite Executive Report backed by five standalone Supporting Evidence Annexes solves both.</p>
+                            <h5 class="card-title"><a href="stories/blog_16.html" class="text-white text-decoration-none">How to Structure a Security Audit Report So Executives Actually Read It: Executive Summaries vs. Evidence Annexes</a></h5>
+                            <p class="card-text mb-0">Why a 150-page raw data dump fails executives while a 2-page summary fails auditors—and how splitting deliverables into a 4–5 page C-Suite Executive Report backed by five standalone Supporting Evidence Annexes solves both.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #16</span>
-                            <a href="stories/blog_16.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_16.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 17: Why You Should Never Automate a Security Process Until You’ve Done It by Hand -->
-                <div class="col" data-category="playbook security culture">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_17.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_17_img1.jpg?v=6" class="card-img-top" alt="Why You Should Never Automate a Security Process Until You’ve Done It by Hand">
+                            <span class="card-id-ribbon">Story #17</span>
+                            <img src="assets/images/blog_17_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="Why You Should Never Automate a Security Process Until You’ve Done It by Hand">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Methodology</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-nexus mb-0">Operational Playbook • Methodology</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
                             </div>
-                            <h5 class="card-title">Why You Should Never Automate a Security Process Until You’ve Done It by Hand</h5>
-                            <p class="card-text">How executing security reviews manually first exposes non-production scope pollution, nested access exclusions, and policy edge cases that whiteboard automations always miss.</p>
+                            <h5 class="card-title"><a href="stories/blog_17.html" class="text-white text-decoration-none">Why You Should Never Automate a Security Process Until You’ve Done It by Hand</a></h5>
+                            <p class="card-text mb-0">How executing security reviews manually first exposes non-production scope pollution, nested access exclusions, and policy edge cases that whiteboard automations always miss.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #17</span>
-                            <a href="stories/blog_17.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_17.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 18: Where AI Belongs in Security Compliance—and Where It Doesn't -->
-                <div class="col" data-category="playbook llm security mcp">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_18.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_18_img1.jpg?v=6" class="card-img-top" alt="Where AI Belongs in Security Compliance—and Where It Doesn't">
+                            <span class="card-id-ribbon">Story #18</span>
+                            <img src="assets/images/blog_18_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="Where AI Belongs in Security Compliance—and Where It Doesn&#x27;t">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">Field Guide &bull; AI &amp; Compliance</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-mcp mb-0">Field Guide • AI &amp; Compliance</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
                             </div>
-                            <h5 class="card-title">Where AI Belongs in Security Compliance—and Where It Doesn&#x27;t</h5>
-                            <p class="card-text">Why you never ask a language model to count thousands of identity rows or guess whether a control passed—and why the right role for AI is orchestrating strict verification tools and assembling human-readable reports.</p>
+                            <h5 class="card-title"><a href="stories/blog_18.html" class="text-white text-decoration-none">Where AI Belongs in Security Compliance—and Where It Doesn&#x27;t</a></h5>
+                            <p class="card-text mb-0">Why you never ask a language model to count thousands of identity rows or guess whether a control passed—and why the right role for AI is orchestrating strict verification tools and assembling human-readable reports.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #18</span>
-                            <a href="stories/blog_18.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_18.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 19: How to Audit User Access Without Drowning in Group Sprawl -->
-                <div class="col" data-category="playbook security">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_19.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_19_img1.jpg?v=6" class="card-img-top" alt="How to Audit User Access Without Drowning in Group Sprawl">
+                            <span class="card-id-ribbon">Story #19</span>
+                            <img src="assets/images/blog_19_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="How to Audit User Access Without Drowning in Group Sprawl">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Operational Playbook &bull; Access Review</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-nexus mb-0">Operational Playbook • Access Review</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
                             </div>
-                            <h5 class="card-title">How to Audit User Access Without Drowning in Group Sprawl</h5>
-                            <p class="card-text">A step-by-step mental model for untangling nested subgroups, sorting human findings into mutually exclusive risk buckets, documenting policy-denied principals, and reconciling human access against machine-only group lockdown.</p>
+                            <h5 class="card-title"><a href="stories/blog_19.html" class="text-white text-decoration-none">How to Audit User Access Without Drowning in Group Sprawl</a></h5>
+                            <p class="card-text mb-0">A step-by-step mental model for untangling nested subgroups, sorting human findings into mutually exclusive risk buckets, documenting policy-denied principals, and reconciling human access against machine-only group lockdown.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #19</span>
-                            <a href="stories/blog_19.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_19.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 20: The Hidden Trap in Vulnerability Management: Why "Closed Within SLA" Can Still Be a Red Flag -->
-                <div class="col" data-category="playbook security">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_20.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_20_img1.jpg?v=6" class="card-img-top" alt="The Hidden Trap in Vulnerability Management: Why Closed Within SLA Can Still Be a Red Flag">
+                            <span class="card-id-ribbon">Story #20</span>
+                            <img src="assets/images/blog_20_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">Field Guide &bull; Vulnerability SLAs</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-mcp mb-0">Field Guide • Vulnerability SLAs</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
                             </div>
-                            <h5 class="card-title">The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag</h5>
-                            <p class="card-text">How issue-tracker pause clocks, priority re-classifications, and queue transfers can mask calendar-duration breaches—and why a 3-bucket triage model (Valid, Breached, Verify) prevents audit blind spots.</p>
+                            <h5 class="card-title"><a href="stories/blog_20.html" class="text-white text-decoration-none">The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag</a></h5>
+                            <p class="card-text mb-0">How issue-tracker pause clocks, priority re-classifications, and queue transfers can mask calendar-duration breaches—and why a 3-bucket triage model (Valid, Breached, Verify) prevents audit blind spots.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #20</span>
-                            <a href="stories/blog_20.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_20.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 21: How I Use AI to Build Creative & Technical Projects Faster—And What Still Requires Human Judgment -->
-                <div class="col" data-category="playbook llm culture">
+                <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_21.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_21_img1.jpg?v=6" class="card-img-top" alt="How I Use AI to Build Creative & Technical Projects Faster—And What Still Requires Human Judgment">
+                            <span class="card-id-ribbon">Story #21</span>
+                            <img src="assets/images/blog_21_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="How I Use AI to Build Creative &amp; Technical Projects Faster—And What Still Requires Human Judgment">
                         </a>
                         <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Engineering Leadership &bull; AI Workflow</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-nexus mb-0">Engineering Leadership • AI Workflow</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
                             </div>
-                            <h5 class="card-title">How I Use AI to Build Creative &amp; Technical Projects Faster—And What Still Requires Human Judgment</h5>
-                            <p class="card-text">An honest reflection on building 27 AI and security projects: what generative AI accelerates in scaffolding and visual design, and where human taste, quality control, and domain ownership remain non-negotiable.</p>
+                            <h5 class="card-title"><a href="stories/blog_21.html" class="text-white text-decoration-none">How I Use AI to Build Creative &amp; Technical Projects Faster—And What Still Requires Human Judgment</a></h5>
+                            <p class="card-text mb-0">An honest reflection on building 27 AI and security projects: what generative AI accelerates in scaffolding and visual design, and where human taste, quality control, and domain ownership remain non-negotiable.</p>
                         </div>
                         <div class="card-footer">
                             <span class="mono-tag small text-secondary">Story #21</span>
-                            <a href="stories/blog_21.html" class="btn-card-action btn-card-primary">
-                                Read Playbook <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <a href="stories/blog_21.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Story 14: Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills -->
-                <div class="col" data-category="playbook mcp security llm">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_14.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_14_img1.jpg?v=5" class="card-img-top" alt="Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">Agent Skills &amp; Security Automation</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
-                            </div>
-                            <h5 class="card-title">Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills</h5>
-                            <p class="card-text">How I mastered enterprise CMMC Level 1 assessments manually by hand, built full-stack web workbenches to automate the workflow, and extracted those deterministic engines into a 6-skill LLM-orchestrated pipeline with SHA-256 attestation.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #14</span>
-                            <a href="stories/blog_14.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 13: Vibe Coding at Scale: Shipping Six Full-Stack AI Studios to GitHub in a Single Day -->
-                <div class="col" data-category="mcp llm culture">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_13.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_13_img1.jpg?v=5" class="card-img-top" alt="Vibe Coding at Scale: Shipping Six Full-Stack AI Studios to GitHub in a Single Day">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Agentic Velocity &amp; Vibe Coding</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
-                            </div>
-                            <h5 class="card-title">Vibe Coding at Scale: Shipping Six Full-Stack AI Studios to GitHub in a Single Day</h5>
-                            <p class="card-text">Some days are for whiteboarding; today was for pure flow-state vibe coding and shipping apps. A candid look at building, visually polishing, and open-sourcing six interactive AI studios—from 3D VTT battlemaps and AI comic engines to symbolic physics labs.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #13</span>
-                            <a href="stories/blog_13.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 7: Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio -->
-                <div class="col" data-category="mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_7.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_7_img1.jpg?v=5" class="card-img-top" alt="Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Agentic Architecture</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
-                            </div>
-                            <h5 class="card-title">Architecting Run Nexus: Why I Built My Own AI Operating System &amp; Portable Agent Skill Studio</h5>
-                            <p class="card-text">How 14+ specialized LLM apps, security workbenches, and 3D studios evolved into Run Nexus and Skill Holders Studio—a unified control plane for agentic engineering.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #07</span>
-                            <a href="stories/blog_7.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 8: Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows -->
-                <div class="col" data-category="mcp">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_8.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_8_img1.jpg?v=5" class="card-img-top" alt="Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">MCP &amp; Multi-Agent</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
-                            </div>
-                            <h5 class="card-title">Beyond Chatbots: Engineering Custom MCP Tool Servers &amp; Deterministic Multi-Agent Workflows</h5>
-                            <p class="card-text">Why single-prompt chat wrappers fail in production—and how Model Context Protocol (MCP) servers, typed schemas, and multi-agent blackboards unlock real autonomy.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #08</span>
-                            <a href="stories/blog_8.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 9: Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards -->
-                <div class="col" data-category="security">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_9.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_9_img1.jpg?v=5" class="card-img-top" alt="Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">AI + Compliance</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
-                            </div>
-                            <h5 class="card-title">Zero-Tolerance Compliance at Scale: Automating Enterprise CMMC Audits with 5-Agent Blackboards</h5>
-                            <p class="card-text">Inside the SAFER AI Workbench: how a sequential 5-agent LLM pipeline at Temperature 0.0 transformed multi-system CMMC Level 1 security assessments.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #09</span>
-                            <a href="stories/blog_9.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 10: Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs -->
-                <div class="col" data-category="llm">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_10.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_10_img1.jpg?v=5" class="card-img-top" alt="Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">Hybrid ML + LLM</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
-                            </div>
-                            <h5 class="card-title">Graph Math Meets Neural Scoring: Auditing 500,000+ Access Grants with Hybrid ML &amp; LLMs</h5>
-                            <p class="card-text">Why LLMs shouldn&#x27;t replace graph algorithms or anomaly math—and how combining BFS traversal, autoencoders, and SmartExplain solved enterprise access review fatigue.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #10</span>
-                            <a href="stories/blog_10.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 11: Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1 -->
-                <div class="col" data-category="llm">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_11.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_11_img1.jpg?v=5" class="card-img-top" alt="Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-mcp mb-0">Generative 3D &amp; Video</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
-                            </div>
-                            <h5 class="card-title">Directing Pixels, Meshes &amp; Frames: Multi-Agent Orchestration Across Headless Blender 5.0, Gemini &amp; Veo 3.1</h5>
-                            <p class="card-text">How hierarchical Director/Worker agents, self-healing bpy code synthesis, and Pydantic continuity schemas turn generative 3D and video into deterministic pipelines.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #11</span>
-                            <a href="stories/blog_11.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 12: Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems -->
-                <div class="col" data-category="llm">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_12.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_12_img1.jpg?v=5" class="card-img-top" alt="Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge badge-nexus mb-0">LLM Engineering</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
-                            </div>
-                            <h5 class="card-title">Earning My GlobalLogic GenAI Certification &amp; My Blueprint for Production-Grade LLM Systems</h5>
-                            <p class="card-text">Connecting formal Generative AI certification foundations—token economics, RAG, grounding, and AI safety—directly to real-world multi-agent systems.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #12</span>
-                            <a href="stories/blog_12.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 1: How I Built My Portfolio -->
-                <div class="col" data-category="culture">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_1.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/story_1_img1.jpg?v=5" class="card-img-top" alt="How I Built My Portfolio">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge mb-0">Web Architecture</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>4 min read</span>
-                            </div>
-                            <h5 class="card-title">How I Built My Portfolio</h5>
-                            <p class="card-text">A detailed account of the architectural vision, tech stack, and iterative design journey behind building Black Beard&#x27;s Portfolio.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #01</span>
-                            <a href="stories/blog_1.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 2: Mastering the Art of Prompt Engineering -->
-                <div class="col" data-category="llm">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_2.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_2_img1.jpg?v=5" class="card-img-top" alt="Mastering the Art of Prompt Engineering">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge mb-0">Prompt Engineering</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>4 min read</span>
-                            </div>
-                            <h5 class="card-title">Mastering the Art of Prompt Engineering</h5>
-                            <p class="card-text">Exploring the art of refining human-AI collaboration to unlock faster engineering workflows and creative solutions.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #02</span>
-                            <a href="stories/blog_2.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 3: AI Meets Cybersecurity -->
-                <div class="col" data-category="security">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_3.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_3_img1.jpg?v=5" class="card-img-top" alt="AI Meets Cybersecurity">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge mb-0">AI + Security</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
-                            </div>
-                            <h5 class="card-title">AI Meets Cybersecurity</h5>
-                            <p class="card-text">How artificial intelligence is reshaping the high-stakes chess match between cyber attackers and defenders.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #03</span>
-                            <a href="stories/blog_3.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 4: Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges -->
-                <div class="col" data-category="culture">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_4.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_4_img1.jpg?v=5" class="card-img-top" alt="Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge mb-0">Engineering Leadership</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
-                            </div>
-                            <h5 class="card-title">Turning Failures Into Features: Lessons Learned From My Biggest Tech Challenges</h5>
-                            <p class="card-text">How data-driven storytelling, patience, and organizational awareness helped overcome a severe security assessment backlog.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #04</span>
-                            <a href="stories/blog_4.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 5: Designing AI-Driven Workflows to Save Time and Boost Productivity -->
-                <div class="col" data-category="llm">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_5.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_5_img1.jpg?v=5" class="card-img-top" alt="Designing AI-Driven Workflows to Save Time and Boost Productivity">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge mb-0">RAG &amp; Workflows</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
-                            </div>
-                            <h5 class="card-title">Designing AI-Driven Workflows to Save Time and Boost Productivity</h5>
-                            <p class="card-text">How RAG-grounded prompt workflows modernized legacy manual checks, slashed turnaround times, and elevated accuracy.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #05</span>
-                            <a href="stories/blog_5.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Story 6: What I Wish I Knew When I Started in Cybersecurity -->
-                <div class="col" data-category="security">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_6.html" class="card-img-wrapper d-block">
-                            <img src="assets/images/blog_6_img1.jpg?v=5" class="card-img-top" alt="What I Wish I Knew When I Started in Cybersecurity">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="category-badge mb-0">Career &amp; SecOps</span>
-                                <span class="mono-tag small text-secondary"><i class="fa-regular fa-clock me-1"></i>5 min read</span>
-                            </div>
-                            <h5 class="card-title">What I Wish I Knew When I Started in Cybersecurity</h5>
-                            <p class="card-text">Seven hard-earned lessons on automation, stakeholder communication, continuous learning, and thriving in security engineering.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #06</span>
-                            <a href="stories/blog_6.html" class="btn-card-action btn-card-primary">
-                                Read More <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            <div id="explorer-more-wrap"></div>
         </div>
     </section>
 
-    <!-- Interactive Neural Particle Network -->
     <div id="interactive-particle-container"></div>
 
-    <!-- Footer -->
     <footer class="text-center">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
@@ -680,8 +363,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <a class="nav-icon-link" href="index.html">Home</a>
-                    <a class="nav-icon-link" href="projects.html">Projects</a>
-                    <a class="nav-icon-link" href="blog.html">Blog</a>
+                    <a class="nav-icon-link" href="projects.html">Projects (35)</a>
+                    <a class="nav-icon-link" href="blog.html">Blog (26)</a>
                     <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -691,11 +374,9 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS (Self-Hosted) -->
-    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261106v3"></script>
-    <!-- Particles JS (Self-Hosted) -->
-    <script src="assets/vendor/particles.min.js?v=20261106v3"></script>
-    <!-- Portfolio Interactive Scripts (Cache-Busted) -->
-    <script src="js/scripts.js?v=20261106v3"></script>
+    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261120v4"></script>
+    <script src="assets/vendor/particles.min.js?v=20261120v4"></script>
+    <script src="js/catalog-data.js?v=20261120v4"></script>
+    <script src="js/scripts.js?v=20261120v4"></script>
 </body>
 </html>

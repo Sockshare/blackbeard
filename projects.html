@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Search, filter, and explore all 35 AI, Enterprise RAG, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
-    <title>Projects Explorer (35) | Black Beard&#x27;s Portfolio</title>
-    <link href="assets/vendor/bootstrap.min.css?v=20261120v4" rel="stylesheet">
+    <meta name="description" content="Search, filter, and explore all 37 AI, Enterprise RAG, Model Context Protocol (MCP), Run Nexus, 3D Generative, and Cybersecurity engineering projects built by Julian Morrisette.">
+    <title>Projects Explorer (37) | Black Beard&#x27;s Portfolio</title>
+    <link href="assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261120v4">
+    <link rel="stylesheet" href="css/style.css?v=20261125v5">
 </head>
 <body>
     <!-- Navigation -->
@@ -24,10 +24,10 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#about">Methodology</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects (35)</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog (26)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects (37)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog (28)</a></li>
                     <li class="nav-item ms-lg-2 my-2 my-lg-0">
-                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 61 systems &amp; stories (Ctrl+K or /)">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 65 systems &amp; stories (Ctrl+K or /)">
                             <i class="fa-solid fa-magnifying-glass text-info"></i>
                             <span>Quick Jump...</span>
                             <span class="kbd-chip">&#8984;K</span>
@@ -49,7 +49,7 @@
     <header class="hero py-4">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-code-branch"></i> 35 Production &amp; Research Systems &bull; Searchable Multi-View Index
+                <i class="fa-solid fa-code-branch"></i> 37 Production &amp; Research Systems &bull; Searchable Multi-View Index
             </div>
             <h1 class="neon-text mb-2">Systems &amp; <span class="hero-gradient-span">Architecture Explorer</span></h1>
             <p class="neon-text-blue mb-0">
@@ -65,15 +65,15 @@
                 <div class="explorer-top-row">
                     <div class="explorer-search-wrap">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="explorer-search" class="explorer-search-input" placeholder="Search 35 systems by name, domain, or stack (e.g., RAG, BigQuery, MCP, SOC 2, CMMC, Three.js, #35)..." autocomplete="off">
+                        <input type="text" id="explorer-search" class="explorer-search-input" placeholder="Search 37 systems by name, domain, or stack (e.g., RAG, BigQuery, MCP, SOC 2, CMMC, Three.js, #35)..." autocomplete="off">
                         <button type="button" id="explorer-clear" class="explorer-clear-btn" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
                     </div>
                     <div class="explorer-controls-right">
                         <select id="explorer-sort" class="explorer-sort-select" aria-label="Sort projects">
-                            <option value="newest">Sort: Newest (#35 &rarr; #01)</option>
+                            <option value="newest">Sort: Newest (#37 &rarr; #01)</option>
                             <option value="flagship">Sort: Flagship First</option>
                             <option value="alpha">Sort: Title (A &rarr; Z)</option>
-                            <option value="oldest">Sort: Chronological (#01 &rarr; #35)</option>
+                            <option value="oldest">Sort: Chronological (#01 &rarr; #37)</option>
                         </select>
                         <div class="view-toggle-group" role="group" aria-label="View density">
                             <button type="button" class="view-toggle-btn active" data-explorer-view="grid" title="Visual Grid Cards">
@@ -90,23 +90,59 @@
                 </div>
 
                 <div class="filter-bar justify-content-start mb-0">
-                    <button class="filter-btn active" data-explorer-cat="all">All Systems (35)</button>
+                    <button class="filter-btn active" data-explorer-cat="all">All Systems (37)</button>
                     <button class="filter-btn" data-explorer-cat="flagship">&#9733; Flagships (6)</button>
                     <button class="filter-btn" data-explorer-cat="compliance">Security, RAG &amp; GRC (8)</button>
-                    <button class="filter-btn" data-explorer-cat="mcp">MCP &amp; Agentic Workflows (29)</button>
-                    <button class="filter-btn" data-explorer-cat="nexus">Run Nexus &amp; Local AI (29)</button>
-                    <button class="filter-btn" data-explorer-cat="media">3D, Robotics &amp; Media (14)</button>
+                    <button class="filter-btn" data-explorer-cat="mcp">MCP &amp; Agentic Workflows (30)</button>
+                    <button class="filter-btn" data-explorer-cat="nexus">Run Nexus &amp; Local AI (31)</button>
+                    <button class="filter-btn" data-explorer-cat="media">3D, Robotics &amp; Media (16)</button>
                     <button class="filter-btn" data-explorer-cat="cyber">Cybersecurity &amp; OSINT (12)</button>
                 </div>
             </div>
 
             <div class="explorer-status-bar">
-                <div id="explorer-status-text">Showing <strong class="text-white">12</strong> of <strong class="text-info">35</strong> matching systems</div>
+                <div id="explorer-status-text">Showing <strong class="text-white">12</strong> of <strong class="text-info">37</strong> matching systems</div>
                 <div class="text-muted">Tip: Press <span class="kbd-chip">&#8984;K</span> or <span class="kbd-chip">/</span> anywhere to jump directly to any project or blog post.</div>
             </div>
 
             <div id="explorer-results-container" data-explorer-type="projects">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_37.html" class="card-img-wrapper d-block">
+                            <span class="card-id-ribbon">#37</span>
+                            <img src="assets/images/neontouch_synth.jpg?v=1" class="card-img-top" loading="lazy" alt="NeonTouch Synth: 10-Finger Ephemeral Light &amp; Polyphonic Cyberdeck Studio">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-media">Web Audio DSP &bull; Interactive Synth</span>
+                            <h5 class="card-title"><a href="projects/project_37.html" class="text-white text-decoration-none">NeonTouch Synth: 10-Finger Ephemeral Light &amp; Polyphonic Cyberdeck Studio</a></h5>
+                            <p class="card-text">Zero-dependency 10-finger ephemeral neon light instrument and Night City Cyberdeck DJ studio (Port 8112) engineered for 60 FPS Web Audio polyphonic synthesis without camera or microphone permissions.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">Web Audio Polyphonic DSP</span><span class="tech-pill">60 FPS Multitouch Canvas</span><span class="tech-pill">16-Step Cyberpunk Sequencer</span><span class="tech-pill">Dual Holo-Turntables &amp; Vocoder</span><span class="tech-pill">+1</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/Sockshare/neontouch-synth" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_37.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="projects/project_36.html" class="card-img-wrapper d-block">
+                            <span class="card-id-ribbon">#36</span>
+                            <img src="assets/images/electroforge_3d_lab.jpg?v=1" class="card-img-top" loading="lazy" alt="ElectroForge 3D: Interactive Electronics, Breadboard &amp; Robotics Lab">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <span class="category-badge badge-media">3D Robotics CAD &bull; Circuit Sim</span>
+                            <h5 class="card-title"><a href="projects/project_36.html" class="text-white text-decoration-none">ElectroForge 3D: Interactive Electronics, Breadboard &amp; Robotics Lab</a></h5>
+                            <p class="card-text">Interactive 3D electronics, 830-point breadboard, microcontroller, and robotics engineering lab (Port 8102) powered by real-time Modified Nodal Analysis (MNA), 12 Blender 5.0.1 .glb hardware models, 4 articulated robotic rigs, 4-Ch oscilloscope, 8-Ch logic analyzer, and 24V thermal overload burnout.</p>
+                            <div class="tech-stack-mini"><span class="tech-pill">MNA / SPICE Nodal Solver</span><span class="tech-pill">Blender 5.0 .glb Hardware</span><span class="tech-pill">6-DOF Arm / Rover / Turret / CNC</span><span class="tech-pill">4-Ch Scope &amp; 8-Ch Logic</span><span class="tech-pill">+1</span></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/Sockshare/electroforge-3d-lab" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="projects/project_36.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="projects/project_35.html" class="card-img-wrapper d-block">
@@ -297,44 +333,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_24.html" class="card-img-wrapper d-block">
-                            <span class="card-id-ribbon">#24</span>
-                            
-                            <img src="assets/images/dungeon_master_os.jpg" class="card-img-top" loading="lazy" alt="Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Agentic Game AI &amp; 3D VTT</span>
-                            <h5 class="card-title"><a href="projects/project_24.html" class="text-white text-decoration-none">Dungeon Master OS: Autonomous AI Game Master &amp; 3D VTT Battlemap</a></h5>
-                            <p class="card-text">Dungeon Master OS is a full-stack AI-driven Dungeons &amp; Dragons 5e Virtual Tabletop (VTT) and autonomous Game Master. It pairs a narrative AI Dungeon Master and rule-enforcing 5e combat engine with a rich interactive HTML5 Canvas tactical battlemap featuring bevelled flagstone dungeon rooms, flickering radial torch sconces, chasm lava hazards, animated water currents, fog of war, A* pathfinding previews, and metallic/wooden token miniatures with live HP arcs.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">Autonomous AI DM</span><span class="tech-pill">Tactical VTT Battlemap</span><span class="tech-pill">Dynamic Torch Lighting</span><span class="tech-pill">5e Combat &amp; Dice Engine</span><span class="tech-pill">+1</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/dungeon-master-os" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
-                            <a href="projects/project_24.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="projects/project_25.html" class="card-img-wrapper d-block">
-                            <span class="card-id-ribbon">#25</span>
-                            
-                            <img src="assets/images/society_in_a_bottle.jpg" class="card-img-top" loading="lazy" alt="Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <span class="category-badge badge-mcp">Generative Multi-Agent Sim</span>
-                            <h5 class="card-title"><a href="projects/project_25.html" class="text-white text-decoration-none">Society in a Bottle: Multi-Agent AI Village &amp; Social Simulation</a></h5>
-                            <p class="card-text">Society in a Bottle is a generative multi-agent social simulation and interactive 2D town sandbox. Eight distinct AI citizens—each with Big-Five personality traits, private goals, gold balances, and episodic/reflected memory streams—live, work, converse, spread rumors, and vote at the Town Hall across 9 interactive buildings (`Oakhearth Tavern`, `Town Hall`, `Blacksmith Forge`, `Grand Library`, `Apothecary`, `Market Square`, `Watchtower`, `Moonlit Docks`, and `Chapel Gardens`) while the user intervenes via a live God-Mode miracle/crisis console.</p>
-                            <div class="tech-stack-mini"><span class="tech-pill">8 Autonomous AI Agents</span><span class="tech-pill">Episodic Memory &amp; Rumors</span><span class="tech-pill">Interactive 2D Town Map</span><span class="tech-pill">God-Mode Interventions</span><span class="tech-pill">+1</span></div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/Sockshare/society-in-a-bottle" target="_blank" rel="noopener noreferrer" class="btn-card-action btn-card-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
-                            <a href="projects/project_25.html" class="btn-card-action btn-card-primary">Open System <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
 
@@ -353,8 +351,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <a class="nav-icon-link" href="index.html">Home</a>
-                    <a class="nav-icon-link" href="projects.html">Projects (35)</a>
-                    <a class="nav-icon-link" href="blog.html">Blog (26)</a>
+                    <a class="nav-icon-link" href="projects.html">Projects (37)</a>
+                    <a class="nav-icon-link" href="blog.html">Blog (28)</a>
                     <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -364,9 +362,9 @@
         </div>
     </footer>
 
-    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261120v4"></script>
-    <script src="assets/vendor/particles.min.js?v=20261120v4"></script>
-    <script src="js/catalog-data.js?v=20261120v4"></script>
-    <script src="js/scripts.js?v=20261120v4"></script>
+    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="js/catalog-data.js?v=20261125v5"></script>
+    <script src="js/scripts.js?v=20261125v5"></script>
 </body>
 </html>

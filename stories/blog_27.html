@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside ElectroForge 3D: combining real-time Modified Nodal Analysis (MNA) circuit simulation, Joule thermal overload burnout, 12 Blender 5.0.1 .glb hardware models, and 4 articulated 3D robotics rigs in one unified workbench.">
+    <title>Solving Real-Time Circuits in 3D: MNA Physics, Blender Hardware &amp; 24V Thermal Burnout in ElectroForge 3D | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261125v5">
+    <style>
+        .table-cyber {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0 26px 0;
+            font-size: 0.9rem;
+        }
+        .table-cyber th {
+            background: rgba(15, 23, 42, 0.94);
+            color: #38bdf8;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            padding: 11px 14px;
+            text-align: left;
+        }
+        .table-cyber td {
+            background: rgba(15, 23, 42, 0.58);
+            color: #cbd5e1;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 11px 14px;
+            vertical-align: top;
+        }
+        .principle-banner {
+            display: block;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.72));
+            border-left: 4px solid #38bdf8;
+            padding: 15px 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects (37)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog (28)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 65 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #27</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-media mb-0">3D Robotics &bull; MNA Circuit Physics &bull; Blender CAD</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>8 min read
+                    </span>
+                </div>
+
+                <h1>Solving Real-Time Circuits in 3D: MNA Physics, Blender Hardware &amp; 24V Thermal Burnout in ElectroForge 3D</h1>
+                <img src="../assets/images/blog_27_img1.jpg?v=1" class="story-hero-img" alt="ElectroForge 3D Modified Nodal Analysis and 24V Overload Thermal Simulation">
+
+                <p class="lead">
+                    Most 3D robotics visualizers fake electronics with pre-baked keyframes, while 2D circuit simulators hide physical hardware behind flat schematic symbols. With <a href="../projects/project_36.html" class="text-info">ElectroForge 3D</a> (now open-sourced at <a href="https://github.com/Sockshare/electroforge-3d-lab" target="_blank" rel="noopener noreferrer" class="text-info">Sockshare/electroforge-3d-lab</a>), I wanted both in one browser tab: real-time <strong>Modified Nodal Analysis (<code>MNA</code>)</strong> electrical math driving <strong>12 Blender 5.0.1 <code>.glb</code> components</strong>, thermal overload failure, and 4 articulated 3D robotic rigs.
+                </p>
+
+                <div class="principle-banner">
+                    <strong>Core Architectural Rule:</strong> Every slider, 3D sensor probe, PSU voltage spike, and CLI command passes through one thread-safe <code>ElectroForgeLabEngine.dispatch()</code> state machine—so electrical math, thermal telemetry, oscilloscope buffers, and robot kinematics are always 100% synchronized.
+                </div>
+
+                <h2>1. Bridging Electrical Nodal Math and 3D Kinematics</h2>
+                <p>
+                    In <code>circuit_engine.py</code>, every component placed on the virtual <code>830-Tie-Point Breadboard</code> carries explicit <code>pin_a</code> and <code>pin_b</code> nodes, rated wattage (<code>max_power_mw</code>), and voltage limits (<code>max_voltage_v</code>). Whenever a wire changes, the Bench PSU ramps from <code>5.0V</code> to <code>24.0V</code>, or the user drags the 3D obstacle closer to the <code>HC-SR04</code> ultrasonic sonar head, the solver recalculates:
+                </p>
+                <ul>
+                    <li><strong>Nodal Voltages &amp; Branch Currents:</strong> Evaluates Ohm&rsquo;s and Kirchhoff&rsquo;s laws, RC charging transients, and <code>555</code> astable oscillator timing across active nodes.</li>
+                    <li><strong>Joule Heating &amp; Burnout Thresholds:</strong> Computes instantaneous power dissipation (<code>P = I&sup2;R</code>) and component junction temperature (<code>T = T_amb + P &middot; R_&theta;</code>), transitioning components cleanly through <code>OK &rarr; WARNING_HOT &rarr; BURNED_OUT</code>.</li>
+                    <li><strong>Waveforms &amp; Actuator Motion:</strong> Synthesizes 4-channel oscilloscope traces, 8-channel logic analyzer timing lines, and joint angles for the <em>6-DOF Robot Arm</em>, <em>4WD Rover</em>, <em>Pan/Tilt Laser Turret</em>, and <em>3-Axis CNC Gantry</em>.</li>
+                </ul>
+
+                <h2>2. Headless Blender 5.0.1 Asset Pipeline &amp; 5 Live Physics Overlays</h2>
+                <p>
+                    To avoid blocky placeholder boxes without bloating the repository, <code>blender_electronics_pipeline.py</code> uses headless Blender <code>bmesh</code> modifiers and Principled BSDF materials to pre-bake all 12 hardware assemblies into lightweight binary glTF 2.0 (<code>.glb</code>) assets (just ~508 KB total across all 12 models). In the Three.js viewport, five toggleable physics overlays render directly over those meshes:
+                </p>
+
+                <table class="table-cyber">
+                    <thead>
+                        <tr>
+                            <th>Lab / Subsystem</th>
+                            <th>Hardware &amp; Stimuli</th>
+                            <th>What It Demonstrates</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>lab_robot_arm</code></td>
+                            <td>Arduino Uno R3 + 6-DOF Arm + Potentiometer</td>
+                            <td>50 Hz PWM servo drive, analog ADC override, and multi-joint IK motion</td>
+                        </tr>
+                        <tr>
+                            <td><code>lab_rover_ultrasonic</code></td>
+                            <td>4WD Chassis + HC-SR04 Sonar + 3D Obstacle</td>
+                            <td>Echo timing vs. obstacle distance and H-bridge reverse/pivot behavior</td>
+                        </tr>
+                        <tr>
+                            <td><code>lab_solar_turret</code></td>
+                            <td>Pan/Tilt Turret + LDRs + 3D Flashlight Lux</td>
+                            <td>Differential photoresistor voltage divider driving optical alignment</td>
+                        </tr>
+                        <tr>
+                            <td><code>lab_overload_burnout</code></td>
+                            <td>24.0V Bench PSU + MOSFET / LED / Resistors</td>
+                            <td>Joule thermal runaway, FLIR heatmap glow, and <code>FAULT_INJECTED</code> triage</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>3. 1:1 Command Bus, CLI Automation &amp; Engineering Exports</h2>
+                <p>
+                    Following the same deterministic design pattern I use in security tooling, ElectroForge 3D exposes every UI action over <code>POST /api/dispatch</code> and mirrors it in <code>cli.py</code>. From a terminal, you can run <code>python3 cli.py load-lab --id lab_rover_ultrasonic</code>, stress-test with <code>python3 cli.py psu --voltage 24.0</code>, inject a <code>SHORT_VCC_GND</code> fault, repair it, and export standard SPICE netlists (<code>.cir</code>), CSV Bills of Materials (<code>.csv</code>), and Arduino C++ firmware (<code>.ino</code>).
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_26.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Defeating the &ldquo;Confused Deputy&rdquo; in RAG
+                    </a>
+                    <a href="blog_28.html" class="btn-card-action btn-card-primary">
+                        Next: Engineering NeonTouch Synth (60 FPS Web Audio DSP) <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="../assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="../js/catalog-data.js?v=20261125v5"></script>
+    <script src="../js/scripts.js?v=20261125v5"></script>
+</body>
+</html>

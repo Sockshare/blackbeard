@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ElectroForge 3D: Interactive 3D Electronics, Breadboard, Microcontroller &amp; Robotics Lab with real-time MNA/SPICE circuit solving, 12 Blender 5.0.1 .glb hardware models, 4 robotic rigs, 4-Ch Oscilloscope, 8-Ch Logic Analyzer, and 24V overload burnout.">
+    <title>ElectroForge 3D: Interactive Electronics, Breadboard &amp; Robotics Lab | Black Beard&#x27;s Portfolio</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261125v5">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects (37)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog (28)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 65 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../projects.html">Projects</a> <span>/</span>
+                <span>ElectroForge 3D: Interactive Electronics, Breadboard &amp; Robotics Lab</span>
+            </div>
+
+            <div class="detail-hero-box">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <img src="../assets/images/electroforge_3d_lab.jpg?v=1" class="project-img" alt="ElectroForge 3D: Interactive Electronics, Breadboard &amp; Robotics Lab">
+                        <div class="tech-stack-mini mt-3">
+                            <span class="tech-pill">MNA / SPICE Nodal Solver</span>
+                            <span class="tech-pill">Blender 5.0 .glb Hardware</span>
+                            <span class="tech-pill">6-DOF Arm / Rover / Turret / CNC</span>
+                            <span class="tech-pill">4-Ch Scope &amp; 8-Ch Logic</span>
+                            <span class="tech-pill">24V Overload &amp; FLIR Thermal</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <span class="category-badge badge-media">3D Robotics CAD &bull; MNA Circuit Sim &bull; Blender 5.0</span>
+                        <h1 class="text-white fw-bold mb-3">ElectroForge 3D: Interactive Electronics, Breadboard &amp; Robotics Lab</h1>
+
+                        <h2><i class="fa-solid fa-microchip"></i> Summary</h2>
+                        <p>ElectroForge 3D is an interactive 3D electronics, solderless breadboard, microcontroller, and robotics engineering workbench (<code>Port 8102</code>). Powered by a real-time <strong>Modified Nodal Analysis (<code>MNA</code>) &amp; thermal physics engine</strong> (<code>circuit_engine.py</code>) paired with <strong>12 pre-baked Blender 5.0.1 <code>.glb</code> PBR hardware models</strong>, it lets engineers wire circuits to 4 articulated 3D robotic rigs, probe signals on a 4-channel oscilloscope and 8-channel logic analyzer, inject <code>24V</code> overload burnout faults, and export SPICE netlists (<code>.cir</code>), Bills of Materials (<code>.csv</code>), and Arduino C++ firmware (<code>.ino</code>).</p>
+
+                        <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
+                        <ul>
+                            <li><strong>12 Blender 5.0.1 PBR <code>.glb</code> Hardware Models &amp; 4 Articulated 3D Rigs:</strong> Wire an <code>830-Tie-Point Breadboard</code> and <code>Arduino Uno R3 / ESP32</code> alongside axial resistors, electrolytic capacitors, 555 DIP-8 ICs, TO-220 MOSFETs, 5mm LEDs, and HC-SR04 ultrasonic sensors to a <em>6-DOF Industrial Robot Arm</em>, <em>4WD Ultrasonic Rover</em>, <em>Pan/Tilt Solar &amp; Laser Turret</em>, or <em>3-Axis Stepper CNC Gantry</em>.</li>
+                            <li><strong>Real-Time MNA Solver, Joule Heating &amp; 24V Overload Burnout:</strong> Computes nodal voltages, RC transients, 555 astable timing, Joule heating (<code>P = I&sup2;R</code>, <code>T = T_amb + P &middot; R_&theta;</code>), and destructive component failure, complete with 5 live 3D visual overlays (electron particle flow, FLIR thermal heatmap, overload burnout VFX, magnetic field lines, and voltage-gradient wires).</li>
+                            <li><strong>Virtual Test Bench &amp; Environmental Stimuli:</strong> Features a dual-rail Bench PSU, Arbitrary Waveform Generator (<code>SINE</code>, <code>PWM_SQUARE</code>, <code>TRIANGLE</code>, <code>SAWTOOTH</code>), 4-Ch Oscilloscope, 8-Ch Logic Analyzer, Digital Multimeter probes, and interactive 3D stimuli (flashlight lux, ultrasonic obstacle distance, heatgun temperature, rotary potentiometer, and tactile pushbutton).</li>
+                            <li><strong>6 Starter Labs, Fault Injection &amp; 1:1 Command Bus + CLI:</strong> Switch between 6 starter labs (<code>lab_robot_arm</code>, <code>lab_555_chaser</code>, <code>lab_rover_ultrasonic</code>, <code>lab_solar_turret</code>, <code>lab_overload_burnout</code>, <code>lab_blank_sandbox</code>), inject faults (<code>SHORT_VCC_GND</code>), or automate every action via <code>POST /api/dispatch</code> and <code>cli.py</code>.</li>
+                            <li><strong>Engineering Exports:</strong> One-click downloads for SPICE netlists (<code>/api/export/spice</code>), CSV Bills of Materials (<code>/api/export/bom</code>), and starter Arduino C++ firmware sketches (<code>/api/export/firmware</code>).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                        <ul class="mb-0">
+                            <li><strong>Physics &amp; Circuit Core:</strong> Python 3 + Flask (<code>server.py</code>), Modified Nodal Analysis (MNA) solver, Joule thermal &amp; overload state machine, 4-Ch Scope &amp; 8-Ch Logic waveform synthesis (<code>circuit_engine.py</code>)</li>
+                            <li><strong>3D CAD &amp; WebGL Rendering:</strong> Headless Blender 5.0.1 <code>bmesh</code> + Principled BSDF <code>.glb</code> asset pipeline (<code>blender_electronics_pipeline.py</code>), Three.js + EffectComposer + UnrealBloomPass</li>
+                            <li><strong>Automation &amp; Exports:</strong> Unified <code>POST /api/dispatch</code> 1:1 command bus, <code>cli.py</code> terminal controller (<code>status</code>, <code>load-lab</code>, <code>psu</code>, <code>fault</code>, <code>repair</code>, <code>export-spice</code>, <code>export-bom</code>)</li>
+                            <li><strong>Visual Modes:</strong> 4 studio themes (<code>precision_lab</code>, <code>cyber_neon</code>, <code>flir_thermal</code>, <code>xray_emf</code>) and 4 time-dilation scales (<code>1.0x</code>, <code>0.1x</code>, <code>0.01x</code>, paused)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-section-card h-100">
+                        <h2><i class="fa-solid fa-brain"></i> Engineering Architecture</h2>
+                        <p class="mb-0">Instead of decoupling 3D visual animation from circuit math, ElectroForge 3D routes every UI slider, environmental stimulus, and CLI command through a single thread-safe <code>ElectroForgeLabEngine.dispatch()</code> state machine. Each mutation re-solves nodal voltages, branch currents, thermal dissipation, oscilloscope buffers, and robotic joint kinematics in lockstep—so cranking the PSU to <code>24.0V</code> or moving a 3D ultrasonic obstacle physically alters both electrical waveforms and 3D actuator motion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Sockshare/electroforge-3d-lab" class="btn-cyber-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Source on GitHub
+                </a>
+                <a href="../stories/blog_27.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-feather-pointed"></i> Read Engineering Story #27
+                </a>
+                <a href="../projects.html" class="btn-cyber-outline">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="../assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="../js/catalog-data.js?v=20261125v5"></script>
+    <script src="../js/scripts.js?v=20261125v5"></script>
+</body>
+</html>

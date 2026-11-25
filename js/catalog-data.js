@@ -3,6 +3,55 @@
 window.PORTFOLIO_CATALOG = {
   "projects": [
     {
+      "id": 37,
+      "flagship": false,
+      "flagshipRank": 999,
+      "title": "NeonTouch Synth: 10-Finger Ephemeral Light & Polyphonic Cyberdeck Studio",
+      "href": "projects/project_37.html",
+      "image": "assets/images/neontouch_synth.jpg?v=1",
+      "badge": "Web Audio DSP & Interactive Synth",
+      "badgeClass": "badge-media",
+      "categories": [
+        "media",
+        "nexus"
+      ],
+      "summary": "Zero-dependency 10-finger ephemeral neon light instrument and Night City Cyberdeck DJ studio (Port 8112) engineered for 60 FPS Web Audio polyphonic synthesis without camera or microphone permissions.",
+      "modalSummary": "NeonTouch Synth (Night City Cyberdeck) pairs a pure Python stdlib ThreadingHTTPServer with a 60 FPS VM-optimized HTML5 Canvas and Web Audio DSP engine featuring 10 scale-locked darksynth timbres, procedural cyberpunk song generation, 16-step sequencer, dual holo-turntables, kaleidoscope mirror lasers, and zero camera/mic requirements.",
+      "tech": [
+        "Web Audio Polyphonic DSP",
+        "60 FPS Multitouch Canvas",
+        "16-Step Cyberpunk Sequencer",
+        "Dual Holo-Turntables & Vocoder",
+        "Zero-Dependency Python Server"
+      ],
+      "github": "https://github.com/Sockshare/neontouch-synth"
+    },
+    {
+      "id": 36,
+      "flagship": false,
+      "flagshipRank": 999,
+      "title": "ElectroForge 3D: Interactive Electronics, Breadboard & Robotics Lab",
+      "href": "projects/project_36.html",
+      "image": "assets/images/electroforge_3d_lab.jpg?v=1",
+      "badge": "3D Robotics CAD & Circuit Sim",
+      "badgeClass": "badge-media",
+      "categories": [
+        "media",
+        "nexus",
+        "mcp"
+      ],
+      "summary": "Interactive 3D electronics, 830-point breadboard, microcontroller, and robotics engineering lab (Port 8102) powered by real-time Modified Nodal Analysis (MNA), 12 Blender 5.0.1 .glb hardware models, 4 articulated robotic rigs, 4-Ch oscilloscope, 8-Ch logic analyzer, and 24V thermal overload burnout.",
+      "modalSummary": "ElectroForge 3D fuses real-time Modified Nodal Analysis (MNA) circuit simulation and Joule thermal burnout physics with 12 Blender 5.0.1 .glb hardware models and 4 interactive robotic rigs (6-DOF Arm, 4WD Rover, Pan/Tilt Turret, 3-Axis CNC Gantry), complete with 1:1 /api/dispatch CLI automation and SPICE/BOM/Arduino exports.",
+      "tech": [
+        "MNA / SPICE Nodal Solver",
+        "Blender 5.0 .glb Hardware",
+        "6-DOF Arm / Rover / Turret / CNC",
+        "4-Ch Scope & 8-Ch Logic",
+        "24V Overload & FLIR Thermal"
+      ],
+      "github": "https://github.com/Sockshare/electroforge-3d-lab"
+    },
+    {
       "id": 35,
       "flagship": true,
       "flagshipRank": 0,
@@ -866,6 +915,41 @@ window.PORTFOLIO_CATALOG = {
     }
   ],
   "stories": [
+    {
+      "id": 28,
+      "featured": false,
+      "featuredRank": 999,
+      "title": "Zero-Dependency 60 FPS Web Audio DSP: Engineering NeonTouch Synth & Night City Cyberdeck",
+      "href": "stories/blog_28.html",
+      "image": "assets/images/blog_28_img1.jpg?v=1",
+      "badge": "Web Audio DSP • 60 FPS Canvas • Creative Coding",
+      "badgeClass": "badge-media",
+      "categories": [
+        "llm",
+        "culture"
+      ],
+      "readTime": "7 min read",
+      "summary": "How I engineered a 10-finger polyphonic light synth and cyberpunk DJ deck running at 60 FPS inside remote desktop VMs with zero external dependencies and zero camera/microphone access.",
+      "ctaLabel": "Read Story"
+    },
+    {
+      "id": 27,
+      "featured": false,
+      "featuredRank": 999,
+      "title": "Solving Real-Time Circuits in 3D: MNA Physics, Blender Hardware & 24V Thermal Burnout in ElectroForge 3D",
+      "href": "stories/blog_27.html",
+      "image": "assets/images/blog_27_img1.jpg?v=1",
+      "badge": "3D Robotics • MNA Circuit Physics • Blender CAD",
+      "badgeClass": "badge-media",
+      "categories": [
+        "mcp",
+        "llm",
+        "culture"
+      ],
+      "readTime": "8 min read",
+      "summary": "Inside ElectroForge 3D: coupling Modified Nodal Analysis (MNA) and Joule heating directly to 12 Blender 5.0.1 .glb hardware models, 4 articulated robotic rigs, 4-Ch scope/8-Ch logic traces, and a 1:1 CLI command bus.",
+      "ctaLabel": "Read Story"
+    },
     {
       "id": 26,
       "featured": true,

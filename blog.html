@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Search and browse all 26 engineering stories, CMMC &amp; SOC 2 compliance playbooks, Enterprise RAG guides, and MCP architecture dispatches by Julian Morrisette.">
-    <title>Blog &amp; Playbooks Explorer (26) | Black Beard&#x27;s Portfolio</title>
-    <link href="assets/vendor/bootstrap.min.css?v=20261120v4" rel="stylesheet">
+    <meta name="description" content="Search and browse all 28 engineering stories, CMMC &amp; SOC 2 compliance playbooks, Enterprise RAG guides, and MCP architecture dispatches by Julian Morrisette.">
+    <title>Blog &amp; Playbooks Explorer (28) | Black Beard&#x27;s Portfolio</title>
+    <link href="assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261120v4">
+    <link rel="stylesheet" href="css/style.css?v=20261125v5">
 </head>
 <body>
     <!-- Navigation -->
@@ -24,10 +24,10 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#about">Methodology</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects (35)</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog (26)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects (37)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog (28)</a></li>
                     <li class="nav-item ms-lg-2 my-2 my-lg-0">
-                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 61 systems &amp; stories (Ctrl+K or /)">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 65 systems &amp; stories (Ctrl+K or /)">
                             <i class="fa-solid fa-magnifying-glass text-info"></i>
                             <span>Quick Jump...</span>
                             <span class="kbd-chip">&#8984;K</span>
@@ -49,11 +49,11 @@
     <header class="hero py-4">
         <div class="container">
             <div class="hero-kicker">
-                <i class="fa-solid fa-feather-pointed"></i> 26 Dispatches, Playbooks &amp; Architecture Field Guides
+                <i class="fa-solid fa-feather-pointed"></i> 28 Dispatches, Playbooks &amp; Architecture Field Guides
             </div>
             <h1 class="neon-text mb-2">Engineering Stories &amp; <span class="hero-gradient-span">Field Playbooks</span></h1>
             <p class="neon-text-blue mb-0">
-                Search across 26 deep-dive dispatches covering Identity-Aware Enterprise RAG, MCP skill compilers, deterministic multi-agent audit workflows, and CMMC / SOC 2 security governance.
+                Search across 28 deep-dive dispatches covering Identity-Aware Enterprise RAG, MCP skill compilers, deterministic multi-agent audit workflows, and CMMC / SOC 2 security governance.
             </p>
         </div>
     </header>
@@ -64,15 +64,15 @@
                 <div class="explorer-top-row">
                     <div class="explorer-search-wrap">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="explorer-search" class="explorer-search-input" placeholder="Search 26 stories &amp; playbooks by keyword (e.g., Confused Deputy, Stochasticity, CMMC, SOC 2, UAR, MCP)..." autocomplete="off">
+                        <input type="text" id="explorer-search" class="explorer-search-input" placeholder="Search 28 stories &amp; playbooks by keyword (e.g., Confused Deputy, Stochasticity, CMMC, SOC 2, UAR, MCP)..." autocomplete="off">
                         <button type="button" id="explorer-clear" class="explorer-clear-btn" aria-label="Clear search"><i class="fa-solid fa-xmark"></i></button>
                     </div>
                     <div class="explorer-controls-right">
                         <select id="explorer-sort" class="explorer-sort-select" aria-label="Sort stories">
-                            <option value="newest">Sort: Latest (Story #26 &rarr; #01)</option>
+                            <option value="newest">Sort: Latest (Story #28 &rarr; #01)</option>
                             <option value="flagship">Sort: Essential Playbooks First</option>
                             <option value="alpha">Sort: Title (A &rarr; Z)</option>
-                            <option value="oldest">Sort: Chronological (#01 &rarr; #26)</option>
+                            <option value="oldest">Sort: Chronological (#01 &rarr; #28)</option>
                         </select>
                         <div class="view-toggle-group" role="group" aria-label="View density">
                             <button type="button" class="view-toggle-btn active" data-explorer-view="grid" title="Visual Grid Cards">
@@ -89,22 +89,62 @@
                 </div>
 
                 <div class="filter-bar justify-content-start mb-0">
-                    <button class="filter-btn active" data-explorer-cat="all">All Dispatches (26)</button>
+                    <button class="filter-btn active" data-explorer-cat="all">All Dispatches (28)</button>
                     <button class="filter-btn" data-explorer-cat="playbook">Playbooks &amp; Field Guides (11)</button>
-                    <button class="filter-btn" data-explorer-cat="mcp">MCP &amp; Agentic Architecture (10)</button>
-                    <button class="filter-btn" data-explorer-cat="llm">LLM Engineering &amp; GenAI (14)</button>
+                    <button class="filter-btn" data-explorer-cat="mcp">MCP &amp; Agentic Architecture (11)</button>
+                    <button class="filter-btn" data-explorer-cat="llm">LLM Engineering &amp; GenAI (16)</button>
                     <button class="filter-btn" data-explorer-cat="security">Compliance &amp; Cybersecurity (13)</button>
-                    <button class="filter-btn" data-explorer-cat="culture">Engineering Leadership (8)</button>
+                    <button class="filter-btn" data-explorer-cat="culture">Engineering Leadership (10)</button>
                 </div>
             </div>
 
             <div class="explorer-status-bar">
-                <div id="explorer-status-text">Showing <strong class="text-white">12</strong> of <strong class="text-info">26</strong> matching stories &amp; playbooks</div>
-                <div class="text-muted">Tip: Switch to <strong>Table</strong> view to scan all 26 titles &amp; read times on one screen.</div>
+                <div id="explorer-status-text">Showing <strong class="text-white">12</strong> of <strong class="text-info">28</strong> matching stories &amp; playbooks</div>
+                <div class="text-muted">Tip: Switch to <strong>Table</strong> view to scan all 28 titles &amp; read times on one screen.</div>
             </div>
 
             <div id="explorer-results-container" data-explorer-type="stories">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_28.html" class="card-img-wrapper d-block">
+                            <span class="card-id-ribbon">Story #28</span>
+                            <img src="assets/images/blog_28_img1.jpg?v=1" class="card-img-top" loading="lazy" alt="Zero-Dependency 60 FPS Web Audio DSP: Engineering NeonTouch Synth &amp; Night City Cyberdeck">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-media mb-0">Web Audio DSP • 60 FPS Canvas • Creative Coding</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>7 min read</span>
+                            </div>
+                            <h5 class="card-title"><a href="stories/blog_28.html" class="text-white text-decoration-none">Zero-Dependency 60 FPS Web Audio DSP: Engineering NeonTouch Synth &amp; Night City Cyberdeck</a></h5>
+                            <p class="card-text mb-0">How I engineered a 10-finger polyphonic light synth and cyberpunk DJ deck running at 60 FPS inside remote desktop VMs with zero external dependencies and zero camera/microphone access.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #28</span>
+                            <a href="stories/blog_28.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="stories/blog_27.html" class="card-img-wrapper d-block">
+                            <span class="card-id-ribbon">Story #27</span>
+                            <img src="assets/images/blog_27_img1.jpg?v=1" class="card-img-top" loading="lazy" alt="Solving Real-Time Circuits in 3D: MNA Physics, Blender Hardware &amp; 24V Thermal Burnout in ElectroForge 3D">
+                        </a>
+                        <div class="card-body flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <span class="category-badge badge-media mb-0">3D Robotics • MNA Circuit Physics • Blender CAD</span>
+                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>8 min read</span>
+                            </div>
+                            <h5 class="card-title"><a href="stories/blog_27.html" class="text-white text-decoration-none">Solving Real-Time Circuits in 3D: MNA Physics, Blender Hardware &amp; 24V Thermal Burnout in ElectroForge 3D</a></h5>
+                            <p class="card-text mb-0">Inside ElectroForge 3D: coupling Modified Nodal Analysis (MNA) and Joule heating directly to 12 Blender 5.0.1 .glb hardware models, 4 articulated robotic rigs, 4-Ch scope/8-Ch logic traces, and a 1:1 CLI command bus.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="mono-tag small text-secondary">Story #27</span>
+                            <a href="stories/blog_27.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="col">
                     <div class="card h-100 d-flex flex-column">
                         <a href="stories/blog_26.html" class="card-img-wrapper d-block">
@@ -305,46 +345,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_20.html" class="card-img-wrapper d-block">
-                            <span class="card-id-ribbon">Story #20</span>
-                            <img src="assets/images/blog_20_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                                <span class="category-badge badge-mcp mb-0">Field Guide • Vulnerability SLAs</span>
-                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
-                            </div>
-                            <h5 class="card-title"><a href="stories/blog_20.html" class="text-white text-decoration-none">The Hidden Trap in Vulnerability Management: Why &quot;Closed Within SLA&quot; Can Still Be a Red Flag</a></h5>
-                            <p class="card-text mb-0">How issue-tracker pause clocks, priority re-classifications, and queue transfers can mask calendar-duration breaches—and why a 3-bucket triage model (Valid, Breached, Verify) prevents audit blind spots.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #20</span>
-                            <a href="stories/blog_20.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 d-flex flex-column">
-                        <a href="stories/blog_21.html" class="card-img-wrapper d-block">
-                            <span class="card-id-ribbon">Story #21</span>
-                            <img src="assets/images/blog_21_img1.jpg?v=6" class="card-img-top" loading="lazy" alt="How I Use AI to Build Creative &amp; Technical Projects Faster—And What Still Requires Human Judgment">
-                        </a>
-                        <div class="card-body flex-grow-1">
-                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                                <span class="category-badge badge-nexus mb-0">Engineering Leadership • AI Workflow</span>
-                                <span class="mono-tag small text-secondary text-nowrap"><i class="fa-regular fa-clock me-1"></i>6 min read</span>
-                            </div>
-                            <h5 class="card-title"><a href="stories/blog_21.html" class="text-white text-decoration-none">How I Use AI to Build Creative &amp; Technical Projects Faster—And What Still Requires Human Judgment</a></h5>
-                            <p class="card-text mb-0">An honest reflection on building 27 AI and security projects: what generative AI accelerates in scaffolding and visual design, and where human taste, quality control, and domain ownership remain non-negotiable.</p>
-                        </div>
-                        <div class="card-footer">
-                            <span class="mono-tag small text-secondary">Story #21</span>
-                            <a href="stories/blog_21.html" class="btn-card-action btn-card-primary">Read Dispatch <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
 
@@ -363,8 +363,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <a class="nav-icon-link" href="index.html">Home</a>
-                    <a class="nav-icon-link" href="projects.html">Projects (35)</a>
-                    <a class="nav-icon-link" href="blog.html">Blog (26)</a>
+                    <a class="nav-icon-link" href="projects.html">Projects (37)</a>
+                    <a class="nav-icon-link" href="blog.html">Blog (28)</a>
                     <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -374,9 +374,9 @@
         </div>
     </footer>
 
-    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261120v4"></script>
-    <script src="assets/vendor/particles.min.js?v=20261120v4"></script>
-    <script src="js/catalog-data.js?v=20261120v4"></script>
-    <script src="js/scripts.js?v=20261120v4"></script>
+    <script src="assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="js/catalog-data.js?v=20261125v5"></script>
+    <script src="js/scripts.js?v=20261125v5"></script>
 </body>
 </html>

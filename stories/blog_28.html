@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside NeonTouch Synth &amp; Night City Cyberdeck: engineering a zero-dependency, 60 FPS multi-touch Web Audio polyphonic music synthesizer and cyberpunk DJ studio with zero camera or microphone overhead.">
+    <title>Zero-Dependency 60 FPS Web Audio DSP: Engineering NeonTouch Synth &amp; Night City Cyberdeck | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261125v5">
+    <style>
+        .table-cyber {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0 26px 0;
+            font-size: 0.9rem;
+        }
+        .table-cyber th {
+            background: rgba(15, 23, 42, 0.94);
+            color: #38bdf8;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            padding: 11px 14px;
+            text-align: left;
+        }
+        .table-cyber td {
+            background: rgba(15, 23, 42, 0.58);
+            color: #cbd5e1;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 11px 14px;
+            vertical-align: top;
+        }
+        .principle-banner {
+            display: block;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.72));
+            border-left: 4px solid #ec4899;
+            padding: 15px 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects (37)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog (28)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 65 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #28</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-media mb-0">Web Audio DSP &bull; 60 FPS Canvas &bull; Creative Coding</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>7 min read
+                    </span>
+                </div>
+
+                <h1>Zero-Dependency 60 FPS Web Audio DSP: Engineering NeonTouch Synth &amp; Night City Cyberdeck</h1>
+                <img src="../assets/images/blog_28_img1.jpg?v=1" class="story-hero-img" alt="NeonTouch Synth Web Audio DSP and 60 FPS Canvas Architecture">
+
+                <p class="lead">
+                    Can you build an expressive 10-finger polyphonic light instrument and cyberpunk DJ console that runs at <code>60 FPS</code> inside a headless Wayland or Chrome Remote Desktop VM—without WebGL driver crashes, external NPM bundles, or camera/microphone permissions? That design constraint shaped <a href="../projects/project_37.html" class="text-info">NeonTouch Synth</a> (<a href="https://github.com/Sockshare/neontouch-synth" target="_blank" rel="noopener noreferrer" class="text-info">GitHub: Sockshare/neontouch-synth</a>), which you can also play live right here on the portfolio at <a href="../neontouch.html" target="_blank" rel="noopener noreferrer" class="text-info">neontouch.html</a>.
+                </p>
+
+                <div class="principle-banner">
+                    <strong>Zero-Permission Creative Instrument:</strong> By keeping <code>camera_enabled: false</code> and <code>microphone_enabled: false</code> (enforced by automated tests), NeonTouch Synth works immediately in locked-down browsers and remote workstations.
+                </div>
+
+                <h2>1. Designing for Zero Wrong Notes &amp; 10 Simultaneous Voices</h2>
+                <p>
+                    In <code>static/js/app.js</code>, every touch point, mouse drag, or multi-finger keyboard chord maps screen coordinates to two orthogonal expressive axes: horizontal position selects pitch from a curated dark cyberpunk <strong>Minor / Phrygian scale</strong> (<code>CYBER_SCALE</code>), while vertical position modulates filter cutoff and harmonic brightness. Pairing that scale lock with 10 distinct darksynth timbres—from <em>BladeLead</em> and <em>Supersaw</em> to <em>Acid303</em>, <em>ReeseBass</em>, and <em>808Slam</em>—means layering 5 or 10 ephemeral neon comet lines creates cinematic chords instead of dissonant noise.
+                </p>
+
+                <h2>2. Keeping Canvas Rendering Fast Inside Remote VMs</h2>
+                <p>
+                    Full-resolution 4K shadow blurs will saturate software rasterizers over remote desktop. To keep latency negligible, the Night City Cyberdeck canvas pairs a tuned <code>RENDER_SCALE = 0.55</code> backing buffer with a strict <code>22ms</code> frame budget—preserving crisp neon plasma trails, 2-way/4-way kaleidoscope mirror lasers, target reticles, and live skyline FFT bars while using ~70% fewer rasterized pixels.
+                </p>
+
+                <table class="table-cyber">
+                    <thead>
+                        <tr>
+                            <th>Subsystem</th>
+                            <th>Implementation</th>
+                            <th>Musical / Visual Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Procedural Track Engine</strong></td>
+                            <td><code>CYBER_BEATS</code> + <code>DARK_PROGRESSION</code></td>
+                            <td>Generates codenamed beats across 88&ndash;124 BPM (Night City, Outrun, Industrial, Blade Runner)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Performance Deck</strong></td>
+                            <td>16-Step Matrix + Dual Jog Turntables + Crossfader</td>
+                            <td>Live beat programming, deck scratching/blending, and punch-in glitch FX</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pure Stdlib Backend</strong></td>
+                            <td><code>ThreadingHTTPServer</code> (<code>server.py</code>)</td>
+                            <td>Zero-dependency HTTP server on <code>:8112</code> with <code>/api/health</code> diagnostics</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>3. Automated Verification Without Brittle Audio Flakes</h2>
+                <p>
+                    The included test suite (<code>tests/test_omnisense.py</code>) boots an ephemeral local <code>ThreadingHTTPServer</code> on port <code>0</code>, validates <code>/api/health</code> capability flags, verifies all 10 cyberdeck UI/DSP controls across <code>index.html</code> and <code>static/js/app.js</code>, confirms zero <code>getUserMedia</code> calls exist, and asserts that removed camera/mic routes return HTTP <code>404</code>.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_27.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Solving Real-Time Circuits in ElectroForge 3D
+                    </a>
+                    <a href="../blog.html" class="btn-card-action btn-card-primary">
+                        View All 28 Blog Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="../assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="../js/catalog-data.js?v=20261125v5"></script>
+    <script src="../js/scripts.js?v=20261125v5"></script>
+</body>
+</html>

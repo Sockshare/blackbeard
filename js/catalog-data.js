@@ -3,6 +3,32 @@
 window.PORTFOLIO_CATALOG = {
   "projects": [
     {
+      "id": 38,
+      "flagship": true,
+      "flagshipRank": 0,
+      "title": "AiLabs: 4-Provider Agentic Coding IDE & Multi-Agent Runtime",
+      "href": "projects/project_38.html",
+      "image": "assets/images/ailabs_agentic_ide.jpg?v=1",
+      "badge": "Flagship Agentic IDE • 4-Provider Model House",
+      "badgeClass": "badge-nexus",
+      "categories": [
+        "mcp",
+        "nexus",
+        "compliance",
+        "cyber"
+      ],
+      "summary": "Clean-room, zero-dependency Agentic Coding IDE & Multi-Agent Runtime (Port 8120 in Run Nexus) uniting Local Ollama, Google Gemini, Anthropic Claude, and OpenAI across 22 native tools, 6-tier team/personal customizations, progressive SKILL.md disclosure, git-worktree subagents, Pre/PostToolUse security hooks, and Eager/Lazy MCP.",
+      "modalSummary": "AiLabs (Port 8120) is a clean-room 4-Provider Agentic Coding IDE & Multi-Agent Runtime integrated into Run Nexus and auto-bridged with SkillForge AI. It normalizes Local Ollama, Google Gemini, Anthropic Claude, and OpenAI behind 22 native tools, a 6-part / 6-tier customization & hook engine, git-worktree isolated subagents, Eager/Lazy MCP servers, reactive auto-wakeup, sidecars, and dual JSONL transcripts with context compaction.",
+      "tech": [
+        "22 Native Agent Tools",
+        "Ollama / Gemini / Claude / OpenAI",
+        "6-Tier Customizations & Hooks",
+        "Git-Worktree Subagents",
+        "Eager & Lazy MCP Hub"
+      ],
+      "github": "https://github.com/Sockshare/ailabs"
+    },
+    {
       "id": 37,
       "flagship": false,
       "flagshipRank": 999,
@@ -54,7 +80,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 35,
       "flagship": true,
-      "flagshipRank": 0,
+      "flagshipRank": 2,
       "title": "Zero-Leak RAG Lab: Identity-Aware Enterprise Grounding & RLS Studio",
       "href": "projects/project_35.html",
       "image": "assets/images/zero_leak_rag_lab.jpg?v=1",
@@ -80,7 +106,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 34,
       "flagship": true,
-      "flagshipRank": 2,
+      "flagshipRank": 3,
       "title": "TrustForge SOC 2: Autonomous SOC 2 Type II Audit, 7-Gate Exception Triage & Privacy Crosswalk Studio",
       "href": "projects/project_34.html",
       "image": "assets/images/trustforge_soc2.jpg?v=8",
@@ -107,10 +133,10 @@ window.PORTFOLIO_CATALOG = {
       "id": 33,
       "flagship": true,
       "flagshipRank": 1,
-      "title": "SkillForge AI: Web-App-to-LLM-Skill & MCP Compiler Studio",
+      "title": "SkillForge AI: 1:1 Skill Builder (skill-creator) & Multi-Skill Orchestrator Studio",
       "href": "projects/project_33.html",
       "image": "assets/images/skillforge_ai.jpg?v=8",
-      "badge": "Agentic AI • MCP • Compiler Studio",
+      "badge": "Agentic AI • 1:1 Skill Builder • Orchestrator",
       "badgeClass": "badge-nexus",
       "categories": [
         "mcp",
@@ -118,21 +144,21 @@ window.PORTFOLIO_CATALOG = {
         "compliance",
         "cyber"
       ],
-      "summary": "Local-first Web-App-to-LLM-Skill (SKILL.md) and Multi-Skill MCP JSON-RPC 2.0 Compiler Studio & Live Agent Testbench. Scans local web apps (including bundled TaskPulse) or OpenAPI/GRC blueprints, compiles 5-Gate & 3-run SHA-256 verified skill bundles, and runs live 3-stage Local Ollama or Cloud LLM tool execution.",
-      "modalSummary": "SkillForge AI converts any local web application folder (including the bundled TaskPulse reference web app), OpenAPI 3.1 service, or security/compliance blueprint into a multi-tool SKILL.md & MCP JSON-RPC 2.0 bundle verified across 5 security/determinism gates, complete with a live 3-stage Local Ollama or Cloud LLM testbench.",
+      "summary": "1:1 Skill Builder (skill-creator) Studio, Headless CLI Python AST Decoupler, Paired Subprocess Evals + HTML Eval Viewer, feedback.json Rewriter, 60/40 Trigger Optimizer, and Sequential Multi-Skill Orchestrator (2-Run SHA-256 Determinism) powered by Local Ollama, Google Gemini, Anthropic Claude, and OpenAI.",
+      "modalSummary": "SkillForge AI v2 replicates the complete skill-creator lifecycle and multi-skill sequential orchestration for any user across Local Ollama, Google Gemini, Anthropic Claude, and OpenAI—supporting intent interviews, AST web-app-to-headless-CLI decoupling, paired with_skill vs. baseline subprocess evals, 60/40 trigger optimization, 2-run SHA-256 determinism, and zero-copy bridging into AiLabs.",
       "tech": [
-        "Web-App-to-SKILL.md",
-        "Multi-Skill MCP Hub",
-        "Live 3-Stage LLM Testbench",
-        "Local Ollama + Cloud APIs",
-        "3-Run SHA-256 Determinism"
+        "1:1 skill-creator Lifecycle",
+        "AST Headless CLI Decoupler",
+        "Paired Subprocess Evals",
+        "60/40 Trigger Optimizer",
+        "Ollama / Gemini / Claude / OpenAI"
       ],
       "github": "https://github.com/Sockshare/skillforge-ai"
     },
     {
       "id": 32,
-      "flagship": true,
-      "flagshipRank": 5,
+      "flagship": false,
+      "flagshipRank": 999,
       "title": "Outbreak 3D (\"Ant Farm\"): Autonomous Human-Zombie Colony & Social Drama Simulation Game",
       "href": "projects/project_32.html",
       "image": "assets/images/outbreak_3d.jpg?v=7",
@@ -552,7 +578,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 7,
       "flagship": true,
-      "flagshipRank": 3,
+      "flagshipRank": 4,
       "title": "Run Nexus & Skill Holders Studio",
       "href": "projects/project_7.html",
       "image": "assets/images/run_nexus.jpg",
@@ -562,8 +588,8 @@ window.PORTFOLIO_CATALOG = {
         "nexus",
         "mcp"
       ],
-      "summary": "A full-stack personal AI operating system and microservice orchestrator managing 14+ specialized LLM applications, live SSE process telemetry, workspace storage, and Skill Holders Studio for building portable AI Agent Skills and MCP-ready workflows.",
-      "modalSummary": "Run Nexus is my flagship local-first AI command center built to unify over 14 specialized AI, security, and creative microservices under one glassmorphic control plane. Paired with Skill Holders Studio, it manages subprocess lifecycles, port routing, live streaming logs, and standardized SKILL.md agent packages that plug directly into autonomous coding and security agents.",
+      "summary": "A full-stack personal AI operating system and microservice orchestrator managing 20+ specialized LLM applications (including AiLabs on :8120 and SkillForge AI on :8108), live process telemetry, workspace storage, and Skill Holders Studio for portable AI Agent Skills and MCP workflows.",
+      "modalSummary": "Run Nexus is my flagship local-first AI command center unifying 20+ specialized AI, agentic IDE (AiLabs :8120), skill compiler (SkillForge AI :8108), security, and 3D creative microservices under one control plane with port routing, live status polling, storage governance, and standardized SKILL.md packages.",
       "tech": [
         "Python / Flask",
         "Multi-Agent Hub",
@@ -576,7 +602,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 8,
       "flagship": true,
-      "flagshipRank": 4,
+      "flagshipRank": 5,
       "title": "SAFER AI Workbench & CMMC Multi-Agent Engine",
       "href": "projects/project_8.html",
       "image": "assets/images/safer_cmmc.jpg",
@@ -916,6 +942,44 @@ window.PORTFOLIO_CATALOG = {
   ],
   "stories": [
     {
+      "id": 30,
+      "featured": true,
+      "featuredRank": 0,
+      "title": "Architecting AiLabs: Building a Clean-Room, 4-Provider Agentic Coding IDE with 22 Native Tools, Git-Worktree Subagents & Lazy MCP",
+      "href": "stories/blog_30.html",
+      "image": "assets/images/blog_30_img1.jpg?v=1",
+      "badge": "Agentic IDE • 4-Provider Model House • Multi-Agent Systems",
+      "badgeClass": "badge-nexus",
+      "categories": [
+        "mcp",
+        "llm",
+        "security",
+        "playbook"
+      ],
+      "readTime": "12 min read",
+      "summary": "Inside AiLabs (Port 8120 in Run Nexus): unifying Local Ollama, Google Gemini, Anthropic Claude, and OpenAI behind 22 native tools, a 6-tier customization & PreToolUse hook engine, progressive SKILL.md disclosure, git-worktree isolated subagents, Lazy MCP schema files, and reactive auto-wakeup.",
+      "ctaLabel": "Read Story"
+    },
+    {
+      "id": 29,
+      "featured": true,
+      "featuredRank": 1,
+      "title": "Inside SkillForge AI v2: Replicating the Complete skill-creator Lifecycle & Multi-Skill Orchestration Across Ollama, Gemini, Claude & OpenAI",
+      "href": "stories/blog_29.html",
+      "image": "assets/images/blog_29_img1.jpg?v=1",
+      "badge": "Agentic AI • 1:1 Skill Builder • Multi-Skill Orchestration",
+      "badgeClass": "badge-nexus",
+      "categories": [
+        "mcp",
+        "llm",
+        "security",
+        "playbook"
+      ],
+      "readTime": "10 min read",
+      "summary": "How I upgraded SkillForge AI into a 1:1 standalone Skill Builder and sequential multi-skill orchestrator—pairing LLM intent interviews, Python AST web-app decoupling, real paired subprocess evals, feedback.json rewrites, and 60/40 trigger optimization across Ollama, Gemini, Claude, and OpenAI.",
+      "ctaLabel": "Read Story"
+    },
+    {
       "id": 28,
       "featured": false,
       "featuredRank": 999,
@@ -953,7 +1017,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 26,
       "featured": true,
-      "featuredRank": 0,
+      "featuredRank": 2,
       "title": "Defeating the “Confused Deputy” in Enterprise RAG & Compiling Web Apps into Live MCP Agent Skills",
       "href": "stories/blog_26.html",
       "image": "assets/images/blog_26_img1.jpg?v=1",
@@ -972,7 +1036,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 25,
       "featured": true,
-      "featuredRank": 1,
+      "featuredRank": 3,
       "title": "Defeating Stochasticity: From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow",
       "href": "stories/blog_25.html",
       "image": "assets/images/blog_25_img1.jpg?v=3",
@@ -991,7 +1055,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 24,
       "featured": true,
-      "featuredRank": 2,
+      "featuredRank": 4,
       "title": "From Web Apps to Deterministic Agent Skills & Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2",
       "href": "stories/blog_24.html",
       "image": "assets/images/blog_24_img1.jpg?v=8",
@@ -1046,7 +1110,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 15,
       "featured": true,
-      "featuredRank": 3,
+      "featuredRank": 5,
       "title": "CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&Ms Are Allowed",
       "href": "stories/blog_15.html",
       "image": "assets/images/blog_15_img1.jpg?v=6",
@@ -1062,8 +1126,8 @@ window.PORTFOLIO_CATALOG = {
     },
     {
       "id": 16,
-      "featured": true,
-      "featuredRank": 4,
+      "featured": false,
+      "featuredRank": 999,
       "title": "How to Structure a Security Audit Report So Executives Actually Read It: Executive Summaries vs. Evidence Annexes",
       "href": "stories/blog_16.html",
       "image": "assets/images/blog_16_img1.jpg?v=6",
@@ -1169,8 +1233,8 @@ window.PORTFOLIO_CATALOG = {
     },
     {
       "id": 14,
-      "featured": true,
-      "featuredRank": 5,
+      "featured": false,
+      "featuredRank": 999,
       "title": "Automating My Automations: From Manual CMMC Audits to Full-Stack Web Apps to LLM-Orchestrated Agent Skills",
       "href": "stories/blog_14.html",
       "image": "assets/images/blog_14_img1.jpg?v=5",

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inside SkillForge AI v2: replicating the complete skill-creator lifecycle—intent interviews, Python AST web-app decoupling, paired subprocess evals, feedback.json iteration, 60/40 trigger optimization, and multi-skill SHA-256 orchestration across Ollama, Gemini, Claude, and OpenAI.">
+    <title>Inside SkillForge AI v2: 1:1 Skill Builder (skill-creator) &amp; Multi-Skill Orchestration | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261125v5">
+    <style>
+        .table-cyber {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0 26px 0;
+            font-size: 0.9rem;
+        }
+        .table-cyber th {
+            background: rgba(15, 23, 42, 0.94);
+            color: #38bdf8;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            padding: 11px 14px;
+            text-align: left;
+        }
+        .table-cyber td {
+            background: rgba(15, 23, 42, 0.58);
+            color: #cbd5e1;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 11px 14px;
+            vertical-align: top;
+        }
+        .principle-banner {
+            display: block;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.72));
+            border-left: 4px solid #10b981;
+            padding: 15px 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects (38)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog (30)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 68 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #29</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Agentic AI &bull; 1:1 Skill Builder &bull; Multi-Skill Orchestration</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>10 min read
+                    </span>
+                </div>
+
+                <h1>Inside SkillForge AI v2: Replicating the Complete <code>skill-creator</code> Lifecycle &amp; Multi-Skill Orchestration Across Ollama, Gemini, Claude &amp; OpenAI</h1>
+                <img src="../assets/images/blog_29_img1.jpg?v=1" class="story-hero-img" alt="SkillForge AI v2 1:1 Skill Builder and Multi-Skill Sequential Orchestrator Architecture">
+
+                <p class="lead">
+                    In the initial release of <a href="../projects/project_33.html" class="text-info">SkillForge AI</a> (<a href="https://github.com/Sockshare/skillforge-ai" target="_blank" rel="noopener noreferrer" class="text-info">GitHub: Sockshare/skillforge-ai</a>), I solved the problem of wrapping local web applications into live MCP JSON-RPC 2.0 tool servers. For v2, I wanted <strong>zero functional difference</strong> between how an expert engineer uses a meta-skill like <code>skill-creator</code> to build standalone CLI skills and multi-stage audit orchestrators—and what any general user can do visually inside SkillForge AI using either <strong>Local Ollama</strong> (any installed onboard model) or <strong>Google Gemini, Anthropic Claude, and OpenAI</strong>.
+                </p>
+
+                <div class="principle-banner">
+                    <strong>Core Principle:</strong> A production AI skill is not a static Markdown prompt—it is a self-contained software package (<code>SKILL.md</code> + pure headless Python CLI + JSON schemas + empirical paired benchmarks) refined through measurable A/B evaluations and held-out trigger optimization.
+                </div>
+
+                <h2>1. Two Ways to Build: Intent Interviews OR Python AST Web-App Decoupling</h2>
+                <p>
+                    Real-world skill authoring starts from one of two places: a blank slate with a domain workflow in mind, or a working full-stack web application whose core domain math is trapped behind HTTP handlers and HTML templates. In <code>skillforge/skill_creator_studio.py</code>, SkillForge AI v2 handles both natively:
+                </p>
+                <ul>
+                    <li><strong>LLM Intent &amp; Edge-Case Interview (<code>interview_skill_intent</code>):</strong> Uses your selected Ollama, Gemini, Claude, or OpenAI model to probe input formats, output contracts, false-positive edge cases, and non-trigger boundaries before generating a single line of code.</li>
+                    <li><strong>Headless CLI AST Decoupler (<code>extract_pure_domain_python_from_webapp</code>):</strong> Parses Python web apps via the standard library <code>ast</code> module, strips out HTTP/Flask/FastAPI server scaffolding, and emits a <strong>100% standalone headless CLI skill</strong> (<code>scripts/*.py</code>) that executes deterministically on disk even when zero web servers are running.</li>
+                </ul>
+
+                <h2>2. Real Paired Subprocess Evals, HTML Review &amp; 60/40 Trigger Optimization</h2>
+                <p>
+                    Most "prompt builders" stop the moment a Markdown file is generated—leaving you blind to whether the skill actually outperforms a baseline prompt or hijacks unrelated user queries. SkillForge AI v2 implements the complete empirical loop on disk:
+                </p>
+
+                <table class="table-cyber">
+                    <thead>
+                        <tr>
+                            <th><code>skill-creator</code> Phase</th>
+                            <th>SkillForge AI v2 Module</th>
+                            <th>Artifact &amp; Empirical Guarantee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Paired Subprocess Evals</strong></td>
+                            <td><code>run_real_skill_creator_evals()</code></td>
+                            <td>Spawns isolated <code>iteration-N/eval-M/{with_skill,without_skill}/outputs/</code> runs, grades assertions into <code>grading.json</code>, and aggregates pass-rate, latency, and token deltas in <code>benchmark.json</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Human Feedback Rewriter</strong></td>
+                            <td><code>submit_human_feedback_and_iterate()</code></td>
+                            <td>Captures per-test human critiques from the standalone HTML Eval Viewer into <code>feedback.json</code>, snapshots <code>old_skill/</code>, and rewrites <code>SKILL.md</code> using Ollama, Gemini, Claude, or OpenAI.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>60/40 Trigger Optimizer</strong></td>
+                            <td><code>optimize_trigger_description()</code></td>
+                            <td>Evaluates 20 realistic <em>should-trigger</em> and <em>should-not-trigger</em> prompts across a 60% train / 40% held-out test split to maximize recall and precision without overfitting.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sequential Orchestrator</strong></td>
+                            <td><code>orchestrator_builder.py</code></td>
+                            <td>Chains Phase 1 Discovery &rarr; Shared Handoff Directory &rarr; Phase 2 V&amp;V &amp; 7-Gate False-Positive Triage &rarr; Phase 3 Executive Report + Annexes, proving <code>SHA-256(Run 1) == SHA-256(Run 2)</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>3. Multi-Provider Freedom + Zero-Copy Bridging into AiLabs</h2>
+                <p>
+                    Every stage in SkillForge AI v2 shares a unified 4-provider model bar (<code>llm_bridge.py</code>). You can auto-discover local onboard models on <code>http://127.0.0.1:11434</code> (such as <code>qwen2.5-coder:7b</code> or <code>llama3.2:3b</code>) for 100% air-gapped skill authoring, or switch to <strong>Google Gemini</strong>, <strong>Anthropic Claude</strong>, or <strong>OpenAI</strong> with a single dropdown. Better yet, every standalone skill or multi-skill orchestrator compiled into <code>skills_workspace/</code> is automatically discovered via progressive disclosure inside <a href="../projects/project_38.html" class="text-info">AiLabs</a>—closing the loop from visual skill engineering to live multi-agent execution.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_28.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Zero-Dependency 60 FPS Web Audio DSP
+                    </a>
+                    <a href="blog_30.html" class="btn-card-action btn-card-primary">
+                        Next: Architecting AiLabs (4-Provider Agentic IDE) <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="../assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="../js/catalog-data.js?v=20261126v6"></script>
+    <script src="../js/scripts.js?v=20261125v5"></script>
+</body>
+</html>

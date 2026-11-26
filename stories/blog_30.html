@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Architecting AiLabs: engineering a clean-room, zero-dependency 4-Provider Agentic Coding IDE and Runtime with 22 native tools, 6-tier team/personal customizations, git-worktree subagents, Lazy MCP, reactive wakeup, and unified Ollama, Gemini, Claude, and OpenAI execution.">
+    <title>Architecting AiLabs: Clean-Room 4-Provider Agentic Coding IDE &amp; Multi-Agent Runtime | Black Beard&#x27;s Blog</title>
+    <!-- Bootstrap 5 CSS (Self-Hosted for Zero-CDN-Failure Reliability) -->
+    <link href="../assets/vendor/bootstrap.min.css?v=20261125v5" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Cyber-Neon Stylesheet (Cache-Busted) -->
+    <link rel="stylesheet" href="../css/style.css?v=20261125v5">
+    <style>
+        .table-cyber {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0 26px 0;
+            font-size: 0.9rem;
+        }
+        .table-cyber th {
+            background: rgba(15, 23, 42, 0.94);
+            color: #38bdf8;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            padding: 11px 14px;
+            text-align: left;
+        }
+        .table-cyber td {
+            background: rgba(15, 23, 42, 0.58);
+            color: #cbd5e1;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 11px 14px;
+            vertical-align: top;
+        }
+        .principle-banner {
+            display: block;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.72));
+            border-left: 4px solid #38bdf8;
+            padding: 15px 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-dot"></span>
+                Black Beard's Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../projects.html">Projects (38)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../blog.html">Blog (30)</a></li>
+                    <li class="nav-item ms-lg-2 my-2 my-lg-0">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 68 systems &amp; stories (Ctrl+K or /)">
+                            <i class="fa-solid fa-magnifying-glass text-info"></i>
+                            <span>Quick Jump...</span>
+                            <span class="kbd-chip">&#8984;K</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-1 d-flex align-items-center gap-1">
+                        <a class="nav-icon-link" href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" title="GitHub (@sockshare)" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="nav-icon-link" href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" title="LinkedIn — Julian Morrisette" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="breadcrumb-cyber mx-auto" style="max-width: 860px;">
+                <a href="../index.html">Home</a> <span>/</span>
+                <a href="../blog.html">Blog</a> <span>/</span>
+                <span>Story #30</span>
+            </div>
+
+            <article class="story-article">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <span class="category-badge badge-nexus mb-0">Agentic IDE &bull; 4-Provider Model House &bull; Multi-Agent Systems</span>
+                    <span class="mono-tag small text-secondary">
+                        <i class="fa-solid fa-user-astronaut me-1"></i>Julian Morrisette &bull;
+                        <i class="fa-regular fa-clock ms-1 me-1"></i>12 min read
+                    </span>
+                </div>
+
+                <h1>Architecting AiLabs: Building a Clean-Room, 4-Provider Agentic Coding IDE with 22 Native Tools, Git-Worktree Subagents &amp; Lazy MCP</h1>
+                <img src="../assets/images/blog_30_img1.jpg?v=1" class="story-hero-img" alt="AiLabs Agentic Runtime Architecture Blueprint">
+
+                <p class="lead">
+                    What does it actually take to engineer a full-featured, enterprise-grade <strong>Agentic Coding IDE &amp; Multi-Agent Runtime</strong> from scratch—with zero third-party Python dependencies and zero vendor lock-in? That question drove <a href="../projects/project_38.html" class="text-info">AiLabs</a> (<a href="https://github.com/Sockshare/ailabs" target="_blank" rel="noopener noreferrer" class="text-info">GitHub: Sockshare/ailabs</a>, integrated on <code>Port 8120</code> inside <a href="../projects/project_7.html" class="text-info">Run Nexus</a>): a clean-room platform uniting 22 native tools, a 6-part / 6-tier customization engine, isolated <code>git worktree</code> subagents, Eager &amp; Lazy MCP servers, reactive task wakeups, and a 4-Provider Model House spanning <strong>Local Ollama</strong>, <strong>Google Gemini</strong>, <strong>Anthropic Claude</strong>, and <strong>OpenAI</strong>.
+                </p>
+
+                <div class="principle-banner">
+                    <strong>Architectural Thesis:</strong> Model intelligence is interchangeable; <em>harness engineering</em>—progressive context disclosure, surgical AST-verified edits, deterministic <code>PreToolUse</code> hooks, isolated subagent worktrees, and reactive event loops—is what makes an agentic IDE reliable in production.
+                </div>
+
+                <h2>1. Unifying 4 Model Providers (Including CPU-Friendly Local Ollama)</h2>
+                <p>
+                    Every LLM family speaks a slightly different tool-calling dialect: OpenAI uses <code>type: "function"</code> and <code>tool_calls</code>, Anthropic Claude uses <code>input_schema</code> and <code>tool_use</code>/<code>tool_result</code> content blocks alongside <code>thinking</code> traces, Google Gemini uses <code>functionDeclarations</code> (which rejects keywords like <code>$schema</code> and <code>additionalProperties</code>), and local 3B/7B Ollama models running on CPU can choke if forced to prefill 22 multi-paragraph JSON schemas on every turn—or wrap valid tool calls inside fenced <code>```json ... ```</code> blocks.
+                </p>
+                <p>
+                    In <code>ailabs/providers.py</code>, AiLabs normalizes all four providers behind one contract with four model tiers (<code>inherit</code>, <code>pro</code>, <code>flash</code>, <code>flash_lite</code>). For cloud APIs and 24B+ GPU Ollama models, all 22 unabridged tool schemas execute simultaneously; for compact <code>&lt;14B</code> CPU Ollama models (<code>llama3.2:3b</code>, <code>qwen2.5-coder:7b</code>), AiLabs dynamically compacts verbose descriptions and parses both native <code>message.tool_calls</code> and fenced JSON tool emissions—making local multi-turn ReAct loops fast and reliable even on CPU-only workstations.
+                </p>
+
+                <h2>2. Context Hygiene: Progressive Skills, 6-Tier Precedence &amp; Lazy MCP</h2>
+                <p>
+                    Dumping 50 team skills and 80 MCP database schemas into every system prompt wastes tens of thousands of tokens and degrades tool-selection accuracy. AiLabs solves context bloat through two complementary mechanisms in <code>ailabs/customizations.py</code> and <code>ailabs/mcp_hub.py</code>:
+                </p>
+
+                <table class="table-cyber">
+                    <thead>
+                        <tr>
+                            <th>Subsystem</th>
+                            <th>Engineering Mechanism</th>
+                            <th>Why It Matters for Teams &amp; Orgs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>6-Tier Customization Precedence</strong></td>
+                            <td><code>Workspace Personal</code> &gt; <code>Workspace Project</code> &gt; <code>Repo Shared (.ailabs/shared/)</code> &gt; <code>Declared JSON</code> &gt; <code>Global (~/.ailabs/ + SkillForge Bridge)</code> &gt; <code>Builtin</code></td>
+                            <td>Engineering teams commit shared rules, skills, subagents, and security hooks into Git (<code>.ailabs/shared/</code>) while preserving developer overrides and symlink deduplication.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Progressive Skill Disclosure</strong></td>
+                            <td>Frontmatter-only index in system prompt + <code>view_file(..., IsSkillFile=true)</code></td>
+                            <td>Hundreds of skills (including skills built in <a href="../projects/project_33.html" class="text-info">SkillForge AI</a>) cost only ~30 tokens each until a task matches and loads full <code>SKILL.md</code> instructions on demand.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eager vs. Lazy MCP Hub</strong></td>
+                            <td><code>mcp_&lt;server&gt;_&lt;tool&gt;</code> vs. on-disk <code>.ailabs_data/mcp/&lt;server&gt;/&lt;tool&gt;.json</code> + <code>call_mcp_tool</code></td>
+                            <td>High-frequency tools stay eager; sprawling enterprise MCP catalogs sync lightweight schema files on disk that the agent inspects only when needed.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deterministic Lifecycle Hooks</strong></td>
+                            <td><code>PreToolUse</code> / <code>PostToolUse</code> shell hooks (<code>exit 2</code> = hard block)</td>
+                            <td>Blocks destructive SQL, unsafe shell flags, or secret leaks <em>outside</em> the stochastic LLM context before <code>execute_native_tool</code> ever runs.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>3. Parallel Subagents Without Merge Collisions, Plus Reactive Wakeup</h2>
+                <p>
+                    When an orchestrating agent spawns multiple coding subagents concurrently, sharing a single working tree guarantees race conditions. AiLabs's <code>invoke_subagent</code> tool supports three workspace modes: <code>inherit</code> (for read-only researchers), <code>branch</code> (isolated directory clone), and <code>share</code> (creating an isolated <code>git worktree</code> sharing the underlying Git object store without duplicating storage). Paired with async <code>run_command</code> handoffs (<code>WaitMsBeforeAsync</code>), conditional <code>schedule</code> timers/crons (<code>TimerCondition</code> early cancellation), persistent <code>sidecars/</code>, <code>bin/agentapi</code>, and sliding-window <code>&lt;CONTEXT_SUMMARY&gt;</code> compaction in <code>ailabs/brain.py</code>, the runtime automatically wakes idle sessions the instant background work completes—zero spin-polling required.
+                </p>
+
+                <hr class="border-secondary opacity-25 my-4">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a href="blog_29.html" class="btn-cyber-outline">
+                        <i class="fa-solid fa-arrow-left"></i> Previous: Inside SkillForge AI v2 (1:1 Skill Builder)
+                    </a>
+                    <a href="../blog.html" class="btn-card-action btn-card-primary">
+                        View All 30 Blog Stories &amp; Playbooks <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Neural Particle Network -->
+    <div id="interactive-particle-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-md-start">
+                    <strong class="text-white">Julian Morrisette &mdash; Black Beard's Portfolio</strong>
+                    <div class="small text-secondary">AI Systems Architect &bull; LLM &amp; MCP Workflow Engineer &bull; Security Automation</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="https://github.com/sockshare" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub (@sockshare)">
+                        <i class="fa-brands fa-github me-1"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/julian-morrisette-1a4813b9/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn — Julian Morrisette">
+                        <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
+    <script src="../assets/vendor/particles.min.js?v=20261125v5"></script>
+    <script src="../js/catalog-data.js?v=20261126v6"></script>
+    <script src="../js/scripts.js?v=20261125v5"></script>
+</body>
+</html>

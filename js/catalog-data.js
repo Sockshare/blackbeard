@@ -6,10 +6,10 @@ window.PORTFOLIO_CATALOG = {
       "id": 38,
       "flagship": true,
       "flagshipRank": 0,
-      "title": "AiLabs: 4-Provider Agentic Coding IDE & Multi-Agent Runtime",
+      "title": "AiLabs: 2-in-1 Agentic IDE, Embedded SkillForge Studio & 41 Deterministic Auditors",
       "href": "projects/project_38.html",
       "image": "assets/images/ailabs_agentic_ide.jpg?v=1",
-      "badge": "Flagship Agentic IDE • 4-Provider Model House",
+      "badge": "Flagship 2-in-1 Agentic IDE • 41 Auditors • Guardrails Lab",
       "badgeClass": "badge-nexus",
       "categories": [
         "mcp",
@@ -17,14 +17,15 @@ window.PORTFOLIO_CATALOG = {
         "compliance",
         "cyber"
       ],
-      "summary": "Clean-room, zero-dependency Agentic Coding IDE & Multi-Agent Runtime (Port 8120 in Run Nexus) uniting Local Ollama, Google Gemini, Anthropic Claude, and OpenAI across 22 native tools, 6-tier team/personal customizations, progressive SKILL.md disclosure, git-worktree subagents, Pre/PostToolUse security hooks, and Eager/Lazy MCP.",
-      "modalSummary": "AiLabs (Port 8120) is a clean-room 4-Provider Agentic Coding IDE & Multi-Agent Runtime integrated into Run Nexus and auto-bridged with SkillForge AI. It normalizes Local Ollama, Google Gemini, Anthropic Claude, and OpenAI behind 22 native tools, a 6-part / 6-tier customization & hook engine, git-worktree isolated subagents, Eager/Lazy MCP servers, reactive auto-wakeup, sidecars, and dual JSONL transcripts with context compaction.",
+      "summary": "Zero-dependency 11-page Multi-Provider Agentic Coding IDE & Security Workbench (Port 8120 in Run Nexus) natively embedding SkillForge AI Studio, 41 built-in deterministic auditors (AppSec, CloudSec, SOC, AI/Data, AST Code Quality, GRC) with parallel batch posture scoring & closed-loop ✨ Fix with AI, Local Binary RAG, chainable workflows, live SSE terminal & tool diffs, HTTP security header grader, MCP inspector, and 4-layer Ollama Guardrails Lab.",
+      "modalSummary": "AiLabs v2 (Port 8120) unites Local Ollama, Google Gemini, Anthropic Claude, and OpenAI across 11 dedicated pages and 22 native tools with zero pip dependencies. It natively mounts SkillForge AI (/builder), ships 41 deterministic SHA-256 auditors with parallel batch suites & closed-loop AI patch verification, extracts PDF/DOCX/XLSX/ZIP into Local RAG, chains automated workflow pipelines & scheduled monitors, tests live HTTP headers & MCP servers, and benchmarks 4-layer prompt-security defenses on Local Ollama.",
       "tech": [
-        "22 Native Agent Tools",
-        "Ollama / Gemini / Claude / OpenAI",
-        "6-Tier Customizations & Hooks",
-        "Git-Worktree Subagents",
-        "Eager & Lazy MCP Hub"
+        "11-Page Agentic IDE",
+        "41 Deterministic Auditors",
+        "Closed-Loop ✨ Fix with AI",
+        "Embedded SkillForge Studio",
+        "4-Layer Ollama Guardrails Lab",
+        "Local RAG + MCP + HTTP Tester"
       ],
       "github": "https://github.com/Sockshare/ailabs"
     },
@@ -144,14 +145,14 @@ window.PORTFOLIO_CATALOG = {
         "compliance",
         "cyber"
       ],
-      "summary": "1:1 Skill Builder (skill-creator) Studio, Headless CLI Python AST Decoupler, Paired Subprocess Evals + HTML Eval Viewer, feedback.json Rewriter, 60/40 Trigger Optimizer, and Sequential Multi-Skill Orchestrator (2-Run SHA-256 Determinism) powered by Local Ollama, Google Gemini, Anthropic Claude, and OpenAI.",
-      "modalSummary": "SkillForge AI v2 replicates the complete skill-creator lifecycle and multi-skill sequential orchestration for any user across Local Ollama, Google Gemini, Anthropic Claude, and OpenAI—supporting intent interviews, AST web-app-to-headless-CLI decoupling, paired with_skill vs. baseline subprocess evals, 60/40 trigger optimization, 2-run SHA-256 determinism, and zero-copy bridging into AiLabs.",
+      "summary": "1:1 Skill Builder (skill-creator) Studio, Headless CLI Python AST Decoupler, Paired Subprocess Evals + HTML Eval Viewer, feedback.json Rewriter, 60/40 Trigger Optimizer, 56-Tool MCP Hub, and Sequential Multi-Skill Orchestrator (2-Run SHA-256 Determinism) — standalone on :8108 and natively embedded inside AiLabs on :8120.",
+      "modalSummary": "SkillForge AI v2 replicates the complete skill-creator lifecycle and multi-skill sequential orchestration across Local Ollama, Google Gemini, Anthropic Claude, and OpenAI—supporting intent interviews, AST web-app-to-headless-CLI decoupling, paired subprocess evals, 60/40 trigger optimization, 56 verified MCP tools, portable ~/.ailabs skill packaging, and native 2-in-1 embedding inside AiLabs.",
       "tech": [
         "1:1 skill-creator Lifecycle",
         "AST Headless CLI Decoupler",
         "Paired Subprocess Evals",
         "60/40 Trigger Optimizer",
-        "Ollama / Gemini / Claude / OpenAI"
+        "2-in-1 AiLabs Native Bridge"
       ],
       "github": "https://github.com/Sockshare/skillforge-ai"
     },
@@ -942,9 +943,28 @@ window.PORTFOLIO_CATALOG = {
   ],
   "stories": [
     {
-      "id": 30,
+      "id": 31,
       "featured": true,
       "featuredRank": 0,
+      "title": "AiLabs v2: Evolving into an 11-Page Zero-Dependency Agentic IDE with 41 Deterministic Auditors, Closed-Loop AI Remediation & a Local Ollama Guardrails Lab",
+      "href": "stories/blog_31.html",
+      "image": "assets/images/blog_31_img1.jpg?v=1",
+      "badge": "Agentic IDE v2 • 41 Deterministic Auditors • Local AI Guardrails",
+      "badgeClass": "badge-security",
+      "categories": [
+        "mcp",
+        "llm",
+        "security",
+        "playbook"
+      ],
+      "readTime": "11 min read",
+      "summary": "How AiLabs evolved into an 11-page zero-pip Agentic IDE & Security Workbench: natively embedding SkillForge AI, 41 SHA-256 deterministic auditors with parallel batch posture scoring & closed-loop ✨ Fix with AI, pure-stdlib PDF/DOCX/XLSX/ZIP Local RAG, chainable workflows, live SSE tool diffs & terminal, HTTP header grading, and a 4-layer Local Ollama Guardrails Lab.",
+      "ctaLabel": "Read Story"
+    },
+    {
+      "id": 30,
+      "featured": true,
+      "featuredRank": 1,
       "title": "Architecting AiLabs: Building a Clean-Room, 4-Provider Agentic Coding IDE with 22 Native Tools, Git-Worktree Subagents & Lazy MCP",
       "href": "stories/blog_30.html",
       "image": "assets/images/blog_30_img1.jpg?v=1",
@@ -963,7 +983,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 29,
       "featured": true,
-      "featuredRank": 1,
+      "featuredRank": 2,
       "title": "Inside SkillForge AI v2: Replicating the Complete skill-creator Lifecycle & Multi-Skill Orchestration Across Ollama, Gemini, Claude & OpenAI",
       "href": "stories/blog_29.html",
       "image": "assets/images/blog_29_img1.jpg?v=1",
@@ -1017,7 +1037,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 26,
       "featured": true,
-      "featuredRank": 2,
+      "featuredRank": 3,
       "title": "Defeating the “Confused Deputy” in Enterprise RAG & Compiling Web Apps into Live MCP Agent Skills",
       "href": "stories/blog_26.html",
       "image": "assets/images/blog_26_img1.jpg?v=1",
@@ -1036,7 +1056,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 25,
       "featured": true,
-      "featuredRank": 3,
+      "featuredRank": 4,
       "title": "Defeating Stochasticity: From Manual Audits to a Byte-for-Byte Deterministic End-to-End AI Skill Workflow",
       "href": "stories/blog_25.html",
       "image": "assets/images/blog_25_img1.jpg?v=3",
@@ -1055,7 +1075,7 @@ window.PORTFOLIO_CATALOG = {
     {
       "id": 24,
       "featured": true,
-      "featuredRank": 4,
+      "featuredRank": 5,
       "title": "From Web Apps to Deterministic Agent Skills & Autonomous SOC 2 Type II Audit Studios: Engineering SkillForge AI and TrustForge SOC 2",
       "href": "stories/blog_24.html",
       "image": "assets/images/blog_24_img1.jpg?v=8",
@@ -1109,8 +1129,8 @@ window.PORTFOLIO_CATALOG = {
     },
     {
       "id": 15,
-      "featured": true,
-      "featuredRank": 5,
+      "featured": false,
+      "featuredRank": 999,
       "title": "CMMC Level 1 Explained: Why It’s Strictly Pass/Fail and Why Zero POA&Ms Are Allowed",
       "href": "stories/blog_15.html",
       "image": "assets/images/blog_15_img1.jpg?v=6",

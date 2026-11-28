@@ -28,9 +28,9 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.html#about">Methodology</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects (38)</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog (30)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog.html">Blog (31)</a></li>
                     <li class="nav-item ms-lg-2 my-2 my-lg-0">
-                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 68 systems &amp; stories (Ctrl+K or /)">
+                        <button type="button" class="cmdk-trigger-btn" data-open-cmdk title="Instant Search across all 69 systems &amp; stories (Ctrl+K or /)">
                             <i class="fa-solid fa-magnifying-glass text-info"></i>
                             <span>Quick Jump...</span>
                             <span class="kbd-chip">&#8984;K</span>
@@ -67,7 +67,7 @@
                             <span class="tech-pill">Paired Subprocess Evals</span>
                             <span class="tech-pill">60/40 Trigger Optimizer</span>
                             <span class="tech-pill">Multi-Skill Orchestrator</span>
-                            <span class="tech-pill">Ollama + Gemini + Claude + OpenAI</span>
+                            <span class="tech-pill">2-in-1 AiLabs Native Bridge</span>
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -75,7 +75,7 @@
                         <h1 class="text-white fw-bold mb-3">SkillForge AI: 1:1 Skill Builder (<code>skill-creator</code>) &amp; Multi-Skill Orchestrator Studio</h1>
 
                         <h2><i class="fa-solid fa-microchip"></i> Summary</h2>
-                        <p>SkillForge AI (<code>Port 8108</code>) is a zero-dependency, local-first <strong>1:1 Skill Builder (<code>skill-creator</code>) Studio, Web-App-to-Headless-CLI Decoupler, Multi-Skill Sequential Orchestrator, and MCP Compiler Hub</strong>. Powered natively by <strong>Local Ollama</strong> (auto-discovering any installed model) as well as closed-source frontier APIs (<strong>Google Gemini</strong>, <strong>Anthropic Claude</strong>, and <strong>OpenAI</strong>), it lets any engineer or general user turn either a natural-language workflow or an existing web application into verified, standalone <code>SKILL.md</code> packages and deterministic multi-stage orchestration pipelines—automatically bridged into <a href="project_38.html" class="text-info">AiLabs</a>.</p>
+                        <p>SkillForge AI (standalone on <code>Port 8108</code> AND natively embedded inside <a href="project_38.html" class="text-info">AiLabs</a> on <code>Port 8120</code> via <code>/builder</code>) is a clean-room, zero-dependency, local-first <strong>1:1 Skill Builder (<code>skill-creator</code>) Studio, Web-App-to-Headless-CLI Decoupler, Multi-Skill Sequential Orchestrator, and 56-Tool MCP Compiler Hub</strong>. Powered natively by <strong>Local Ollama</strong> (auto-discovering any installed model) alongside <strong>Google Gemini</strong>, <strong>Anthropic Claude</strong>, and <strong>OpenAI</strong>, it turns natural-language workflows or local web apps into verified, portable <code>SKILL.md</code> packages (<code>~/.ailabs/config/skills/</code>) and deterministic multi-stage orchestration pipelines.</p>
 
                         <h2 class="mt-4"><i class="fa-solid fa-bolt"></i> Key Features</h2>
                         <ul>
@@ -83,7 +83,7 @@
                             <li><strong>Dual Web-App Compilation (Live MCP Server OR Pure Headless CLI Decoupling):</strong> Point SkillForge AI at any local application (including bundled <em>TaskPulse</em> on <code>:8110</code> and <em>BillingOps</em> on <code>:8115</code>) to either expose live HTTP routes as MCP JSON-RPC 2.0 tools OR strip HTTP/UI boilerplate via Python AST into a 100% standalone headless CLI skill that runs with zero web server running.</li>
                             <li><strong>Sequential Multi-Skill Orchestration &amp; 2-Run SHA-256 Determinism Builder:</strong> Chains Phase 1 Upstream Discovery &rarr; Shared Handoff Directory &rarr; Phase 2 V&amp;V Scanners &amp; 7-Gate False-Positive Validator &rarr; Phase 3 Executive Report + Evidence Annexes, verifying byte-for-byte reproducibility across consecutive runs (<code>SHA-256 Run 1 == Run 2</code>).</li>
                             <li><strong>Unified 4-Provider Model Bar (Local Ollama + Gemini + Claude + OpenAI):</strong> Switch seamlessly between local onboard Ollama models (<code>:11434</code>) and cloud APIs across every stage—intent interviews, web-app translation, live 3-stage agent testing, <code>feedback.json</code> rewrites, and 60/40 trigger optimization.</li>
-                            <li><strong>PreToolUse Guardrails Lab &amp; Zero-Copy Bridge into AiLabs:</strong> Includes a 100-skill progressive-disclosure token router simulator, deterministic SQL/Bash/secret <code>PreToolUse</code> blocker (`exit 2`), and instant discovery inside <a href="project_38.html" class="text-info">AiLabs</a> and Claude Code.</li>
+                            <li><strong>PreToolUse Guardrails Lab &amp; Native 2-in-1 AiLabs Embedding:</strong> Includes a 100-skill progressive-disclosure token router simulator, deterministic SQL/Bash/secret <code>PreToolUse</code> blocker (<code>exit 2</code>), clean-room portable <code>INSTALL.md</code> packaging targeting <code>~/.ailabs/config/skills/</code>, and live MCP inspection + zero-copy skill discovery inside <a href="project_38.html" class="text-info">AiLabs</a>.</li>
                         </ul>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                         <ul class="mb-0">
                             <li><strong>Skill Builder &amp; Orchestrator Core:</strong> Python 3.10+ Standard Library (Zero External Pip Dependencies), Python AST Domain Extractor (<code>skill_creator_studio.py</code>), Sequential Pipeline Compiler (<code>orchestrator_builder.py</code>), 60/40 Trigger Optimizer &amp; Guardrails Engine (<code>enterprise_kit.py</code>)</li>
                             <li><strong>4-Provider LLM House:</strong> Unified adapter (<code>llm_bridge.py</code>) supporting Local Ollama (<code>/api/tags</code>, <code>/api/chat</code>), Google Gemini (<code>v1beta</code>), Anthropic Claude (<code>/v1/messages</code>), and OpenAI (<code>/v1/chat/completions</code>)</li>
-                            <li><strong>Agent &amp; Protocol Standards:</strong> Progressive-Disclosure <code>SKILL.md</code> Specification, Multi-Skill MCP Hub (<code>2024-11-05</code> JSON-RPC 2.0), Canonical JSON &amp; SHA-256 Attestation</li>
+                            <li><strong>Agent &amp; Protocol Standards:</strong> Progressive-Disclosure <code>SKILL.md</code> Specification, Multi-Skill MCP Hub (<code>2024-11-05</code> JSON-RPC 2.0, 56 tools / 20 resources verified via <code>--self-test</code>), Canonical JSON &amp; SHA-256 Attestation</li>
                             <li><strong>Verification Suite:</strong> Automated 17-test <code>unittest</code> suite (<code>tests/test_skillforge.py</code>) verifying Ollama discovery, AST decoupling, real subprocess eval loops, multi-skill 2-run SHA-256 determinism, PreToolUse guardrails, and clean-room hygiene</li>
                         </ul>
                     </div>
@@ -104,7 +104,7 @@
                 <div class="col-lg-6">
                     <div class="detail-section-card h-100">
                         <h2><i class="fa-solid fa-brain"></i> Theory &amp; Architecture</h2>
-                        <p class="mb-0">Great agent skills aren't one-shot prompt blobs—they are software artifacts refined through empirical evaluation. SkillForge AI brings the complete internal meta-skill workflow to every user in a visual studio: decoupling pure domain Python from web apps via AST analysis, proving measurable value through paired <code>with_skill</code> vs. baseline subprocess benchmarks (`grading.json` &amp; `benchmark.json`), preventing trigger overfitting with a 60/40 train/test split, and composing individual skills into cryptographically deterministic multi-stage pipelines.</p>
+                        <p class="mb-0">Great agent skills aren't one-shot prompt blobs—they are software artifacts refined through empirical evaluation. SkillForge AI brings the complete internal meta-skill workflow to every user in a visual studio (and natively inside <a href="project_38.html" class="text-info">AiLabs</a>): decoupling pure domain Python from web apps via AST analysis, proving measurable value through paired <code>with_skill</code> vs. baseline subprocess benchmarks (<code>grading.json</code> &amp; <code>benchmark.json</code>), preventing trigger overfitting with a 60/40 train/test split, and composing individual skills into cryptographically deterministic multi-stage pipelines.</p>
                     </div>
                 </div>
             </div>
@@ -151,7 +151,7 @@
 
     <script src="../assets/vendor/bootstrap.bundle.min.js?v=20261125v5"></script>
     <script src="../assets/vendor/particles.min.js?v=20261125v5"></script>
-    <script src="../js/catalog-data.js?v=20261126v6"></script>
+    <script src="../js/catalog-data.js?v=20261128v7"></script>
     <script src="../js/scripts.js?v=20261125v5"></script>
 </body>
 </html>
